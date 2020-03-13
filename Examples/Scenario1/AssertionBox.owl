@@ -1,14 +1,10 @@
 @prefix : <http://www.ia.urjc.es/ontologies/building/sbevac_scenario#> .
-@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix sbevac: <http://www.ia.urjc.es/ontologies/building/sbevac#> .
@@ -17,7 +13,6 @@
 @base <http://www.ia.urjc.es/ontologies/building/sbevac_scenario> .
 
 <http://www.ia.urjc.es/ontologies/building/sbevac_scenario> rdf:type owl:Ontology ;
-                                                             owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbevac/1.5> ;
                                                              owl:imports <https://raw.githubusercontent.com/qasimkhalid/SBEO/master/sbevac.owl> .
 
 #################################################################
