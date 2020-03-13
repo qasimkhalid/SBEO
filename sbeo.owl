@@ -1,4 +1,4 @@
-@prefix : <http://www.ia.urjc.es/ontologies/building/sbeo#> .
+@prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -7,7 +7,6 @@
 @prefix seas: <https://w3id.org/seas/> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fiemser: <http://sites.google.com/site/smartappliancesproject/ontologies/fiemser#> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
