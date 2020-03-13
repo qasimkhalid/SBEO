@@ -6,7 +6,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix saref: <https://w3id.org/saref#> .
-@prefix terms: <http://purl.org/dc/terms/> .
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fiemser: <http://sites.google.com/site/smartappliancesproject/ontologies/fiemser#> .
