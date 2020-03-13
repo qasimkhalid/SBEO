@@ -18,7 +18,7 @@
 
 <http://www.ia.urjc.es/ontologies/building/sbevac_scenario> rdf:type owl:Ontology ;
                                                              owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbevac/1.5> ;
-                                                             owl:imports <file:/C:/Users/Qasim%20KHALID/Dropbox/Qasim's%20Progress/Others/My%20Ontology/SBEvac/General/SBEvac_Ontology_1.5_T-Box.owl> .
+                                                             owl:imports <https://raw.githubusercontent.com/qasimkhalid/SBEO/master/sbevac.owl> .
 
 #################################################################
 #    Individuals
