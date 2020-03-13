@@ -17,20 +17,12 @@
 @base <http://www.ia.urjc.es/ontologies/building/sbevac> .
 
 <http://www.ia.urjc.es/ontologies/building/sbevac> rdf:type owl:Ontology ;
-                                                    owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbevac/1.6> ;
+                                                    owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbevac/1.7> ;
                                                     owl:imports seas:BuildingOntology-1.0 ;
-                                                    dcterms:creator "Qasim Khalid"@en ;
-                                                    dcterms:description "The Smart Buildings Evacuation (SBEVAC) ontology is proposed to acquire knowledge of emergency evacuation (or egress) and to provide safe evacuation paths to the occupants of buildings during hazardous circumstances in a building. The goal of this ontology is not only to provide safe paths to the people, but also the paths will be feasible for people with respect to their physical characteristics and preferences. In this regard, we propose a knowledge base system for emergency evacuation in which we use the concept of a smart building. First, we define the concepts that are necessary to develop the proposed systems. Second, we develop the hierarchy to use these concepts. Third, we define the properties and characteristics of these concepts. Fourth, we introduce role restrictions, and at last, we introduce instances for particular scenarios to validate our foundation knowledge base. We use three different concepts in our ontology and integrate them with respect to our requirements. The first concept is knowledge about the building geometry, the second concept is the knowledge about the momentary situation of the building, and the third concept is the knowledge about the occupants of the building. We reuse seas:BuildingOntology to get geometry of the buildings. Also, it may limit the overlap with the following existing specialized ontologies such as FIEMSER ontology, gbXML ontology and ifcOWL ontology."@en ;
-                                                    dcterms:title "SBEVAC: Smart Building Evacuation Ontology"@en ;
-                                                    owl:versionInfo "1.6"@en .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://www.w3.org/2002/07/owl#sameAs
-owl:sameAs rdf:type owl:AnnotationProperty .
-
+                                                    dcterms:creator "Qasim Khalid" ;
+                                                    dcterms:description "The Smart Buildings Evacuation Ontology (SBEO) is proposed to acquire knowledge of emergency evacuation (or egress) and to provide safe evacuation paths to the occupants of buildings during hazardous circumstances in a building. The goal of this ontology is not only to provide safe paths to the people, but also the paths will be feasible for people with respect to their physical characteristics and preferences. In this regard, we propose a knowledge base system for emergency evacuation in which we use the concept of a smart building. First, we define the concepts that are necessary to develop the proposed systems. Second, we develop the hierarchy to use these concepts. Third, we define the properties and characteristics of these concepts. Fourth, we introduce role restrictions, and at last, we introduce instances for particular scenarios to validate our foundation knowledge base. We use three different concepts in our ontology and integrate them with respect to our requirements. The first concept is knowledge about the building geometry, the second concept is the knowledge about the momentary situation of the building, and the third concept is the knowledge about the occupants of the building. We reuse seas:BuildingOntology to get geometry of the buildings. Also, it may limit the overlap with the following existing specialized ontologies such as FIEMSER ontology, gbXML ontology and ifcOWL ontology."^^xsd:string ;
+                                                    dcterms:title "SBEO: Smart Building Evacuation Ontology" ;
+                                                    owl:versionInfo 1.7 .
 
 #################################################################
 #    Object Properties
@@ -42,8 +34,8 @@ sbevac:accompanying rdf:type owl:ObjectProperty ,
                              owl:TransitiveProperty ;
                     rdfs:domain sbevac:Person ;
                     rdfs:range sbevac:Person ;
-                    rdfs:comment "This property is used to mention how who is accompanying who."@en ;
-                    rdfs:label "accompanying"@en .
+                    rdfs:comment "This property is used to mention how who is accompanying who."^^xsd:string ;
+                    rdfs:label "accompanying"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#acquaintanceOf
@@ -51,8 +43,8 @@ sbevac:acquaintanceOf rdf:type owl:ObjectProperty ,
                                owl:SymmetricProperty ;
                       rdfs:domain sbevac:Person ;
                       rdfs:range sbevac:Person ;
-                      rdfs:comment "This property is used to represent any friend or acquaintace tie among occupants."@en ;
-                      rdfs:label "acquaintanceOf"@en .
+                      rdfs:comment "This property is used to represent any friend or acquaintace tie among occupants."^^xsd:string ;
+                      rdfs:label "acquaintanceOf"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#adjacentTo
@@ -60,8 +52,8 @@ sbevac:adjacentTo rdf:type owl:ObjectProperty ,
                            owl:SymmetricProperty ;
                   rdfs:domain seas:Zone ;
                   rdfs:range seas:Zone ;
-                  rdfs:comment "This property is used to mention the spaces that are adjacent to a specific space by a wall. This property is helpful for security purposes, for example, in case of any emergency situation when the seas:BuildingSpaceConnection, i.e. door, windows, are not accessible."@en ;
-                  rdfs:label "adjacentTo"@en .
+                  rdfs:comment "This property is used to mention the spaces that are adjacent to a specific space by a wall. This property is helpful for security purposes, for example, in case of any emergency situation when the seas:BuildingSpaceConnection, i.e. door, windows, are not accessible."^^xsd:string ;
+                  rdfs:label "adjacentTo"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#assignedRoute
@@ -74,15 +66,15 @@ sbevac:assignedRoute rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#connectedTo
-sbevac:connectedTo rdf:type owl:ObjectProperty ,
-                            owl:SymmetricProperty ;
+sbevac:connectedTo rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty seas:connectedTo ;
+                   rdf:type owl:SymmetricProperty ;
                    rdfs:domain seas:BuildingSpace ,
                                seas:BuildingSpaceConnection ;
                    rdfs:range seas:BuildingSpace ,
                               seas:BuildingSpaceConnection ;
-                   rdfs:comment "This property is used to mention the connectivity of any seas:BuildingSpaceConnection or seas:BuildingSpace with each other."@en ;
-                   rdfs:label "conectedTo"@en ;
-                   owl:sameAs "seas:connectedTo" .
+                   rdfs:comment "This property is used to mention the connectivity of any seas:BuildingSpaceConnection or seas:BuildingSpace with each other."^^xsd:string ;
+                   rdfs:label "conectedTo"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#dependentOn
@@ -91,8 +83,8 @@ sbevac:dependentOn rdf:type owl:ObjectProperty ;
                    rdf:type owl:TransitiveProperty ;
                    rdfs:domain sbevac:Person ;
                    rdfs:range sbevac:Person ;
-                   rdfs:comment "This property is used to mention the dependency of a particular person on his/her responsible person"@en ;
-                   rdfs:label "dependentOn"@en .
+                   rdfs:comment "This property is used to mention the dependency of a particular person on his/her responsible person"^^xsd:string ;
+                   rdfs:label "dependentOn"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#distanceOf
@@ -101,8 +93,8 @@ sbevac:distanceOf rdf:type owl:ObjectProperty ,
                   rdfs:domain sbevac:Distance ;
                   rdfs:range seas:Zone ,
                              seas:ZoneConnection ;
-                  rdfs:comment "This property is used to represent the distance between any two connected seas:BuildingSpaceConnection or seas:BuildingSpace."@en ;
-                  rdfs:label "distanceOf"@en .
+                  rdfs:comment "This property is used to represent the distance between any two connected seas:BuildingSpaceConnection or seas:BuildingSpace."^^xsd:string ;
+                  rdfs:label "distanceOf"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#endsIn
@@ -111,8 +103,8 @@ sbevac:endsIn rdf:type owl:ObjectProperty ;
               rdfs:domain sbevac:Route ;
               rdfs:range seas:BuildingSpace ,
                          seas:BuildingSpaceConnection ;
-              rdfs:comment "This property is used to express the last space where the route ends. Generally, these are sbevac:Exit."@en ;
-              rdfs:label "endsIn"@en .
+              rdfs:comment "This property is used to express the last space where the route ends. Generally, these are sbevac:Exit."^^xsd:string ;
+              rdfs:label "endsIn"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#hasPath
@@ -121,8 +113,8 @@ sbevac:hasPath rdf:type owl:ObjectProperty ;
                            seas:BuildingSpaceConnection ;
                rdfs:range seas:BuildingSpace ,
                           seas:BuildingSpaceConnection ;
-               rdfs:comment "This property is used to express the set of connected spaces that makes a route."@en ;
-               rdfs:label "hasPath"@en .
+               rdfs:comment "This property is used to express the set of connected spaces that makes a route."^^xsd:string ;
+               rdfs:label "hasPath"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#installedIn
@@ -133,8 +125,8 @@ sbevac:installedIn rdf:type owl:ObjectProperty ,
                                seas:BuildingSpaceConnection ;
                    rdfs:range seas:BuildingSpace ,
                               seas:BuildingSpaceConnection ;
-                   rdfs:comment "This property is used to mention any device, system, or instrument, installed in a seas:BuildingSpace."@en ;
-                   rdfs:label "installedIn"@en .
+                   rdfs:comment "This property is used to mention any device, system, or instrument, installed in a seas:BuildingSpace."^^xsd:string ;
+                   rdfs:label "installedIn"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#locatedIn
@@ -147,8 +139,8 @@ sbevac:locatedIn rdf:type owl:ObjectProperty ;
                              seas:ZoneConnection ;
                  rdfs:range seas:BuildingSpaceConnection ,
                             seas:Zone ;
-                 rdfs:comment "This property is used to mention the existence of anything in a particular seas:BuildingSpace, such as person, or stairs, doors, etc."@en ;
-                 rdfs:label "locatedIn"@en .
+                 rdfs:comment "This property is used to mention the existence of anything in a particular seas:BuildingSpace, such as person, or stairs, doors, etc."^^xsd:string ;
+                 rdfs:label "locatedIn"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#notAccessibleTo
@@ -156,16 +148,16 @@ sbevac:notAccessibleTo rdf:type owl:ObjectProperty ;
                        rdfs:domain seas:Zone ,
                                    seas:ZoneConnection ;
                        rdfs:range sbevac:Person ;
-                       rdfs:comment "This property is used to prohibit the access of any specific person to a specific seas:BuildingSpace."@en ;
-                       rdfs:label "notAccessibleTo"@en .
+                       rdfs:comment "This property is used to prohibit the access of any specific person to a specific seas:BuildingSpace."^^xsd:string ;
+                       rdfs:label "notAccessibleTo"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#responsibleTo
 sbevac:responsibleTo rdf:type owl:ObjectProperty ;
                      rdfs:domain sbevac:Person ;
                      rdfs:range sbevac:Person ;
-                     rdfs:comment "This property is used to mention the responsibility for a particular person to his/her dependent persons."@en ;
-                     rdfs:label "responsibleTo"@en .
+                     rdfs:comment "This property is used to mention the responsibility for a particular person to his/her dependent persons."^^xsd:string ;
+                     rdfs:label "responsibleTo"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#startsFrom
@@ -173,12 +165,8 @@ sbevac:startsFrom rdf:type owl:ObjectProperty ;
                   rdfs:domain sbevac:Route ;
                   rdfs:range seas:Zone ,
                              seas:ZoneConnection ;
-                  rdfs:comment "This property is used to express the last space where any route starts."@en ;
-                  rdfs:label "startsFrom"@en .
-
-
-###  https://w3id.org/seas/connectedTo
-seas:connectedTo rdf:type owl:ObjectProperty .
+                  rdfs:comment "This property is used to express the last space where any route starts."^^xsd:string ;
+                  rdfs:label "startsFrom"^^xsd:string .
 
 
 #################################################################
@@ -190,15 +178,17 @@ sbevac:accommodationCapacity rdf:type owl:DatatypeProperty ;
                              rdfs:domain seas:Zone ,
                                          seas:ZoneConnection ;
                              rdfs:range xsd:integer ;
-                             rdfs:comment "This property is used to represent the accommodating capacity (in terms of persons) of a particular space."@en ;
-                             rdfs:label "accommodationCapacity"@en .
+                             rdfs:comment "This property is used to represent the accommodating capacity (in terms of persons) of a particular space."^^xsd:string ;
+                             rdfs:label "accommodationCapacity"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#age
 sbevac:age rdf:type owl:DatatypeProperty ;
-           rdfs:comment "The age of the person."@en ;
-           rdfs:label "age"@en ;
-           owl:sameAs "foaf:age"@en .
+           owl:equivalentProperty foaf:age ;
+           rdfs:domain sbevac:Person ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "The age of the person."^^xsd:string ;
+           rdfs:label "age"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#atTime
@@ -208,8 +198,8 @@ sbevac:atTime rdf:type owl:DatatypeProperty ;
                           sbevac:Person ,
                           sbevac:Sensor ;
               rdfs:range xsd:long ;
-              rdfs:comment "This property is used to attach a timestamp with any particular event."@en ;
-              rdfs:label "atTime"@en .
+              rdfs:comment "This property is used to attach a timestamp with any particular event."^^xsd:string ;
+              rdfs:label "atTime"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#currentOccupancy
@@ -217,87 +207,99 @@ sbevac:currentOccupancy rdf:type owl:DatatypeProperty ;
                         rdfs:domain seas:Zone ,
                                     seas:ZoneConnection ;
                         rdfs:range xsd:integer ;
-                        rdfs:comment "This property is used to represent the current occupancy(in terms of persons) of a particular space."@en ;
-                        rdfs:label "currentOccupancy"@en .
+                        rdfs:comment "This property is used to represent the current occupancy(in terms of persons) of a particular space."^^xsd:string ;
+                        rdfs:label "currentOccupancy"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#familiarityWithBuilding
 sbevac:familiarityWithBuilding rdf:type owl:DatatypeProperty ;
                                rdfs:domain sbevac:Person ;
                                rdfs:range xsd:boolean ;
-                               rdfs:comment "This property is used to represent the familiarity of person with the building geometry."@en ;
-                               rdfs:label "familiarityWithBuilding"@en .
+                               rdfs:comment "This property is used to represent the familiarity of person with the building geometry."^^xsd:string ;
+                               rdfs:label "familiarityWithBuilding"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#familyID
 sbevac:familyID rdf:type owl:DatatypeProperty ;
                 rdfs:domain sbevac:Person ;
                 rdfs:range xsd:integer ;
-                rdfs:comment "This property is used to represent an identity number(ID) of each family. All the members of a family have common ID."@en ;
-                rdfs:label "familyID"@en .
+                rdfs:comment "This property is used to represent an identity number(ID) of each family. All the members of a family have common ID."^^xsd:string ;
+                rdfs:label "familyID"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#firstName
 sbevac:firstName rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:comment "The first name of the person."@en ;
-                 rdfs:label "firstName"@en ;
-                 owl:sameAs "foaf:firstName"@en .
+                 rdfs:domain sbevac:Person ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "The first name of the person."^^xsd:string ;
+                 rdfs:label "firstName"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#fitnessLevel
 sbevac:fitnessLevel rdf:type owl:DatatypeProperty ;
                     rdfs:domain sbevac:Person ;
                     rdfs:range xsd:integer ;
-                    rdfs:comment "This property is used to represent the fitness level of a person. For example, there are 5 levels. Upper three levels are appropriate and considered as safe whereas the below two levels are considered as dangerous and a particular person needs assistance. The person is considered as sbevac:Injured, if the levels are changed from upper three to lower two."@en ;
-                    rdfs:label "fitnessLevel"@en .
+                    rdfs:comment "This property is used to represent the fitness level of a person. For example, there are 5 levels. Upper three levels are appropriate and considered as safe whereas the below two levels are considered as dangerous and a particular person needs assistance. The person is considered as sbevac:Injured, if the levels are changed from upper three to lower two."^^xsd:string ;
+                    rdfs:label "fitnessLevel"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#groupID
 sbevac:groupID rdf:type owl:DatatypeProperty ;
                rdfs:domain sbevac:Person ;
                rdfs:range xsd:integer ;
-               rdfs:comment "This property is used to represent an identity number(ID) that is assigned to people who are evacuating together and having the same sbevac:assignedRoute."@en ;
-               rdfs:label "groupID"@en .
+               rdfs:comment "This property is used to represent an identity number(ID) that is assigned to people who are evacuating together and having the same sbevac:assignedRoute."^^xsd:string ;
+               rdfs:label "groupID"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#hasID
 sbevac:hasID rdf:type owl:DatatypeProperty ;
              rdfs:domain sbevac:Person ;
              rdfs:range xsd:integer ;
-             rdfs:comment "This property is used to represent an identification number, which is unique for every occupant of the building. It is different than group and family ID. This ID number is used to calculate all the functionalities for a specific person, e.g. location, characteristics, preferences, etc."@en ;
-             rdfs:label "hasID"@en .
+             rdfs:comment "This property is used to represent an identification number, which is unique for every occupant of the building. It is different than group and family ID. This ID number is used to calculate all the functionalities for a specific person, e.g. location, characteristics, preferences, etc."^^xsd:string ;
+             rdfs:label "hasID"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#hasLength
 sbevac:hasLength rdf:type owl:DatatypeProperty ;
                  rdfs:domain sbevac:Route ;
                  rdfs:range xsd:integer ;
-                 rdfs:comment "This property is used to represent a value between any two building space connections. This value can be expressed in terms of time, distance, etc."@en ;
-                 rdfs:label "hasLength"@en .
+                 rdfs:comment "This property is used to represent a value between any two building space connections. This value can be expressed in terms of time, distance, etc."^^xsd:string ;
+                 rdfs:label "hasLength"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#lastName
 sbevac:lastName rdf:type owl:DatatypeProperty ;
+                owl:equivalentProperty foaf:lastName ;
                 rdfs:subPropertyOf owl:topDataProperty ;
-                rdfs:comment "The last name of the person."@en ;
-                rdfs:label "lastName"@en ;
-                owl:sameAs "foaf:lastName"@en .
+                rdfs:domain sbevac:Person ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The last name of the person."^^xsd:string ;
+                rdfs:label "lastName"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#name
 sbevac:name rdf:type owl:DatatypeProperty ;
-            rdfs:label "The name of the person, place or a thing."@en ,
-                       "name"@en ;
-            owl:sameAs "foaf:name"@en .
+            owl:equivalentProperty foaf:name ;
+            rdfs:domain sbevac:Exit ,
+                        sbevac:Person ,
+                        sbevac:Route ,
+                        sbevac:SafeZone ,
+                        seas:Zone ,
+                        seas:ZoneConnection ,
+                        seas:ZoneFrontier ;
+            rdfs:range xsd:string ;
+            rdfs:label "The name of the person, place or a thing."^^xsd:string ,
+                       "name"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#needsSupervision
 sbevac:needsSupervision rdf:type owl:DatatypeProperty ;
                         rdfs:domain sbevac:Person ;
                         rdfs:range xsd:boolean ;
-                        rdfs:comment "This property is used to mention either a person needs a supervision or not."@en ;
-                        rdfs:label "needsSupervision"@en .
+                        rdfs:comment "This property is used to mention either a person needs a supervision or not."^^xsd:string ;
+                        rdfs:label "needsSupervision"^^xsd:string .
+
 
 
 #################################################################
@@ -307,15 +309,15 @@ sbevac:needsSupervision rdf:type owl:DatatypeProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#ActiveFireProtection
 sbevac:ActiveFireProtection rdf:type owl:Class ;
                             rdfs:subClassOf sbevac:FireProtection ;
-                            rdfs:comment "ActiveFireProtection"@en ,
-                                         "It is an integral part of the fire protection used as a first response to minimize the spread of fire and related effects."@en .
+                            rdfs:comment "ActiveFireProtection"^^xsd:string ,
+                                         "It is an integral part of the fire protection used as a first response to minimize the spread of fire and related effects."^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#AssemblyPoint
 sbevac:AssemblyPoint rdf:type owl:Class ;
                      rdfs:subClassOf sbevac:SafeZone ;
-                     rdfs:comment "a place where people in an office, etc. should go if there is an emergency, for example, a fire (Cambridge English Dictionary) ."@en ;
-                     rdfs:label "AssemblyPoint"@en .
+                     rdfs:comment "a place where people in an office, etc. should go if there is an emergency, for example, a fire (Cambridge English Dictionary) ."^^xsd:string ;
+                     rdfs:label "AssemblyPoint"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Available
@@ -323,126 +325,126 @@ sbevac:Available rdf:type owl:Class ;
                  owl:equivalentClass sbevac:SafeZone ;
                  rdfs:subClassOf sbevac:SpaceCharacteristic ;
                  owl:disjointWith sbevac:Unavailable ;
-                 rdfs:comment "This is used to specify the availability of a parituclar space, route, etc. If its available, it means it can be accessible to sbevac:Person subject to the characteristics of that person."@en ;
-                 rdfs:label "Available"@en .
+                 rdfs:comment "This is used to specify the availability of a parituclar space, route, etc. If its available, it means it can be accessible to sbevac:Person subject to the characteristics of that person."^^xsd:string ;
+                 rdfs:label "Available"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#ChemicalSpill
 sbevac:ChemicalSpill rdf:type owl:Class ;
                      rdfs:subClassOf sbevac:Incident ;
-                     rdfs:comment "A hazardous event that happens due to the spillage or leakge of any toxic chemical in the building."@en ;
-                     rdfs:label "ChemicalSpill"@en .
+                     rdfs:comment "A hazardous event that happens due to the spillage or leakge of any toxic chemical in the building."^^xsd:string ;
+                     rdfs:label "ChemicalSpill"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Congestion
 sbevac:Congestion rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:Incident ;
-                  rdfs:comment "An event that happens at bottlenecks when the flow of people increases than a provided limit due to herding (and similar phenomena of human behaviour), during an emergency evacuation process. As a result, overall escape time is increased."@en ;
-                  rdfs:label "Congestion"@en .
+                  rdfs:comment "An event that happens at bottlenecks when the flow of people increases than a provided limit due to herding (and similar phenomena of human behaviour), during an emergency evacuation process. As a result, overall escape time is increased."^^xsd:string ;
+                  rdfs:label "Congestion"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#DayCare
 sbevac:DayCare rdf:type owl:Class ;
                rdfs:subClassOf seas:Room ;
-               rdfs:comment "A space for childcare supervised by a nanny while parents are at work."@en ;
-               rdfs:label "DayCare"@en .
+               rdfs:comment "A space for childcare supervised by a nanny while parents are at work."^^xsd:string ;
+               rdfs:label "DayCare"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Dependent
 sbevac:Dependent rdf:type owl:Class ;
                  rdfs:subClassOf sbevac:PedestrianCharacteristic ;
                  owl:disjointWith sbevac:Responsible ;
-                 rdfs:comment "It represents the dependency of a person on other persons in case of any emergency condition."@en ;
-                 rdfs:label "Dependent"@en .
+                 rdfs:comment "It represents the dependency of a person on other persons in case of any emergency condition."^^xsd:string ;
+                 rdfs:label "Dependent"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Device
 sbevac:Device rdf:type owl:Class ;
-              rdfs:comment "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment (Oxford Dictionary of English)."@en ;
-              rdfs:label "Device"@en .
+              rdfs:comment "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment (Oxford Dictionary of English)."^^xsd:string ;
+              rdfs:label "Device" .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Distance
 sbevac:Distance rdf:type owl:Class ;
                 rdfs:subClassOf sbevac:SpaceCharacteristic ;
-                rdfs:comment "Distance class is mainly used to mention the distance between two spaces(either connected or not). As the building is represented as a graph having nodes and egdes, where as edges represents the connection between two nodes, therefore, the weight of the edge is considered as the Distance. Later on, the Distance is used to calculate the evaucation routes."@en ;
-                rdfs:label "Distance"@en .
+                rdfs:comment "Distance class is mainly used to mention the distance between two spaces(either connected or not). As the building is represented as a graph having nodes and egdes, where as edges represents the connection between two nodes, therefore, the weight of the edge is considered as the Distance. Later on, the Distance is used to calculate the evaucation routes."^^xsd:string ;
+                rdfs:label "Distance"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Earthquake
 sbevac:Earthquake rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:Incident ;
-                  rdfs:comment "A sudden violent shaking of the ground, typically causing great destruction, as a result of movements within the earth's crust or volcanic action(Oxford Dictionary). It may cause a sudden panic among the occupants of the building."@en ;
-                  rdfs:label "Earthquake"@en .
+                  rdfs:comment "A sudden violent shaking of the ground, typically causing great destruction, as a result of movements within the earth's crust or volcanic action(Oxford Dictionary). It may cause a sudden panic among the occupants of the building."^^xsd:string ;
+                  rdfs:label "Earthquake"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#EmergencyExit
 sbevac:EmergencyExit rdf:type owl:Class ;
                      rdfs:subClassOf sbevac:Exit ;
-                     rdfs:comment "Emerency exit is only used in case of any emergency conditions such fire, etc."@en ;
-                     rdfs:label "EmergencyExit"@en .
+                     rdfs:comment "Emerency exit is only used in case of any emergency conditions such fire, etc."^^xsd:string ;
+                     rdfs:label "EmergencyExit"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Entrance
 sbevac:Entrance rdf:type owl:Class ;
                 rdfs:subClassOf sbevac:SpaceCharacteristic ;
-                rdfs:comment "Entrance represents a space or a door that is used to enter into a building. Normally, it is also used as an exit."@en ;
-                rdfs:label "Entrance"@en .
+                rdfs:comment "Entrance represents a space or a door that is used to enter into a building. Normally, it is also used as an exit."^^xsd:string ;
+                rdfs:label "Entrance"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#EvacuationStatus
 sbevac:EvacuationStatus rdf:type owl:Class ;
-                        rdfs:comment "The status of an evacuation process for each person."@en ;
-                        rdfs:label "EvacuationStatus"@en .
+                        rdfs:comment "The status of an evacuation process for each person."^^xsd:string ;
+                        rdfs:label "EvacuationStatus"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Exit
 sbevac:Exit rdf:type owl:Class ;
             rdfs:subClassOf sbevac:SpaceCharacteristic ;
-            rdfs:comment "Exit represents a space or a door that is used to exit the building. Generally, an exit is as same as an entrance."@en ;
-            rdfs:label "Exit"@en .
+            rdfs:comment "Exit represents a space or a door that is used to exit the building. Generally, an exit is as same as an entrance."^^xsd:string ;
+            rdfs:label "Exit"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Family
 sbevac:Family rdf:type owl:Class ;
               rdfs:subClassOf sbevac:PedestrianCharacteristic ;
-              rdfs:comment "A group of persons having family ties between them."@en ;
-              rdfs:label "Family"@en .
+              rdfs:comment "A group of persons having family ties between them."^^xsd:string ;
+              rdfs:label "Family"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Fire
 sbevac:Fire rdf:type owl:Class ;
             rdfs:subClassOf sbevac:Incident ;
-            rdfs:comment "An event that may burn different parts of the building and hazourdous for both the people and the building."@en ;
-            rdfs:label "Fire"@en .
+            rdfs:comment "An event that may burn different parts of the building and hazourdous for both the people and the building."^^xsd:string ;
+            rdfs:label "Fire"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#FireDoor
 sbevac:FireDoor rdf:type owl:Class ;
                 rdfs:subClassOf sbevac:PassiveFireProtection ;
-                rdfs:comment "A type of door used to minimize the spread of fire and related effects by isolating two connected spaces or sections in the building."@en ;
-                rdfs:label "FireDoor"@en .
+                rdfs:comment "A type of door used to minimize the spread of fire and related effects by isolating two connected spaces or sections in the building."^^xsd:string ;
+                rdfs:label "FireDoor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#FireExtinguisher
 sbevac:FireExtinguisher rdf:type owl:Class ;
                         rdfs:subClassOf sbevac:ActiveFireProtection ;
-                        rdfs:comment "An active fire protection instrument used by persons to blow out small scale fire."@en ;
-                        rdfs:label "FireExtinguisher"@en .
+                        rdfs:comment "An active fire protection instrument used by persons to blow out small scale fire."^^xsd:string ;
+                        rdfs:label "FireExtinguisher"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#FireProtection
 sbevac:FireProtection rdf:type owl:Class ;
                       rdfs:subClassOf sbevac:IncidentProtection ;
-                      rdfs:comment "It is a practice to minimize the effects of potentially danger fires."@en ;
-                      rdfs:label "FireProtection"@en .
+                      rdfs:comment "It is a practice to minimize the effects of potentially danger fires."^^xsd:string ;
+                      rdfs:label "FireProtection"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Hearing
 sbevac:Hearing rdf:type owl:Class ;
                rdfs:subClassOf sbevac:SensoryImpairment ;
-               rdfs:comment "It is a partial or total unability to hear. It is also known as Hearing loss."@en ;
-               rdfs:label "Hearing"@en .
+               rdfs:comment "It is a partial or total unability to hear. It is also known as Hearing loss."^^xsd:string ;
+               rdfs:label "Hearing"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Impaired
@@ -450,218 +452,218 @@ sbevac:Impaired rdf:type owl:Class ;
                 owl:equivalentClass sbevac:Injured ;
                 rdfs:subClassOf sbevac:PedestrianCharacteristic ;
                 owl:disjointWith sbevac:Normal ;
-                rdfs:comment "The state or fact of being impaired, especially in a specified faculty(Oxford Distionary of Language)."@en ;
-                rdfs:label "Impaired"@en .
+                rdfs:comment "The state or fact of being impaired, especially in a specified faculty(Oxford Distionary of Language)."^^xsd:string ;
+                rdfs:label "Impaired"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#InProgress
 sbevac:InProgress rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:NotSuccessful ;
-                  rdfs:comment "It represents that the person is following the provided route and the evacuation process is in progress."@en ;
-                  rdfs:label "InProgress"@en .
+                  rdfs:comment "It represents that the person is following the provided route and the evacuation process is in progress."^^xsd:string ;
+                  rdfs:label "InProgress"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Incident
 sbevac:Incident rdf:type owl:Class ;
-                rdfs:comment "An event or occurance that can be dangerous for the occupants of the building."@en ;
-                rdfs:label "Incident"@en .
+                rdfs:comment "An event or occurance that can be dangerous for the occupants of the building."^^xsd:string ;
+                rdfs:label "Incident"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#IncidentProtection
 sbevac:IncidentProtection rdf:type owl:Class ;
                           rdfs:subClassOf sbevac:Device ;
-                          rdfs:comment "It is a practice to avoid and minimize the effects of potentially danger events for the occupants of the building as well as for the structure of building itself."@en ;
-                          rdfs:label "IncidentProtection"@en .
+                          rdfs:comment "It is a practice to avoid and minimize the effects of potentially danger events for the occupants of the building as well as for the structure of building itself."^^xsd:string ;
+                          rdfs:label "IncidentProtection"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Injured
 sbevac:Injured rdf:type owl:Class ;
                rdfs:subClassOf sbevac:PedestrianCharacteristic ;
-               rdfs:comment "It represents an injury to a person during an evacuation process."@en ;
-               rdfs:label "Injured"@en .
+               rdfs:comment "It represents an injury to a person during an evacuation process."^^xsd:string ;
+               rdfs:label "Injured"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#KidsArea
 sbevac:KidsArea rdf:type owl:Class ;
                 rdfs:subClassOf seas:Room ;
-                rdfs:comment "A space where children can play during the specific time while parents are either busy at work or doing different things such as shopping, seeing a doctor, etc. Normally, it is not supervised by anyone."@en ;
-                rdfs:label "KidsArea"@en .
+                rdfs:comment "A space where children can play during the specific time while parents are either busy at work or doing different things such as shopping, seeing a doctor, etc. Normally, it is not supervised by anyone."^^xsd:string ;
+                rdfs:label "KidsArea"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#LocationSensor
 sbevac:LocationSensor rdf:type owl:Class ;
                       rdfs:subClassOf sbevac:Sensor ;
-                      rdfs:comment "The location sensor is a part of indoor positioning system to detect the location of each person within the building."@en ;
-                      rdfs:label "LocationSensor"@en .
+                      rdfs:comment "The location sensor is a part of indoor positioning system to detect the location of each person within the building."^^xsd:string ;
+                      rdfs:label "LocationSensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#LowStamina
 sbevac:LowStamina rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:PhysicalImpairment ;
-                  rdfs:comment "It is the unability to sustain physical or mental activity to a normal level."@en ;
-                  rdfs:label "LowStamina"@en .
+                  rdfs:comment "It is the unability to sustain physical or mental activity to a normal level."^^xsd:string ;
+                  rdfs:label "LowStamina"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Motorised
 sbevac:Motorised rdf:type owl:Class ;
                  rdfs:subClassOf sbevac:Wheelchair ;
-                 rdfs:comment "It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair."@en ;
-                 rdfs:label "Motorised"@en .
+                 rdfs:comment "It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair."^^xsd:string ;
+                 rdfs:label "Motorised"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Non-Motorised
 sbevac:Non-Motorised rdf:type owl:Class ;
                      rdfs:subClassOf sbevac:Wheelchair ;
-                     rdfs:comment "A traditional wheelchair that is used by hands. It has significantly lower speed than motorised wheelchairs."@en ;
-                     rdfs:label "Non-Motorised"@en .
+                     rdfs:comment "A traditional wheelchair that is used by hands. It has significantly lower speed than motorised wheelchairs."^^xsd:string ;
+                     rdfs:label "Non-Motorised"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Normal
 sbevac:Normal rdf:type owl:Class ;
               rdfs:subClassOf sbevac:PedestrianCharacteristic ;
-              rdfs:comment "Persons who are not having any impairment."@en ;
-              rdfs:label "Normal"@en .
+              rdfs:comment "Persons who are not having any impairment."^^xsd:string ;
+              rdfs:label "Normal"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#NormalExit
 sbevac:NormalExit rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:Exit ;
-                  rdfs:comment "Normal exit is used to exit a building. It can be a door or the whole space in the building that is always considered safe."@en ;
-                  rdfs:label "NormalExit"@en .
+                  rdfs:comment "Normal exit is used to exit a building. It can be a door or the whole space in the building that is always considered safe."^^xsd:string ;
+                  rdfs:label "NormalExit"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#NotSuccessful
 sbevac:NotSuccessful rdf:type owl:Class ;
                      rdfs:subClassOf sbevac:EvacuationStatus ;
-                     rdfs:comment "It represents that the evacuation is not completed by a person yet."@en ;
-                     rdfs:label "NotSuccessful"@en .
+                     rdfs:comment "It represents that the evacuation is not completed by a person yet."^^xsd:string ;
+                     rdfs:label "NotSuccessful"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Obstructed
 sbevac:Obstructed rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:NotSuccessful ;
-                  rdfs:comment "It represents that the person is obstrcuted during an evacuation process and not continuing one's evcuation."@en ;
-                  rdfs:label "Obstructed"@en .
+                  rdfs:comment "It represents that the person is obstrcuted during an evacuation process and not continuing one's evcuation."^^xsd:string ;
+                  rdfs:label "Obstructed"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Panic
 sbevac:Panic rdf:type owl:Class ;
              rdfs:subClassOf sbevac:Incident ;
-             rdfs:comment "A  sudden uncontrollable fear or anxiety, often causing wildly unthinking behaviour (Oxford Dictionary of English)."@en ;
-             rdfs:label "Panic"@en .
+             rdfs:comment "A  sudden uncontrollable fear or anxiety, often causing wildly unthinking behaviour (Oxford Dictionary of English)."^^xsd:string ;
+             rdfs:label "Panic"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#PassiveFireProtection
 sbevac:PassiveFireProtection rdf:type owl:Class ;
                              rdfs:subClassOf sbevac:FireProtection ;
-                             rdfs:comment "It is an integral component installed in the building while construction to resist the fire."@en ;
-                             rdfs:label "PassiveFireProtection"@en .
+                             rdfs:comment "It is an integral component installed in the building while construction to resist the fire."^^xsd:string ;
+                             rdfs:label "PassiveFireProtection"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#PedestrianCharacteristic
 sbevac:PedestrianCharacteristic rdf:type owl:Class ;
-                                rdfs:comment "PedestrianCharacteristic class defines features for each person that are helps system to find an appropriate route."@en ;
-                                rdfs:label "PedestrianCharacteristic"@en .
+                                rdfs:comment "PedestrianCharacteristic class defines features for each person that are helps system to find an appropriate route."^^xsd:string ;
+                                rdfs:label "PedestrianCharacteristic"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Person
 sbevac:Person rdf:type owl:Class ;
-              rdfs:comment "It represents a single individual of any age and having any type of characteristics."@en ;
-              rdfs:label "Person"@en ;
-              owl:sameAs "http://xmlns.com/foaf/0.1/Person" .
+              owl:equivalentClass foaf:Person ;
+              rdfs:comment "It represents a single individual of any age and having any type of characteristics."^^xsd:string ;
+              rdfs:label "Person"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#PhysicalImpairment
 sbevac:PhysicalImpairment rdf:type owl:Class ;
                           rdfs:subClassOf sbevac:Impaired ;
-                          rdfs:comment "A physical impairment is a condition in which any part of person's body is either  damaged or is not working properly."@en ;
-                          rdfs:label "PhysicalImpairment"@en .
+                          rdfs:comment "A physical impairment is a condition in which any part of person's body is either  damaged or is not working properly."^^xsd:string ;
+                          rdfs:label "PhysicalImpairment"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Responsible
 sbevac:Responsible rdf:type owl:Class ;
                    rdfs:subClassOf sbevac:PedestrianCharacteristic ;
-                   rdfs:comment "This class represents either a person is reponsible to anyone or not. One may be reponsible to one/all of one's family members or any other person such as injured, impiared etc."@en ;
-                   rdfs:label "Responsible"@en .
+                   rdfs:comment "This class represents either a person is reponsible to anyone or not. One may be reponsible to one/all of one's family members or any other person such as injured, impiared etc."^^xsd:string ;
+                   rdfs:label "Responsible"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Route
 sbevac:Route rdf:type owl:Class ;
              rdfs:subClassOf sbevac:SpaceCharacteristic ;
-             rdfs:comment "Route is a set of spaces connected to each other by a door that ultimately leads to any of the exits in the building. Technically, rdf:list is used to store it."@en ;
-             rdfs:label "Route"@en .
+             rdfs:comment "Route is a set of spaces connected to each other by a door that ultimately leads to any of the exits in the building. Technically, rdf:list is used to store it."^^xsd:string ;
+             rdfs:label "Route"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#SafeZone
 sbevac:SafeZone rdf:type owl:Class ;
                 rdfs:subClassOf sbevac:SpaceCharacteristic ;
-                rdfs:comment "A space that is considered safe during any type of incident in the building."@en ;
-                rdfs:label "SafeZone"@en .
+                rdfs:comment "A space that is considered safe during any type of incident in the building."^^xsd:string ;
+                rdfs:label "SafeZone"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Sensor
 sbevac:Sensor rdf:type owl:Class ;
+              owl:equivalentClass saref:Sensor ;
               rdfs:subClassOf sbevac:Device ;
-              rdfs:comment "A sensor is device that detects or measures a physical property and records, indicates, or otherwise responds to it (Oxford Dictionary of English)."@en ;
-              rdfs:label "Sensor"@en ;
-              owl:sameAs "https://w3id.org/saref#Sensor" .
+              rdfs:comment "A sensor is device that detects or measures a physical property and records, indicates, or otherwise responds to it (Oxford Dictionary of English)."^^xsd:string ;
+              rdfs:label "Sensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#SensoryImpairment
 sbevac:SensoryImpairment rdf:type owl:Class ;
                          rdfs:subClassOf sbevac:Impaired ;
-                         rdfs:comment "Sensory impairment is when one of the senses such as sight, hearing, smell, touch, taste and spatial awareness, is no longer normal."@en ;
-                         rdfs:label "SensoryImpairment"@en .
+                         rdfs:comment "Sensory impairment is when one of the senses such as sight, hearing, smell, touch, taste and spatial awareness, is no longer normal."^^xsd:string ;
+                         rdfs:label "SensoryImpairment"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#SmokeSensor
 sbevac:SmokeSensor rdf:type owl:Class ;
+                   owl:equivalentClass saref:SmokeSensor ;
                    rdfs:subClassOf sbevac:Sensor ;
-                   rdfs:comment "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."@en ;
-                   rdfs:label "SmokeSensor"@en ;
-                   owl:sameAs "https://w3id.org/saref#SmokeSensor" .
+                   rdfs:comment "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."^^xsd:string ;
+                   rdfs:label "SmokeSensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#SpaceCharacteristic
 sbevac:SpaceCharacteristic rdf:type owl:Class ;
-                           rdfs:comment "SpaceCharacteristic class defines important features of each space that are required to take various decisions during an evacuation process."@en ;
-                           rdfs:label "SpaceCharacteristic"@en .
+                           rdfs:comment "SpaceCharacteristic class defines important features of each space that are required to take various decisions during an evacuation process."^^xsd:string ;
+                           rdfs:label "SpaceCharacteristic"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Stampeding
 sbevac:Stampeding rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:Panic ;
-                  rdfs:comment "A sudden and uncontrollable run by the group of people caused by panic."@en ;
-                  rdfs:label "Stampeding"@en .
+                  rdfs:comment "A sudden and uncontrollable run by the group of people caused by panic."^^xsd:string ;
+                  rdfs:label "Stampeding"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Successful
 sbevac:Successful rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:EvacuationStatus ;
-                  rdfs:comment "It represents that the person has successfully evacuated the building."@en ;
-                  rdfs:label "Successful"@en .
+                  rdfs:comment "It represents that the person has successfully evacuated the building."^^xsd:string ;
+                  rdfs:label "Successful"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#TemperatureSensor
 sbevac:TemperatureSensor rdf:type owl:Class ;
+                         owl:equivalentClass saref:TemperatureSensor ;
                          rdfs:subClassOf sbevac:Sensor ;
-                         rdfs:comment "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."@en ;
-                         rdfs:label "TemperatureSensor"@en ;
-                         owl:sameAs "https://w3id.org/saref#TemperatureSensor" .
+                         rdfs:comment "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."^^xsd:string ;
+                         rdfs:label "TemperatureSensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#TerroristAttack
 sbevac:TerroristAttack rdf:type owl:Class ;
                        rdfs:subClassOf sbevac:Incident ;
-                       rdfs:comment "A surprise event involving the deliberate use of violence against the occupants of the buildings."@en ;
-                       rdfs:label "TerroristAttack"@en .
+                       rdfs:comment "A surprise event involving the deliberate use of violence against the occupants of the buildings."^^xsd:string ;
+                       rdfs:label "TerroristAttack"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Unavailable
 sbevac:Unavailable rdf:type owl:Class ;
                    rdfs:subClassOf sbevac:SpaceCharacteristic ;
-                   rdfs:comment "This is used to specify the availability of a parituclar space, route, etc. If its unavailable, it means it is not accessible to any sbevac:Person."@en ;
-                   rdfs:label "Unavailable"@en .
+                   rdfs:comment "This is used to specify the availability of a parituclar space, route, etc. If its unavailable, it means it is not accessible to any sbevac:Person."^^xsd:string ;
+                   rdfs:label "Unavailable"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Visitor
@@ -672,26 +674,21 @@ sbevac:Visitor rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Visual
 sbevac:Visual rdf:type owl:Class ;
               rdfs:subClassOf sbevac:SensoryImpairment ;
-              rdfs:comment "It is a partial or total unability to see. It is also known as visual loss. Here, we considered a person having visual impairment who as severe low vision; 20/200 to 20/400 or higher."@en ;
-              rdfs:label "Visual"@en .
+              rdfs:comment "It is a partial or total unability to see. It is also known as visual loss. Here, we considered a person having visual impairment who as severe low vision; 20/200 to 20/400 or higher."^^xsd:string ;
+              rdfs:label "Visual"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#WaitingZone
 sbevac:WaitingZone rdf:type owl:Class ;
                    rdfs:subClassOf sbevac:SafeZone ;
-                   rdfs:comment "A space where people can wait to picked up either by their family members or  acquaintances or emergency rescue teams, during any incident. It is always considered as safe."@en ;
-                   rdfs:label "WaitingZone"@en .
+                   rdfs:comment "A space where people can wait to picked up either by their family members or  acquaintances or emergency rescue teams, during any incident. It is always considered as safe."^^xsd:string ;
+                   rdfs:label "WaitingZone"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbevac#Wheelchair
 sbevac:Wheelchair rdf:type owl:Class ;
                   rdfs:subClassOf sbevac:PhysicalImpairment ;
-                  rdfs:comment "It is a mobility device that is used by a person having any kind of tempoary or permanent physical impairment."@en ;
-                  rdfs:label "Wheelchair"@en .
-
-
-###  https://w3id.org/seas/Room
-seas:Room rdf:type owl:Class .
-
+                  rdfs:comment "It is a mobility device that is used by a person having any kind of tempoary or permanent physical impairment."^^xsd:string ;
+                  rdfs:label "Wheelchair"^^xsd:string .
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
