@@ -1,39 +1,33 @@
-@prefix : <http://www.ia.urjc.es/ontologies/building/sbevac_scenario#> .
-@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix : <http://www.ia.urjc.es/ontologies/building/sbeo_scenario#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix saref: <https://w3id.org/saref#> .
-@prefix terms: <http://purl.org/dc/terms/> .
-@prefix sbevac: <http://www.ia.urjc.es/ontologies/building/sbevac#> .
+@prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fiemser: <http://sites.google.com/site/smartappliancesproject/ontologies/fiemser#> .
-@base <http://www.ia.urjc.es/ontologies/building/sbevac_scenario> .
+@base <http://www.ia.urjc.es/ontologies/building/sbeo_scenario> .
 
-<http://www.ia.urjc.es/ontologies/building/sbevac_scenario> rdf:type owl:Ontology ;
-                                                             owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbevac/1.5> ;
-                                                             owl:imports <https://raw.githubusercontent.com/qasimkhalid/SBEO/master/sbevac.owl> .
+<http://www.ia.urjc.es/ontologies/building/sbeo_scenario> rdf:type owl:Ontology ;
+                                                             owl:imports <https://raw.githubusercontent.com/qasimkhalid/SBEO/master/sbeo.owl> .
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#AssemblyPoint1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AssemblyPoint1
 :AssemblyPoint1 rdf:type owl:NamedIndividual ,
-                               sbevac:AssemblyPoint ;
-                      sbevac:connectedTo :Exit2 .
+                               sbeo:AssemblyPoint ;
+                      sbeo:connectedTo :Exit2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Corridor1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor1
 :Corridor1 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
-                 sbevac:connectedTo :Corridor5 ,
+                 sbeo:connectedTo :Corridor5 ,
                                   :Corridor6 ,
                                   :Hall1 ,
                                   :Office1 ,
@@ -42,22 +36,22 @@
                                   :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Corridor2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor2
 :Corridor2 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
-                 sbevac:adjacentTo :Office8 ;
-                 sbevac:connectedTo :Corridor3 ,
+                 sbeo:adjacentTo :Office8 ;
+                 sbeo:connectedTo :Corridor3 ,
                                   :Hall1 ,
                                   :Hall2 ,
                                   :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Corridor3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor3
 :Corridor3 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
-                 sbevac:adjacentTo :Kitchen1 ,
+                 sbeo:adjacentTo :Kitchen1 ,
                                    :Office8 ;
-                 sbevac:connectedTo :Corridor2 ,
+                 sbeo:connectedTo :Corridor2 ,
                                   :Corridor4 ,
                                   :Corridor5 ,
                                   :Hall3 ,
@@ -68,122 +62,122 @@
                                   :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Corridor4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor4
 :Corridor4 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
-                 sbevac:adjacentTo :Kitchen1 ;
-                 sbevac:connectedTo :Corridor3 ,
+                 sbeo:adjacentTo :Kitchen1 ;
+                 sbeo:connectedTo :Corridor3 ,
                                   :Corridor6 ,
                                   :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Corridor5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor5
 :Corridor5 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
-                 sbevac:connectedTo :Corridor1 ,
+                 sbeo:connectedTo :Corridor1 ,
                                   :Corridor3 ,
                                   :Hall4 ,
                                   :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Corridor6
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor6
 :Corridor6 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
-                 sbevac:adjacentTo :Office1 ;
-                 sbevac:connectedTo :Corridor1 ,
+                 sbeo:adjacentTo :Office1 ;
+                 sbeo:connectedTo :Corridor1 ,
                                   :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#DayCare1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#DayCare1
 :DayCare1 rdf:type owl:NamedIndividual ,
-                         sbevac:DayCare ;
-                sbevac:adjacentTo :KidsArea1 ,
+                         sbeo:DayCare ;
+                sbeo:adjacentTo :KidsArea1 ,
                                   :Office4 ;
-                sbevac:connectedTo :Hall1 .
+                sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Exit1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Exit1
 :Exit1 rdf:type owl:NamedIndividual ,
-                      sbevac:NormalExit ;
-             sbevac:locatedIn :Corridor6 ;
-             sbevac:connectedTo :Corridor6 .
+                      sbeo:NormalExit ;
+             sbeo:locatedIn :Corridor6 ;
+             sbeo:connectedTo :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Exit2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Exit2
 :Exit2 rdf:type owl:NamedIndividual ,
-                      sbevac:NormalExit ;
-             sbevac:locatedIn :Hall5 ;
-             sbevac:connectedTo :Hall5 .
+                      sbeo:NormalExit ;
+             sbeo:locatedIn :Hall5 ;
+             sbeo:connectedTo :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Exit3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Exit3
 :Exit3 rdf:type owl:NamedIndividual ,
-                      sbevac:NormalExit ;
-             sbevac:locatedIn :Hall3 ;
-             sbevac:connectedTo :Hall3 .
+                      sbeo:NormalExit ;
+             sbeo:locatedIn :Hall3 ;
+             sbeo:connectedTo :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireDoor1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireDoor1
 :FireDoor1 rdf:type owl:NamedIndividual ,
-                          sbevac:FireDoor ;
-                 sbevac:connectedTo :Corridor1 ,
+                          sbeo:FireDoor ;
+                 sbeo:connectedTo :Corridor1 ,
                                   :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireDoor2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireDoor2
 :FireDoor2 rdf:type owl:NamedIndividual ,
-                          sbevac:FireDoor ;
-                 sbevac:connectedTo :Corridor1 ,
+                          sbeo:FireDoor ;
+                 sbeo:connectedTo :Corridor1 ,
                                   :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireDoor3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireDoor3
 :FireDoor3 rdf:type owl:NamedIndividual ,
-                          sbevac:FireDoor ;
-                 sbevac:connectedTo :Corridor3 ,
+                          sbeo:FireDoor ;
+                 sbeo:connectedTo :Corridor3 ,
                                   :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireExtinguisher1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher1
 :FireExtinguisher1 rdf:type owl:NamedIndividual ,
                                   :FireExtinguisher ;
-                         sbevac:locatedIn :Corridor6 .
+                         sbeo:locatedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireExtinguisher2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher2
 :FireExtinguisher2 rdf:type owl:NamedIndividual ,
                                   :FireExtinguisher ;
-                         sbevac:locatedIn :Corridor6 .
+                         sbeo:locatedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireExtinguisher3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher3
 :FireExtinguisher3 rdf:type owl:NamedIndividual ,
                                   :FireExtinguisher ;
-                         sbevac:locatedIn :Corridor1 .
+                         sbeo:locatedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireExtinguisher4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher4
 :FireExtinguisher4 rdf:type owl:NamedIndividual ,
                                   :FireExtinguisher ;
-                         sbevac:locatedIn :Kitchen1 .
+                         sbeo:locatedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireExtinguisher5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher5
 :FireExtinguisher5 rdf:type owl:NamedIndividual ,
                                   :FireExtinguisher ;
-                         sbevac:locatedIn :Corridor3 .
+                         sbeo:locatedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#FireExtinguisher6
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher6
 :FireExtinguisher6 rdf:type owl:NamedIndividual ,
                                   :FireExtinguisher ;
-                         sbevac:locatedIn :Corridor3 .
+                         sbeo:locatedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Hall1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall1
 :Hall1 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
-             sbevac:connectedTo :Corridor1 ,
+             sbeo:connectedTo :Corridor1 ,
                               :Corridor2 ,
                               :DayCare1 ,
                               :KidsArea1 ,
@@ -192,938 +186,938 @@
                               :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Hall2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall2
 :Hall2 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
-             sbevac:adjacentTo :Corridor3 ,
+             sbeo:adjacentTo :Corridor3 ,
                                :Hall3 ,
                                :Office7 ;
-             sbevac:connectedTo :Corridor2 .
+             sbeo:connectedTo :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Hall3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall3
 :Hall3 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
-             sbevac:adjacentTo :Hall2 ,
+             sbeo:adjacentTo :Hall2 ,
                                :Office9 ;
-             sbevac:connectedTo :Corridor3 .
+             sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Hall4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall4
 :Hall4 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
-             sbevac:adjacentTo :Corridor1 ,
+             sbeo:adjacentTo :Corridor1 ,
                                :Office8 ;
-             sbevac:connectedTo :Corridor3 ,
+             sbeo:connectedTo :Corridor3 ,
                               :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Hall5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall5
 :Hall5 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
-             sbevac:adjacentTo :Office11 ;
-             sbevac:connectedTo :Corridor3 ,
+             sbeo:adjacentTo :Office11 ;
+             sbeo:connectedTo :Corridor3 ,
                               :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#KidsArea1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#KidsArea1
 :KidsArea1 rdf:type owl:NamedIndividual ,
-                          sbevac:KidsArea ;
-                 sbevac:adjacentTo :KidsArea1 ,
+                          sbeo:KidsArea ;
+                 sbeo:adjacentTo :KidsArea1 ,
                                    :Office5 ;
-                 sbevac:connectedTo :Hall1 .
+                 sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Kitchen1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Kitchen1
 :Kitchen1 rdf:type owl:NamedIndividual ,
                          seas:Kitchen ;
-                sbevac:adjacentTo :Corridor1 ,
+                sbeo:adjacentTo :Corridor1 ,
                                   :Corridor3 ,
                                   :Corridor4 ;
-                sbevac:connectedTo :Corridor5 .
+                sbeo:connectedTo :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office1
 :Office1 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :Corridor6 ,
+               sbeo:adjacentTo :Corridor6 ,
                                  :Office2 ;
-               sbevac:connectedTo :Corridor1 .
+               sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office10
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office10
 :Office10 rdf:type owl:NamedIndividual ,
                          seas:Office ;
-                sbevac:adjacentTo :Office11 ,
+                sbeo:adjacentTo :Office11 ,
                                   :Office9 ;
-                sbevac:connectedTo :Corridor3 .
+                sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office11
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office11
 :Office11 rdf:type owl:NamedIndividual ,
                          seas:Office ;
-                sbevac:adjacentTo :Hall5 ,
+                sbeo:adjacentTo :Hall5 ,
                                   :Office10 ;
-                sbevac:connectedTo :Corridor3 .
+                sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office2
 :Office2 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :Office1 ,
+               sbeo:adjacentTo :Office1 ,
                                  :Office3 ;
-               sbevac:connectedTo :Corridor1 .
+               sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office3
 :Office3 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :Office2 ,
+               sbeo:adjacentTo :Office2 ,
                                  :Office4 ;
-               sbevac:connectedTo :Corridor1 .
+               sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office4
 :Office4 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :KidsArea1 ,
+               sbeo:adjacentTo :KidsArea1 ,
                                  :Office3 ;
-               sbevac:connectedTo :Corridor1 .
+               sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office5
 :Office5 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :DayCare1 ,
+               sbeo:adjacentTo :DayCare1 ,
                                  :Office6 ;
-               sbevac:connectedTo :Hall1 .
+               sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office6
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office6
 :Office6 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :Office5 ,
+               sbeo:adjacentTo :Office5 ,
                                  :Office7 ;
-               sbevac:connectedTo :Hall1 .
+               sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office7
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office7
 :Office7 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :Hall2 ,
+               sbeo:adjacentTo :Hall2 ,
                                  :Office6 ;
-               sbevac:connectedTo :Corridor2 .
+               sbeo:connectedTo :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office8
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office8
 :Office8 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :Corridor1 ,
+               sbeo:adjacentTo :Corridor1 ,
                                  :Corridor2 ,
                                  :Corridor3 ,
                                  :Hall4 ;
-               sbevac:connectedTo :Hall1 .
+               sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Office9
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Office9
 :Office9 rdf:type owl:NamedIndividual ,
                         seas:Office ;
-               sbevac:adjacentTo :Hall3 ,
+               sbeo:adjacentTo :Hall3 ,
                                  :Office10 ;
-               sbevac:connectedTo :Corridor3 .
+               sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person1
 :Person1 rdf:type owl:NamedIndividual ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ,
-                        sbevac:Responsible ;
-               sbevac:responsibleTo :Person6 ,
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ,
+                        sbeo:Responsible ;
+               sbeo:responsibleTo :Person6 ,
                                     :Person7 ;
-               sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-               sbevac:familyID 1 ;
-               sbevac:hasID 1 .
+               sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+               sbeo:familyID 1 ;
+               sbeo:hasID 1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person10
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person10
 :Person10 rdf:type owl:NamedIndividual ,
-                         sbevac:Motorised ,
-                         sbevac:Person ;
-                sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-                sbevac:hasID 10 .
+                         sbeo:Motorised ,
+                         sbeo:Person ;
+                sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+                sbeo:hasID 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person11
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person11
 :Person11 rdf:type owl:NamedIndividual ,
-                         sbevac:Person ,
-                         sbevac:Visual ;
-                sbevac:hasID 11 .
+                         sbeo:Person ,
+                         sbeo:Visual ;
+                sbeo:hasID 11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person12
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person12
 :Person12 rdf:type owl:NamedIndividual ,
-                         sbevac:Person ,
-                         sbevac:Visual ;
-                sbevac:hasID 12 .
+                         sbeo:Person ,
+                         sbeo:Visual ;
+                sbeo:hasID 12 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person13
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person13
 :Person13 rdf:type owl:NamedIndividual ,
-                         sbevac:Person ,
-                         sbevac:Visual ;
-                sbevac:hasID 13 .
+                         sbeo:Person ,
+                         sbeo:Visual ;
+                sbeo:hasID 13 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person14
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person14
 :Person14 rdf:type owl:NamedIndividual ,
-                         sbevac:Hearing ,
-                         sbevac:Person ;
-                sbevac:familiarityWithBuilding "false"^^xsd:boolean ;
-                sbevac:hasID 14 .
+                         sbeo:Hearing ,
+                         sbeo:Person ;
+                sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
+                sbeo:hasID 14 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person15
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person15
 :Person15 rdf:type owl:NamedIndividual ,
-                         sbevac:Hearing ,
-                         sbevac:Person ;
-                sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-                sbevac:hasID 15 .
+                         sbeo:Hearing ,
+                         sbeo:Person ;
+                sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+                sbeo:hasID 15 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person16
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person16
 :Person16 rdf:type owl:NamedIndividual ,
-                         sbevac:Person ,
-                         sbevac:Visitor ;
-                sbevac:familiarityWithBuilding "false"^^xsd:boolean ;
-                sbevac:hasID 16 .
+                         sbeo:Person ,
+                         sbeo:Visitor ;
+                sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
+                sbeo:hasID 16 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person17
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person17
 :Person17 rdf:type owl:NamedIndividual ,
-                         sbevac:Person ,
-                         sbevac:Visitor ;
-                sbevac:familiarityWithBuilding "false"^^xsd:boolean ;
-                sbevac:hasID 17 .
+                         sbeo:Person ,
+                         sbeo:Visitor ;
+                sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
+                sbeo:hasID 17 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person18
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person18
 :Person18 rdf:type owl:NamedIndividual ,
-                         sbevac:Normal ,
-                         sbevac:Person ;
-                sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-                sbevac:hasID 18 .
+                         sbeo:Normal ,
+                         sbeo:Person ;
+                sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+                sbeo:hasID 18 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person19
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person19
 :Person19 rdf:type owl:NamedIndividual ,
-                         sbevac:Normal ,
-                         sbevac:Person ;
-                sbevac:acquaintanceOf :Person8 ;
-                sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-                sbevac:hasID 19 .
+                         sbeo:Normal ,
+                         sbeo:Person ;
+                sbeo:acquaintanceOf :Person8 ;
+                sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+                sbeo:hasID 19 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person2
 :Person2 rdf:type owl:NamedIndividual ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ,
-                        sbevac:Responsible ;
-               sbevac:responsibleTo :Person6 ,
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ,
+                        sbeo:Responsible ;
+               sbeo:responsibleTo :Person6 ,
                                     :Person7 ;
-               sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-               sbevac:familyID 1 ;
-               sbevac:hasID 2 .
+               sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+               sbeo:familyID 1 ;
+               sbeo:hasID 2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person3
 :Person3 rdf:type owl:NamedIndividual ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ,
-                        sbevac:Responsible ;
-               sbevac:responsibleTo :Person8 ;
-               sbevac:familyID 2 ;
-               sbevac:hasID 3 .
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ,
+                        sbeo:Responsible ;
+               sbeo:responsibleTo :Person8 ;
+               sbeo:familyID 2 ;
+               sbeo:hasID 3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person4
 :Person4 rdf:type owl:NamedIndividual ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ,
-                        sbevac:Responsible ;
-               sbevac:responsibleTo :Person8 ;
-               sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-               sbevac:familyID 2 ;
-               sbevac:hasID 4 .
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ,
+                        sbeo:Responsible ;
+               sbeo:responsibleTo :Person8 ;
+               sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+               sbeo:familyID 2 ;
+               sbeo:hasID 4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person5
 :Person5 rdf:type owl:NamedIndividual ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ,
-                        sbevac:Responsible ;
-               sbevac:responsibleTo :Person8 ;
-               sbevac:familiarityWithBuilding "true"^^xsd:boolean ;
-               sbevac:familyID 2 ;
-               sbevac:hasID 5 .
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ,
+                        sbeo:Responsible ;
+               sbeo:responsibleTo :Person8 ;
+               sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
+               sbeo:familyID 2 ;
+               sbeo:hasID 5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person6
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person6
 :Person6 rdf:type owl:NamedIndividual ,
-                        sbevac:Dependent ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ;
-               sbevac:familyID 1 ;
-               sbevac:hasID 6 .
+                        sbeo:Dependent ,
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ;
+               sbeo:familyID 1 ;
+               sbeo:hasID 6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person7
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person7
 :Person7 rdf:type owl:NamedIndividual ,
-                        sbevac:Dependent ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ;
-               sbevac:familyID 1 ;
-               sbevac:hasID 7 .
+                        sbeo:Dependent ,
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ;
+               sbeo:familyID 1 ;
+               sbeo:hasID 7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person8
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person8
 :Person8 rdf:type owl:NamedIndividual ,
-                        sbevac:Dependent ,
-                        sbevac:Family ,
-                        sbevac:Normal ,
-                        sbevac:Person ;
-               sbevac:familyID 2 ;
-               sbevac:hasID 8 .
+                        sbeo:Dependent ,
+                        sbeo:Family ,
+                        sbeo:Normal ,
+                        sbeo:Person ;
+               sbeo:familyID 2 ;
+               sbeo:hasID 8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Person9
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Person9
 :Person9 rdf:type owl:NamedIndividual ,
-                        sbevac:Non-Motorised ,
-                        sbevac:Person ;
-               sbevac:familiarityWithBuilding "false"^^xsd:boolean ;
-               sbevac:hasID 9 .
+                        sbeo:Non-Motorised ,
+                        sbeo:Person ;
+               sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
+               sbeo:hasID 9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke1
 :Smoke1 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-              sbevac:installedIn :Office1 .
+                       sbeo:SmokeSensor ;
+              sbeo:installedIn :Office1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke10
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke10
 :Smoke10 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor1 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke11
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke11
 :Smoke11 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor1 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke12
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke12
 :Smoke12 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor1 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke13
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke13
 :Smoke13 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Office6 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Office6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke14
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke14
 :Smoke14 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Kitchen1 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke15
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke15
 :Smoke15 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor5 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke16
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke16
 :Smoke16 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Hall4 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Hall4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke17
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke17
 :Smoke17 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Office8 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke18
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke18
 :Smoke18 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor2 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke19
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke19
 :Smoke19 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Office7 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke2
 :Smoke2 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-              sbevac:installedIn :Office2 .
+                       sbeo:SmokeSensor ;
+              sbeo:installedIn :Office2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke20
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke20
 :Smoke20 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor4 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke21
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke21
 :Smoke21 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor3 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke22
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke22
 :Smoke22 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor3 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke23
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke23
 :Smoke23 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor3 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke24
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke24
 :Smoke24 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Corridor3 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke25
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke25
 :Smoke25 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Hall2 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Hall2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke26
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke26
 :Smoke26 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Hall5 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke27
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke27
 :Smoke27 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Office11 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Office11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke28
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke28
 :Smoke28 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Office10 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Office10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke29
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke29
 :Smoke29 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Office9 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke3
 :Smoke3 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-              sbevac:installedIn :Office3 .
+                       sbeo:SmokeSensor ;
+              sbeo:installedIn :Office3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke30
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke30
 :Smoke30 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Hall3 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke31
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke31
 :Smoke31 rdf:type owl:NamedIndividual ,
-                        sbevac:SmokeSensor ;
-               sbevac:installedIn :Hall3 .
+                        sbeo:SmokeSensor ;
+               sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke4
 :Smoke4 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-                                                          sbevac:installedIn :Office4 .
+                       sbeo:SmokeSensor ;
+                                                          sbeo:installedIn :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke5
 :Smoke5 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-                                                          sbevac:installedIn :KidsArea1 .
+                       sbeo:SmokeSensor ;
+                                                          sbeo:installedIn :KidsArea1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke6
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke6
 :Smoke6 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-                                                          sbevac:installedIn :DayCare1 .
+                       sbeo:SmokeSensor ;
+                                                          sbeo:installedIn :DayCare1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke7
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke7
 :Smoke7 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-                                                          sbevac:installedIn :Office5 .
+                       sbeo:SmokeSensor ;
+                                                          sbeo:installedIn :Office5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke8
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke8
 :Smoke8 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-                                                          sbevac:installedIn :Corridor6 .
+                       sbeo:SmokeSensor ;
+                                                          sbeo:installedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Smoke9
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke9
 :Smoke9 rdf:type owl:NamedIndividual ,
-                       sbevac:SmokeSensor ;
-                                                          sbevac:installedIn :Corridor1 .
+                       sbeo:SmokeSensor ;
+                                                          sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Stairs1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Stairs1
 :Stairs1 rdf:type owl:NamedIndividual ,
                         seas:Stairs ;
-               sbevac:connectedTo :Corridor3 ,
+               sbeo:connectedTo :Corridor3 ,
                                 :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp1
 :Temp1 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-             sbevac:installedIn :Office1 .
+                      sbeo:TemperatureSensor ;
+             sbeo:installedIn :Office1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp10
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp10
 :Temp10 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor1 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp11
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp11
 :Temp11 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor1 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp12
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp12
 :Temp12 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor1 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp13
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp13
 :Temp13 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Office6 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Office6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp14
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp14
 :Temp14 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Kitchen1 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp15
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp15
 :Temp15 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor5 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp16
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp16
 :Temp16 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Hall4 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Hall4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp17
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp17
 :Temp17 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Office8 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp18
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp18
 :Temp18 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor2 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp19
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp19
 :Temp19 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Office7 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp2
 :Temp2 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-             sbevac:installedIn :Office2 .
+                      sbeo:TemperatureSensor ;
+             sbeo:installedIn :Office2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp20
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp20
 :Temp20 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor4 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp21
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp21
 :Temp21 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor3 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp22
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp22
 :Temp22 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor3 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp23
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp23
 :Temp23 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor3 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp24
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp24
 :Temp24 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Corridor3 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp25
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp25
 :Temp25 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Hall2 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Hall2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp26
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp26
 :Temp26 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Hall5 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp27
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp27
 :Temp27 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Office11 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Office11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp28
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp28
 :Temp28 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Office10 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Office10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp29
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp29
 :Temp29 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Office9 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp3
 :Temp3 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-             sbevac:installedIn :Office3 .
+                      sbeo:TemperatureSensor ;
+             sbeo:installedIn :Office3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp30
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp30
 :Temp30 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Hall3 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp31
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp31
 :Temp31 rdf:type owl:NamedIndividual ,
-                       sbevac:TemperatureSensor ;
-              sbevac:installedIn :Hall3 .
+                       sbeo:TemperatureSensor ;
+              sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp4
 :Temp4 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-                                                               sbevac:installedIn :Office4 .
+                      sbeo:TemperatureSensor ;
+                                                               sbeo:installedIn :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp5
 :Temp5 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-                                                               sbevac:installedIn :KidsArea1.
+                      sbeo:TemperatureSensor ;
+                                                               sbeo:installedIn :KidsArea1.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp6
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp6
 :Temp6 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-                                                               sbevac:installedIn :DayCare1 .
+                      sbeo:TemperatureSensor ;
+                                                               sbeo:installedIn :DayCare1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp7
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp7
 :Temp7 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-                                                               sbevac:installedIn :Office5 .
+                      sbeo:TemperatureSensor ;
+                                                               sbeo:installedIn :Office5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp8
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp8
 :Temp8 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-                                                               sbevac:installedIn :Corridor6 .
+                      sbeo:TemperatureSensor ;
+                                                               sbeo:installedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#Temp9
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp9
 :Temp9 rdf:type owl:NamedIndividual ,
-                      sbevac:TemperatureSensor ;
-                                                               sbevac:installedIn :Corridor1.
+                      sbeo:TemperatureSensor ;
+                                                               sbeo:installedIn :Corridor1.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon1
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon1
 :iBeacon1 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                sbevac:installedIn :Office1 .
+                         sbeo:LocationSensor ;
+                sbeo:installedIn :Office1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon10
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon10
 :iBeacon10 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor1 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon11
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon11
 :iBeacon11 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor1 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon12
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon12
 :iBeacon12 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Hall1 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon13
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon13
 :iBeacon13 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Office6 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Office6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon14
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon14
 :iBeacon14 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Kitchen1 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon15
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon15
 :iBeacon15 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor5 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon16
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon16
 :iBeacon16 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Hall4 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Hall4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon17
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon17
 :iBeacon17 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Office8 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon18
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon18
 :iBeacon18 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor2 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon19
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon19
 :iBeacon19 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Office7 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon2
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon2
 :iBeacon2 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                sbevac:installedIn :Office2 .
+                         sbeo:LocationSensor ;
+                sbeo:installedIn :Office2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon20
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon20
 :iBeacon20 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor4 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon21
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon21
 :iBeacon21 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor3 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon22
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon22
 :iBeacon22 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor3 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon23
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon23
 :iBeacon23 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor3 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon24
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon24
 :iBeacon24 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Corridor3 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon25
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon25
 :iBeacon25 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Hall2 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Hall2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon26
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon26
 :iBeacon26 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Hall5 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon27
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon27
 :iBeacon27 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Office11 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Office11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon28
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon28
 :iBeacon28 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Office10 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Office10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon29
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon29
 :iBeacon29 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Office9 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon3
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon3
 :iBeacon3 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                sbevac:installedIn :Office3 .
+                         sbeo:LocationSensor ;
+                sbeo:installedIn :Office3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon30
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon30
 :iBeacon30 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Hall3 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon31
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon31
 :iBeacon31 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Hall3 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Hall3 .
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon32
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon32
 :iBeacon32 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Exit1 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Exit1 .
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon33
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon33
 :iBeacon33 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Exit2 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Exit2 .
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon34
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon34
 :iBeacon34 rdf:type owl:NamedIndividual ,
-                          sbevac:LocationSensor ;
-                 sbevac:installedIn :Exit3 .
+                          sbeo:LocationSensor ;
+                 sbeo:installedIn :Exit3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon4
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon4
 :iBeacon4 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                       sbevac:installedIn :Office4 .
+                         sbeo:LocationSensor ;
+                       sbeo:installedIn :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon5
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon5
 :iBeacon5 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                                                                sbevac:installedIn :KidsArea1 .
+                         sbeo:LocationSensor ;
+                                                                sbeo:installedIn :KidsArea1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon6
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon6
 :iBeacon6 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                       sbevac:installedIn :DayCare1.
+                         sbeo:LocationSensor ;
+                       sbeo:installedIn :DayCare1.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon7
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon7
 :iBeacon7 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                                                                      sbevac:installedIn :Office5.
+                         sbeo:LocationSensor ;
+                                                                      sbeo:installedIn :Office5.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon8
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon8
 :iBeacon8 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                                                                      sbevac:installedIn :Corridor6.
+                         sbeo:LocationSensor ;
+                                                                      sbeo:installedIn :Corridor6.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac#iBeacon9
+###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon9
 :iBeacon9 rdf:type owl:NamedIndividual ,
-                         sbevac:LocationSensor ;
-                                                                      sbevac:installedIn :Corridor1.
+                         sbeo:LocationSensor ;
+                                                                      sbeo:installedIn :Corridor1.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac_scenario#RouteA
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario#RouteA
 :RouteA rdf:type owl:NamedIndividual ,
-                 sbevac:Route ;
-        sbevac:hasPath (:Corridor2 :Hall1 :Corridor1 :Corridor6 :Exit1) .
+                 sbeo:Route ;
+        sbeo:hasPath (:Corridor2 :Hall1 :Corridor1 :Corridor6 :Exit1) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac_scenario#RouteB
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario#RouteB
 :RouteB rdf:type owl:NamedIndividual ,
-                 sbevac:Route ;
-        sbevac:hasPath (:Corridor2 :Corridor3 :Hall5 :Exit2) .
+                 sbeo:Route ;
+        sbeo:hasPath (:Corridor2 :Corridor3 :Hall5 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac_scenario#RouteC
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario#RouteC
 :RouteC rdf:type owl:NamedIndividual ,
-                 sbevac:Route ;
-        sbevac:hasPath (:Corridor2 :Corridor3 :Hall5 :Exit2) .
+                 sbeo:Route ;
+        sbeo:hasPath (:Corridor2 :Corridor3 :Hall5 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac_scenario#RouteD
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario#RouteD
 :RouteD rdf:type owl:NamedIndividual ,
-                 sbevac:Route ;
-        sbevac:hasPath (:Corridor2 :Corridor3 :Hall3 :Exit2) .
+                 sbeo:Route ;
+        sbeo:hasPath (:Corridor2 :Corridor3 :Hall3 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac_scenario#RouteE
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario#RouteE
 :RouteE rdf:type owl:NamedIndividual ,
-                 sbevac:Route ;
-        sbevac:hasPath (:Corridor2 :Hall1 :Corridor1 :Corridor4 :Hall5 :Exit2) .
+                 sbeo:Route ;
+        sbeo:hasPath (:Corridor2 :Hall1 :Corridor1 :Corridor4 :Hall5 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbevac_scenario#RouteF
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario#RouteF
 :RouteF rdf:type owl:NamedIndividual ,
-                 sbevac:Route ;
-        sbevac:hasPath (:Corridor4 :Corridor3 :Hall3 :Exit1) .
+                 sbeo:Route ;
+        sbeo:hasPath (:Corridor4 :Corridor3 :Hall3 :Exit1) .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
