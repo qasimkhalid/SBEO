@@ -74,8 +74,7 @@ sbeo:connectedTo rdf:type owl:ObjectProperty ;
                             seas:BuildingSpace ,
                             seas:BuildingSpaceConnection ;
                  rdfs:comment "This property is used to mention the connectivity of any seas:BuildingSpaceConnection or seas:BuildingSpace with each other."^^xsd:string ;
-                 rdfs:label "conectedTo"^^xsd:string ;
-                 rdfs:seeAlso <seas:connectedTo> .
+                 rdfs:label "conectedTo"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#dependentOn
@@ -207,8 +206,7 @@ sbeo:age rdf:type owl:DatatypeProperty ;
          rdfs:domain sbeo:Person ;
          rdfs:range xsd:integer ;
          rdfs:comment "The age of the person."^^xsd:string ;
-         rdfs:label "age"^^xsd:string ;
-         rdfs:seeAlso <foaf:age> .
+         rdfs:label "age"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#atTime
@@ -266,8 +264,7 @@ sbeo:firstName rdf:type owl:DatatypeProperty ;
                rdfs:domain sbeo:Person ;
                rdfs:range xsd:string ;
                rdfs:comment "The first name of the person."^^xsd:string ;
-               rdfs:label "firstName"^^xsd:string ;
-               rdfs:seeAlso <foaf:firstName> .
+               rdfs:label "firstName"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#fitnessLevel
@@ -312,8 +309,7 @@ sbeo:lastName rdf:type owl:DatatypeProperty ;
               rdfs:domain sbeo:Person ;
               rdfs:range xsd:string ;
               rdfs:comment "The last name of the person."^^xsd:string ;
-              rdfs:label "lastName"^^xsd:string ;
-              rdfs:seeAlso <foaf:lastName> .
+              rdfs:label "lastName"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#name
@@ -328,8 +324,7 @@ sbeo:name rdf:type owl:DatatypeProperty ;
                       seas:ZoneFrontier ;
           rdfs:range xsd:string ;
           rdfs:label "The name of the person, place or a thing."^^xsd:string ,
-                     "name"^^xsd:string ;
-          rdfs:seeAlso <foaf:name> .
+                     "name"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#needsSupervision
@@ -572,8 +567,7 @@ sbeo:PassiveFireProtection rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Person
 sbeo:Person rdf:type owl:Class ;
             rdfs:comment "It represents a single individual of any age and having any type of characteristics."^^xsd:string ;
-            rdfs:label "Person"^^xsd:string ;
-            rdfs:seeAlso <foaf:Person> .
+            rdfs:label "Person"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#PhysicalImpairment
@@ -621,8 +615,7 @@ sbeo:SensoryImpairment rdf:type owl:Class ;
 sbeo:SmokeSensor rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:Sensor ;
                  rdfs:comment "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."^^xsd:string ;
-                 rdfs:label "SmokeSensor"^^xsd:string ;
-                 rdfs:seeAlso saref:SmokeSensor .
+                 rdfs:label "SmokeSensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SpaceCharacteristic
@@ -642,8 +635,7 @@ sbeo:Stampeding rdf:type owl:Class ;
 sbeo:TemperatureSensor rdf:type owl:Class ;
                        rdfs:subClassOf sbeo:Sensor ;
                        rdfs:comment "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."^^xsd:string ;
-                       rdfs:label "TemperatureSensor"^^xsd:string ;
-                       rdfs:seeAlso saref:TemperatureSensor .
+                       rdfs:label "TemperatureSensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TerroristAttack
