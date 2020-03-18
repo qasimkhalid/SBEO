@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-03-18T00:41:45.692Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36" etag="2um1Hwul8y6MYSQ6Pp8d" version="12.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-03-18T00:46:58.790Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36" etag="7NSAchATxkfiTgyhd_XA" version="12.8.6" type="github">
   <diagram id="s-fJWoQtj2VFVK5msN_l" name="Page-1">
-    <mxGraphModel dx="6059" dy="2450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2690" dy="519" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -151,7 +151,7 @@
         <mxCell id="EgX6zlfz2IxhlC0AGUEL-9" value="sbeo:Incident" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="430" y="240" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="EgX6zlfz2IxhlC0AGUEL-10" value="Route" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" parent="1" vertex="1">
+        <mxCell id="EgX6zlfz2IxhlC0AGUEL-10" value="sbeo:Route" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="-510" y="160" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-78" style="edgeStyle=orthogonalEdgeStyle;curved=1;comic=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="EgX6zlfz2IxhlC0AGUEL-11" target="IQOuE0TxBNfk_iXKN2kF-77">
@@ -374,7 +374,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="EgX6zlfz2IxhlC0AGUEL-37" value="Sensor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" parent="1" vertex="1">
+        <mxCell id="EgX6zlfz2IxhlC0AGUEL-37" value="sbeo:Sensor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="30" y="340" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-3" style="edgeStyle=orthogonalEdgeStyle;curved=1;comic=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;shadow=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="EgX6zlfz2IxhlC0AGUEL-38" target="EgX6zlfz2IxhlC0AGUEL-45">
@@ -550,7 +550,7 @@
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-40" value="&lt;span style=&quot;white-space: normal&quot;&gt;sbeo:Physical&lt;br&gt;Impairment&lt;br&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" vertex="1" parent="1">
           <mxGeometry x="-1110" y="320" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="IQOuE0TxBNfk_iXKN2kF-41" value="Visitor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" vertex="1" parent="1">
+        <mxCell id="IQOuE0TxBNfk_iXKN2kF-41" value="sbeo:Visitor" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" vertex="1" parent="1">
           <mxGeometry x="-730" y="460" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-42" value="&lt;span style=&quot;white-space: normal&quot;&gt;sbeo:Respnsible&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;" vertex="1" parent="1">
