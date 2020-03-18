@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-03-18T22:43:19.042Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36" etag="hVRbBD6fPIOC0SCBzOjf" version="12.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-03-18T22:46:29.680Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36" etag="yD7iv_OyQDSrlfJBGi_M" version="12.8.6" type="github">
   <diagram id="s-fJWoQtj2VFVK5msN_l" name="Page-1">
-    <mxGraphModel dx="4878" dy="1828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2460" dy="457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1298,7 +1298,7 @@
           <mxGeometry x="-1238" y="196" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="yLDOqc1vmUTKO-x5eXoO-25" value="Class" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
-          <mxGeometry x="-1144" y="96" width="50" height="20" as="geometry" />
+          <mxGeometry x="-1142" y="96" width="50" height="20" as="geometry" />
         </mxCell>
         <mxCell id="yLDOqc1vmUTKO-x5eXoO-26" value="External class, imported &lt;br&gt;from other ontologies" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
           <mxGeometry x="-1184" y="146" width="140" height="30" as="geometry" />
@@ -1306,14 +1306,14 @@
         <mxCell id="yLDOqc1vmUTKO-x5eXoO-27" value="Multiple Classes &lt;br&gt;all together" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
           <mxGeometry x="-1164" y="199" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="yLDOqc1vmUTKO-x5eXoO-28" value="Datatype of the &lt;br&gt;Range of &lt;br&gt;Data Property" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
-          <mxGeometry x="-1164" y="246" width="100" height="50" as="geometry" />
+        <mxCell id="yLDOqc1vmUTKO-x5eXoO-28" value="Datatype of the &lt;br&gt;Range of Data Property" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
+          <mxGeometry x="-1184" y="256" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yLDOqc1vmUTKO-x5eXoO-29" value="Object Property" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
-          <mxGeometry x="-1164" y="301" width="100" height="20" as="geometry" />
+          <mxGeometry x="-1166" y="301" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="yLDOqc1vmUTKO-x5eXoO-30" value="Data Property" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
-          <mxGeometry x="-1159" y="341" width="90" height="20" as="geometry" />
+          <mxGeometry x="-1162" y="341" width="90" height="20" as="geometry" />
         </mxCell>
         <mxCell id="yLDOqc1vmUTKO-x5eXoO-32" value="SBEO :Smart Building Evacuation Ontology&amp;nbsp;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
           <mxGeometry x="113" y="36" width="100" height="40" as="geometry" />
