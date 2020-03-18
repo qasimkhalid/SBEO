@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-03-18T22:38:51.378Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36" etag="9guKrHsEhO0aQ_dcOEaZ" version="12.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-03-18T22:43:19.042Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36" etag="hVRbBD6fPIOC0SCBzOjf" version="12.8.6" type="github">
   <diagram id="s-fJWoQtj2VFVK5msN_l" name="Page-1">
-    <mxGraphModel dx="4878" dy="1960" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4878" dy="1828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -413,7 +413,7 @@
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-108" value="rdfs:subClassOf" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontColor=#000000;" parent="IQOuE0TxBNfk_iXKN2kF-79" vertex="1" connectable="0">
           <mxGeometry x="0.2927" y="8" relative="1" as="geometry">
-            <mxPoint x="6.970000000000002" y="-23.5" as="offset" />
+            <mxPoint x="26.000000000000004" y="-8.41" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-81" style="edgeStyle=orthogonalEdgeStyle;curved=1;comic=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="EgX6zlfz2IxhlC0AGUEL-11" target="IQOuE0TxBNfk_iXKN2kF-72" edge="1">
@@ -427,7 +427,7 @@
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-106" value="rdfs:subClassOf" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontColor=#000000;" parent="IQOuE0TxBNfk_iXKN2kF-81" vertex="1" connectable="0">
           <mxGeometry x="0.3118" y="1" relative="1" as="geometry">
-            <mxPoint x="-2" y="-32.5" as="offset" />
+            <mxPoint x="-2" y="-9.879999999999999" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="EgX6zlfz2IxhlC0AGUEL-11" value="sbeo:Space&lt;br&gt;Characteristic" style="ellipse;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;horizontal=1;verticalAlign=middle;align=center;labelBorderColor=none;whiteSpace=wrap;html=1;shadow=0;" parent="1" vertex="1">
@@ -571,7 +571,7 @@
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-92" value="rdfs:subClassOf" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontColor=#000000;" parent="IQOuE0TxBNfk_iXKN2kF-16" vertex="1" connectable="0">
           <mxGeometry x="-0.035" y="98" relative="1" as="geometry">
-            <mxPoint x="-86" y="71.97" as="offset" />
+            <mxPoint x="-128.24" y="56" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="EgX6zlfz2IxhlC0AGUEL-16" value="owl:Thing" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;shadow=0;" parent="1" vertex="1">
@@ -593,7 +593,7 @@
         </mxCell>
         <mxCell id="IQOuE0TxBNfk_iXKN2kF-135" value="rdfs:subClassOf" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;fontColor=#000000;" parent="EgX6zlfz2IxhlC0AGUEL-68" vertex="1" connectable="0">
           <mxGeometry x="-0.3157" y="-24" relative="1" as="geometry">
-            <mxPoint x="2.289999999999999" y="14.5" as="offset" />
+            <mxPoint x="24" y="35.239999999999995" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="EgX6zlfz2IxhlC0AGUEL-26" value="seas:Building&lt;br&gt;Space" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
