@@ -4,3 +4,5 @@ The Smart Buildings Evacuation Ontology (SBEO) is proposed to acquire knowledge 
 
 
 We have used SBEO as a base model to create Assertion Boxes for different scenarios. These can be found in the Examples directory. 
+
+![](Class_Property_Diagram.png)
