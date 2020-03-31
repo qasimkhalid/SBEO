@@ -140,37 +140,37 @@
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher1
 :FireExtinguisher1 rdf:type owl:NamedIndividual ,
-                                  :FireExtinguisher ;
+                                  sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor6 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher2
 :FireExtinguisher2 rdf:type owl:NamedIndividual ,
-                                  :FireExtinguisher ;
+                                  sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor6 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher3
 :FireExtinguisher3 rdf:type owl:NamedIndividual ,
-                                  :FireExtinguisher ;
+                                  sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor1 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher4
 :FireExtinguisher4 rdf:type owl:NamedIndividual ,
-                                  :FireExtinguisher ;
+                                  sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Kitchen1 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher5
 :FireExtinguisher5 rdf:type owl:NamedIndividual ,
-                                  :FireExtinguisher ;
+                                  sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor3 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher6
 :FireExtinguisher6 rdf:type owl:NamedIndividual ,
-                                  :FireExtinguisher ;
+                                  sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor3 .
 
 
