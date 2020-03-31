@@ -5,10 +5,8 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
-@prefix saref: <https://w3id.org/saref#> .
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix fiemser: <http://sites.google.com/site/smartappliancesproject/ontologies/fiemser#> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo_scenario> .
 
 <http://www.ia.urjc.es/ontologies/building/sbeo_scenario> rdf:type owl:Ontology ;
