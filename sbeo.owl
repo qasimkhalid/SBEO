@@ -13,7 +13,7 @@
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
 <http://www.ia.urjc.es/ontologies/building/sbeo> rdf:type owl:Ontology ;
-                                                  owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbeo/1.9> ;
+                                                  owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbeo/2.0> ;
                                                   owl:imports <https://raw.githubusercontent.com/qasimkhalid/SBEO/master/imports/BuildingOntology-1.0.owl> ;
                                                   dcterms:creator "Qasim Khalid" ;
                                                   dcterms:description """Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of shopping or stadium seating routes, a recommendation of safe and feasible emergency evacuation routes, or all together. 
@@ -22,7 +22,7 @@ The core SBEO uses the three major concepts: topology of the building, situation
 
 There are eight classes in SBEO: Person, BuildingSpace, BuildingSpaceConnection, Incident, Device, SpaceCharacteristic, Route and Distance. As the reusing the vocabulary is the essence of linked data and semantic web, therefore in SBEO, we have also reused three external vocabularies, i.e. Person from FOAF(http://xmlns.com/foaf/spec/), and both BuildingSpace and BuildingSpaceConnection from SEAS Building Ontology (https://ci.mines-stetienne.fr/seas/BuildingOntology-1.0). On the other hand, we have introduced some classes in SBEO which are the subclasses of these existing vocabularies."""^^xsd:string ;
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology" ;
-                                                  owl:versionInfo 1.9 .
+                                                  owl:versionInfo 2.0 .
 
 #################################################################
 #    Object Properties
@@ -67,14 +67,20 @@ sbeo:assignedRoute rdf:type owl:ObjectProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#connectedTo
 sbeo:connectedTo rdf:type owl:ObjectProperty ,
                           owl:SymmetricProperty ;
-                 rdfs:domain sbeo:Entrance ,
-                             sbeo:Exit ,
-                             seas:BuildingSpace ,
-                             seas:BuildingSpaceConnection ;
-                 rdfs:range sbeo:Entrance ,
-                            sbeo:Exit ,
-                            seas:BuildingSpace ,
-                            seas:BuildingSpaceConnection ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( sbeo:Entrance
+                                             sbeo:Exit
+                                             seas:Zone
+                                             seas:ZoneConnection
+                                           )
+                             ] ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( sbeo:Entrance
+                                            sbeo:Exit
+                                            seas:Zone
+                                            seas:ZoneConnection
+                                          )
+                            ] ;
                  rdfs:comment "This property is used to mention the connectivity of any seas:BuildingSpaceConnection or seas:BuildingSpace with each other."^^xsd:string ;
                  rdfs:label "conectedTo"^^xsd:string ;
                  rdfs:seeAlso <seas:connectedTo> .
@@ -94,10 +100,13 @@ sbeo:dependentOn rdf:type owl:ObjectProperty ;
 sbeo:distanceOf rdf:type owl:ObjectProperty ,
                          owl:SymmetricProperty ;
                 rdfs:domain sbeo:Distance ;
-                rdfs:range sbeo:Entrance ,
-                           sbeo:Exit ,
-                           seas:BuildingSpace ,
-                           seas:BuildingSpaceConnection ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( sbeo:Entrance
+                                           sbeo:Exit
+                                           seas:Zone
+                                           seas:ZoneConnection
+                                         )
+                           ] ;
                 rdfs:comment "This property is used to represent the distance between any two connected seas:BuildingSpaceConnection or seas:BuildingSpace."^^xsd:string ;
                 rdfs:label "distanceOf"^^xsd:string .
 
@@ -106,21 +115,26 @@ sbeo:distanceOf rdf:type owl:ObjectProperty ,
 sbeo:endsIn rdf:type owl:ObjectProperty ;
             owl:inverseOf sbeo:startsFrom ;
             rdfs:domain sbeo:Route ;
-            rdfs:range sbeo:Entrance ,
-                       sbeo:Exit ,
-                       sbeo:Route ,
-                       seas:BuildingSpace ,
-                       seas:BuildingSpaceConnection ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( sbeo:Entrance
+                                       sbeo:Exit
+                                       sbeo:Route
+                                       seas:Zone
+                                       seas:ZoneConnection
+                                     )
+                       ] ;
             rdfs:comment "This property is used to express the last space where the route ends. Generally, these are sbeo:Exit."^^xsd:string ;
             rdfs:label "endsIn"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasPath
 sbeo:hasPath rdf:type owl:ObjectProperty ;
-             rdfs:domain seas:BuildingSpace ,
-                         seas:BuildingSpaceConnection ;
-             rdfs:range seas:BuildingSpace ,
-                        seas:BuildingSpaceConnection ;
+             rdfs:domain sbeo:Route ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( seas:Zone
+                                        seas:ZoneConnection
+                                      )
+                        ] ;
              rdfs:comment "This property is used to express the set of connected building spaces or building space connections that makes a route. In this regard, when this property is used as a predicate in a triple, the object of that triple must be a rdf:list."^^xsd:string ;
              rdfs:label "hasPath"^^xsd:string .
 
@@ -128,11 +142,12 @@ sbeo:hasPath rdf:type owl:ObjectProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
 sbeo:installedIn rdf:type owl:ObjectProperty ,
                           owl:TransitiveProperty ;
-                 rdfs:domain sbeo:Device ,
-                             seas:BuildingSpace ,
-                             seas:BuildingSpaceConnection ;
-                 rdfs:range seas:BuildingSpace ,
-                            seas:BuildingSpaceConnection ;
+                 rdfs:domain sbeo:Device ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( seas:Zone
+                                            seas:ZoneConnection
+                                          )
+                            ] ;
                  rdfs:comment "This property is used to mention any device, system, or instrument, installed in a seas:BuildingSpace."^^xsd:string ;
                  rdfs:label "installedIn"^^xsd:string .
 
@@ -140,20 +155,29 @@ sbeo:installedIn rdf:type owl:ObjectProperty ,
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#locatedIn
 sbeo:locatedIn rdf:type owl:ObjectProperty ,
                         owl:TransitiveProperty ;
-               rdfs:domain sbeo:Incident ,
-                           foaf:Person ,
-                           seas:BuildingSpace ,
-                           seas:BuildingSpaceConnection ;
-               rdfs:range seas:BuildingSpace ,
-                          seas:BuildingSpaceConnection ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( sbeo:Incident
+                                           foaf:Person
+                                           seas:Zone
+                                           seas:ZoneConnection
+                                         )
+                           ] ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( seas:Zone
+                                          seas:ZoneConnection
+                                        )
+                          ] ;
                rdfs:comment "This property is used to mention the existence of anything in a particular seas:BuildingSpace, such as person, or stairs, doors, etc."^^xsd:string ;
                rdfs:label "locatedIn"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo
 sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
-                     rdfs:domain seas:BuildingSpace ,
-                                 seas:BuildingSpaceConnection ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( seas:Zone
+                                                 seas:ZoneConnection
+                                               )
+                                 ] ;
                      rdfs:range foaf:Person ;
                      rdfs:comment "This property is used to prohibit the access of any specific foaf:Person to a specific seas:BuildingSpace or seas:BuildingSpaceConnection."^^xsd:string ;
                      rdfs:label "notAccessibleTo"^^xsd:string .
@@ -171,11 +195,14 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#startsFrom
 sbeo:startsFrom rdf:type owl:ObjectProperty ;
                 rdfs:domain sbeo:Route ;
-                rdfs:range sbeo:Entrance ,
-                           sbeo:Exit ,
-                           sbeo:Route ,
-                           seas:BuildingSpace ,
-                           seas:BuildingSpaceConnection ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( sbeo:Entrance
+                                           sbeo:Exit
+                                           sbeo:Route
+                                           seas:Zone
+                                           seas:ZoneConnection
+                                         )
+                           ] ;
                 rdfs:comment "This property is used to express the space where any route starts."^^xsd:string ;
                 rdfs:label "startsFrom"^^xsd:string .
 
@@ -186,10 +213,12 @@ sbeo:startsFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
 sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf owl:topDataProperty ;
-                           rdfs:domain sbeo:SafeZone ,
-                                       seas:BuildingSpace ,
-                                       seas:BuildingSpaceConnection ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( sbeo:SafeZone
+                                                       seas:Zone
+                                                       seas:ZoneConnection
+                                                     )
+                                       ] ;
                            rdfs:range xsd:integer ;
                            rdfs:comment "This property is used to represent the accommodating capacity (in terms of persons) of a particular space."^^xsd:string ;
                            rdfs:label "accommodationCapacity"^^xsd:string .
@@ -197,10 +226,12 @@ sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#atTime
 sbeo:atTime rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf owl:topDataProperty ;
-            rdfs:domain sbeo:Incident ,
-                        sbeo:Sensor ,
-                        foaf:Person ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:Incident
+                                        sbeo:Sensor
+                                        foaf:Person
+                                      )
+                        ] ;
             rdfs:range xsd:long ;
             rdfs:comment "It is used to represent a timestamp with any particular event. It is a calculated as Unix epoch. For example, when a specific person is located in a specific space, or a specific sensor detects a specific value, etc."^^xsd:string ;
             rdfs:label "atTime"^^xsd:string .
@@ -209,9 +240,12 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#currentOccupancy
 sbeo:currentOccupancy rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf owl:topDataProperty ;
-                      rdfs:domain sbeo:SafeZone ,
-                                  seas:BuildingSpace ,
-                                  seas:BuildingSpaceConnection ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( sbeo:SafeZone
+                                                  seas:Zone
+                                                  seas:ZoneConnection
+                                                )
+                                  ] ;
                       rdfs:range xsd:integer ;
                       rdfs:comment "This property is used to represent the current occupancy(in terms of persons) of a particular space."^^xsd:string ;
                       rdfs:label "currentOccupancy"^^xsd:string .
@@ -222,7 +256,7 @@ sbeo:evacuationStatus rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf owl:topDataProperty ;
                       rdfs:domain foaf:Person ;
                       rdfs:range xsd:string ;
-                      rdfs:comment "It represents the status of evacuation of each person. This property is specially used for evacuation purposes. Its value can be either â€˜not startedâ€™ or â€˜in progressâ€™ or â€˜completedâ€™. The value remains â€˜not startedâ€™ in two cases. The first case, when there is no hazard and emergency evacuation has been started. The second case, when a hazard is detected and the emergency evacuation has not been started by person; both intentionally and unintentionally. The value of this property becomes â€˜in progressâ€™ when a person starts to move from oneâ€™s initial position and remains as it is until one has not arrived its assigned exit. Once a person arrives the exit, the evacuation status changes to â€˜completedâ€™, that represents the evacuation process has been finished for that specific person."^^xsd:string ;
+                      rdfs:comment "It represents the status of evacuation of each person. This property is specially used for evacuation purposes. Its value can be either Ã¢â‚¬Ëœnot startedÃ¢â‚¬â„¢ or Ã¢â‚¬Ëœin progressÃ¢â‚¬â„¢ or Ã¢â‚¬ËœcompletedÃ¢â‚¬â„¢. The value remains Ã¢â‚¬Ëœnot startedÃ¢â‚¬â„¢ in two cases. The first case, when there is no hazard and emergency evacuation has been started. The second case, when a hazard is detected and the emergency evacuation has not been started by person; both intentionally and unintentionally. The value of this property becomes Ã¢â‚¬Ëœin progressÃ¢â‚¬â„¢ when a person starts to move from oneÃ¢â‚¬â„¢s initial position and remains as it is until one has not arrived its assigned exit. Once a person arrives the exit, the evacuation status changes to Ã¢â‚¬ËœcompletedÃ¢â‚¬â„¢, that represents the evacuation process has been finished for that specific person."^^xsd:string ;
                       rdfs:label "evacuationStatus"^^xsd:string .
 
 
@@ -264,9 +298,13 @@ sbeo:groupID rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasDistance
 sbeo:hasDistance rdf:type owl:DatatypeProperty ;
-                 rdfs:domain sbeo:Entrance ,
-                             sbeo:Exit ,
-                             seas:BuildingSpaceConnection ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( sbeo:Entrance
+                                             sbeo:Exit
+                                             seas:Zone
+                                             seas:ZoneConnection
+                                           )
+                             ] ;
                  rdfs:range xsd:integer ;
                  rdfs:label "It represents the distance (in meters) between any two seas:BuildingSpace Connections or any sbeo:Exit (or sbeo:Entrance) and a seas:BuildingSpaceConnection."^^xsd:string ,
                             "hasDistance"^^xsd:string .
@@ -308,7 +346,6 @@ sbeo:hasValue rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#needsSupervision
 sbeo:needsSupervision rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf owl:topDataProperty ;
                       rdfs:domain foaf:Person ;
                       rdfs:range xsd:boolean ;
                       rdfs:comment "This property is used to mention either a person needs supervision or not. As its value is in Boolean, therefore, the true means that a person needs the supervision whereas a false means (s)he does not."^^xsd:string ;
@@ -684,6 +721,15 @@ sbeo:Wheelchair rdf:type owl:Class ;
 foaf:Person rdf:type owl:Class ;
             rdfs:comment "It represents a single individual of any age and having any type of characteristics."^^xsd:string ;
             rdfs:label "Person"^^xsd:string .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PersonCheck
+sbeo:PersonCheck rdf:type owl:NamedIndividual ,
+                          foaf:Person .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
