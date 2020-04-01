@@ -5,7 +5,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
-@prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
+@prefix sbeo: <http://www.ia.urjc.es/ontologies/sbeo#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge> .
 
@@ -16,13 +16,13 @@
 #    Individuals
 #################################################################
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#AssemblyPoint1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#AssemblyPoint1
 :AssemblyPoint1 rdf:type owl:NamedIndividual ,
                                sbeo:AssemblyPoint ;
                       sbeo:connectedTo :Exit2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Corridor1
 :Corridor1 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
                  sbeo:connectedTo :Corridor5 ,
@@ -34,7 +34,7 @@
                                   :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Corridor2
 :Corridor2 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
                  sbeo:adjacentTo :Office8 ;
@@ -44,7 +44,7 @@
                                   :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Corridor3
 :Corridor3 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
                  sbeo:adjacentTo :Kitchen1 ,
@@ -60,7 +60,7 @@
                                   :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Corridor4
 :Corridor4 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
                  sbeo:adjacentTo :Kitchen1 ;
@@ -69,7 +69,7 @@
                                   :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Corridor5
 :Corridor5 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
                  sbeo:connectedTo :Corridor1 ,
@@ -78,7 +78,7 @@
                                   :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Corridor6
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Corridor6
 :Corridor6 rdf:type owl:NamedIndividual ,
                           seas:Corridor ;
                  sbeo:adjacentTo :Office1 ;
@@ -86,7 +86,7 @@
                                   :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#DayCare1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#DayCare1
 :DayCare1 rdf:type owl:NamedIndividual ,
                          sbeo:DayCare ;
                 sbeo:adjacentTo :KidsArea1 ,
@@ -94,85 +94,85 @@
                 sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Exit1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Exit1
 :Exit1 rdf:type owl:NamedIndividual ,
                       sbeo:NormalExit ;
              sbeo:locatedIn :Corridor6 ;
              sbeo:connectedTo :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Exit2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Exit2
 :Exit2 rdf:type owl:NamedIndividual ,
                       sbeo:NormalExit ;
              sbeo:locatedIn :Hall5 ;
              sbeo:connectedTo :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Exit3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Exit3
 :Exit3 rdf:type owl:NamedIndividual ,
                       sbeo:NormalExit ;
              sbeo:locatedIn :Hall3 ;
              sbeo:connectedTo :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireDoor1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireDoor1
 :FireDoor1 rdf:type owl:NamedIndividual ,
                           sbeo:FireDoor ;
                  sbeo:connectedTo :Corridor1 ,
                                   :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireDoor2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireDoor2
 :FireDoor2 rdf:type owl:NamedIndividual ,
                           sbeo:FireDoor ;
                  sbeo:connectedTo :Corridor1 ,
                                   :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireDoor3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireDoor3
 :FireDoor3 rdf:type owl:NamedIndividual ,
                           sbeo:FireDoor ;
                  sbeo:connectedTo :Corridor3 ,
                                   :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireExtinguisher1
 :FireExtinguisher1 rdf:type owl:NamedIndividual ,
                                   sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireExtinguisher2
 :FireExtinguisher2 rdf:type owl:NamedIndividual ,
                                   sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireExtinguisher3
 :FireExtinguisher3 rdf:type owl:NamedIndividual ,
                                   sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireExtinguisher4
 :FireExtinguisher4 rdf:type owl:NamedIndividual ,
                                   sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireExtinguisher5
 :FireExtinguisher5 rdf:type owl:NamedIndividual ,
                                   sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher6
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#FireExtinguisher6
 :FireExtinguisher6 rdf:type owl:NamedIndividual ,
                                   sbeo:FireExtinguisher ;
                          sbeo:locatedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Hall1
 :Hall1 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
              sbeo:connectedTo :Corridor1 ,
@@ -184,7 +184,7 @@
                               :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Hall2
 :Hall2 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
              sbeo:adjacentTo :Corridor3 ,
@@ -193,7 +193,7 @@
              sbeo:connectedTo :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Hall3
 :Hall3 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
              sbeo:adjacentTo :Hall2 ,
@@ -201,7 +201,7 @@
              sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Hall4
 :Hall4 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
              sbeo:adjacentTo :Corridor1 ,
@@ -210,7 +210,7 @@
                               :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Hall5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Hall5
 :Hall5 rdf:type owl:NamedIndividual ,
                       seas:Hall ;
              sbeo:adjacentTo :Office11 ;
@@ -218,7 +218,7 @@
                               :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#KidsArea1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#KidsArea1
 :KidsArea1 rdf:type owl:NamedIndividual ,
                           sbeo:KidsArea ;
                  sbeo:adjacentTo :KidsArea1 ,
@@ -226,7 +226,7 @@
                  sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Kitchen1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Kitchen1
 :Kitchen1 rdf:type owl:NamedIndividual ,
                          seas:Kitchen ;
                 sbeo:adjacentTo :Corridor1 ,
@@ -235,7 +235,7 @@
                 sbeo:connectedTo :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office1
 :Office1 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :Corridor6 ,
@@ -243,7 +243,7 @@
                sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office10
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office10
 :Office10 rdf:type owl:NamedIndividual ,
                          seas:Office ;
                 sbeo:adjacentTo :Office11 ,
@@ -251,7 +251,7 @@
                 sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office11
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office11
 :Office11 rdf:type owl:NamedIndividual ,
                          seas:Office ;
                 sbeo:adjacentTo :Hall5 ,
@@ -259,7 +259,7 @@
                 sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office2
 :Office2 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :Office1 ,
@@ -267,7 +267,7 @@
                sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office3
 :Office3 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :Office2 ,
@@ -275,7 +275,7 @@
                sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office4
 :Office4 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :KidsArea1 ,
@@ -283,7 +283,7 @@
                sbeo:connectedTo :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office5
 :Office5 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :DayCare1 ,
@@ -291,7 +291,7 @@
                sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office6
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office6
 :Office6 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :Office5 ,
@@ -299,7 +299,7 @@
                sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office7
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office7
 :Office7 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :Hall2 ,
@@ -307,7 +307,7 @@
                sbeo:connectedTo :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office8
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office8
 :Office8 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :Corridor1 ,
@@ -317,7 +317,7 @@
                sbeo:connectedTo :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Office9
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Office9
 :Office9 rdf:type owl:NamedIndividual ,
                         seas:Office ;
                sbeo:adjacentTo :Hall3 ,
@@ -325,7 +325,7 @@
                sbeo:connectedTo :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person1
 :Person1 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
@@ -338,7 +338,7 @@
                sbeo:hasID 1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person10
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person10
 :Person10 rdf:type owl:NamedIndividual ,
                          sbeo:Motorised ,
                          sbeo:Person ;
@@ -346,28 +346,28 @@
                 sbeo:hasID 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person11
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person11
 :Person11 rdf:type owl:NamedIndividual ,
                          sbeo:Person ,
                          sbeo:Visual ;
                 sbeo:hasID 11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person12
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person12
 :Person12 rdf:type owl:NamedIndividual ,
                          sbeo:Person ,
                          sbeo:Visual ;
                 sbeo:hasID 12 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person13
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person13
 :Person13 rdf:type owl:NamedIndividual ,
                          sbeo:Person ,
                          sbeo:Visual ;
                 sbeo:hasID 13 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person14
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person14
 :Person14 rdf:type owl:NamedIndividual ,
                          sbeo:Hearing ,
                          sbeo:Person ;
@@ -375,7 +375,7 @@
                 sbeo:hasID 14 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person15
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person15
 :Person15 rdf:type owl:NamedIndividual ,
                          sbeo:Hearing ,
                          sbeo:Person ;
@@ -383,7 +383,7 @@
                 sbeo:hasID 15 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person16
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person16
 :Person16 rdf:type owl:NamedIndividual ,
                          sbeo:Person ,
                          sbeo:Visitor ;
@@ -391,7 +391,7 @@
                 sbeo:hasID 16 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person17
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person17
 :Person17 rdf:type owl:NamedIndividual ,
                          sbeo:Person ,
                          sbeo:Visitor ;
@@ -399,7 +399,7 @@
                 sbeo:hasID 17 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person18
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person18
 :Person18 rdf:type owl:NamedIndividual ,
                          sbeo:Normal ,
                          sbeo:Person ;
@@ -407,7 +407,7 @@
                 sbeo:hasID 18 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person19
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person19
 :Person19 rdf:type owl:NamedIndividual ,
                          sbeo:Normal ,
                          sbeo:Person ;
@@ -416,7 +416,7 @@
                 sbeo:hasID 19 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person2
 :Person2 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
@@ -429,7 +429,7 @@
                sbeo:hasID 2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person3
 :Person3 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
@@ -440,7 +440,7 @@
                sbeo:hasID 3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person4
 :Person4 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
@@ -452,7 +452,7 @@
                sbeo:hasID 4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person5
 :Person5 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
@@ -464,7 +464,7 @@
                sbeo:hasID 5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person6
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person6
 :Person6 rdf:type owl:NamedIndividual ,
                         sbeo:Dependent ,
                         sbeo:Family ,
@@ -474,7 +474,7 @@
                sbeo:hasID 6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person7
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person7
 :Person7 rdf:type owl:NamedIndividual ,
                         sbeo:Dependent ,
                         sbeo:Family ,
@@ -484,7 +484,7 @@
                sbeo:hasID 7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person8
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person8
 :Person8 rdf:type owl:NamedIndividual ,
                         sbeo:Dependent ,
                         sbeo:Family ,
@@ -494,7 +494,7 @@
                sbeo:hasID 8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Person9
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person9
 :Person9 rdf:type owl:NamedIndividual ,
                         sbeo:Non-Motorised ,
                         sbeo:Person ;
@@ -502,585 +502,585 @@
                sbeo:hasID 9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke1
 :Smoke1 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
               sbeo:installedIn :Office1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke10
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke10
 :Smoke10 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke11
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke11
 :Smoke11 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke12
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke12
 :Smoke12 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke13
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke13
 :Smoke13 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Office6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke14
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke14
 :Smoke14 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke15
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke15
 :Smoke15 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke16
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke16
 :Smoke16 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Hall4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke17
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke17
 :Smoke17 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke18
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke18
 :Smoke18 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke19
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke19
 :Smoke19 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke2
 :Smoke2 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
               sbeo:installedIn :Office2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke20
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke20
 :Smoke20 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke21
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke21
 :Smoke21 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke22
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke22
 :Smoke22 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke23
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke23
 :Smoke23 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke24
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke24
 :Smoke24 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke25
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke25
 :Smoke25 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Hall2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke26
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke26
 :Smoke26 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke27
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke27
 :Smoke27 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Office11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke28
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke28
 :Smoke28 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Office10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke29
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke29
 :Smoke29 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke3
 :Smoke3 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
               sbeo:installedIn :Office3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke30
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke30
 :Smoke30 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke31
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke31
 :Smoke31 rdf:type owl:NamedIndividual ,
                         sbeo:SmokeSensor ;
                sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke4
 :Smoke4 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
                                                           sbeo:installedIn :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke5
 :Smoke5 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
                                                           sbeo:installedIn :KidsArea1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke6
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke6
 :Smoke6 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
                                                           sbeo:installedIn :DayCare1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke7
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke7
 :Smoke7 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
                                                           sbeo:installedIn :Office5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke8
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke8
 :Smoke8 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
                                                           sbeo:installedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Smoke9
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Smoke9
 :Smoke9 rdf:type owl:NamedIndividual ,
                        sbeo:SmokeSensor ;
                                                           sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Stairs1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Stairs1
 :Stairs1 rdf:type owl:NamedIndividual ,
                         seas:Stairs ;
                sbeo:connectedTo :Corridor3 ,
                                 :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp1
 :Temp1 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
              sbeo:installedIn :Office1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp10
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp10
 :Temp10 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp11
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp11
 :Temp11 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp12
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp12
 :Temp12 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp13
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp13
 :Temp13 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Office6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp14
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp14
 :Temp14 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp15
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp15
 :Temp15 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp16
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp16
 :Temp16 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Hall4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp17
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp17
 :Temp17 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp18
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp18
 :Temp18 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp19
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp19
 :Temp19 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp2
 :Temp2 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
              sbeo:installedIn :Office2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp20
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp20
 :Temp20 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp21
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp21
 :Temp21 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp22
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp22
 :Temp22 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp23
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp23
 :Temp23 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp24
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp24
 :Temp24 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp25
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp25
 :Temp25 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Hall2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp26
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp26
 :Temp26 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp27
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp27
 :Temp27 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Office11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp28
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp28
 :Temp28 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Office10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp29
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp29
 :Temp29 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp3
 :Temp3 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
              sbeo:installedIn :Office3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp30
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp30
 :Temp30 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp31
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp31
 :Temp31 rdf:type owl:NamedIndividual ,
                        sbeo:TemperatureSensor ;
               sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp4
 :Temp4 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
                                                                sbeo:installedIn :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp5
 :Temp5 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
                                                                sbeo:installedIn :KidsArea1.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp6
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp6
 :Temp6 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
                                                                sbeo:installedIn :DayCare1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp7
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp7
 :Temp7 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
                                                                sbeo:installedIn :Office5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp8
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp8
 :Temp8 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
                                                                sbeo:installedIn :Corridor6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Temp9
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Temp9
 :Temp9 rdf:type owl:NamedIndividual ,
                       sbeo:TemperatureSensor ;
                                                                sbeo:installedIn :Corridor1.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon1
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon1
 :iBeacon1 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                 sbeo:installedIn :Office1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon10
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon10
 :iBeacon10 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon11
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon11
 :iBeacon11 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon12
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon12
 :iBeacon12 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Hall1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon13
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon13
 :iBeacon13 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Office6 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon14
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon14
 :iBeacon14 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Kitchen1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon15
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon15
 :iBeacon15 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon16
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon16
 :iBeacon16 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Hall4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon17
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon17
 :iBeacon17 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Office8 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon18
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon18
 :iBeacon18 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon19
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon19
 :iBeacon19 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Office7 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon2
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon2
 :iBeacon2 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                 sbeo:installedIn :Office2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon20
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon20
 :iBeacon20 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon21
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon21
 :iBeacon21 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon22
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon22
 :iBeacon22 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon23
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon23
 :iBeacon23 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon24
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon24
 :iBeacon24 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Corridor3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon25
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon25
 :iBeacon25 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Hall2 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon26
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon26
 :iBeacon26 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Hall5 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon27
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon27
 :iBeacon27 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Office11 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon28
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon28
 :iBeacon28 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Office10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon29
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon29
 :iBeacon29 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Office9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon3
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon3
 :iBeacon3 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                 sbeo:installedIn :Office3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon30
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon30
 :iBeacon30 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Hall3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon31
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon31
 :iBeacon31 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Hall3 .
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon32
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon32
 :iBeacon32 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Exit1 .
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon33
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon33
 :iBeacon33 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Exit2 .
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon34
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon34
 :iBeacon34 rdf:type owl:NamedIndividual ,
                           sbeo:LocationSensor ;
                  sbeo:installedIn :Exit3 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon4
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon4
 :iBeacon4 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                        sbeo:installedIn :Office4 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon5
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon5
 :iBeacon5 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                                                                 sbeo:installedIn :KidsArea1 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon6
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon6
 :iBeacon6 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                        sbeo:installedIn :DayCare1.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon7
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon7
 :iBeacon7 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                                                                       sbeo:installedIn :Office5.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon8
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon8
 :iBeacon8 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                                                                       sbeo:installedIn :Corridor6.
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#iBeacon9
+###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#iBeacon9
 :iBeacon9 rdf:type owl:NamedIndividual ,
                          sbeo:LocationSensor ;
                                                                       sbeo:installedIn :Corridor1.
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D1
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D1
 :D1 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon32 ,
@@ -1088,7 +1088,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D10
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D10
 :D10 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon10 ,
@@ -1096,7 +1096,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D11
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D11
 :D11 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon10 ,
@@ -1104,7 +1104,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D12
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D12
 :D12 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon11 ,
@@ -1112,7 +1112,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D13
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D13
 :D13 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon12 ,
@@ -1120,7 +1120,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D14
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D14
 :D14 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon20 ,
@@ -1128,7 +1128,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D15
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D15
 :D15 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon10 ,
@@ -1136,7 +1136,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D16
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D16
 :D16 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon12 ,
@@ -1144,7 +1144,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D17
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D17
 :D17 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon12 ,
@@ -1152,7 +1152,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D18
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D18
 :D18 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon14 ,
@@ -1160,7 +1160,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D19
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D19
 :D19 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon15 ,
@@ -1168,7 +1168,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D2
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D2
 :D2 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon1 ,
@@ -1176,7 +1176,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D20
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D20
 :D20 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon18 ,
@@ -1184,7 +1184,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D21
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D21
 :D21 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon20 ,
@@ -1192,7 +1192,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D22
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D22
 :D22 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon15 ,
@@ -1200,7 +1200,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D23
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D23
 :D23 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon16 ,
@@ -1208,7 +1208,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D24
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D24
 :D24 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon18 ,
@@ -1216,7 +1216,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D25
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D25
 :D25 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon18 ,
@@ -1224,7 +1224,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D26
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D26
 :D26 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon21 ,
@@ -1232,7 +1232,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D27
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D27
 :D27 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon22 ,
@@ -1240,7 +1240,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D28
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D28
 :D28 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon23 ,
@@ -1248,7 +1248,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D29
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D29
 :D29 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon20 ,
@@ -1256,7 +1256,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D3
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D3
 :D3 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon10 ,
@@ -1264,7 +1264,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D30
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D30
 :D30 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon21 ,
@@ -1272,7 +1272,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D31
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D31
 :D31 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon22 ,
@@ -1280,7 +1280,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D32
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D32
 :D32 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon23 ,
@@ -1288,7 +1288,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D33
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D33
 :D33 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon30 ,
@@ -1296,7 +1296,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D34
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D34
 :D34 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon30 ,
@@ -1304,7 +1304,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D35
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D35
 :D35 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon31 ,
@@ -1312,7 +1312,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D36
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D36
 :D36 rdf:type owl:NamedIndividual ,
               sbeo:Distance ;
      sbeo:distanceOf :iBeacon26 ,
@@ -1320,7 +1320,7 @@
      sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D4
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D4
 :D4 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon ,
@@ -1328,7 +1328,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D5
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D5
 :D5 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon ,
@@ -1336,7 +1336,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D6
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D6
 :D6 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon ,
@@ -1344,7 +1344,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D7
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D7
 :D7 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon ,
@@ -1352,7 +1352,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D8
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D8
 :D8 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon ,
@@ -1360,7 +1360,7 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#D9
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##D9
 :D9 rdf:type owl:NamedIndividual ,
              sbeo:Distance ;
     sbeo:distanceOf :iBeacon ,
@@ -1368,37 +1368,37 @@
     sbeo:hasValue 10 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#RouteA
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##RouteA
 :RouteA rdf:type owl:NamedIndividual ,
                  sbeo:Route ;
         sbeo:hasPath (:Corridor2 :Hall1 :Corridor1 :Corridor6 :Exit1) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#RouteB
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##RouteB
 :RouteB rdf:type owl:NamedIndividual ,
                  sbeo:Route ;
         sbeo:hasPath (:Corridor2 :Corridor3 :Hall5 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#RouteC
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##RouteC
 :RouteC rdf:type owl:NamedIndividual ,
                  sbeo:Route ;
         sbeo:hasPath (:Corridor2 :Corridor3 :Hall5 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#RouteD
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##RouteD
 :RouteD rdf:type owl:NamedIndividual ,
                  sbeo:Route ;
         sbeo:hasPath (:Corridor2 :Corridor3 :Hall3 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#RouteE
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##RouteE
 :RouteE rdf:type owl:NamedIndividual ,
                  sbeo:Route ;
         sbeo:hasPath (:Corridor2 :Hall1 :Corridor1 :Corridor4 :Hall5 :Exit2) .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge#RouteF
+###  http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge##RouteF
 :RouteF rdf:type owl:NamedIndividual ,
                  sbeo:Route ;
         sbeo:hasPath (:Corridor4 :Corridor3 :Hall3 :Exit1) .
