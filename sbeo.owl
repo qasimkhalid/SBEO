@@ -320,7 +320,11 @@ sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasValue
 sbeo:hasValue rdf:type owl:DatatypeProperty ;
-              rdfs:domain sbeo:Device ;
+              rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( sbeo:Device
+                                                  seas:Distance
+                                                )
+                                  ] ;
               rdfs:range xsd:integer ;
               rdfs:comment "It represents the value of detected by any sbeo:Device."^^xsd:string ;
               rdfs:label "hasValue"^^xsd:string .
