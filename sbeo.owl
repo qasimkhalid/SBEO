@@ -648,8 +648,7 @@ sbeo:SensoryImpairment rdf:type owl:Class ;
 sbeo:SmokeSensor rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:Sensor ;
                  rdfs:comment "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."^^xsd:string ;
-                 rdfs:label "SmokeSensor"^^xsd:string ;
-                 rdfs:seeAlso saref:SmokeSensor .
+                 rdfs:label "SmokeSensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SpaceCharacteristic
@@ -669,8 +668,7 @@ sbeo:Stampeding rdf:type owl:Class ;
 sbeo:TemperatureSensor rdf:type owl:Class ;
                        rdfs:subClassOf sbeo:Sensor ;
                        rdfs:comment "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."^^xsd:string ;
-                       rdfs:label "TemperatureSensor"^^xsd:string ;
-                       rdfs:seeAlso saref:TemperatureSensor .
+                       rdfs:label "TemperatureSensor"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TerroristAttack
