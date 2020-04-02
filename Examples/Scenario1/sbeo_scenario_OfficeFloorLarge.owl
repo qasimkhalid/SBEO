@@ -5,7 +5,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
-@prefix sbeo: <http://www.ia.urjc.es/ontologies/sbeo#> .
+@prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo_scenario_officeFloorLarge> .
 
