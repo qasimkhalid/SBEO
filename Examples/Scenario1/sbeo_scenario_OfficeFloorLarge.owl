@@ -329,7 +329,7 @@
 :Person1 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ,
+                        foaf:Person ,
                         sbeo:Responsible ;
                sbeo:responsibleTo :Person6 ,
                                     :Person7 ;
@@ -341,28 +341,28 @@
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person10
 :Person10 rdf:type owl:NamedIndividual ,
                          sbeo:Motorised ,
-                         sbeo:Person ;
+                         foaf:Person ;
                 sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
                 sbeo:hasID 10 .
 
 
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person11
 :Person11 rdf:type owl:NamedIndividual ,
-                         sbeo:Person ,
+                         foaf:Person ,
                          sbeo:Visual ;
                 sbeo:hasID 11 .
 
 
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person12
 :Person12 rdf:type owl:NamedIndividual ,
-                         sbeo:Person ,
+                         foaf:Person ,
                          sbeo:Visual ;
                 sbeo:hasID 12 .
 
 
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person13
 :Person13 rdf:type owl:NamedIndividual ,
-                         sbeo:Person ,
+                         foaf:Person ,
                          sbeo:Visual ;
                 sbeo:hasID 13 .
 
@@ -370,7 +370,7 @@
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person14
 :Person14 rdf:type owl:NamedIndividual ,
                          sbeo:Hearing ,
-                         sbeo:Person ;
+                         foaf:Person ;
                 sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
                 sbeo:hasID 14 .
 
@@ -378,14 +378,14 @@
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person15
 :Person15 rdf:type owl:NamedIndividual ,
                          sbeo:Hearing ,
-                         sbeo:Person ;
+                         foaf:Person ;
                 sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
                 sbeo:hasID 15 .
 
 
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person16
 :Person16 rdf:type owl:NamedIndividual ,
-                         sbeo:Person ,
+                         foaf:Person ,
                          sbeo:Visitor ;
                 sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
                 sbeo:hasID 16 .
@@ -393,7 +393,7 @@
 
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person17
 :Person17 rdf:type owl:NamedIndividual ,
-                         sbeo:Person ,
+                         foaf:Person ,
                          sbeo:Visitor ;
                 sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
                 sbeo:hasID 17 .
@@ -402,7 +402,7 @@
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person18
 :Person18 rdf:type owl:NamedIndividual ,
                          sbeo:Normal ,
-                         sbeo:Person ;
+                         foaf:Person ;
                 sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
                 sbeo:hasID 18 .
 
@@ -410,7 +410,7 @@
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person19
 :Person19 rdf:type owl:NamedIndividual ,
                          sbeo:Normal ,
-                         sbeo:Person ;
+                         foaf:Person ;
                 sbeo:acquaintanceOf :Person8 ;
                 sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
                 sbeo:hasID 19 .
@@ -420,7 +420,7 @@
 :Person2 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ,
+                        foaf:Person ,
                         sbeo:Responsible ;
                sbeo:responsibleTo :Person6 ,
                                     :Person7 ;
@@ -433,7 +433,7 @@
 :Person3 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ,
+                        foaf:Person ,
                         sbeo:Responsible ;
                sbeo:responsibleTo :Person8 ;
                sbeo:familyID 2 ;
@@ -444,7 +444,7 @@
 :Person4 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ,
+                        foaf:Person ,
                         sbeo:Responsible ;
                sbeo:responsibleTo :Person8 ;
                sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
@@ -456,7 +456,7 @@
 :Person5 rdf:type owl:NamedIndividual ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ,
+                        foaf:Person ,
                         sbeo:Responsible ;
                sbeo:responsibleTo :Person8 ;
                sbeo:familiarityWithBuilding "true"^^xsd:boolean ;
@@ -469,7 +469,7 @@
                         sbeo:Dependent ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ;
+                        foaf:Person ;
                sbeo:familyID 1 ;
                sbeo:hasID 6 .
 
@@ -479,7 +479,7 @@
                         sbeo:Dependent ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ;
+                        foaf:Person ;
                sbeo:familyID 1 ;
                sbeo:hasID 7 .
 
@@ -489,7 +489,7 @@
                         sbeo:Dependent ,
                         sbeo:Family ,
                         sbeo:Normal ,
-                        sbeo:Person ;
+                        foaf:Person ;
                sbeo:familyID 2 ;
                sbeo:hasID 8 .
 
@@ -497,7 +497,7 @@
 ###  http://www.ia.urjc.es/ontologies/sbeo_scenario_officeFloorLarge#Person9
 :Person9 rdf:type owl:NamedIndividual ,
                         sbeo:Non-Motorised ,
-                        sbeo:Person ;
+                        foaf:Person ;
                sbeo:familiarityWithBuilding "false"^^xsd:boolean ;
                sbeo:hasID 9 .
 
