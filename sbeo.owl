@@ -316,12 +316,12 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                    rdfs:label "Responsible To"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#role
-sbeo:role rdf:type owl:ObjectProperty ;
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
+sbeo:hasRole rdf:type owl:ObjectProperty ;
           rdfs:domain foaf:Person ;
           rdfs:range sbeo:Role ;
           rdfs:comment "A role of a person while doing an activity."@en ;
-          rdfs:label "Role"@en .
+          rdfs:label "Has Role"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speedAt
