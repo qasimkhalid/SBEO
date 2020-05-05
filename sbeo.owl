@@ -709,7 +709,7 @@ sbeo:AudioDescription rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
 sbeo:Autonomous rdf:type owl:Class ;
-                rdfs:subClassOf sbeo:Role ;
+                rdfs:subClassOf sbeo:Role, foaf:Person ;
                 rdfs:comment "An individual who performs one's actions on his/her own."@en ;
                 rdfs:label "Autonomous"@en .
 
@@ -821,7 +821,7 @@ sbeo:DeafPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
 sbeo:Dependent rdf:type owl:Class ;
-               rdfs:subClassOf sbeo:Role ;
+               rdfs:subClassOf sbeo:Role, foaf:Person  ;
                owl:disjointWith sbeo:Responsible ;
                rdfs:comment "An individual who is dependent on one or more individuals."@en ;
                rdfs:label "Dependent"@en .
@@ -1113,7 +1113,7 @@ sbeo:KidsArea rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
 sbeo:Leader rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Role ;
+            rdfs:subClassOf sbeo:Role, foaf:Person  ;
             rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
             rdfs:label "Leader"@en .
 
@@ -1290,7 +1290,7 @@ sbeo:Ramp rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
 sbeo:Responsible rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Role ;
+                 rdfs:subClassOf sbeo:Role, foaf:Person  ;
                  rdfs:comment "An individual who is reponsible to one or more individuals."@en ;
                  rdfs:label "Responsible"@en .
 
@@ -1515,7 +1515,7 @@ sbeo:VisitingGroup rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
 sbeo:Visitor rdf:type owl:Class ;
-             rdfs:subClassOf sbeo:Role ;
+             rdfs:subClassOf sbeo:Role, foaf:Person  ;
              rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
              rdfs:label "Visitor"@en .
 
