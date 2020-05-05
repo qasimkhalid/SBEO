@@ -12,7 +12,7 @@
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
 <http://www.ia.urjc.es/ontologies/building/sbeo> rdf:type owl:Ontology ;
-                                                  owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbeo/2.1> ;
+                                                  owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbeo/2.2> ;
                                                   dcterms:creator "Qasim Khalid" ;
                                                   dcterms:description """Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
@@ -316,26 +316,6 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                    rdfs:label "Responsible To"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#role
-sbeo:role rdf:type owl:ObjectProperty ;
-          rdfs:domain foaf:Person ;
-          rdfs:range sbeo:Role ;
-          rdfs:comment "A role of a person while doing an activity."@en ;
-          rdfs:label "Role"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#speedAt
-sbeo:speedAt rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:SocialUnit ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:RouteElement
-                                        sbeo:Space
-                                      )
-                        ] ;
-             rdfs:comment "The average speed of a person at a specific space."@en ;
-             rdfs:label "Speed of a Person"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#startsFrom
 sbeo:startsFrom rdf:type owl:ObjectProperty ;
                 rdfs:domain sbeo:Route ;
@@ -498,6 +478,14 @@ sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
               rdfs:label "Has Smoke"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSpeed
+sbeo:hasSpeed rdf:type owl:DatatypeProperty ;
+              rdfs:domain sbeo:SocialUnit ;
+              rdfs:range xsd:decimal ;
+              rdfs:comment "The average speed of a person."@en ;
+              rdfs:label "Has Speed"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasStaticDescription
 sbeo:hasStaticDescription rdf:type owl:DatatypeProperty ;
                           rdfs:domain [ rdf:type owl:Class ;
@@ -554,6 +542,14 @@ sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
                        rdfs:range xsd:int ;
                        rdfs:comment "Number of times a social unit is deviated while following the provided path."@en ;
                        rdfs:label "Has X Time Deviated"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#speedFactor
+sbeo:speedFactor rdf:type owl:DatatypeProperty ;
+                 rdfs:domain sbeo:RouteElement ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "A multiplying factor thay may affect the speed of person while passing through a specific space."@en ;
+                 rdfs:label "Speed Factor"@en .
 
 
 ###  http://www.w3.org/ns/prov#atTime
@@ -709,7 +705,8 @@ sbeo:AudioDescription rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
 sbeo:Autonomous rdf:type owl:Class ;
-                rdfs:subClassOf sbeo:Role ;
+                rdfs:subClassOf sbeo:Role ,
+                                foaf:Person ;
                 rdfs:comment "An individual who performs one's actions on his/her own."@en ;
                 rdfs:label "Autonomous"@en .
 
@@ -821,7 +818,8 @@ sbeo:DeafPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
 sbeo:Dependent rdf:type owl:Class ;
-               rdfs:subClassOf sbeo:Role ;
+               rdfs:subClassOf sbeo:Role ,
+                               foaf:Person ;
                owl:disjointWith sbeo:Responsible ;
                rdfs:comment "An individual who is dependent on one or more individuals."@en ;
                rdfs:label "Dependent"@en .
@@ -1113,7 +1111,8 @@ sbeo:KidsArea rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
 sbeo:Leader rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Role ;
+            rdfs:subClassOf sbeo:Role ,
+                            foaf:Person ;
             rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
             rdfs:label "Leader"@en .
 
@@ -1290,7 +1289,8 @@ sbeo:Ramp rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
 sbeo:Responsible rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Role ;
+                 rdfs:subClassOf sbeo:Role ,
+                                 foaf:Person ;
                  rdfs:comment "An individual who is reponsible to one or more individuals."@en ;
                  rdfs:label "Responsible"@en .
 
@@ -1515,7 +1515,8 @@ sbeo:VisitingGroup rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
 sbeo:Visitor rdf:type owl:Class ;
-             rdfs:subClassOf sbeo:Role ;
+             rdfs:subClassOf sbeo:Role ,
+                             foaf:Person ;
              rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
              rdfs:label "Visitor"@en .
 
