@@ -18,7 +18,7 @@
 
 The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation."""@en ;
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
-                                                  owl:versionInfo 2.1 .
+                                                  owl:versionInfo 2.2 .
 
 #################################################################
 #    Annotation properties
@@ -314,6 +314,14 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                    rdfs:range sbeo:Dependent ;
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#role
+sbeo:role rdf:type owl:ObjectProperty ;
+          rdfs:domain foaf:Person ;
+          rdfs:range sbeo:Role ;
+          rdfs:comment "A role of a person while doing an activity."@en ;
+          rdfs:label "Role"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speedAt
@@ -699,9 +707,17 @@ sbeo:AudioDescription rdf:type owl:Class ;
                       rdfs:label "Audio Description"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
+sbeo:Autonomous rdf:type owl:Class ;
+                rdfs:subClassOf sbeo:Role ;
+                rdfs:comment "An individual who performs one's actions on his/her own."@en ;
+                rdfs:label "Autonomous"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousMobilityPerson
 sbeo:AutonomousMobilityPerson rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:MotorImpairedPerson ;
+                              rdfs:comment "A person who can walk on his/her with a help of a non-motorised device, e.g. crutches."@en ;
                               rdfs:label "Autonomous Mobility Person"@en .
 
 
@@ -710,14 +726,6 @@ sbeo:AutonomousNavigation rdf:type owl:Class ;
                           rdfs:subClassOf sbeo:Navigation ;
                           rdfs:comment "A type of navigation in which a person plans and executes his or her path without any human or machine intervention."@en ;
                           rdfs:label "Autonomous Navigation"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousPerson
-sbeo:AutonomousPerson rdf:type owl:Class ;
-                      rdfs:subClassOf sbeo:Role ,
-                                      foaf:Person ;
-                      rdfs:comment "An individual who performs one's actions on his/her own."@en ;
-                      rdfs:label "Autonomous Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#BlindPerson
@@ -813,8 +821,7 @@ sbeo:DeafPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
 sbeo:Dependent rdf:type owl:Class ;
-               rdfs:subClassOf sbeo:Role ,
-                               foaf:Person ;
+               rdfs:subClassOf sbeo:Role ;
                owl:disjointWith sbeo:Responsible ;
                rdfs:comment "An individual who is dependent on one or more individuals."@en ;
                rdfs:label "Dependent"@en .
@@ -906,6 +913,7 @@ sbeo:Escalator rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#EscortSupportedWheelchairPerson
 sbeo:EscortSupportedWheelchairPerson rdf:type owl:Class ;
                                      rdfs:subClassOf sbeo:MobilityWithWheelchairPerson ;
+                                     rdfs:comment "A physical impaired person whose wheelchair is escorted by another person."@en ;
                                      rdfs:label "Escort Supported Wheelchair Person"@en .
 
 
@@ -1105,7 +1113,7 @@ sbeo:KidsArea rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
 sbeo:Leader rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Responsible ;
+            rdfs:subClassOf sbeo:Role ;
             rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
             rdfs:label "Leader"@en .
 
@@ -1139,6 +1147,7 @@ sbeo:MeetingRoom rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MentalImpairedPerson
 sbeo:MentalImpairedPerson rdf:type owl:Class ;
                           rdfs:subClassOf sbeo:ImpairedPerson ;
+                          rdfs:comment "A person having mental impairment in which one's mind is damaged or is not working properly and one have issues such as consciousness, orientation, concentration."@en ;
                           rdfs:label "Mental Impaired Person"@en .
 
 
@@ -1158,13 +1167,14 @@ sbeo:MobilePhone rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithOtherAssistedDevicePerson
 sbeo:MobilityWithOtherAssistedDevicePerson rdf:type owl:Class ;
                                            rdfs:subClassOf sbeo:MotorImpairedPerson ;
+                                           rdfs:comment "A person who used a motorised device for moving, such as motorised wheelchair or scooter, etc."@en ;
                                            rdfs:label "MobilityWithOtherAssistedDevicePerson"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithWheelchairPerson
 sbeo:MobilityWithWheelchairPerson rdf:type owl:Class ;
                                   rdfs:subClassOf sbeo:MotorImpairedPerson ;
-                                  rdfs:comment "It is a mobility device that is used by a person having any kind of tempoary or permanent physical impairment."@en ;
+                                  rdfs:comment "A person using a wheelchair (a mobility device that is used while having any kind of tempoary or permanent physical impairment)."@en ;
                                   rdfs:label "Mobility With Wheelchair Person"@en .
 
 
@@ -1182,7 +1192,8 @@ sbeo:MotorImpairedPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MotorisedWheelchairPerson
 sbeo:MotorisedWheelchairPerson rdf:type owl:Class ;
-                               rdfs:subClassOf sbeo:MobilityWithWheelchairPerson ;
+                               rdfs:subClassOf sbeo:MobilityWithOtherAssistedDevicePerson ,
+                                               sbeo:MobilityWithWheelchairPerson ;
                                rdfs:comment "It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair."@en ;
                                rdfs:label "Motorised Wheelchair Person"@en .
 
@@ -1279,8 +1290,7 @@ sbeo:Ramp rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
 sbeo:Responsible rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Role ,
-                                 foaf:Person ;
+                 rdfs:subClassOf sbeo:Role ;
                  rdfs:comment "An individual who is reponsible to one or more individuals."@en ;
                  rdfs:label "Responsible"@en .
 
@@ -1505,8 +1515,7 @@ sbeo:VisitingGroup rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
 sbeo:Visitor rdf:type owl:Class ;
-             rdfs:subClassOf sbeo:Role ,
-                             foaf:Person ;
+             rdfs:subClassOf sbeo:Role ;
              rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
              rdfs:label "Visitor"@en .
 
@@ -1822,7 +1831,7 @@ seas:UtilityRoom rdf:type owl:Class ;
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( sbeo:AutonomousPerson
+  owl:members ( sbeo:Autonomous
                 sbeo:Dependent
                 sbeo:Responsible
               )
