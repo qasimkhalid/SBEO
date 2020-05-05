@@ -315,20 +315,6 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
 
-<<<<<<< HEAD
-=======
-###  http://www.ia.urjc.es/ontologies/building/sbeo#speedAt
-sbeo:speedAt rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:SocialUnit ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:RouteElement
-                                        sbeo:Space
-                                      )
-                        ] ;
-             rdfs:comment "The average speed of a person at a specific space."@en ;
-             rdfs:label "Speed of a Person"@en .
-
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#startsFrom
 sbeo:startsFrom rdf:type owl:ObjectProperty ;
@@ -719,12 +705,8 @@ sbeo:AudioDescription rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
 sbeo:Autonomous rdf:type owl:Class ;
-<<<<<<< HEAD
                 rdfs:subClassOf sbeo:Role ,
                                 foaf:Person ;
-=======
-                rdfs:subClassOf sbeo:Role, foaf:Person ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
                 rdfs:comment "An individual who performs one's actions on his/her own."@en ;
                 rdfs:label "Autonomous"@en .
 
@@ -836,12 +818,8 @@ sbeo:DeafPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
 sbeo:Dependent rdf:type owl:Class ;
-<<<<<<< HEAD
                rdfs:subClassOf sbeo:Role ,
                                foaf:Person ;
-=======
-               rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
                owl:disjointWith sbeo:Responsible ;
                rdfs:comment "An individual who is dependent on one or more individuals."@en ;
                rdfs:label "Dependent"@en .
@@ -1133,12 +1111,8 @@ sbeo:KidsArea rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
 sbeo:Leader rdf:type owl:Class ;
-<<<<<<< HEAD
             rdfs:subClassOf sbeo:Role ,
                             foaf:Person ;
-=======
-            rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
             rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
             rdfs:label "Leader"@en .
 
@@ -1315,12 +1289,8 @@ sbeo:Ramp rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
 sbeo:Responsible rdf:type owl:Class ;
-<<<<<<< HEAD
                  rdfs:subClassOf sbeo:Role ,
                                  foaf:Person ;
-=======
-                 rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
                  rdfs:comment "An individual who is reponsible to one or more individuals."@en ;
                  rdfs:label "Responsible"@en .
 
@@ -1545,12 +1515,8 @@ sbeo:VisitingGroup rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
 sbeo:Visitor rdf:type owl:Class ;
-<<<<<<< HEAD
              rdfs:subClassOf sbeo:Role ,
                              foaf:Person ;
-=======
-             rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
              rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
              rdfs:label "Visitor"@en .
 
