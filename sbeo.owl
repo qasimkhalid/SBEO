@@ -287,12 +287,16 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
 sbeo:partOf rdf:type owl:ObjectProperty ,
                      owl:TransitiveProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( seas:Building
-                                        seas:BuildingSpace
+                          owl:unionOf ( sbeo:Space
+                                        sbeo:RouteElement
                                       )
                         ] ;
-            rdfs:range seas:SiteOfBuilding ;
-            rdfs:comment "Expresses a physical space as a part or a fragament of another physical space. For example, a block of apartments can be a part of apartment building, etc."@en ;
+            rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:Space
+                                        sbeo:RouteElement
+                                      )
+                        ] ;
+            rdfs:comment "Expresses a physical space as a part or a fragment of another physical space. For example, a block of apartments can be a part of apartment building, etc."@en ;
             rdfs:label "partOf"@en .
 
 
