@@ -208,7 +208,8 @@ sbeo:installedIn rdf:type owl:ObjectProperty ,
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#leadsTo
-sbeo:leadsTo rdf:type owl:ObjectProperty ;
+sbeo:leadsTo rdf:type owl:ObjectProperty  ,
+                          owl:TransitiveProperty, owl:SymmetricProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( sbeo:RouteElement
                                          sbeo:Space
