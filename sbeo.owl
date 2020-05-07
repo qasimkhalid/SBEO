@@ -208,8 +208,8 @@ sbeo:installedIn rdf:type owl:ObjectProperty ,
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#leadsTo
-sbeo:leadsTo rdf:type owl:ObjectProperty  ,
-                          owl:SymmetricProperty ;
+sbeo:leadsTo rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( sbeo:RouteElement
                                          sbeo:Space
@@ -287,15 +287,15 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
 sbeo:partOf rdf:type owl:ObjectProperty ,
                      owl:TransitiveProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:Space
-                                        sbeo:RouteElement
+                          owl:unionOf ( sbeo:RouteElement
+                                        sbeo:Space
                                       )
                         ] ;
             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:Space
-                                        sbeo:RouteElement
-                                      )
-                        ] ;
+                         owl:unionOf ( sbeo:RouteElement
+                                       sbeo:Space
+                                     )
+                       ] ;
             rdfs:comment "Expresses a physical space as a part or a fragment of another physical space. For example, a block of apartments can be a part of apartment building, etc."@en ;
             rdfs:label "partOf"@en .
 
@@ -738,6 +738,7 @@ sbeo:BlindPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingEntrance
 sbeo:BuildingEntrance rdf:type owl:Class ;
+                      owl:equivalentClass sbeo:BuildingExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Building Entrance"@en .
 
@@ -791,6 +792,7 @@ sbeo:Congestion rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#CorridorEntrance
 sbeo:CorridorEntrance rdf:type owl:Class ;
+                      owl:equivalentClass sbeo:CorridorExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Corridor Entrance"@en .
 
@@ -984,6 +986,7 @@ sbeo:FireProtectionDevice rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FloorEntrance
 sbeo:FloorEntrance rdf:type owl:Class ;
+                   owl:equivalentClass sbeo:FloorExit ;
                    rdfs:subClassOf sbeo:Entrance ;
                    rdfs:label "Floor Entrance"@en .
 
@@ -1012,6 +1015,7 @@ sbeo:Group rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#HallEntrance
 sbeo:HallEntrance rdf:type owl:Class ;
+                  owl:equivalentClass sbeo:HallExit ;
                   rdfs:subClassOf sbeo:Entrance ;
                   rdfs:label "Hall Entrance"@en .
 
@@ -1238,6 +1242,7 @@ sbeo:NonMotorisedWheelchairPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#OpenAreaEntrance
 sbeo:OpenAreaEntrance rdf:type owl:Class ;
+                      owl:equivalentClass sbeo:OpenAreaExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Open Area Entrance"@en .
 
@@ -1316,6 +1321,7 @@ sbeo:Role rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomEntrance
 sbeo:RoomEntrance rdf:type owl:Class ;
+                  owl:equivalentClass sbeo:RoomExit ;
                   rdfs:subClassOf sbeo:Entrance ;
                   rdfs:label "Room Entrance"@en .
 
