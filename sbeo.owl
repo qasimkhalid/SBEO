@@ -1289,6 +1289,13 @@ sbeo:PointOfInterest rdf:type owl:Class ;
                      rdfs:label "Point Of Interest"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterestSegment
+sbeo:PointOfInterestSegment rdf:type owl:Class ;
+                            rdfs:subClassOf sbeo:HorizontalPassage ;
+                            rdfs:comment "A traverasal part of a space that is connected to a specific Point of Interest."@en ;
+                            rdfs:label "Point Of Interest Segement"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Ramp
 sbeo:Ramp rdf:type owl:Class ;
           rdfs:subClassOf sbeo:VerticalPassage ,
