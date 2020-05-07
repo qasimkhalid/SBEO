@@ -6,3 +6,13 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 
   
+<p align="center">
+  <img src="FloorPlanOfficeSpace.png"/>
+</p>
+___________________________________________________
+<p align="center">
+  <img src="RouteGraphOfficeSpace_Detailed.png"/>
+</p>
+<p align="center">
+  <img src="NodeEdgeGraphOfficeSpace.png"/>
+</p>
