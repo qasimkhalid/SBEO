@@ -208,7 +208,8 @@ sbeo:installedIn rdf:type owl:ObjectProperty ,
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#leadsTo
-sbeo:leadsTo rdf:type owl:ObjectProperty ;
+sbeo:leadsTo rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( sbeo:RouteElement
                                          sbeo:Space
@@ -286,12 +287,16 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
 sbeo:partOf rdf:type owl:ObjectProperty ,
                      owl:TransitiveProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( seas:Building
-                                        seas:BuildingSpace
+                          owl:unionOf ( sbeo:RouteElement
+                                        sbeo:Space
                                       )
                         ] ;
-            rdfs:range seas:SiteOfBuilding ;
-            rdfs:comment "Expresses a physical space as a part or a fragament of another physical space. For example, a block of apartments can be a part of apartment building, etc."@en ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( sbeo:RouteElement
+                                       sbeo:Space
+                                     )
+                       ] ;
+            rdfs:comment "Expresses a physical space as a part or a fragment of another physical space. For example, a block of apartments can be a part of apartment building, etc."@en ;
             rdfs:label "partOf"@en .
 
 
@@ -315,20 +320,6 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
 
-<<<<<<< HEAD
-=======
-###  http://www.ia.urjc.es/ontologies/building/sbeo#speedAt
-sbeo:speedAt rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:SocialUnit ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:RouteElement
-                                        sbeo:Space
-                                      )
-                        ] ;
-             rdfs:comment "The average speed of a person at a specific space."@en ;
-             rdfs:label "Speed of a Person"@en .
-
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#startsFrom
 sbeo:startsFrom rdf:type owl:ObjectProperty ;
@@ -719,12 +710,8 @@ sbeo:AudioDescription rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
 sbeo:Autonomous rdf:type owl:Class ;
-<<<<<<< HEAD
                 rdfs:subClassOf sbeo:Role ,
                                 foaf:Person ;
-=======
-                rdfs:subClassOf sbeo:Role, foaf:Person ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
                 rdfs:comment "An individual who performs one's actions on his/her own."@en ;
                 rdfs:label "Autonomous"@en .
 
@@ -751,6 +738,7 @@ sbeo:BlindPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingEntrance
 sbeo:BuildingEntrance rdf:type owl:Class ;
+                      owl:equivalentClass sbeo:BuildingExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Building Entrance"@en .
 
@@ -804,6 +792,7 @@ sbeo:Congestion rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#CorridorEntrance
 sbeo:CorridorEntrance rdf:type owl:Class ;
+                      owl:equivalentClass sbeo:CorridorExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Corridor Entrance"@en .
 
@@ -836,12 +825,8 @@ sbeo:DeafPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
 sbeo:Dependent rdf:type owl:Class ;
-<<<<<<< HEAD
                rdfs:subClassOf sbeo:Role ,
                                foaf:Person ;
-=======
-               rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
                owl:disjointWith sbeo:Responsible ;
                rdfs:comment "An individual who is dependent on one or more individuals."@en ;
                rdfs:label "Dependent"@en .
@@ -1001,6 +986,7 @@ sbeo:FireProtectionDevice rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FloorEntrance
 sbeo:FloorEntrance rdf:type owl:Class ;
+                   owl:equivalentClass sbeo:FloorExit ;
                    rdfs:subClassOf sbeo:Entrance ;
                    rdfs:label "Floor Entrance"@en .
 
@@ -1029,6 +1015,7 @@ sbeo:Group rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#HallEntrance
 sbeo:HallEntrance rdf:type owl:Class ;
+                  owl:equivalentClass sbeo:HallExit ;
                   rdfs:subClassOf sbeo:Entrance ;
                   rdfs:label "Hall Entrance"@en .
 
@@ -1133,12 +1120,8 @@ sbeo:KidsArea rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
 sbeo:Leader rdf:type owl:Class ;
-<<<<<<< HEAD
             rdfs:subClassOf sbeo:Role ,
                             foaf:Person ;
-=======
-            rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
             rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
             rdfs:label "Leader"@en .
 
@@ -1259,6 +1242,7 @@ sbeo:NonMotorisedWheelchairPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#OpenAreaEntrance
 sbeo:OpenAreaEntrance rdf:type owl:Class ;
+                      owl:equivalentClass sbeo:OpenAreaExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Open Area Entrance"@en .
 
@@ -1305,6 +1289,13 @@ sbeo:PointOfInterest rdf:type owl:Class ;
                      rdfs:label "Point Of Interest"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterestSegment
+sbeo:PointOfInterestSegment rdf:type owl:Class ;
+                            rdfs:subClassOf sbeo:HorizontalPassage ;
+                            rdfs:comment "A traverasal part of a space that is connected to a specific Point of Interest."@en ;
+                            rdfs:label "Point Of Interest Segement"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Ramp
 sbeo:Ramp rdf:type owl:Class ;
           rdfs:subClassOf sbeo:VerticalPassage ,
@@ -1315,12 +1306,8 @@ sbeo:Ramp rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
 sbeo:Responsible rdf:type owl:Class ;
-<<<<<<< HEAD
                  rdfs:subClassOf sbeo:Role ,
                                  foaf:Person ;
-=======
-                 rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
                  rdfs:comment "An individual who is reponsible to one or more individuals."@en ;
                  rdfs:label "Responsible"@en .
 
@@ -1341,6 +1328,7 @@ sbeo:Role rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomEntrance
 sbeo:RoomEntrance rdf:type owl:Class ;
+                  owl:equivalentClass sbeo:RoomExit ;
                   rdfs:subClassOf sbeo:Entrance ;
                   rdfs:label "Room Entrance"@en .
 
@@ -1350,6 +1338,13 @@ sbeo:RoomExit rdf:type owl:Class ;
               rdfs:subClassOf sbeo:Exit ;
               rdfs:comment "A logical point that is used to represent the exit of a room."@en ;
               rdfs:label "Room Exit"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomSegment
+sbeo:RoomSegment rdf:type owl:Class ;
+                 rdfs:subClassOf sbeo:HorizontalPassage ;
+                 rdfs:comment "A traverable part in a room that is usually used to go the exit or the other part of the room."@en ;
+                 rdfs:label "Room Segment"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Route
@@ -1545,12 +1540,8 @@ sbeo:VisitingGroup rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
 sbeo:Visitor rdf:type owl:Class ;
-<<<<<<< HEAD
              rdfs:subClassOf sbeo:Role ,
                              foaf:Person ;
-=======
-             rdfs:subClassOf sbeo:Role, foaf:Person  ;
->>>>>>> ab4ed9ce0ddbf5cec4c3dd9d0db7db9d6d42009c
              rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
              rdfs:label "Visitor"@en .
 
