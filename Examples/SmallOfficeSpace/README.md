@@ -9,15 +9,15 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ### Floor Plan
 <p align="center">
-  <img src="FloorPlanOfficeSpace.png"/>
+  <img src="Figures/FloorPlanOfficeSpace.png"/>
 </p>
 
 ### Route Graph Overlaid Building Floor Plan
 <p align="center">
-  <img src="RouteGraphOfficeSpace_Detailed.png"/>
+  <img src="Figures/RouteGraphOfficeSpace_Detailed.png"/>
 </p>
 
 ### Node-Edge Graph
 <p align="center">
-  <img src="NodeEdgeGraphOfficeSpace.png"/>
+  <img src="Figures/NodeEdgeGraphOfficeSpace.png"/>
 </p>
