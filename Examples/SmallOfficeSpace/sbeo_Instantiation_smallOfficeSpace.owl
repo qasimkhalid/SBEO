@@ -387,23 +387,22 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FireExtinguisher1
 :FireExtinguisher1 rdf:type owl:NamedIndividual ,
-                            sbeo:FireExtinguisher ,
-                            sbeo:PointOfInterest ;
-                   sbeo:locatedIn :Corridor1 .
+                            sbeo:FireExtinguisher ;
+                   sbeo:locatedIn :PointOfInterest1 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FireExtinguisher2
 :FireExtinguisher2 rdf:type owl:NamedIndividual ,
                             sbeo:FireExtinguisher ,
                             sbeo:PointOfInterest ;
-                   sbeo:locatedIn :Corridor6 .
+                   sbeo:locatedIn :PointOfInterest2 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FireExtinguisher3
 :FireExtinguisher3 rdf:type owl:NamedIndividual ,
                             sbeo:FireExtinguisher ,
                             sbeo:PointOfInterest ;
-                   sbeo:locatedIn :Corridor10 .
+                   sbeo:locatedIn :PointOfInterest3 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FirstFloor
@@ -1191,15 +1190,21 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PointOfInterest1
-:PointOfInterest1 rdf:type owl:NamedIndividual .
+:PointOfInterest1 rdf:type owl:NamedIndividual ,
+                           sbeo:PointOfInterest ;
+                  sbeo:locatedIn :Corridor1 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PointOfInterest2
-:PointOfInterest2 rdf:type owl:NamedIndividual .
+:PointOfInterest2 rdf:type owl:NamedIndividual ,
+                           sbeo:PointOfInterest ;
+                  sbeo:locatedIn :Corridor6 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PointOfInterest3
-:PointOfInterest3 rdf:type owl:NamedIndividual .
+:PointOfInterest3 rdf:type owl:NamedIndividual ,
+                           sbeo:PointOfInterest ;
+                  sbeo:locatedIn :Corridor10 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#RE1
