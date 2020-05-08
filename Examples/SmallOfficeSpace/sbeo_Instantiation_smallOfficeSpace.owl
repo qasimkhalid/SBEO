@@ -19,17 +19,6 @@ The office space can be considered as a smart space as it is equipped with diffe
                                                                    owl:versionInfo "0.1"@en .
 
 #################################################################
-#    Object Properties
-#################################################################
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#excludedFor
-sbeo:excludedFor rdfs:range [ rdf:type owl:Restriction ;
-                              owl:onProperty sbeo:excludedFor ;
-                              owl:someValuesFrom sbeo:MotorImpairedPerson
-                            ] .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
