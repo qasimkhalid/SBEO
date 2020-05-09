@@ -160,10 +160,13 @@ sbeo:hasDescription rdf:type owl:ObjectProperty ;
                     rdfs:domain [ rdf:type owl:Class ;
                                   owl:unionOf ( sbeo:Route
                                                 sbeo:RouteElement
+                                                sbeo:Activity
+                                                sbeo:Event
+                                                sbeo:Device
                                               )
                                 ] ;
                     rdfs:range sbeo:Description ;
-                    rdfs:comment "Expresses an descriptive information about a specific space or point."@en ;
+                    rdfs:comment "Expresses an descriptive information about any specific space, point, activiy, event or device."@en ;
                     rdfs:label "Has Description"@en .
 
 
