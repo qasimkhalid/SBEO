@@ -17,7 +17,7 @@ The office space can be considered as a smart space as it is equipped with diffe
   <img src="Figures/RouteGraphOfficeSpace_Detailed.png"/>
 </p>
 
-### Node-Edge Graph
+### Undirected Graph Representation of Building Floor Plan
 <p align="center">
   <img src="Figures/NodeEdgeGraphOfficeSpace.png"/>
 </p>
