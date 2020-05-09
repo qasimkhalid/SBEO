@@ -357,8 +357,8 @@ sbeo:uses rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Status
-sbeo:Status rdf:type owl:DatatypeProperty ;
+###  http://www.ia.urjc.es/ontologies/building/sbeo#status
+sbeo:status rdf:type owl:DatatypeProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( sbeo:RouteElement
                                         sbeo:SocialUnit
@@ -366,7 +366,7 @@ sbeo:Status rdf:type owl:DatatypeProperty ;
                                       )
                         ] ;
             rdfs:range xsd:string ;
-            rdfs:comment "Status of a social unit or a space. This is a multi purpose property that is used to express various information about spaces, point of interests, route elements and social units, such as person or groups. If the subject belongs to the SocialUnit class, the object values of this property are 'Visiting', 'Evacuating', 'Evacuated', 'PickingUpDependents'. On the other hand, if the subject of a triple using this property belongs to a Space, PointofInterest or RouteElement class, the object values are 'Available' and 'UnAvailable'."@en ;
+            rdfs:comment "Status of a social unit or a space. This is a multi-purpose property that is used to express various information about spaces, point of interests, route elements and social units, such as person or groups. If the subject belongs to the SocialUnit class, the object values of this property are 'Visiting', 'Evacuating', 'Evacuated', 'PickingUpDependents'. On the other hand, if the subject of a triple using this property belongs to a Space, PointofInterest or RouteElement class, the object values are 'Available' and 'UnAvailable'."@en ;
             rdfs:label "Status"@en .
 
 
