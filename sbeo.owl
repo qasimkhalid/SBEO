@@ -855,6 +855,13 @@ sbeo:DisplayScreen rdf:type owl:Class ;
                    rdfs:label "Display Screen"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#DownSyndromePerson
+sbeo:DownSyndromePerson rdf:type owl:Class ;
+                        rdfs:subClassOf sbeo:MentalImpairedPerson ;
+                        rdfs:comment "Down Syndrome Person"@en ;
+                        rdfs:label "A person having Down's syndrome."@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Earthquake
 sbeo:Earthquake rdf:type owl:Class ;
                 rdfs:subClassOf sbeo:Incident ;
