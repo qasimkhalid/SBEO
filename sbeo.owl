@@ -12,13 +12,12 @@
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
 <http://www.ia.urjc.es/ontologies/building/sbeo> rdf:type owl:Ontology ;
-                                                  owl:versionIRI <http://www.ia.urjc.es/ontologies/building/sbeo/2.2> ;
                                                   dcterms:creator "Qasim Khalid" ;
                                                   dcterms:description """Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
 The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation."""@en ;
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
-                                                  owl:versionInfo 2.2 .
+                                                  owl:versionInfo 2.4 .
 
 #################################################################
 #    Annotation properties
@@ -55,7 +54,7 @@ sbeo:acquaintanceOf rdf:type owl:ObjectProperty ,
                              owl:SymmetricProperty ;
                     rdfs:domain foaf:Person ;
                     rdfs:range foaf:Person ;
-                    rdfs:comment "Any friend or acquaintance tie among occupants."@en ;
+                    rdfs:comment "Any friend or an acquaintance tie among occupants."@en ;
                     rdfs:label "Acquaintance Of"@en .
 
 
@@ -139,11 +138,7 @@ sbeo:excludedFor rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#familiarWith
 sbeo:familiarWith rdf:type owl:ObjectProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( sbeo:Role
-                                              foaf:Person
-                                            )
-                              ] ;
+                  rdfs:domain foaf:Person ;
                   rdfs:range [ rdf:type owl:Class ;
                                owl:unionOf ( sbeo:PointOfInterest
                                              sbeo:Route
@@ -155,14 +150,34 @@ sbeo:familiarWith rdf:type owl:ObjectProperty ;
                   rdfs:label "Familiar With"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasActivityStatus
+sbeo:hasActivityStatus rdf:type owl:ObjectProperty ;
+                       rdfs:domain foaf:Person ;
+                       rdfs:range sbeo:ActivityStatus ;
+                       rdfs:comment "The status of an activity being performed by a person."@en ;
+                       rdfs:label "Has Activity Status"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasAvailabilityStatus
+sbeo:hasAvailabilityStatus rdf:type owl:ObjectProperty ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( sbeo:Device
+                                                       sbeo:Space
+                                                     )
+                                       ] ;
+                           rdfs:range sbeo:AvailabilityStatus ;
+                           rdfs:comment "The status of something in terms of availability. For example, available or unavailable."@en ;
+                           rdfs:label "Has Availability Status"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasDescription
 sbeo:hasDescription rdf:type owl:ObjectProperty ;
                     rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( sbeo:Route
-                                                sbeo:RouteElement
-                                                sbeo:Activity
-                                                sbeo:Event
+                                  owl:unionOf ( sbeo:Activity
                                                 sbeo:Device
+                                                sbeo:Event
+                                                sbeo:Route
+                                                sbeo:RouteElement
                                               )
                                 ] ;
                     rdfs:range sbeo:Description ;
@@ -170,12 +185,43 @@ sbeo:hasDescription rdf:type owl:ObjectProperty ;
                     rdfs:label "Has Description"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasDeviationState
+sbeo:hasDeviationState rdf:type owl:ObjectProperty ;
+                       rdfs:comment "A deviation status of a person depending on how ofthen one deviates from the proposed route."@en ;
+                       rdfs:label "Has Deviation State"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasFitnessStatus
+sbeo:hasFitnessStatus rdf:type owl:ObjectProperty ;
+                      rdfs:domain foaf:Person ;
+                      rdfs:range sbeo:FitnessStatus ;
+                      rdfs:comment "A fitness status is associated with a person that represent the quality of being suitable for a specific activity. There are three different levels of fitness levels are introduced that can be extended according to the needs of the application. These are 'Fit', 'Exhausted' and 'Injured'."@en ;
+                      rdfs:label "Has Fitness Status"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMember
-sbeo:hasMember rdf:type owl:ObjectProperty ;
+sbeo:hasMember rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
                rdfs:domain sbeo:Group ;
                rdfs:range foaf:Person ;
                rdfs:comment "Expresses one of the persons who compose a social group."@en ;
-               rdfs:label "has Member"@en .
+               rdfs:label "Has Member"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMotionState
+sbeo:hasMotionState rdf:type owl:ObjectProperty ;
+                    rdfs:domain sbeo:SocialUnit ;
+                    rdfs:range sbeo:MotionState ;
+                    rdfs:comment "The motion state of a person or a device."@en ;
+                    rdfs:label "Has Motion State"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasNavigationalState
+sbeo:hasNavigationalState rdf:type owl:ObjectProperty ;
+                          rdfs:domain sbeo:SocialUnit ;
+                          rdfs:range sbeo:NavigationalState ;
+                          rdfs:comment "A navigational state of a person while following any path."@en ;
+                          rdfs:label "Has Navigational State"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasPath
@@ -189,6 +235,14 @@ sbeo:hasPath rdf:type owl:ObjectProperty ;
                         ] ;
              rdfs:comment "Expresses a set of connected spaces or points that makes a route."@en ;
              rdfs:label "Has Path"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
+sbeo:hasRole rdf:type owl:ObjectProperty ;
+             rdfs:domain foaf:Person ;
+             rdfs:range sbeo:Role ;
+             rdfs:comment "Expresses a relation between a person and a role."@en ;
+             rdfs:label "Has Role"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
@@ -260,7 +314,6 @@ sbeo:navigationalPreference rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo
 sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
                      rdfs:domain [ rdf:type owl:Class ;
                                    owl:unionOf ( sbeo:PointOfInterest
                                                  sbeo:RouteElement
@@ -300,17 +353,13 @@ sbeo:partOf rdf:type owl:ObjectProperty ,
                                      )
                        ] ;
             rdfs:comment "Expresses a physical space as a part or a fragment of another physical space. For example, a block of apartments can be a part of apartment building, etc."@en ;
-            rdfs:label "partOf"@en .
+            rdfs:label "Part Of"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#performedBy
 sbeo:performedBy rdf:type owl:ObjectProperty ;
                  rdfs:domain sbeo:Activity ;
-                 rdfs:range [ rdf:type owl:Class ;
-                              owl:unionOf ( sbeo:SocialUnit
-                                            foaf:Person
-                                          )
-                            ] ;
+                 rdfs:range sbeo:SocialUnit ;
                  rdfs:comment "Expresses an activity carried out by a social unit."@en ;
                  rdfs:label "Performed by"@en .
 
@@ -360,17 +409,16 @@ sbeo:uses rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#status
-sbeo:status rdf:type owl:DatatypeProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:RouteElement
-                                        sbeo:SocialUnit
-                                        sbeo:Space
-                                      )
-                        ] ;
-            rdfs:range xsd:string ;
-            rdfs:comment "Status of a social unit or a space. This is a multi-purpose property that is used to express various information about spaces, point of interests, route elements and social units, such as person or groups. If the subject belongs to the SocialUnit class, the object values of this property are 'Visiting', 'Evacuating', 'Evacuated', 'PickingUpDependents'. On the other hand, if the subject of a triple using this property belongs to a Space, PointofInterest or RouteElement class, the object values are 'Available' and 'UnAvailable'."@en ;
-            rdfs:label "Status"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ID
+sbeo:ID rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( sbeo:Device
+                                    sbeo:SocialUnit
+                                  )
+                    ] ;
+        rdfs:range xsd:integer ;
+        rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
+        rdfs:label "Identification Number"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
@@ -384,6 +432,19 @@ sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ;
                            rdfs:range xsd:integer ;
                            rdfs:comment "The accommodating capacity (in terms of persons) of a particular space."@en ;
                            rdfs:label "Accommodation Capacity"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#atTime
+sbeo:atTime rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:Activity
+                                        sbeo:Device
+                                        sbeo:Event
+                                        sbeo:SocialUnit
+                                      )
+                        ] ;
+            rdfs:comment "The time at which an activity or event occurred."@en ;
+            rdfs:label "At Time"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#currentOccupancy
@@ -400,82 +461,30 @@ sbeo:currentOccupancy rdf:type owl:DatatypeProperty ;
                       rdfs:label "Current Occupancy"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#fitnessStatus
-sbeo:fitnessStatus rdf:type owl:DatatypeProperty ;
-                   rdfs:domain foaf:Person ;
-                   rdfs:range xsd:string ;
-                   rdfs:comment "A fitness status is associated with a person that represent the quality of being suitable for a specific activity. There are three different levels of fitness levels are introduced that can be extended according to the needs of the application. These are 'Fit', 'Exhausted' and 'Injured'."@en ;
-                   rdfs:label "Fitness Status"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#dynamicDescription
+sbeo:dynamicDescription rdf:type owl:DatatypeProperty ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( sbeo:Activity
+                                                    sbeo:Event
+                                                    sbeo:PointOfInterest
+                                                    sbeo:SocialUnit
+                                                  )
+                                    ] ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "A dynamic or momentary information about a specific activity, event, social unit, or a space."@en ;
+                        rdfs:label "Dynamic Description"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasDeviationState
-sbeo:hasDeviationState rdf:type owl:DatatypeProperty ;
-                       rdfs:domain [ rdf:type owl:Class ;
-                                     owl:unionOf ( sbeo:SocialUnit
-                                                   foaf:Person
-                                                 )
-                                   ] ;
-                       rdfs:range xsd:string ;
-                       rdfs:comment "A deviation status of a person depending on how ofthen one deviates from the proposed route. It may take four different values. These are 'NoDeviate', 'RareDeviate', 'OftenDeviate' and  'TooOftenDeviate'."@en ;
-                       rdfs:label "Has Deviation State"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasDynamicDescription
-sbeo:hasDynamicDescription rdf:type owl:DatatypeProperty ;
-                           rdfs:domain [ rdf:type owl:Class ;
-                                         owl:unionOf ( sbeo:Activity
-                                                       sbeo:Event
-                                                       sbeo:PointOfInterest
-                                                       sbeo:SocialUnit
-                                                     )
-                                       ] ;
-                           rdfs:range xsd:string ;
-                           rdfs:comment "A dynamic or momentary information about a specific activity, event, social unit, or a space."@en ;
-                           rdfs:label "Has Dynamic Description"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasID
-sbeo:hasID rdf:type owl:DatatypeProperty ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( sbeo:Device
-                                       sbeo:SocialUnit
-                                     )
-                       ] ;
-           rdfs:range xsd:integer ;
-           rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
-           rdfs:label "Identity Number"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasLength
-sbeo:hasLength rdf:type owl:DatatypeProperty ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( sbeo:Passage
-                                           sbeo:Route
-                                         )
-                           ] ;
-               rdfs:range xsd:float ;
-               rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
-               rdfs:label "Has Length"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMotionState
-sbeo:hasMotionState rdf:type owl:DatatypeProperty ;
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( sbeo:SocialUnit
-                                                foaf:Person
-                                              )
-                                ] ;
-                    rdfs:range xsd:string ;
-                    rdfs:comment "The motion state of a person. It takes three values at the moment; 'Standing', 'Walking', 'Running'."@en ;
-                    rdfs:label "Has Motion State"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasNavigationalState
-sbeo:hasNavigationalState rdf:type owl:DatatypeProperty ;
-                          rdfs:domain foaf:Person ;
-                          rdfs:range xsd:string ;
-                          rdfs:comment "A navigational status of a person. It takes two values; 'FollowingPath' and 'DeviatingFromPath'."@en ;
-                          rdfs:label "Has Navigational State"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#endedAtTime
+sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( sbeo:Activity
+                                             sbeo:Event
+                                           )
+                             ] ;
+                 owl:propertyDisjointWith sbeo:startedAtTime ;
+                 rdfs:comment "The time at which an activity ended."@en ;
+                 rdfs:label "Ended At Time"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke
@@ -486,70 +495,30 @@ sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
               rdfs:label "Has Smoke"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSpeed
-sbeo:hasSpeed rdf:type owl:DatatypeProperty ;
-              rdfs:domain sbeo:SocialUnit ;
-              rdfs:range xsd:decimal ;
-              rdfs:comment "The average speed of a person."@en ;
-              rdfs:label "Has Speed"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasStaticDescription
-sbeo:hasStaticDescription rdf:type owl:DatatypeProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( sbeo:Activity
-                                                      sbeo:Event
-                                                      sbeo:PointOfInterest
-                                                      sbeo:SocialUnit
-                                                    )
-                                      ] ;
-                          rdfs:range xsd:string ;
-                          rdfs:comment "A static or a fix information about any activity, event, space, social unit, or point of interest." ;
-                          rdfs:label "Has Static Description"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasTimeDuration
-sbeo:hasTimeDuration rdf:type owl:DatatypeProperty ;
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( sbeo:Activity
-                                                 sbeo:Event
-                                               )
-                                 ] ;
-                     rdfs:range xsd:float ;
-                     rdfs:comment "The length of time during which any activity or event lasts."@en ;
-                     rdfs:label "Has Time Duration"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasTravelTime
-sbeo:hasTravelTime rdf:type owl:DatatypeProperty ;
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( sbeo:Passage
-                                               sbeo:Route
-                                             )
-                               ] ;
-                   rdfs:range xsd:float ;
-                   rdfs:comment "A specific period of time required to move from one place to another."@en ;
-                   rdfs:label "Has Travel Time"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasWidth
-sbeo:hasWidth rdf:type owl:DatatypeProperty ;
-              rdfs:domain sbeo:Passage ;
-              rdfs:range xsd:float ;
-              rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
-              rdfs:label "Has Width"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasXTimesDeviated
 sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
-                       rdfs:domain [ rdf:type owl:Class ;
-                                     owl:unionOf ( sbeo:SocialUnit
-                                                   foaf:Person
-                                                 )
-                                   ] ;
+                       rdfs:domain sbeo:SocialUnit ;
                        rdfs:range xsd:int ;
                        rdfs:comment "Number of times a social unit is deviated while following the provided path."@en ;
                        rdfs:label "Has X Time Deviated"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#length
+sbeo:length rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:Passage
+                                        sbeo:Route
+                                      )
+                        ] ;
+            rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
+            rdfs:label "Length"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#speed
+sbeo:speed rdf:type owl:DatatypeProperty ;
+           rdfs:domain sbeo:SocialUnit ;
+           rdfs:comment "The average speed of a person."@en ;
+           rdfs:label "Speed"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speedFactor
@@ -560,58 +529,71 @@ sbeo:speedFactor rdf:type owl:DatatypeProperty ;
                  rdfs:label "Speed Factor"@en .
 
 
-###  http://www.w3.org/ns/prov#atTime
-prov:atTime rdf:type owl:DatatypeProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:Activity
-                                        sbeo:Device
-                                        sbeo:Event
-                                        sbeo:SocialUnit
-                                        foaf:Person
-                                      )
-                        ] ;
-            rdfs:range xsd:long ;
-            rdfs:comment "The time at which an activity or event occurred."@en ;
-            rdfs:label "At Time"@en .
-
-
-###  http://www.w3.org/ns/prov#endedAtTime
-prov:endedAtTime rdf:type owl:DatatypeProperty ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( sbeo:Activity
-                                             sbeo:Event
-                                           )
-                             ] ;
-                 rdfs:range xsd:long ;
-                 owl:propertyDisjointWith prov:startedAtTime ;
-                 rdfs:comment "The time at which an activity ended."@en ;
-                 rdfs:label "Ended At Time"@en .
-
-
-###  http://www.w3.org/ns/prov#startedAtTime
-prov:startedAtTime rdf:type owl:DatatypeProperty ;
+###  http://www.ia.urjc.es/ontologies/building/sbeo#startedAtTime
+sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
                    rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( sbeo:Activity
                                                sbeo:Event
                                              )
                                ] ;
-                   rdfs:range xsd:long ;
                    rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger."@en ;
                    rdfs:label "Started At Time"@en .
 
 
-###  http://www.w3.org/ns/prov#value
-prov:value rdf:type owl:DatatypeProperty ;
+###  http://www.ia.urjc.es/ontologies/building/sbeo#staticDescription
+sbeo:staticDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( sbeo:Activity
+                                                   sbeo:Event
+                                                   sbeo:PointOfInterest
+                                                   sbeo:SocialUnit
+                                                 )
+                                   ] ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "A static or a fix information about any activity, event, space, social unit, or point of interest." ;
+                       rdfs:label "Static Description"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#timeDuration
+sbeo:timeDuration rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( sbeo:Activity
+                                              sbeo:Event
+                                            )
+                              ] ;
+                  rdfs:comment "The length of time during which any activity or event lasts."@en ;
+                  rdfs:label "Time Duration"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#travelTime
+sbeo:travelTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( sbeo:Passage
+                                            sbeo:Route
+                                          )
+                            ] ;
+                rdfs:comment "A specific period of time required to move from one place to another."@en ;
+                rdfs:label "Travel Time"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#value
+sbeo:value rdf:type owl:DatatypeProperty ;
            rdfs:domain sbeo:Device ;
-           rdfs:range xsd:float ;
            rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
            rdfs:label "Value"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#width
+sbeo:width rdf:type owl:DatatypeProperty ;
+           rdfs:domain sbeo:Passage ;
+           rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
+           rdfs:label "Width"@en .
+
+
 ###  http://xmlns.com/foaf/0.1/age
-foaf:age rdf:type owl:DatatypeProperty ;
+foaf:age rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain foaf:Person ;
-         rdfs:range xsd:integer ;
          rdfs:comment "The age of the person."@en ;
          rdfs:label "Age"@en .
 
@@ -619,15 +601,14 @@ foaf:age rdf:type owl:DatatypeProperty ;
 ###  http://xmlns.com/foaf/0.1/firstName
 foaf:firstName rdf:type owl:DatatypeProperty ;
                rdfs:domain foaf:Person ;
-               rdfs:range xsd:string ;
                rdfs:comment "The first name of the person."@en ;
                rdfs:label "First Name"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/gender
-foaf:gender rdf:type owl:DatatypeProperty ;
+foaf:gender rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain foaf:Person ;
-            rdfs:range xsd:string ;
             rdfs:comment "The gender of a person. It is typically but not necessarily 'male' or 'female'."@en ;
             rdfs:label "Gender"@en .
 
@@ -635,7 +616,6 @@ foaf:gender rdf:type owl:DatatypeProperty ;
 ###  http://xmlns.com/foaf/0.1/lastName
 foaf:lastName rdf:type owl:DatatypeProperty ;
               rdfs:domain foaf:Person ;
-              rdfs:range xsd:string ;
               rdfs:comment "The last name of the person."@en ;
               rdfs:label "Last Name"@en .
 
@@ -655,6 +635,20 @@ sbeo:ActiveFireProtectionDevice rdf:type owl:Class ;
 sbeo:Activity rdf:type owl:Class ;
               rdfs:comment "A process that a person, group of persons, or machine does during a specific amount of time, such as visiting, shopping, etc."@en ;
               rdfs:label "Activity"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ActivityStatus
+sbeo:ActivityStatus rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:oneOf ( sbeo:Evacuated
+                                                      sbeo:Evacuating
+                                                      sbeo:PickingUpDependents
+                                                      sbeo:Visiting
+                                                    )
+                                        ] ;
+                    rdfs:subClassOf sbeo:Status ;
+                    rdfs:comment "It expresses the status of a specific activity being performed by a person."@en ;
+                    rdfs:label "Activity Status"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AlertingDevice
@@ -713,8 +707,7 @@ sbeo:AudioDescription rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
 sbeo:Autonomous rdf:type owl:Class ;
-                rdfs:subClassOf sbeo:Role ,
-                                foaf:Person ;
+                rdfs:subClassOf sbeo:Role ;
                 rdfs:comment "An individual who performs one's actions on his/her own."@en ;
                 rdfs:label "Autonomous"@en .
 
@@ -733,6 +726,18 @@ sbeo:AutonomousNavigation rdf:type owl:Class ;
                           rdfs:label "Autonomous Navigation"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AvailabilityStatus
+sbeo:AvailabilityStatus rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:oneOf ( sbeo:Available
+                                                          sbeo:UnAvailable
+                                                        )
+                                            ] ;
+                        rdfs:subClassOf sbeo:Status ;
+                        rdfs:comment "It expresses the status of something that is either available or not."@en ;
+                        rdfs:label "Availability Status"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#BlindPerson
 sbeo:BlindPerson rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:VisuallyImpairedPerson ;
@@ -741,7 +746,6 @@ sbeo:BlindPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingEntrance
 sbeo:BuildingEntrance rdf:type owl:Class ;
-                      owl:equivalentClass sbeo:BuildingExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Building Entrance"@en .
 
@@ -795,7 +799,6 @@ sbeo:Congestion rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#CorridorEntrance
 sbeo:CorridorEntrance rdf:type owl:Class ;
-                      owl:equivalentClass sbeo:CorridorExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Corridor Entrance"@en .
 
@@ -828,8 +831,7 @@ sbeo:DeafPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
 sbeo:Dependent rdf:type owl:Class ;
-               rdfs:subClassOf sbeo:Role ,
-                               foaf:Person ;
+               rdfs:subClassOf sbeo:Role ;
                owl:disjointWith sbeo:Responsible ;
                rdfs:comment "An individual who is dependent on one or more individuals."@en ;
                rdfs:label "Dependent"@en .
@@ -839,6 +841,20 @@ sbeo:Dependent rdf:type owl:Class ;
 sbeo:Description rdf:type owl:Class ;
                  rdfs:comment "A representation and detail of a person, object, or event. It is used to describe the details of anything."@en ;
                  rdfs:label "Description"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#DeviationState
+sbeo:DeviationState rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:oneOf ( sbeo:NoDeviate
+                                                      sbeo:OftenDeviate
+                                                      sbeo:RareDeviate
+                                                      sbeo:TooOftenDeviate
+                                                    )
+                                        ] ;
+                    rdfs:subClassOf sbeo:State ;
+                    rdfs:comment "It models the user's deviation state from one's proposed route. For example, RareDeviate (0 to 5 deviations), OftenDeviate (6 to 10 deviations) and TooOftenDeviate (11 and above deviations)."@en ;
+                    rdfs:label "Deviation State"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Device
@@ -852,6 +868,13 @@ sbeo:DisplayScreen rdf:type owl:Class ;
                    rdfs:subClassOf sbeo:Device ;
                    rdfs:comment "A display screen is an output device to represent the information in visual or tactile form."@en ;
                    rdfs:label "Display Screen"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#DownSyndromePerson
+sbeo:DownSyndromePerson rdf:type owl:Class ;
+                        rdfs:subClassOf sbeo:MentalImpairedPerson ;
+                        rdfs:comment "Down Syndrome Person"@en ;
+                        rdfs:label "A person having Down's syndrome."@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Earthquake
@@ -987,9 +1010,21 @@ sbeo:FireProtectionDevice rdf:type owl:Class ;
                           rdfs:label "Fire Protection Device"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FitnessStatus
+sbeo:FitnessStatus rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:oneOf ( sbeo:Exhausted
+                                                     sbeo:Fit
+                                                     sbeo:Injured
+                                                   )
+                                       ] ;
+                   rdfs:subClassOf sbeo:Status ;
+                   rdfs:comment "A fitness status is associated with a person that represent the quality of being suitable for a specific activity."@en ;
+                   rdfs:label "Fitness Status"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FloorEntrance
 sbeo:FloorEntrance rdf:type owl:Class ;
-                   owl:equivalentClass sbeo:FloorExit ;
                    rdfs:subClassOf sbeo:Entrance ;
                    rdfs:label "Floor Entrance"@en .
 
@@ -1018,7 +1053,6 @@ sbeo:Group rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#HallEntrance
 sbeo:HallEntrance rdf:type owl:Class ;
-                  owl:equivalentClass sbeo:HallExit ;
                   rdfs:subClassOf sbeo:Entrance ;
                   rdfs:label "Hall Entrance"@en .
 
@@ -1101,13 +1135,6 @@ sbeo:IncidentProtectionDevice rdf:type owl:Class ;
                               rdfs:label "Incident Protection Device"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#InjuredPerson
-sbeo:InjuredPerson rdf:type owl:Class ;
-                   rdfs:subClassOf foaf:Person ;
-                   rdfs:comment "It represents that a person has an injury."@en ;
-                   rdfs:label "Injured Person"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Junction
 sbeo:Junction rdf:type owl:Class ;
               rdfs:subClassOf sbeo:NavigationalPoint ;
@@ -1123,8 +1150,7 @@ sbeo:KidsArea rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
 sbeo:Leader rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Role ,
-                            foaf:Person ;
+            rdfs:subClassOf sbeo:Role ;
             rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
             rdfs:label "Leader"@en .
 
@@ -1195,6 +1221,21 @@ sbeo:ModerateHearingImpairedPerson rdf:type owl:Class ;
                                    rdfs:label "Moderate Hearing Impaired Person"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#MotionState
+sbeo:MotionState rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:oneOf ( sbeo:Rolling
+                                                   sbeo:Running
+                                                   sbeo:Scooting
+                                                   sbeo:Standing
+                                                   sbeo:Walking
+                                                 )
+                                     ] ;
+                 rdfs:subClassOf sbeo:State ;
+                 rdfs:comment "It describes the movement of a person."@en ;
+                 rdfs:label "Motion State"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MotorImpairedPerson
 sbeo:MotorImpairedPerson rdf:type owl:Class ;
                          rdfs:subClassOf sbeo:PhysicallyImpairedPerson ;
@@ -1236,6 +1277,18 @@ sbeo:NavigationalPoint rdf:type owl:Class ;
                        rdfs:label "Navigational Point"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#NavigationalState
+sbeo:NavigationalState rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:oneOf ( sbeo:DeviatingFromPath
+                                                         sbeo:FollowingPath
+                                                       )
+                                           ] ;
+                       rdfs:subClassOf sbeo:State ;
+                       rdfs:comment "It models the user's navigational state while following the path."@en ;
+                       rdfs:label "Navigational State"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#NonMotorisedWheelchairPerson
 sbeo:NonMotorisedWheelchairPerson rdf:type owl:Class ;
                                   rdfs:subClassOf sbeo:MobilityWithWheelchairPerson ;
@@ -1245,7 +1298,6 @@ sbeo:NonMotorisedWheelchairPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#OpenAreaEntrance
 sbeo:OpenAreaEntrance rdf:type owl:Class ;
-                      owl:equivalentClass sbeo:OpenAreaExit ;
                       rdfs:subClassOf sbeo:Entrance ;
                       rdfs:label "Open Area Entrance"@en .
 
@@ -1309,8 +1361,7 @@ sbeo:Ramp rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
 sbeo:Responsible rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Role ,
-                                 foaf:Person ;
+                 rdfs:subClassOf sbeo:Role ;
                  rdfs:comment "An individual who is reponsible to one or more individuals."@en ;
                  rdfs:label "Responsible"@en .
 
@@ -1331,7 +1382,6 @@ sbeo:Role rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomEntrance
 sbeo:RoomEntrance rdf:type owl:Class ;
-                  owl:equivalentClass sbeo:RoomExit ;
                   rdfs:subClassOf sbeo:Entrance ;
                   rdfs:label "Room Entrance"@en .
 
@@ -1352,7 +1402,6 @@ sbeo:RoomSegment rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Route
 sbeo:Route rdf:type owl:Class ;
-           rdfs:subClassOf sbeo:Thoroughfare ;
            rdfs:comment "A set of connected spaces represented by a starting and ending point, that ultimately leads to some specific position or place."@en ;
            rdfs:label "Route"@en .
 
@@ -1405,6 +1454,20 @@ sbeo:ShoppingRoute rdf:type owl:Class ;
                    rdfs:label "Shopping Route"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ShortestPath
+sbeo:ShortestPath rdf:type owl:Class ;
+                  rdfs:subClassOf sbeo:Route ;
+                  rdfs:comment "A type of route having minimum cost in terms of distance or time."@en ;
+                  rdfs:label "Shortest Path"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SimplestPath
+sbeo:SimplestPath rdf:type owl:Class ;
+                  rdfs:subClassOf sbeo:Route ;
+                  rdfs:comment "A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points."@en ;
+                  rdfs:label "Simplest Path"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SmartPhone
 sbeo:SmartPhone rdf:type owl:Class ;
                 rdfs:subClassOf sbeo:MobilePhone ;
@@ -1445,10 +1508,16 @@ sbeo:Stampeding rdf:type owl:Class ;
                 rdfs:label "Stampeding"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#StorageRoom
-sbeo:StorageRoom rdf:type owl:Class ;
-                 rdfs:subClassOf seas:Room ;
-                 rdfs:label "Storage Room"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#State
+sbeo:State rdf:type owl:Class ;
+           rdfs:comment "The particular condition that someone or something is in at a specific time."@en ;
+           rdfs:label "State"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Status
+sbeo:Status rdf:type owl:Class ;
+            rdfs:comment "The situation at a particular time during a process."@en ;
+            rdfs:label "Status"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Suite
@@ -1543,8 +1612,7 @@ sbeo:VisitingGroup rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
 sbeo:Visitor rdf:type owl:Class ;
-             rdfs:subClassOf sbeo:Role ,
-                             foaf:Person ;
+             rdfs:subClassOf sbeo:Role ;
              rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
              rdfs:label "Visitor"@en .
 
@@ -1856,6 +1924,100 @@ seas:UtilityRoom rdf:type owl:Class ;
 
 
 #################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Available
+sbeo:Available rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#DeviatingFromPath
+sbeo:DeviatingFromPath rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Evacuated
+sbeo:Evacuated rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Evacuating
+sbeo:Evacuating rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Exhausted
+sbeo:Exhausted rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Fit
+sbeo:Fit rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FollowingPath
+sbeo:FollowingPath rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Injured
+sbeo:Injured rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#NoDeviate
+sbeo:NoDeviate rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#OftenDeviate
+sbeo:OftenDeviate rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PickingUpDependents
+sbeo:PickingUpDependents rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#RareDeviate
+sbeo:RareDeviate rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Rolling
+sbeo:Rolling rdf:type owl:NamedIndividual ;
+             rdfs:comment "A type of movement by turning over and over on an axis, usually performed by a person using a wheelchair,"@en ;
+             rdfs:label "Rolling"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Running
+sbeo:Running rdf:type owl:NamedIndividual ;
+             rdfs:comment "A movement of an able-bodied person at a speed faster than a walk"@en ;
+             rdfs:label "Running"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Scooting
+sbeo:Scooting rdf:type owl:NamedIndividual ;
+              rdfs:comment "A type of movement usually performed while sitting in (or riding on) an automatic or mechical device, such as electrical wheelchair, electric scooter, etc."@en ;
+              rdfs:label "Scooting"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Standing
+sbeo:Standing rdf:type owl:NamedIndividual ;
+              rdfs:comment "Having or maintaining an upright position, supported by one's feet (Oxford Dictionary of English)."@en ;
+              rdfs:label "Standing"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#TooOftenDeviate
+sbeo:TooOftenDeviate rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#UnAvailable
+sbeo:UnAvailable rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Visiting
+sbeo:Visiting rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Walking
+sbeo:Walking rdf:type owl:NamedIndividual ;
+             rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
+             rdfs:label "Walking"@en .
+
+
+#################################################################
 #    General axioms
 #################################################################
 
@@ -1865,6 +2027,3 @@ seas:UtilityRoom rdf:type owl:Class ;
                 sbeo:Responsible
               )
 ] .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
