@@ -104,8 +104,22 @@ sbeo:connectedTo rdf:type owl:ObjectProperty ,
 sbeo:dependentOn rdf:type owl:ObjectProperty ;
                  owl:inverseOf sbeo:responsibleTo ;
                  rdf:type owl:TransitiveProperty ;
-                 rdfs:domain sbeo:Dependent ;
-                 rdfs:range sbeo:Responsible ;
+                 rdfs:domain [ owl:intersectionOf ( foaf:Person
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty sbeo:hasRole ;
+                                                      owl:hasValue sbeo:Dependent
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+                 rdfs:range [ owl:intersectionOf ( foaf:Person
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty sbeo:hasRole ;
+                                                     owl:hasValue sbeo:Responsible
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
                  rdfs:comment "Requiring someone to perform a specific activity."@en ;
                  rdfs:label "Dependent On"@en .
 
@@ -367,8 +381,22 @@ sbeo:performedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo
 sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                             owl:TransitiveProperty ;
-                   rdfs:domain sbeo:Responsible ;
-                   rdfs:range sbeo:Dependent ;
+                   rdfs:domain [ owl:intersectionOf ( foaf:Person
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sbeo:hasRole ;
+                                                        owl:hasValue sbeo:Responsible
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+                   rdfs:range [ owl:intersectionOf ( foaf:Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty sbeo:hasRole ;
+                                                       owl:hasValue sbeo:Dependent
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
 
@@ -710,10 +738,6 @@ sbeo:AudioDescription rdf:type owl:Class ;
                       rdfs:label "Audio Description"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
-sbeo:Autonomous rdf:type owl:Class .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousMobilityPerson
 sbeo:AutonomousMobilityPerson rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:MotorImpairedPerson ;
@@ -815,10 +839,6 @@ sbeo:DayCare rdf:type owl:Class ;
 sbeo:DeafPerson rdf:type owl:Class ;
                 rdfs:subClassOf sbeo:HearingImpairedPerson ;
                 rdfs:label "Deaf Person"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
-sbeo:Dependent rdf:type owl:Class .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Description
@@ -1334,10 +1354,6 @@ sbeo:Ramp rdf:type owl:Class ;
                           seas:BuildingSpace ;
           rdfs:comment "A sloping surface joining two different levels, as at the entrance or between floors of a building (Oxford Dictionary of English)."@en ;
           rdfs:label "Ramp"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
-sbeo:Responsible rdf:type owl:Class .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Road
@@ -1909,7 +1925,9 @@ sbeo:AssistedNavigation rdf:type owl:NamedIndividual ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
-sbeo:Autonomous rdf:type owl:NamedIndividual .
+sbeo:Autonomous rdf:type owl:NamedIndividual ;
+                rdfs:comment "An individual who performs one's actions on his/her own."@en ;
+                rdfs:label "Autonomous"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousNavigation
@@ -1929,7 +1947,9 @@ sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
-sbeo:Dependent rdf:type owl:NamedIndividual .
+sbeo:Dependent rdf:type owl:NamedIndividual ;
+               rdfs:comment "An individual who is dependent on one or more individuals."@en ;
+               rdfs:label "Dependent"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#DeviatingFromPath
@@ -1989,7 +2009,9 @@ sbeo:RareDeviate rdf:type owl:NamedIndividual .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
-sbeo:Responsible rdf:type owl:NamedIndividual .
+sbeo:Responsible rdf:type owl:NamedIndividual ;
+                 rdfs:comment "An individual who is responsible to one or more individuals."@en ;
+                 rdfs:label "Responsible"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Rolling
@@ -2038,34 +2060,6 @@ sbeo:Visitor rdf:type owl:NamedIndividual ;
 sbeo:Walking rdf:type owl:NamedIndividual ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
              rdfs:label "Walking"@en .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-sbeo:Autonomous rdfs:comment "An individual who performs one's actions on his/her own."@en ;
-                rdfs:label "Autonomous"@en .
-
-
-sbeo:Dependent rdfs:comment "An individual who is dependent on one or more individuals."@en ;
-               rdfs:label "Dependent"@en .
-
-
-sbeo:Responsible rdfs:label "Responsible"@en ;
-                 rdfs:comment "An individual who is responsible to one or more individuals."@en .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( sbeo:Autonomous
-                sbeo:Dependent
-                sbeo:Responsible
-              )
-] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
