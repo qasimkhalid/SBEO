@@ -17,11 +17,7 @@
 
 The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation."""@en ;
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
-<<<<<<< HEAD
                                                   owl:versionInfo 2.4 .
-=======
-                                                  owl:versionInfo 2.3 .
->>>>>>> 3f2db3f7c9534cc02c82ebc4d4209c51e7cc671f
 
 #################################################################
 #    Annotation properties
@@ -308,12 +304,26 @@ sbeo:locatedIn rdf:type owl:ObjectProperty ,
                rdfs:label "Located In"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#navigationalPreference
-sbeo:navigationalPreference rdf:type owl:ObjectProperty ;
-                            rdfs:domain sbeo:SocialUnit ;
-                            rdfs:range sbeo:Navigation ;
-                            rdfs:comment "Navigational Preference of a social unit to perform a specific activity."@en ;
-                            rdfs:label "Navigational Preference"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#meansOfNotification
+sbeo:meansOfNotification rdf:type owl:ObjectProperty ;
+                         rdfs:domain foaf:Person ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( sbeo:AlertingDevice
+                                                    sbeo:DisplayScreen
+                                                    sbeo:HandheldDevice
+                                                    sbeo:Telephone
+                                                  )
+                                    ] ;
+                         rdfs:comment "A method of notifying a social unit."@en ;
+                         rdfs:label "Means of Notification"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#navigationalType
+sbeo:navigationalType rdf:type owl:ObjectProperty ;
+                      rdfs:domain sbeo:SocialUnit ;
+                      rdfs:range sbeo:Navigation ;
+                      rdfs:comment "A type of navigational provided to a social unit to perform a specific activity."@en ;
+                      rdfs:label "Navigation Type"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo
@@ -327,20 +337,6 @@ sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
                      rdfs:range sbeo:SocialUnit ;
                      rdfs:comment "Expresses the prohibition of access of any specific foaf:Person to a specific physical space."@en ;
                      rdfs:label "Not Accessible To"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#notificationPreference
-sbeo:notificationPreference rdf:type owl:ObjectProperty ;
-                            rdfs:domain foaf:Person ;
-                            rdfs:range [ rdf:type owl:Class ;
-                                         owl:unionOf ( sbeo:AlertingDevice
-                                                       sbeo:DisplayScreen
-                                                       sbeo:HandheldDevice
-                                                       sbeo:Telephone
-                                                     )
-                                       ] ;
-                            rdfs:comment "A notification preference of a person during a specific activity."@en ;
-                            rdfs:label "Notification Preference"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#partOf
@@ -375,6 +371,18 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                    rdfs:range sbeo:Dependent ;
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#routePreference
+sbeo:routePreference rdf:type owl:ObjectProperty ;
+                     rdfs:domain foaf:Person ;
+                     rdfs:range [ rdf:type owl:Class ;
+                                  owl:unionOf ( sbeo:ShortestPath
+                                                sbeo:SimplestPath
+                                              )
+                                ] ;
+                     rdfs:comment "Route preference of a social unit to perform an activity."@en ;
+                     rdfs:label "Route Preference"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#startsFrom
@@ -413,7 +421,6 @@ sbeo:uses rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-<<<<<<< HEAD
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ID
 sbeo:ID rdf:type owl:DatatypeProperty ;
         rdfs:domain [ rdf:type owl:Class ;
@@ -426,8 +433,6 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
         rdfs:label "Identification Number"@en .
 
 
-=======
->>>>>>> 3f2db3f7c9534cc02c82ebc4d4209c51e7cc671f
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
 sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ;
                            rdfs:domain [ rdf:type owl:Class ;
@@ -536,54 +541,8 @@ sbeo:speedFactor rdf:type owl:DatatypeProperty ;
                  rdfs:label "Speed Factor"@en .
 
 
-<<<<<<< HEAD
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#startedAtTime
 sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
-=======
-###  http://www.ia.urjc.es/ontologies/building/sbeo#status
-sbeo:status rdf:type owl:DatatypeProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:RouteElement
-                                        sbeo:SocialUnit
-                                        sbeo:Space
-                                      )
-                        ] ;
-            rdfs:range xsd:string ;
-            rdfs:comment "Status of a social unit or a space. This is a multi-purpose property that is used to express various information about spaces, point of interests, route elements and social units, such as person or groups. If the subject belongs to the SocialUnit class, the object values of this property are 'Visiting', 'Evacuating', 'Evacuated', 'PickingUpDependents'. On the other hand, if the subject of a triple using this property belongs to a Space, PointofInterest or RouteElement class, the object values are 'Available' and 'UnAvailable'."@en ;
-            rdfs:label "Status"@en .
-
-
-###  http://www.w3.org/ns/prov#atTime
-prov:atTime rdf:type owl:DatatypeProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:Activity
-                                        sbeo:Device
-                                        sbeo:Event
-                                        sbeo:SocialUnit
-                                        foaf:Person
-                                      )
-                        ] ;
-            rdfs:range xsd:long ;
-            rdfs:comment "The time at which an activity or event occurred."@en ;
-            rdfs:label "At Time"@en .
-
-
-###  http://www.w3.org/ns/prov#endedAtTime
-prov:endedAtTime rdf:type owl:DatatypeProperty ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( sbeo:Activity
-                                             sbeo:Event
-                                           )
-                             ] ;
-                 rdfs:range xsd:long ;
-                 owl:propertyDisjointWith prov:startedAtTime ;
-                 rdfs:comment "The time at which an activity ended."@en ;
-                 rdfs:label "Ended At Time"@en .
-
-
-###  http://www.w3.org/ns/prov#startedAtTime
-prov:startedAtTime rdf:type owl:DatatypeProperty ;
->>>>>>> 3f2db3f7c9534cc02c82ebc4d4209c51e7cc671f
                    rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( sbeo:Activity
                                                sbeo:Event
@@ -744,13 +703,6 @@ sbeo:AssemblyPoint rdf:type owl:Class ;
                    rdfs:label "Assembly Point"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#AssistedNavigation
-sbeo:AssistedNavigation rdf:type owl:Class ;
-                        rdfs:subClassOf sbeo:Navigation ;
-                        rdfs:comment "A type of navigation in which a person is assisted by a person or a machine to perform a specific activity."@en ;
-                        rdfs:label "Assisted Navigation"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AudioDescription
 sbeo:AudioDescription rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:Description ;
@@ -759,10 +711,7 @@ sbeo:AudioDescription rdf:type owl:Class ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
-sbeo:Autonomous rdf:type owl:Class ;
-                rdfs:subClassOf sbeo:Role ;
-                rdfs:comment "An individual who performs one's actions on his/her own."@en ;
-                rdfs:label "Autonomous"@en .
+sbeo:Autonomous rdf:type owl:Class .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousMobilityPerson
@@ -770,13 +719,6 @@ sbeo:AutonomousMobilityPerson rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:MotorImpairedPerson ;
                               rdfs:comment "A person who can walk on his/her with a help of a non-motorised device, e.g. crutches."@en ;
                               rdfs:label "Autonomous Mobility Person"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousNavigation
-sbeo:AutonomousNavigation rdf:type owl:Class ;
-                          rdfs:subClassOf sbeo:Navigation ;
-                          rdfs:comment "A type of navigation in which a person plans and executes his or her path without any human or machine intervention."@en ;
-                          rdfs:label "Autonomous Navigation"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AvailabilityStatus
@@ -830,13 +772,6 @@ sbeo:Classroom rdf:type owl:Class ;
                rdfs:label "Classroom"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#CollaborativeNavigation
-sbeo:CollaborativeNavigation rdf:type owl:Class ;
-                             rdfs:subClassOf sbeo:Navigation ;
-                             rdfs:comment "A type of navigation in which two or more persons are involved that may or may not have same objectives."@en ;
-                             rdfs:label "Collaborative Navigation"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ColourBlindPerson
 sbeo:ColourBlindPerson rdf:type owl:Class ;
                        rdfs:subClassOf sbeo:VisuallyImpairedPerson ;
@@ -883,11 +818,7 @@ sbeo:DeafPerson rdf:type owl:Class ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
-sbeo:Dependent rdf:type owl:Class ;
-               rdfs:subClassOf sbeo:Role ;
-               owl:disjointWith sbeo:Responsible ;
-               rdfs:comment "An individual who is dependent on one or more individuals."@en ;
-               rdfs:label "Dependent"@en .
+sbeo:Dependent rdf:type owl:Class .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Description
@@ -1201,13 +1132,6 @@ sbeo:KidsArea rdf:type owl:Class ;
               rdfs:label "Kids Area"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
-sbeo:Leader rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Role ;
-            rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
-            rdfs:label "Leader"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensor
 sbeo:LocationSensor rdf:type owl:Class ;
                     rdfs:subClassOf sbeo:Sensor ;
@@ -1309,15 +1233,15 @@ sbeo:MovingPavement rdf:type owl:Class ;
                     rdfs:label "Moving Pavement"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#MultiObjectiveNavigation
-sbeo:MultiObjectiveNavigation rdf:type owl:Class ;
-                              rdfs:subClassOf sbeo:Navigation ;
-                              rdfs:comment "A type of navigation in which multiple point of interests are supposed to be visited by a person."@en ;
-                              rdfs:label "Multi-objective Navigation"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Navigation
 sbeo:Navigation rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( sbeo:AssistedNavigation
+                                                  sbeo:AutonomousNavigation
+                                                  sbeo:CollaborativeNavigation
+                                                  sbeo:MultiObjectiveNavigation
+                                                )
+                                    ] ;
                 rdfs:subClassOf sbeo:Activity ;
                 rdfs:comment "The process or activity of accurately ascertaining one's position and planning and following a route (Oxford Dictionary of English)."@en ;
                 rdfs:label "Navigation"@en .
@@ -1413,10 +1337,7 @@ sbeo:Ramp rdf:type owl:Class ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
-sbeo:Responsible rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Role ;
-                 rdfs:comment "An individual who is reponsible to one or more individuals."@en ;
-                 rdfs:label "Responsible"@en .
+sbeo:Responsible rdf:type owl:Class .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Road
@@ -1429,6 +1350,14 @@ sbeo:Road rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Role
 sbeo:Role rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( sbeo:Autonomous
+                                            sbeo:Dependent
+                                            sbeo:Leader
+                                            sbeo:Responsible
+                                            sbeo:Visitor
+                                          )
+                              ] ;
           rdfs:comment "The function assumed or part played by a person or thing in a particular situation (Oxford Dictionary of English)."@en ;
           rdfs:label "Role"@en .
 
@@ -1661,13 +1590,6 @@ sbeo:VisitingGroup rdf:type owl:Class ;
                    rdfs:subClassOf sbeo:Group ;
                    rdfs:comment "A group of two or more people that has the same objective of visiting any space."@en ;
                    rdfs:label "Visiting Group"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
-sbeo:Visitor rdf:type owl:Class ;
-             rdfs:subClassOf sbeo:Role ;
-             rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
-             rdfs:label "Visitor"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#VisuallyImpairedPerson
@@ -1980,8 +1902,34 @@ seas:UtilityRoom rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AssistedNavigation
+sbeo:AssistedNavigation rdf:type owl:NamedIndividual ;
+                        rdfs:comment "A type of navigation in which a person is assisted by a person or a machine to perform a specific activity."@en ;
+                        rdfs:label "Assisted Navigation"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
+sbeo:Autonomous rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousNavigation
+sbeo:AutonomousNavigation rdf:type owl:NamedIndividual ;
+                          rdfs:comment "A type of navigation in which a person plans and executes his or her path without any human or machine intervention."@en ;
+                          rdfs:label "Autonomous Navigation"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Available
 sbeo:Available rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#CollaborativeNavigation
+sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ;
+                             rdfs:comment "A type of navigation in which two or more persons are involved that may or may not have same objectives."@en ;
+                             rdfs:label "Collaborative Navigation"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
+sbeo:Dependent rdf:type owl:NamedIndividual .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#DeviatingFromPath
@@ -2012,6 +1960,18 @@ sbeo:FollowingPath rdf:type owl:NamedIndividual .
 sbeo:Injured rdf:type owl:NamedIndividual .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
+sbeo:Leader rdf:type owl:NamedIndividual ;
+            rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
+            rdfs:label "Leader"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#MultiObjectiveNavigation
+sbeo:MultiObjectiveNavigation rdf:type owl:NamedIndividual ;
+                              rdfs:comment "A type of navigation in which multiple point of interests are supposed to be visited by a person."@en ;
+                              rdfs:label "Multi-objective Navigation"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#NoDeviate
 sbeo:NoDeviate rdf:type owl:NamedIndividual .
 
@@ -2026,6 +1986,10 @@ sbeo:PickingUpDependents rdf:type owl:NamedIndividual .
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RareDeviate
 sbeo:RareDeviate rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
+sbeo:Responsible rdf:type owl:NamedIndividual .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Rolling
@@ -2064,10 +2028,32 @@ sbeo:UnAvailable rdf:type owl:NamedIndividual .
 sbeo:Visiting rdf:type owl:NamedIndividual .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
+sbeo:Visitor rdf:type owl:NamedIndividual ;
+             rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
+             rdfs:label "Visitor"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Walking
 sbeo:Walking rdf:type owl:NamedIndividual ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
              rdfs:label "Walking"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+sbeo:Autonomous rdfs:comment "An individual who performs one's actions on his/her own."@en ;
+                rdfs:label "Autonomous"@en .
+
+
+sbeo:Dependent rdfs:comment "An individual who is dependent on one or more individuals."@en ;
+               rdfs:label "Dependent"@en .
+
+
+sbeo:Responsible rdfs:label "Responsible"@en ;
+                 rdfs:comment "An individual who is responsible to one or more individuals."@en .
 
 
 #################################################################
@@ -2080,3 +2066,6 @@ sbeo:Walking rdf:type owl:NamedIndividual ;
                 sbeo:Responsible
               )
 ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
