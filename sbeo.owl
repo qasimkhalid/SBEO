@@ -1,3 +1,4 @@
+@prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -20,24 +21,56 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   owl:versionInfo 2.4 .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
-
-#################################################################
 #    Object Properties
 #################################################################
+
+###  http://purl.org/ontology/olo/core#item
+olo:item rdf:type owl:ObjectProperty ;
+         rdfs:domain olo:Slot ;
+         rdfs:comment "An item of a slot in an ordered list."@en ;
+         rdfs:label "has item"@en .
+
+
+###  http://purl.org/ontology/olo/core#next
+olo:next rdf:type owl:ObjectProperty ;
+         owl:inverseOf olo:previous ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain olo:Slot ;
+         rdfs:range olo:Slot ;
+         rdfs:comment "Associates the next slot in an ordered list."@en ;
+         rdfs:isDefinedBy olo: ;
+         rdfs:label "has next"@en .
+
+
+###  http://purl.org/ontology/olo/core#ordered_list
+olo:ordered_list rdf:type owl:ObjectProperty ;
+                 owl:inverseOf olo:slot ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain olo:Slot ;
+                 rdfs:range olo:OrderedList ;
+                 rdfs:comment "An ordered list of an slot."@en ;
+                 rdfs:isDefinedBy olo: ;
+                 rdfs:label "has ordered list"@en .
+
+
+###  http://purl.org/ontology/olo/core#previous
+olo:previous rdf:type owl:ObjectProperty ,
+                      owl:InverseFunctionalProperty ;
+             rdfs:domain olo:Slot ;
+             rdfs:range olo:Slot ;
+             rdfs:comment "Associates the previous slot in an ordered list"@en ;
+             rdfs:isDefinedBy olo: ;
+             rdfs:label "has previous"@en .
+
+
+###  http://purl.org/ontology/olo/core#slot
+olo:slot rdf:type owl:ObjectProperty ;
+         rdfs:domain olo:OrderedList ;
+         rdfs:range olo:Slot ;
+         rdfs:comment "A slot in an ordered list."@en ;
+         rdfs:isDefinedBy olo: ;
+         rdfs:label "has slot"@en .
+
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accompanying
 sbeo:accompanying rdf:type owl:ObjectProperty ,
@@ -124,19 +157,6 @@ sbeo:dependentOn rdf:type owl:ObjectProperty ;
                  rdfs:label "Dependent On"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#endsIn
-sbeo:endsIn rdf:type owl:ObjectProperty ;
-            rdfs:domain sbeo:Route ;
-            rdfs:range [ rdf:type owl:Class ;
-                         owl:unionOf ( sbeo:PointOfInterest
-                                       sbeo:RouteElement
-                                       sbeo:Space
-                                     )
-                       ] ;
-            rdfs:comment "Expresses the last physical space or point where the route ends."@en ;
-            rdfs:label "Ends In"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#excludedFor
 sbeo:excludedFor rdf:type owl:ObjectProperty ;
                  rdfs:domain [ rdf:type owl:Class ;
@@ -192,10 +212,11 @@ sbeo:hasDescription rdf:type owl:ObjectProperty ;
                                                 sbeo:Event
                                                 sbeo:Route
                                                 sbeo:RouteElement
+                                                sbeo:Space
                                               )
                                 ] ;
                     rdfs:range sbeo:Description ;
-                    rdfs:comment "Expresses an descriptive information about any specific space, point, activiy, event or device."@en ;
+                    rdfs:comment "Expresses a descriptive information about any specific space, point, activiy, event or device."@en ;
                     rdfs:label "Has Description"@en .
 
 
@@ -238,17 +259,12 @@ sbeo:hasNavigationalState rdf:type owl:ObjectProperty ;
                           rdfs:label "Has Navigational State"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasPath
-sbeo:hasPath rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:Route ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:PointOfInterest
-                                        sbeo:RouteElement
-                                        sbeo:Space
-                                      )
-                        ] ;
-             rdfs:comment "Expresses a set of connected spaces or points that makes a route."@en ;
-             rdfs:label "Has Path"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasNavigationalType
+sbeo:hasNavigationalType rdf:type owl:ObjectProperty ;
+                         rdfs:domain sbeo:SocialUnit ;
+                         rdfs:range sbeo:Navigation ;
+                         rdfs:comment "A type of navigational provided to a social unit to perform a specific activity."@en ;
+                         rdfs:label "Has Navigation Type"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
@@ -332,14 +348,6 @@ sbeo:meansOfNotification rdf:type owl:ObjectProperty ;
                          rdfs:label "Means of Notification"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#navigationalType
-sbeo:navigationalType rdf:type owl:ObjectProperty ;
-                      rdfs:domain sbeo:SocialUnit ;
-                      rdfs:range sbeo:Navigation ;
-                      rdfs:comment "A type of navigational provided to a social unit to perform a specific activity."@en ;
-                      rdfs:label "Navigation Type"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo
 sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
                      rdfs:domain [ rdf:type owl:Class ;
@@ -413,19 +421,6 @@ sbeo:routePreference rdf:type owl:ObjectProperty ;
                      rdfs:label "Route Preference"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#startsFrom
-sbeo:startsFrom rdf:type owl:ObjectProperty ;
-                rdfs:domain sbeo:Route ;
-                rdfs:range [ rdf:type owl:Class ;
-                             owl:unionOf ( sbeo:PointOfInterest
-                                           sbeo:RouteElement
-                                           sbeo:Space
-                                         )
-                           ] ;
-                rdfs:comment "Expresses the first physical space or point where the route starts."@en ;
-                rdfs:label "Starts From"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#uses
 sbeo:uses rdf:type owl:ObjectProperty ;
           rdfs:domain [ rdf:type owl:Class ;
@@ -448,6 +443,16 @@ sbeo:uses rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://purl.org/ontology/olo/core#index
+olo:index rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain olo:Slot ;
+          rdfs:range xsd:positiveInteger ;
+          rdfs:comment "An index of a slot in an ordered list."@en ;
+          rdfs:isDefinedBy olo: ;
+          rdfs:label "has index"@en .
+
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ID
 sbeo:ID rdf:type owl:DatatypeProperty ;
@@ -487,6 +492,15 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
             rdfs:label "At Time"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#cost
+sbeo:cost rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain sbeo:Route ,
+                      sbeo:RouteElement ;
+          rdfs:comment "A numeric value associated with an edge or a complete route(path). It is also reffered to as a weight."@en ;
+          rdfs:label "Cost"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#currentOccupancy
 sbeo:currentOccupancy rdf:type owl:DatatypeProperty ;
                       rdfs:domain [ rdf:type owl:Class ;
@@ -508,6 +522,7 @@ sbeo:dynamicDescription rdf:type owl:DatatypeProperty ;
                                                     sbeo:Event
                                                     sbeo:PointOfInterest
                                                     sbeo:SocialUnit
+                                                    sbeo:Space
                                                   )
                                     ] ;
                         rdfs:range xsd:string ;
@@ -538,18 +553,20 @@ sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasXTimesDeviated
 sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
                        rdfs:domain sbeo:SocialUnit ;
-                       rdfs:range xsd:int ;
+                       rdfs:range xsd:integer ;
                        rdfs:comment "Number of times a social unit is deviated while following the provided path."@en ;
                        rdfs:label "Has X Time Deviated"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#length
-sbeo:length rdf:type owl:DatatypeProperty ;
+sbeo:length rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:Passage
-                                        sbeo:Route
+                          owl:unionOf ( olo:OrderedList
+                                        sbeo:Passage
                                       )
                         ] ;
+            rdfs:range xsd:nonNegativeInteger ;
             rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
             rdfs:label "Length"@en .
 
@@ -565,7 +582,7 @@ sbeo:speed rdf:type owl:DatatypeProperty ;
 sbeo:speedFactor rdf:type owl:DatatypeProperty ;
                  rdfs:domain sbeo:RouteElement ;
                  rdfs:range xsd:decimal ;
-                 rdfs:comment "A multiplying factor thay may affect the speed of person while passing through a specific space."@en ;
+                 rdfs:comment "A multiplying factor that may affect the speed of person while passing through a specific space."@en ;
                  rdfs:label "Speed Factor"@en .
 
 
@@ -587,6 +604,7 @@ sbeo:staticDescription rdf:type owl:DatatypeProperty ;
                                                    sbeo:Event
                                                    sbeo:PointOfInterest
                                                    sbeo:SocialUnit
+                                                   sbeo:Space
                                                  )
                                    ] ;
                        rdfs:range xsd:string ;
@@ -663,6 +681,40 @@ foaf:lastName rdf:type owl:DatatypeProperty ;
 #################################################################
 #    Classes
 #################################################################
+
+###  http://purl.org/ontology/olo/core#OrderedList
+olo:OrderedList rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:length ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "An ordered list with a given length an indexed items."@en ;
+                rdfs:isDefinedBy olo: ;
+                rdfs:label "Ordered List"@en .
+
+
+###  http://purl.org/ontology/olo/core#Slot
+olo:Slot rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:next ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:ordered_list ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:previous ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:index ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "A slot in an ordered list with a fixed index."@en ;
+         rdfs:isDefinedBy olo: ;
+         rdfs:label "Slot"@en .
+
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActiveFireProtectionDevice
 sbeo:ActiveFireProtectionDevice rdf:type owl:Class ;
@@ -857,7 +909,7 @@ sbeo:DeviationState rdf:type owl:Class ;
                                                     )
                                         ] ;
                     rdfs:subClassOf sbeo:State ;
-                    rdfs:comment "It models the user's deviation state from one's proposed route. For example, RareDeviate (0 to 5 deviations), OftenDeviate (6 to 10 deviations) and TooOftenDeviate (11 and above deviations)."@en ;
+                    rdfs:comment "It models the user's deviation state from one's proposed route. For example, NoDeviate (0 deviation), RareDeviate (between 1 and 5 deviations, both included), OftenDeviate (between 6 and 10, both included), and TooOftenDeviate (11 and above deviations)."@en ;
                     rdfs:label "Deviation State"@en .
 
 
