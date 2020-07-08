@@ -235,8 +235,7 @@ sbeo:hasFitnessStatus rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMember
-sbeo:hasMember rdf:type owl:ObjectProperty ,
-                        owl:TransitiveProperty ;
+sbeo:hasMember rdf:type owl:ObjectProperty ;
                rdfs:domain sbeo:Group ;
                rdfs:range foaf:Person ;
                rdfs:comment "Expresses one of the persons who compose a social group."@en ;
@@ -1322,7 +1321,7 @@ sbeo:Navigation rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#NavigationalPoint
 sbeo:NavigationalPoint rdf:type owl:Class ;
                        rdfs:subClassOf sbeo:RoutePoint ;
-                       rdfs:comment "It is a special type of point that connects more than two corridors or enforce change of direction to users or indicate the end of corridors (e.g., representing a waiting public area - not room - leading to different corridors etc.)."@en ;
+                       rdfs:comment "It is a special type of point that connects more than two corridors or enforce change of direction to users or indicate the end of corridors."@en ;
                        rdfs:label "Navigational Point"@en .
 
 
@@ -1446,7 +1445,7 @@ sbeo:RoomExit rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomSegment
 sbeo:RoomSegment rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:HorizontalPassage ;
-                 rdfs:comment "A traverable part in a room that is usually used to go the exit or the other part of the room."@en ;
+                 rdfs:comment "A traversable part in a room that is usually used to go the exit or the other part of the room."@en ;
                  rdfs:label "Room Segment"@en .
 
 
@@ -1614,6 +1613,7 @@ sbeo:Thoroughfare rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TransitionPoint
 sbeo:TransitionPoint rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:RoutePoint ;
+                     rdfs:comment "A point at which person passes from one place to the next."@en ;
                      rdfs:label "Transition Point"@en .
 
 
