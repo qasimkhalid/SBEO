@@ -1,3 +1,4 @@
+@prefix : <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -21,9 +22,8 @@
 The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation."""@en ;
                                                   dcterms:language "en" ;
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
-                                                  owl:versionInfo 0.1 ;
-                                                  rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> .
-                                                  
+                                                  rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
+                                                  owl:versionInfo 0.1 .
 
 #################################################################
 #    Object Properties
@@ -417,13 +417,17 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#routePreference
 sbeo:routePreference rdf:type owl:ObjectProperty ;
                      rdfs:domain foaf:Person ;
-                     rdfs:range [ rdf:type owl:Class ;
-                                  owl:unionOf ( sbeo:ShortestPath
-                                                sbeo:SimplestPath
-                                              )
-                                ] ;
+                     rdfs:range sbeo:GraphBasedRoute ;
                      rdfs:comment "Route preference of a social unit to perform an activity."@en ;
                      rdfs:label "Route Preference"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#routeType
+sbeo:routeType rdf:type owl:ObjectProperty ;
+               rdfs:domain sbeo:Route ;
+               rdfs:range sbeo:GraphBasedRoute ;
+               rdfs:comment "This property is used to express the type of a route in terms of graph-based routes, such as Shortest Path, Simplest Path etc."@en ;
+               rdfs:label "Route Type"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#uses
@@ -1109,6 +1113,16 @@ sbeo:Footpath rdf:type owl:Class ;
               rdfs:label "Footpath"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#GraphBasedRoute
+sbeo:GraphBasedRoute rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:oneOf ( sbeo:ShortestPath
+                                                       sbeo:SimplestPath
+                                                     )
+                                         ] ;
+                     rdfs:subClassOf sbeo:Route .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Group
 sbeo:Group rdf:type owl:Class ;
            rdfs:subClassOf sbeo:SocialUnit ;
@@ -1465,11 +1479,6 @@ sbeo:Route rdf:type owl:Class ;
                              owl:onProperty sbeo:hasAvailabilityStatus ;
                              owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ;
-		   owl:equivalentClass [ rdf:type owl:Class ;
-                                              owl:oneOf ( sbeo:ShortestPath
-                                                          sbeo:SimplestPath
-                                                        )
-                                            ] ;
            rdfs:comment "A set of connected spaces represented by a starting and ending point, that ultimately leads to some specific position or place."@en ;
            rdfs:label "Route"@en .
 
@@ -1520,18 +1529,6 @@ sbeo:ShoppingRoute rdf:type owl:Class ;
                    rdfs:subClassOf sbeo:VisitRoute ;
                    rdfs:comment "A type of route in which the specific points of interest are mentioned in the form of connected spaces, according to the preferences or interests of a one or more individuals."@en ;
                    rdfs:label "Shopping Route"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#ShortestPath
-sbeo:ShortestPath rdf:type owl:NamedIndividual ;
-                  rdfs:comment "A type of route having minimum cost in terms of distance or time."@en ;
-                  rdfs:label "Shortest Path"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SimplestPath
-sbeo:SimplestPath rdf:type owl:NamedIndividual ;
-                  rdfs:comment "A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points."@en ;
-                  rdfs:label "Simplest Path"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SmartPhone
@@ -2010,7 +2007,9 @@ sbeo:AutonomousNavigation rdf:type owl:NamedIndividual ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Available
-sbeo:Available rdf:type owl:NamedIndividual .
+sbeo:Available rdf:type owl:NamedIndividual ;
+               rdfs:comment "Obtainable or accessible and ready for use or service."@en ;
+               rdfs:label "Available"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#CollaborativeNavigation
@@ -2026,31 +2025,45 @@ sbeo:Dependent rdf:type owl:NamedIndividual ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#DeviatingFromPath
-sbeo:DeviatingFromPath rdf:type owl:NamedIndividual .
+sbeo:DeviatingFromPath rdf:type owl:NamedIndividual ;
+                       rdfs:label "Deviating From Path"@en ,
+                                  "When someone is deviating from the provided path."@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Evacuated
-sbeo:Evacuated rdf:type owl:NamedIndividual .
+sbeo:Evacuated rdf:type owl:NamedIndividual ;
+               rdfs:label "Evacuated"@en ,
+                          "This instance is used to mention when a person has been evacuated successfully."@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Evacuating
-sbeo:Evacuating rdf:type owl:NamedIndividual .
+sbeo:Evacuating rdf:type owl:NamedIndividual ;
+                rdfs:label "Evacuating"@en ,
+                           "This instance is used to express when someone is in the process of evacuating some space."@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Exhausted
-sbeo:Exhausted rdf:type owl:NamedIndividual .
+sbeo:Exhausted rdf:type owl:NamedIndividual ;
+               rdfs:comment "This instance is used to express the when someone has drained of one's energy or effectiveness."@en ;
+               rdfs:label "Exhausted"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Fit
-sbeo:Fit rdf:type owl:NamedIndividual .
+sbeo:Fit rdf:type owl:NamedIndividual ;
+         rdfs:comment "This instance is used to express when the physical and mental condition is sound of someone."@en ;
+         rdfs:label "Fit"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FollowingPath
-sbeo:FollowingPath rdf:type owl:NamedIndividual .
+sbeo:FollowingPath rdf:type owl:NamedIndividual ;
+                   rdfs:comment "This instance is used to express when someone is following one's provided path."@en ;
+                   rdfs:label "Following Path"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Injured
-sbeo:Injured rdf:type owl:NamedIndividual .
+sbeo:Injured rdf:type owl:NamedIndividual ;
+             rdfs:comment "This instance is used to express when someone is not fit and has some injuries."@en ;
+             rdfs:label "Injured"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
@@ -2066,19 +2079,27 @@ sbeo:MultiObjectiveNavigation rdf:type owl:NamedIndividual ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#NoDeviate
-sbeo:NoDeviate rdf:type owl:NamedIndividual .
+sbeo:NoDeviate rdf:type owl:NamedIndividual ;
+               rdfs:comment "This instance is used to express when someone is not deviating at all while following one's provided path."@en ;
+               rdfs:label "No Deviate"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#OftenDeviate
-sbeo:OftenDeviate rdf:type owl:NamedIndividual .
+sbeo:OftenDeviate rdf:type owl:NamedIndividual ;
+                  rdfs:comment "This instance is used to express when someone is deviating frequently between 6 to 10 times while following the provided path."@en ;
+                  rdfs:label "Often Deviate"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#PickingUpDependents
-sbeo:PickingUpDependents rdf:type owl:NamedIndividual .
+sbeo:PickingUpDependents rdf:type owl:NamedIndividual ;
+                         rdfs:comment "This instance is used to express when someone is picking up the dependent member of one's group."@en ;
+                         rdfs:label "Picking Up Dependents"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RareDeviate
-sbeo:RareDeviate rdf:type owl:NamedIndividual .
+sbeo:RareDeviate rdf:type owl:NamedIndividual ;
+                 rdfs:comment "This instance is used to express when someone rarely deviates (between 1 to 5 times) while following the provided path."@en ;
+                 rdfs:label "Rare Deviate"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
@@ -2105,6 +2126,18 @@ sbeo:Scooting rdf:type owl:NamedIndividual ;
               rdfs:label "Scooting"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ShortestPath
+sbeo:ShortestPath rdf:type owl:NamedIndividual ;
+                  rdfs:comment "A type of route having minimum cost in terms of distance or time."@en ;
+                  rdfs:label "Shortest Path"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SimplestPath
+sbeo:SimplestPath rdf:type owl:NamedIndividual ;
+                  rdfs:comment "A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points."@en ;
+                  rdfs:label "Simplest Path"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Standing
 sbeo:Standing rdf:type owl:NamedIndividual ;
               rdfs:comment "Having or maintaining an upright position, supported by one's feet (Oxford Dictionary of English)."@en ;
@@ -2112,15 +2145,21 @@ sbeo:Standing rdf:type owl:NamedIndividual ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TooOftenDeviate
-sbeo:TooOftenDeviate rdf:type owl:NamedIndividual .
+sbeo:TooOftenDeviate rdf:type owl:NamedIndividual ;
+                     rdfs:comment "This instance is used to express when someone is deviating frequently between 11 or more times while following the provided path."@en ;
+                     rdfs:label "Too Often Deviate"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#UnAvailable
-sbeo:UnAvailable rdf:type owl:NamedIndividual .
+sbeo:UnAvailable rdf:type owl:NamedIndividual ;
+                 rdfs:comment "Not available or accessible."@en ;
+                 rdfs:label "Unavailable"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visiting
-sbeo:Visiting rdf:type owl:NamedIndividual .
+sbeo:Visiting rdf:type owl:NamedIndividual ;
+              rdfs:comment "The activity of making visits."@en ;
+              rdfs:label "Visiting"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
