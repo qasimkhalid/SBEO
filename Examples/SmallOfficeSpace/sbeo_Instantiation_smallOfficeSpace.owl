@@ -1,4 +1,5 @@
 @prefix : <http://www.ia.urjc.es/ontologies/building/office_space_scenario#> .
+@prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -17,6 +18,8 @@
 
 The office space can be considered as a smart space as it is equipped with different sensors such as location, temperature and smoke. In addition, fire incident equipment, alerting device such as speakers, and a monitor screen are also installed in it."""@en ;
                                                                    owl:versionInfo "0.1"@en .
+
+
 
 #################################################################
 #    Individuals
@@ -1035,7 +1038,8 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#OfficeBuilding1
 :OfficeBuilding1 rdf:type owl:NamedIndividual ,
-                          seas:OfficeBuilding .
+                          seas:OfficeBuilding ;
+                 sbeo:partOf :ShoppingArcade .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#OpenHall1
@@ -1083,25 +1087,32 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person1
 :Person1 rdf:type owl:NamedIndividual ,
-                  sbeo:Autonomous ,
                   sbeo:MotorisedWheelchairPerson ;
+         sbeo:familiarWith :OfficeBuilding1 ;
+         sbeo:hasFitnessStatus sbeo:Fit ;
+         sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalType sbeo:AssistedNavigation ;
+         sbeo:hasRole sbeo:Autonomous ;
          sbeo:locatedIn :Office4 ;
+         sbeo:meansOfNotification :Phone1 ;
          sbeo:uses :Phone1 ;
-         sbeo:fitnessStatus "Fit"^^xsd:string ;
-         sbeo:hasID 2 ;
-         sbeo:hasMotionState "Standing"^^xsd:string ;
+         sbeo:ID 2 ;
          foaf:firstName "Alice"^^xsd:string ;
          foaf:gender "female"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person2
 :Person2 rdf:type owl:NamedIndividual ,
-                  sbeo:Responsible ;
+                  foaf:Person ;
+         sbeo:familiarWith :OfficeBuilding1 ;
+         sbeo:hasFitnessStatus sbeo:Fit ;
+         sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalType sbeo:AssistedNavigation ;
+         sbeo:hasRole sbeo:Responsible ;
          sbeo:locatedIn :Office3 ;
+         sbeo:meansOfNotification :Phone2 ;
          sbeo:uses :Phone2 ;
-         sbeo:fitnessStatus "fit"^^xsd:string ;
-         sbeo:hasID 3 ;
-         sbeo:hasMotionState "Standing"^^xsd:string ;
+         sbeo:ID 3 ;
          foaf:age 55 ;
          foaf:firstName "Brian"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
@@ -1109,62 +1120,79 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person3
 :Person3 rdf:type owl:NamedIndividual ,
-                  sbeo:Dependent ;
+                  foaf:Person ;
+         sbeo:hasFitnessStatus sbeo:Fit ;
+         sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalType sbeo:CollaborativeNavigation ;
+         sbeo:hasRole sbeo:Dependent ;
          sbeo:locatedIn :KidsRoom ;
-         sbeo:fitnessStatus "fit"^^xsd:string ;
-         sbeo:hasID 4 ;
-         sbeo:hasMotionState "Standing"^^xsd:string ;
+         sbeo:meansOfNotification :Screen1 ;
+         sbeo:ID 4 ;
          foaf:firstName "Chris"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person4
 :Person4 rdf:type owl:NamedIndividual ,
-                  sbeo:Autonomous ,
                   sbeo:BlindPerson ;
+         sbeo:familiarWith :OfficeBuilding1 ;
+         sbeo:hasFitnessStatus sbeo:Fit ;
+         sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalType sbeo:AssistedNavigation ;
+         sbeo:hasRole sbeo:Autonomous ;
          sbeo:locatedIn :Office2 ;
+         sbeo:meansOfNotification :SpecialPurposeDevice1 ;
          sbeo:uses :SpecialPurposeDevice1 ;
-         sbeo:fitnessStatus "fit"^^xsd:string ;
-         sbeo:hasID 5 ;
-         sbeo:hasMotionState "Standing"^^xsd:string ;
+         sbeo:ID 5 ;
          foaf:firstName "Dan"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person5
 :Person5 rdf:type owl:NamedIndividual ,
-                  sbeo:Autonomous ,
                   sbeo:DeafPerson ;
+         sbeo:familiarWith :OfficeBuilding1 ;
+         sbeo:hasFitnessStatus sbeo:Fit ;
+         sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalType sbeo:AssistedNavigation ;
+         sbeo:hasRole sbeo:Autonomous ;
          sbeo:locatedIn :Office5 ;
+         sbeo:meansOfNotification :Phone3 ;
          sbeo:uses :Phone3 ;
-         sbeo:fitnessStatus "fit"^^xsd:string ;
-         sbeo:hasID 6 ;
-         sbeo:hasMotionState "Standing"^^xsd:string ;
+         sbeo:ID 6 ;
          foaf:firstName "Elliot"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person6
 :Person6 rdf:type owl:NamedIndividual ,
-                  sbeo:Responsible ;
+                  foaf:Person ;
+         sbeo:familiarWith :OfficeBuilding1 ;
+         sbeo:hasFitnessStatus sbeo:Fit ;
+         sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalType sbeo:AssistedNavigation ,
+                                  sbeo:MultiObjectiveNavigation ;
+         sbeo:hasRole sbeo:Responsible ;
          sbeo:locatedIn :Office1 ;
+         sbeo:meansOfNotification :Phone4 ;
          sbeo:responsibleTo :Person3 ;
          sbeo:uses :Phone4 ;
-         sbeo:fitnessStatus "fit"^^xsd:string ;
-         sbeo:hasID 1 ;
-         sbeo:hasMotionState "Standing"^^xsd:string ;
+         sbeo:ID 1 ;
          foaf:firstName "Maria"^^xsd:string ;
          foaf:gender "female"^^xsd:string .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person7
 :Person7 rdf:type owl:NamedIndividual ,
-                  sbeo:Dependent ;
+                  foaf:Person ;
          sbeo:accompanying :Person2 ;
+         sbeo:dependentOn :Person2 ;
+         sbeo:hasFitnessStatus sbeo:Fit ;
+         sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalType sbeo:CollaborativeNavigation ;
+         sbeo:hasRole sbeo:Dependent ;
          sbeo:locatedIn :Office3 ;
-         sbeo:fitnessStatus "fit"^^xsd:string ;
-         sbeo:hasID 7 ;
-         sbeo:hasMotionState "Standing"^^xsd:string ;
+         sbeo:ID 7 ;
          foaf:firstName "Victor"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
 
@@ -1322,6 +1350,576 @@ The office space can be considered as a smart space as it is equipped with diffe
                                :RE9 .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route1
+:Route1 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:ExitRoute ;
+        olo:slot :Slot1 ,
+                 :Slot2 ,
+                 :Slot3 ,
+                 :Slot4 ,
+                 :Slot5 ;
+        sbeo:length "5"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route10
+:RouteJ rdf:type owl:NamedIndividual ,
+                  olo:OrderedList ,
+                  sbeo:Route ;
+         olo:slot :Slot43 ,
+                  :Slot44 ,
+                  :Slot45 ,
+                  :Slot46 ,
+                  :Slot47 ,
+                  :Slot48 ,
+				  :Slot49 ;
+         sbeo:length "7"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route2
+:Route10 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot6 ,
+                 :Slot7 ,
+                 :Slot8 ,
+                 :Slot9 ;
+        sbeo:length "4"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route3
+:Route2 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:ExitRoute ;
+        olo:slot :Slot10 ,
+                 :Slot11 ,
+                 :Slot12 ,
+                 :Slot13 ;
+        sbeo:length "4"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route4
+:Route4 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot14 ,
+                 :Slot15 ,
+                 :Slot16 ,
+                 :Slot17 ,
+				 :Slot50 ;
+        sbeo:length "4"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route5
+:Route3 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:ExitRoute ;
+        olo:slot :Slot18 ,
+                 :Slot19 ,
+                 :Slot20 ,
+                 :Slot21 ,
+                 :Slot22 ;
+        sbeo:length "5"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route6
+:Route5 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:ExitRoute ;
+        olo:slot :Slot23 ,
+                 :Slot24 ,
+                 :Slot25 ,
+                 :Slot26 ;
+        sbeo:length "4"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route7
+:Route9 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot27 ,
+                 :Slot28 ,
+                 :Slot29 ;
+        sbeo:length "3"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route8
+:Route6 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot30 ,
+                 :Slot31 ,
+                 :Slot32 ,
+                 :Slot33 ,
+                 :Slot34 ;
+        sbeo:length "5"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route9
+:Route7 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot35 ,
+                 :Slot36 ,
+                 :Slot37 ,
+                 :Slot38 ,
+                 :Slot39 ,
+                 :Slot40 ,
+                 :Slot41 ,
+                 :Slot42 ;
+        sbeo:length "8"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot1
+:Slot1 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :J4 ;
+       olo:next :Slot2 ;
+       olo:ordered_list :Route1 ;
+       olo:index "1"^^xsd:positiveInteger .
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot10
+:Slot10 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J2 ;
+        olo:next :Slot11 ;
+        olo:ordered_list :Route2 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot11
+:Slot11 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE2 ;
+        olo:next :Slot12 ;
+        olo:ordered_list :Route2 ;
+        olo:index "2"^^xsd:positiveInteger .
+		
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot12
+:Slot12 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE2 ;
+        olo:next :Slot13 ;
+        olo:ordered_list :Route2 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot13
+:Slot13 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE2 ;
+        olo:ordered_list :Route2 ;
+        olo:index "4"^^xsd:positiveInteger .
+		
+	
+
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot14
+:Slot14 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J3 ;
+        olo:next :Slot15 ;
+        olo:ordered_list :Route4 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot15
+:Slot15 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :PV2 ;
+        olo:next :Slot16 ;
+        olo:ordered_list :Route4 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot16
+:Slot16 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE1 ;
+        olo:next :Slot17 ;
+        olo:ordered_list :Route4 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot17
+:Slot17 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J1 ;
+		olo:next :Slot50 ;
+        olo:ordered_list :Route4 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot18
+:Slot18 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J2 ;
+        olo:next :Slot19 ;
+        olo:ordered_list :Route3 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot19
+:Slot19 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE1 ;
+        olo:next :Slot20 ;
+        olo:ordered_list :Route3 ;
+        olo:index "2"^^xsd:positiveInteger .	
+
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot2
+:Slot2 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :RE7 ;
+       olo:next :Slot3 ;
+       olo:ordered_list :Route1 ;
+       olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot20
+:Slot20 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE2 ;
+        olo:next :Slot21 ;
+        olo:ordered_list :Route3 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot21
+:Slot21 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J1 ;
+        olo:next :Slot22 ;
+        olo:ordered_list :Route3 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot22
+:Slot22 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE1 ;
+        olo:ordered_list :Route3 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot23
+:Slot23 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J3 ;
+        olo:next :Slot24 ;
+        olo:ordered_list :Route5 ;
+        olo:index "1"^^xsd:positiveInteger .		
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot24
+:Slot24 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :PV1 ;
+        olo:next :Slot25 ;
+        olo:ordered_list :Route5 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot25
+:Slot25 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J1 ;
+        olo:next :Slot26 ;
+        olo:ordered_list :Route5 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot26
+:Slot26 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE1 ;
+        olo:ordered_list :Route5 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot27
+:Slot27 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE3 ;
+        olo:next :Slot28 ;
+        olo:ordered_list :Route9 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot28
+:Slot28 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE4 ;
+        olo:next :Slot29 ;
+        olo:ordered_list :Route9 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot29
+:Slot29 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J2 ;
+        olo:ordered_list :Route9 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+
+
+
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot3
+:Slot3 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :RE8 ;
+       olo:next :Slot4 ;
+       olo:ordered_list :Route1 ;
+       olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot30
+:Slot30 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J2 ;
+        olo:next :Slot31 ;
+        olo:ordered_list :Route6 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot31
+:Slot31 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE4 ;
+        olo:next :Slot32 ;
+        olo:ordered_list :Route6 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot32
+:Slot32 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OpenHall2 ;
+        olo:next :Slot33 ;
+        olo:ordered_list :Route6 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot33
+:Slot33 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE3 ;
+        olo:next :Slot34 ;
+        olo:ordered_list :Route6 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot34
+:Slot34 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE2 ;
+        olo:ordered_list :Route6 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot35
+:Slot35 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J1 ;
+        olo:next :Slot36 ;
+        olo:ordered_list :Route7 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot36
+:Slot36 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE2 ;
+        olo:next :Slot37 ;
+        olo:ordered_list :Route7 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot37
+:Slot37 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE1 ;
+        olo:next :Slot38 ;
+        olo:ordered_list :Route7 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot38
+:Slot38 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :Office1 ;
+        olo:next :Slot39 ;
+        olo:ordered_list :Route7 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot39
+:Slot39 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :Office2 ;
+        olo:next :Slot40 ;
+        olo:ordered_list :Route7 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot4
+:Slot4 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :RE9 ;
+       olo:next :Slot5 ;
+       olo:ordered_list :Route1 ;
+       olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot40
+:Slot40 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE2 ;
+        olo:next :Slot41 ;
+        olo:ordered_list :Route7 ;
+        olo:index "6"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot41
+:Slot41 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE3 ;
+        olo:next :Slot42 ;
+        olo:ordered_list :Route7 ;
+        olo:index "7"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot42
+:Slot42 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE2 ;
+        olo:ordered_list :Route7 ;
+        olo:index "8"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot43
+:Slot43 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J3 ;
+        olo:next :Slot44 ;
+        olo:ordered_list :Route8 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot44
+:Slot44 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :PV2 ;
+        olo:next :Slot45 ;
+        olo:ordered_list :Route8 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot45
+:Slot45 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE1 ;
+        olo:next :Slot46 ;
+        olo:ordered_list :Route8 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot46
+:Slot46 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OpenHall1 ;
+        olo:next :Slot47 ;
+        olo:ordered_list :Route8 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot47
+:Slot47 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE2 ;
+        olo:next :Slot48 ;
+        olo:ordered_list :Route8 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot48
+:Slot48 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE1 ;
+        olo:next :Slot49 ;
+        olo:ordered_list :Route8 ;
+        olo:index "6"^^xsd:positiveInteger .
+		
+		
+
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot49
+:Slot49 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J2 ;
+        olo:ordered_list :Route8 ;
+        olo:index "7"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot5
+:Slot5 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :FE3 ;
+       olo:ordered_list :Route1 ;
+       olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot6
+:Slot6 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :J3 ;
+       olo:next :Slot7 ;
+       olo:ordered_list :Route10 ;
+       olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot7
+:Slot7 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :RE4 ;
+       olo:next :Slot8 ;
+       olo:ordered_list :Route10 ;
+       olo:index "2"^^xsd:positiveInteger .
+	   
+
+:Slot50 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :FE1 ;
+       olo:ordered_list :Route4 ;
+       olo:index "5"^^xsd:positiveInteger .	   
+	   
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot8
+:Slot8 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :RE5 ;
+       olo:next :Slot9 ;
+       olo:ordered_list :Route10 ;
+       olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot9
+:Slot9 rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :J4 ;
+       olo:ordered_list :Route10 ;
+       olo:index "4"^^xsd:positiveInteger .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Screen1
 :Screen1 rdf:type owl:NamedIndividual ,
                   sbeo:DisplayScreen ;
@@ -1332,6 +1930,13 @@ The office space can be considered as a smart space as it is equipped with diffe
 :Screen2 rdf:type owl:NamedIndividual ,
                   sbeo:DisplayScreen ;
          sbeo:installedIn :Kitchen .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#ShoppingArcade
+:ShoppingArcade rdf:type owl:NamedIndividual ,
+                         sbeo:ShoppingMallBuilding .
+
+
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor1
@@ -2287,6 +2892,8 @@ The office space can be considered as a smart space as it is equipped with diffe
 :WC2 rdf:type owl:NamedIndividual ,
               seas:Bathroom ;
      sbeo:locatedIn :FirstFloor .
+
+
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
