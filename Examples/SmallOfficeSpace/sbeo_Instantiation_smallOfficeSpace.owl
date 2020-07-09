@@ -1350,7 +1350,7 @@ The office space can be considered as a smart space as it is equipped with diffe
                                :RE9 .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route1
+
 :Route1 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1362,8 +1362,8 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "5"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route10
-:RouteJ rdf:type owl:NamedIndividual ,
+
+:Route8 rdf:type owl:NamedIndividual ,
                   olo:OrderedList ,
                   sbeo:Route ;
          olo:slot :Slot43 ,
@@ -1376,7 +1376,7 @@ The office space can be considered as a smart space as it is equipped with diffe
          sbeo:length "7"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route2
+
 :Route10 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:Route ;
@@ -1387,7 +1387,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "4"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route3
+
 :Route2 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1398,7 +1398,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "4"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route4
+
 :Route4 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:Route ;
@@ -1410,7 +1410,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "4"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route5
+
 :Route3 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1422,7 +1422,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "5"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route6
+
 :Route5 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1433,7 +1433,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "4"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route7
+
 :Route9 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:Route ;
@@ -1443,7 +1443,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "3"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route8
+
 :Route6 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:Route ;
@@ -1455,7 +1455,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "5"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route9
+
 :Route7 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:Route ;
