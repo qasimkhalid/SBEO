@@ -97,17 +97,17 @@ Some research projects are being prepared to leverage the ontology.
 Deprecated classes will be labelled as obsolete with a proper annotation property.
 
 3. **Versioning policy (MUST)**
-The IoMusT ontology adopts sequence-based identifiers for its versions with a major number and a minor number, separated by a dot. A novel release featuring only small changes will cause a switch of the minor number, while relevant and/or structural changes affects also the major number.
+The SBEO adopts sequence-based identifiers for its versions with a major number and a minor number, separated by a dot. A novel release featuring only small changes will cause a switch of the minor number, while relevant and/or structural changes affects also the major number.
 
 ## G. Quality assurance
 1. **Testing (MUST)**
-Tests have been made by checking competency questions and formal requirements in the presentation paper. Once published, it will be available [here]().
+Tests have been made by checking competency questions and formal requirements in the presentation paper. Once published, it will be available [here](https://github.com/qasimkhalid/SBEO).
 
 2. **Evaluation (MUST)**
-Metrics, and discussions over IoMust ontology evaluation have been discussed in the presentation paper.
+Metrics, and discussions over SBEO evaluation have been discussed in the [description document](https://github.com/qasimkhalid/SBEO/blob/master/Documentation/sbeo_Description.pdf).
 
 3. **Examples of use (MUST)**
-At the moment, there is only one theoretical example of usage in the [description document](https://github.com/qasimkhalid/SBEO/blob/master/Documentation/sbeo_Description.pdf).
+At the moment, there is only one theoretical [example](https://github.com/qasimkhalid/SBEO/blob/master/Examples/SmallOfficeSpace/sbeo_Instantiation_smallOfficeSpace.owl) of usage in the [description document](https://github.com/qasimkhalid/SBEO/blob/master/Documentation/sbeo_Description.pdf).
 
 4. **Institutional endorsement (OPTIONAL)**
 None
