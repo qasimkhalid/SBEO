@@ -1465,6 +1465,11 @@ sbeo:Route rdf:type owl:Class ;
                              owl:onProperty sbeo:hasAvailabilityStatus ;
                              owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ;
+		   owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:oneOf ( sbeo:ShortestPath
+                                                          sbeo:SimplestPath
+                                                        )
+                                            ] ;
            rdfs:comment "A set of connected spaces represented by a starting and ending point, that ultimately leads to some specific position or place."@en ;
            rdfs:label "Route"@en .
 
@@ -1518,15 +1523,13 @@ sbeo:ShoppingRoute rdf:type owl:Class ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ShortestPath
-sbeo:ShortestPath rdf:type owl:Class ;
-                  rdfs:subClassOf sbeo:Route ;
+sbeo:ShortestPath rdf:type owl:NamedIndividual ;
                   rdfs:comment "A type of route having minimum cost in terms of distance or time."@en ;
                   rdfs:label "Shortest Path"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SimplestPath
-sbeo:SimplestPath rdf:type owl:Class ;
-                  rdfs:subClassOf sbeo:Route ;
+sbeo:SimplestPath rdf:type owl:NamedIndividual ;
                   rdfs:comment "A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points."@en ;
                   rdfs:label "Simplest Path"@en .
 
