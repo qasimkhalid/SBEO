@@ -21,3 +21,8 @@ The office space can be considered as a smart space as it is equipped with diffe
 <p align="center">
   <img src="Figures/NodeEdgeGraphOfficeSpace.png"/>
 </p>
+
+### Some Possible Routes in the Above-Mentioned Undirected Graph
+<p align="center">
+  <img src="Figures/Routes.png"/>
+</p>
