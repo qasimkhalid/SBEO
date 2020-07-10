@@ -18,18 +18,17 @@ Smart Building Evacuation Ontology (SBEO), version 0.1
 <https://github.com/qasimkhalid/SBEO>
 
 6. **Methodological framework (MUST)**
-The ontology is defines the needed concepts to create a Musical Things IoT environment by introducing the namespaces _iot_ and _iomust_, and connecting them to well known ontologies like [SOSA](<https://www.w3.org/TR/vocab-ssn/>) and [PROV-O](<https://www.w3.org/TR/prov-o/>).
+The ontology defined the needed concepts to create a real-time context aware route recommendations during both normal and emergency conditions by introducing the namespaces _sbeo_, and connecting them to well-known ontologies like [SEAS](<https://w3id.org/seas/>), [FOAF](<http://xmlns.com/foaf/spec/>) and [OLO](<http://purl.org/ontology/olo/core#>).
 
 ## B. Motivation
 1. **Need (MUST)**
-The Internet of Musical Things is an unexplored field of IoT that at
-the moment lacks of semantic representation
+Real-time context-aware route recommendation system in indoor envrionments during emergencies especially for group of families having kids or people with impairments, is still an unexplored field that at the moment lacks of semantic representation.
 
 2. **Competition (MUST)**
-At the moment, only with ontologies in IoT panorama. So far, no ontologies are available joining Music and IoT.
+There are some ontolgies such as, ONALIN [2],  ONTONAV [3], INO and UNO [4], that described the context-aware route recommendation, but all of them have not described the concepts to represent the groups as well as none of them is available on internet. 
 
 3. **Target audience (MUST)**
-Developers of IoT applications applied to music.
+All types of persons by the fact that the route recommendation and knowing about emergency evacuation in building is vital for their safety and equanimity. 
 
 ## C. Scope, requirements, development community
 1. **Scope and coverage (MUST)**
@@ -115,3 +114,6 @@ The ontology is still new, but we plan to use it in forthcoming projects.
 
 ## References
 [1] Matentzoglu, N., Malone, J., Mungall, C., & Stevens, R. (2018). MIRO: guidelines for minimum information for the reporting of an ontology. _Journal of biomedical semantics, 9_(1), 6.
+[2] Dudas, P.M., Ghafourian, M. and Karimi, H.A., 2009, May. ONALIN: Ontology and algorithm for indoor routing. In 2009 Tenth International Conference on Mobile Data Management: Systems, Services and Middleware (pp. 720-725). IEEE.
+[3] Anagnostopoulos, C., Tsetsos, V. and Kikiras, P., 2005. OntoNav: A semantic indoor navigation system. In 1st Workshop on Semantics in Mobile Environments (SME05), Ayia.
+[4] Kikiras, P., Tsetsos, V. and Hadjiefthymiades, S., 2006, August. Ontology-based user modeling for pedestrian navigation systems. In ECAI 2006 Workshop on Ubiquitous User Modeling (UbiqUM), Riva del Garda, Italy (pp. 1-6).
