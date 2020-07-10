@@ -5,11 +5,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
-@prefix time: <http://www.w3.org/2006/time#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
