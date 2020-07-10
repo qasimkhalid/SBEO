@@ -1,4 +1,3 @@
-@prefix : <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
