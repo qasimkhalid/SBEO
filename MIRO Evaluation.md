@@ -61,7 +61,7 @@ it uses a reduced subset of OWL 2 capabilities, being the Description Logic ALCR
 Protégé v5.5.0.
 
 3. **Ontology metrics (SHOULD)**
-Number of classes: 172; number of object properties: 33; number of data properties: 24; number of individuals: 29.
+Number of classes: 171; number of object properties: 34; number of data properties: 24; number of individuals: 31.
 
 4. **Incorporation of other ontologies (MUST)**
 [SEAS](<https://w3id.org/seas/>), [OLO](<http://purl.org/ontology/olo/core#>), [FOAF](<http://xmlns.com/foaf/spec/>)
@@ -82,7 +82,7 @@ See point E.4.
 33 object properties; 24 datatype properties.
 
 10. **Axiom pattern (MUST)**
-1065 axioms included (of which 306 logical axioms, 256 declaration axioms, 178 SubClassOf, 8 Equivalent Classes, 7 Hidden GCI, 3 Inverse Object Properties, 2 Functional Object Properties, 1 Inverse Functional, 6 Transitive Object Properties , 5 Symmetric Object Properties, 32 Object Property Domain and 31 Object Property Range, 1 SubData Property, 1 Disjoint Data Property, 4 Functional Data Property, 24 Data Property Domain and 10 Data Property Range, and 503 Annotation Assertions)
+1101 axioms included (of which 308 logical axioms, 258 declaration axioms, 177 SubClassOf, 9 Equivalent Classes, 8 Hidden GCI, 3 Inverse Object Properties, 2 Functional Object Properties, 1 Inverse Functional Object Property, 6 Transitive Object Properties , 5 Symmetric Object Properties, 33 Object Property Domain and 32 Object Property Range, 1 SubData Property, 1 Disjoint Data Property, 4 Functional Data Property, 24 Data Property Domain and 10 Data Property Range, and 535 Annotation Assertions)
 
 11. **Deferencable URI (OPTIONAL)** 
 It is possible to use deferencable URIs, but no assumption on this is made in the ontology.
@@ -114,6 +114,9 @@ The ontology is still new, but we plan to use it in forthcoming projects.
 
 ## References
 [1] Matentzoglu, N., Malone, J., Mungall, C., & Stevens, R. (2018). MIRO: guidelines for minimum information for the reporting of an ontology. _Journal of biomedical semantics, 9_(1), 6.
+
 [2] Dudas, P.M., Ghafourian, M. and Karimi, H.A., 2009, May. ONALIN: Ontology and algorithm for indoor routing. In 2009 Tenth International Conference on Mobile Data Management: Systems, Services and Middleware (pp. 720-725). IEEE.
+
 [3] Anagnostopoulos, C., Tsetsos, V. and Kikiras, P., 2005. OntoNav: A semantic indoor navigation system. In 1st Workshop on Semantics in Mobile Environments (SME05), Ayia.
+
 [4] Kikiras, P., Tsetsos, V. and Hadjiefthymiades, S., 2006, August. Ontology-based user modeling for pedestrian navigation systems. In ECAI 2006 Workshop on Ubiquitous User Modeling (UbiqUM), Riva del Garda, Italy (pp. 1-6).
