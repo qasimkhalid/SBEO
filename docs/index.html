@@ -73,10 +73,12 @@ function loadTOC(){
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="https://www.gnu.org/licenses/gpl.html" target="_blank"><img src="https://img.shields.io/badge/License-https://www.gnu.org/licenses/gpl.html-blue.svg" alt="GPLv3" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank">
+<img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
+
+<dt>Cite as:</dt>
 <dd>Qasim Khalid. SBEO: Smart Building Evacuation Ontology. Revision: 0.1.</dd>
 </dl>
-
 <hr/>
 </div>
 <div class="status">
@@ -86,26 +88,37 @@ function loadTOC(){
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
 Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
-The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</span>
+<p>The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</span>
 </div>
+<hr/>
 <div id="toc"></div> 
-<div id="toc"><h2>Table of contents</h2><ul><li>
-1. <a href="https://qasimkhalid.github.io/SBEO/#intro">Introduction </a></li><ul><li>
-1.1. <a href="https://qasimkhalid.github.io/SBEO/#ns">Namespace declarations</a></li></ul><li>
-2. <a href="https://qasimkhalid.github.io/SBEO/#overv">Smart Building Evacuation Ontology (SBEO): Overview </a></li><li>
-3. <a href="https://qasimkhalid.github.io/SBEO/#glanc">SBEO at a glance </a></li><li>
-4. <a href="https://qasimkhalid.github.io/SBEO/#visu">SBEO Visualization </a></li><li>
-3. <a href="https://qasimkhalid.github.io/SBEO/#crossreference">Cross reference for Smart Building Evacuation Ontology (SBEO) classes, properties and dataproperties </a></li><ul><li>
-3.1. <a href="https://qasimkhalid.github.io/SBEO/#classes-headline">Classes</a></li><li>
-3.2. <a href="https://qasimkhalid.github.io/SBEO/#properties">Object Properties</a></li><li>
-3.3. <a href="https://qasimkhalid.github.io/SBEO/#dataproperties-headline">Data Properties</a></li></ul><li>
-4. <a href="https://qasimkhalid.github.io/SBEO/#ref">References </a></li><li>
-5. <a href="https://qasimkhalid.github.io/SBEO/#ack">Acknowledgements </a></li></ul></div>     
+<div id="toc"><h2>Table of Contents</h2><ul>
+1. <a href="https://qasimkhalid.github.io/SBEO/#intro">Introduction </a>
+<p><ul>1.1. <a href="https://qasimkhalid.github.io/SBEO/#ns">Namespace declarations</a></ul>
+<p>2. <a href="https://qasimkhalid.github.io/SBEO/#overv">Smart Building Evacuation Ontology (SBEO): Overview </a>
+<p>3. <a href="https://qasimkhalid.github.io/SBEO/#glanc">SBEO at a glance </a>
+<p>4. <a href="https://qasimkhalid.github.io/SBEO/#visu">SBEO Visualization </a>
+<p>5. <a href="https://qasimkhalid.github.io/SBEO/#crossreference">Cross reference for Smart Building Evacuation Ontology (SBEO) classes, properties and dataproperties </a>
+<p><ul>5.1. <a href="https://qasimkhalid.github.io/SBEO/#classes-headline">Classes</a>
+<p>5.2. <a href="https://qasimkhalid.github.io/SBEO/#properties">Object Properties</a>
+<p>5.3. <a href="https://qasimkhalid.github.io/SBEO/#dataproperties-headline">Data Properties</a></ul>
+<p>6. <a href="https://qasimkhalid.github.io/SBEO/#ref">References </a>
+<p>7. <a href="https://qasimkhalid.github.io/SBEO/#ack">Acknowledgements </a></ul>
 
+
+</div>     
+
+
+
+
+
+
+
+<hr/>
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-The ontology used various concepts from existing ontologies such as <a href="http://xmlns.com/foaf/spec/">FOAF</a> and <a href="(https://w3id.org/seas/BuildingOntology-1.0)">SEAS Building Ontology</a>. As we know that FOAF (Friend of a Friend) specification is produced as a part of FOAF project (http://www.foaf-project.org/) that describes the characteristics of people and social groups. Also, the basic information about them such as age, gender, first name, last name and so forth. Regarding SEAS Building Ontology, as we have mentioned in the previous sections, it describes all the concepts related to the buildings and building spaces. On the other hand, some ontologies are not available online, such as Indoor Navigation Ontology (INO) and User Navigation Ontology (UNO) [1], User Tracking Ontology (UTO)[2]. Consequently, we have borrowed those concepts with our namespace. Figure 1 shows the core concepts of SBEO ontology, which are divided into three major parts. These are User Model, Building Model, and Context Model. 
+The ontology used various concepts from existing ontologies such as <a href="http://xmlns.com/foaf/spec/">FOAF</a> and <a href="(https://w3id.org/seas/BuildingOntology-1.0)">SEAS Building Ontology</a>. As we know that FOAF (Friend of a Friend) specification is produced as a part of FOAF project (http://www.foaf-project.org/) that describes the characteristics of people and social groups. Also, the basic information about them such as age, gender, first name, last name and so forth. Regarding SEAS Building Ontology, it describes all the concepts related to the buildings and building spaces. On the other hand, some ontologies are not available online, such as Indoor Navigation Ontology (INO) and User Navigation Ontology (UNO) [1], User Tracking Ontology (UTO)[2]. Consequently, we have borrowed those concepts with our namespace. Figure 1 shows the core concepts of SBEO ontology, which are divided into three major parts. These are User Model, Building Model, and Context Model. 
 
 
 </span>
