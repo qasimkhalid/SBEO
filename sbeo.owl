@@ -1,3 +1,4 @@
+@prefix : <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -21,6 +22,30 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+dcterms:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -473,7 +498,8 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
-sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ;
+sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
                            rdfs:domain [ rdf:type owl:Class ;
                                          owl:unionOf ( sbeo:PointOfInterest
                                                        sbeo:RouteElement
@@ -648,7 +674,8 @@ sbeo:value rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#width
-sbeo:width rdf:type owl:DatatypeProperty ;
+sbeo:width rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain sbeo:Passage ;
            rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
            rdfs:label "Width"@en .
