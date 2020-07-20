@@ -1,4 +1,3 @@
-@prefix : <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -22,30 +21,6 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/elements/1.1/rights
-dc:rights rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/language
-dcterms:language rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
 
 #################################################################
 #    Object Properties
@@ -388,6 +363,28 @@ sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
                      rdfs:label "Not Accessible To"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#notificationPreference
+sbeo:notificationPreference rdf:type owl:ObjectProperty ;
+                            rdfs:domain sbeo:SocialUnit ;
+                            rdfs:range sbeo:Description .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ofPerson
+sbeo:ofPerson rdf:type owl:ObjectProperty ;
+              rdfs:domain sbeo:SafetyParameter ;
+              rdfs:range foaf:Person .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace
+sbeo:ofSpace rdf:type owl:ObjectProperty ;
+             rdfs:domain sbeo:SafetyParameter ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:RouteElement
+                                        sbeo:Space
+                                      )
+                        ] .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#partOf
 sbeo:partOf rdf:type owl:ObjectProperty ,
                      owl:TransitiveProperty ;
@@ -454,11 +451,7 @@ sbeo:routeType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#uses
 sbeo:uses rdf:type owl:ObjectProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( sbeo:SocialUnit
-                                      foaf:Person
-                                    )
-                      ] ;
+          rdfs:domain sbeo:SocialUnit ;
           rdfs:range [ rdf:type owl:Class ;
                        owl:unionOf ( sbeo:Device
                                      sbeo:PointOfInterest
@@ -495,6 +488,20 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:integer ;
         rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
         rdfs:label "Identification Number"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
+sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain foaf:Person ;
+                         rdfs:range [ rdf:type rdfs:Datatype ;
+                                      owl:onDatatype xsd:float ;
+                                      owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
+                                                             ]
+                                                             [ xsd:maxInclusive "1.0"^^xsd:float
+                                                             ]
+                                                           )
+                                    ] .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
@@ -574,12 +581,31 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                  rdfs:label "Ended At Time"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasLowerLimit
+sbeo:hasLowerLimit rdf:type owl:DatatypeProperty ;
+                   rdfs:domain sbeo:Parameter ;
+                   rdfs:range xsd:float .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke
 sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
               rdfs:domain sbeo:SmokeSensor ;
               rdfs:range xsd:boolean ;
               rdfs:comment "It is used to describe if a smoke sensor detects smoke. It is expressed as Boolean in which true means the smoke is detected and the false means there is no smoke detected by the smoke sensor."@en ;
               rdfs:label "Has Smoke"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasUpperLimit
+sbeo:hasUpperLimit rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:float .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasValue
+sbeo:hasValue rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain sbeo:Device ;
+              rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
+              rdfs:label "Value"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasXTimesDeviated
@@ -601,6 +627,24 @@ sbeo:length rdf:type owl:DatatypeProperty ,
             rdfs:range xsd:nonNegativeInteger ;
             rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
             rdfs:label "Length"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#safetyFactor
+sbeo:safetyFactor rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( sbeo:RouteElement
+                                              sbeo:Space
+                                            )
+                              ] ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:onDatatype xsd:float ;
+                               owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
+                                                      ]
+                                                      [ xsd:maxInclusive "1.0"^^xsd:float
+                                                      ]
+                                                    )
+                             ] .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speed
@@ -664,13 +708,6 @@ sbeo:travelTime rdf:type owl:DatatypeProperty ;
                             ] ;
                 rdfs:comment "A specific period of time required to move from one place to another."@en ;
                 rdfs:label "Travel Time"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#value
-sbeo:value rdf:type owl:DatatypeProperty ;
-           rdfs:domain sbeo:Device ;
-           rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
-           rdfs:label "Value"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#width
@@ -1149,7 +1186,11 @@ sbeo:GraphBasedRoute rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Group
 sbeo:Group rdf:type owl:Class ;
-           rdfs:subClassOf sbeo:SocialUnit ;
+           rdfs:subClassOf sbeo:SocialUnit ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:hasMember ;
+                             owl:minCardinality "2"^^xsd:nonNegativeInteger
+                           ] ;
            rdfs:comment "It represents a collection of two or more people who interact with each other and may have the similar characteristics or objectives."@en ;
            rdfs:label "Group"@en .
 
@@ -1412,6 +1453,12 @@ sbeo:Panic rdf:type owl:Class ;
            rdfs:label "Panic"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Parameter
+sbeo:Parameter rdf:type owl:Class ;
+               rdfs:comment "A numerical or other measurable factor forming one of a set that defines a system or sets the conditions of its operation."@en ;
+               rdfs:label "Parameter"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Passage
 sbeo:Passage rdf:type owl:Class ;
              rdfs:subClassOf sbeo:RouteElement ;
@@ -1518,6 +1565,48 @@ sbeo:RoutePoint rdf:type owl:Class ;
                 rdfs:subClassOf sbeo:RouteElement ;
                 rdfs:comment "Any spatial element that is part of a path and traversable by persons. In addition, it may be used as a logic representation of physical passages to represent a node (or a vertex) in a route graph."@en ;
                 rdfs:label "Route Point"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SafetyParameter
+sbeo:SafetyParameter rdf:type owl:Class ;
+                     rdfs:subClassOf sbeo:Parameter ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:ofPerson ;
+                                       owl:someValuesFrom foaf:Person
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:ofSpace ;
+                                       owl:someValuesFrom [ rdf:type owl:Class ;
+                                                            owl:unionOf ( sbeo:RouteElement
+                                                                          sbeo:Space
+                                                                        )
+                                                          ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:hasValue ;
+                                       owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                           owl:onDatatype xsd:float ;
+                                                           owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
+                                                                                  ]
+                                                                                  [ xsd:maxInclusive "1.0"^^xsd:float
+                                                                                  ]
+                                                                                )
+                                                         ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:hasLowerLimit ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:hasUpperLimit ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:hasValue ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     rdfs:comment "A parameter to express the safety of any space for a specific person (or type of persons) in terms of accessibility."@en ;
+                     rdfs:label "Saftery Parameter"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SeatingArrangementRoute
@@ -2196,6 +2285,40 @@ sbeo:Visitor rdf:type owl:NamedIndividual ;
 sbeo:Walking rdf:type owl:NamedIndividual ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
              rdfs:label "Walking"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty sbeo:hasMember ;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass [ owl:intersectionOf ( foaf:Person
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:hasRole ;
+                                       owl:hasValue sbeo:Leader
+                                     ]
+                                   ) ;
+                rdf:type owl:Class
+              ] ;
+  rdfs:subClassOf sbeo:EmergencyEvacuationGroup
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty sbeo:hasMember ;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass [ owl:intersectionOf ( foaf:Person
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:hasRole ;
+                                       owl:hasValue sbeo:Responsible
+                                     ]
+                                   ) ;
+                rdf:type owl:Class
+              ] ;
+  rdfs:subClassOf sbeo:Family
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
