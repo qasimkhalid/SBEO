@@ -369,8 +369,8 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
                             rdfs:range sbeo:Description .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#ofPerson
-sbeo:ofPerson rdf:type owl:ObjectProperty ;
+###  http://www.ia.urjc.es/ontologies/building/sbeo#forPerson
+sbeo:forPerson rdf:type owl:ObjectProperty ;
               rdfs:domain sbeo:SafetyParameter ;
               rdfs:range foaf:Person .
 
