@@ -581,10 +581,13 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                  rdfs:label "Ended At Time"@en .
 
 
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasLowerLimit
 sbeo:hasLowerLimit rdf:type owl:DatatypeProperty ;
                    rdfs:domain sbeo:Parameter ;
-                   rdfs:range xsd:float .
+                   rdfs:range xsd:float;
+                 rdfs:comment "Specifies the lower limit a numeric property value must acquire."@en ;
+                 rdfs:label "Has Lower Limit"@en.
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke
@@ -597,8 +600,11 @@ sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasUpperLimit
 sbeo:hasUpperLimit rdf:type owl:DatatypeProperty ;
+
                    rdfs:domain sbeo:Parameter ;
-                   rdfs:range xsd:float .
+                   rdfs:range xsd:float;
+                 rdfs:comment "Specifies the upper limit a numeric property value must acquire."@en ;
+                 rdfs:label "Has Upper Limit"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasValue
