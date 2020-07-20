@@ -1578,7 +1578,7 @@ sbeo:RoutePoint rdf:type owl:Class ;
 sbeo:SafetyParameter rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:Parameter ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:ofPerson ;
+                                       owl:onProperty sbeo:forPerson ;
                                        owl:someValuesFrom foaf:Person
                                      ] ,
                                      [ rdf:type owl:Restriction ;
