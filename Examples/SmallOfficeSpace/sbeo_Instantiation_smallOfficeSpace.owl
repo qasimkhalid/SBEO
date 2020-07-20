@@ -19,6 +19,312 @@
 The office space can be considered as a smart space as it is equipped with different sensors such as location, temperature and smoke. In addition, fire incident equipment, alerting device such as speakers, and a monitor screen are also installed in it."""@en ;
                                                                    owl:versionInfo "0.1"@en .
 
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/ontology/olo/core#item
+olo:item rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontology/olo/core#next
+olo:next rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontology/olo/core#ordered_list
+olo:ordered_list rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontology/olo/core#slot
+olo:slot rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#accompanying
+sbeo:accompanying rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#connectedTo
+sbeo:connectedTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#dependentOn
+sbeo:dependentOn rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#familiarWith
+sbeo:familiarWith rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasFitnessStatus
+sbeo:hasFitnessStatus rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMember
+sbeo:hasMember rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMotionState
+sbeo:hasMotionState rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasNavigationalType
+sbeo:hasNavigationalType rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
+sbeo:hasRole rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
+sbeo:installedIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#leadsTo
+sbeo:leadsTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#locatedIn
+sbeo:locatedIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#meansOfNotification
+sbeo:meansOfNotification rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#partOf
+sbeo:partOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#performedBy
+sbeo:performedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo
+sbeo:responsibleTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#uses
+sbeo:uses rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/ontology/olo/core#index
+olo:index rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ID
+sbeo:ID rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#length
+sbeo:length rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/age
+foaf:age rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/firstName
+foaf:firstName rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/gender
+foaf:gender rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/ontology/olo/core#OrderedList
+olo:OrderedList rdf:type owl:Class .
+
+
+###  http://purl.org/ontology/olo/core#Slot
+olo:Slot rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AlertingDevice
+sbeo:AlertingDevice rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AlertingDeviceForImpairedPerson
+sbeo:AlertingDeviceForImpairedPerson rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#BlindPerson
+sbeo:BlindPerson rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingEntrance
+sbeo:BuildingEntrance rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingExit
+sbeo:BuildingExit rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#CorridorSegment
+sbeo:CorridorSegment rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#DeafPerson
+sbeo:DeafPerson rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#DisplayScreen
+sbeo:DisplayScreen rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#EmergencyEvacuationGroup
+sbeo:EmergencyEvacuationGroup rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#EmergencyExit
+sbeo:EmergencyExit rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#EndPoint
+sbeo:EndPoint rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ExitRoute
+sbeo:ExitRoute rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Family
+sbeo:Family rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher
+sbeo:FireExtinguisher rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#FloorExit
+sbeo:FloorExit rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Group
+sbeo:Group rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#HallSegment
+sbeo:HallSegment rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#HandheldDevice
+sbeo:HandheldDevice rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Junction
+sbeo:Junction rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#KidsArea
+sbeo:KidsArea rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensor
+sbeo:LocationSensor rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#MotorisedWheelchairPerson
+sbeo:MotorisedWheelchairPerson rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#OpenAreaExit
+sbeo:OpenAreaExit rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest
+sbeo:PointOfInterest rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterestSegment
+sbeo:PointOfInterestSegment rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomExit
+sbeo:RoomExit rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomSegment
+sbeo:RoomSegment rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Route
+sbeo:Route rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ShoppingMallBuilding
+sbeo:ShoppingMallBuilding rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SmartPhone
+sbeo:SmartPhone rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensor
+sbeo:SmokeSensor rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#TemperatureSensor
+sbeo:TemperatureSensor rdf:type owl:Class .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Visit
+sbeo:Visit rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Bathroom
+seas:Bathroom rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/BuildingStorey
+seas:BuildingStorey rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Corridor
+seas:Corridor rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Door
+seas:Door rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Elevator
+seas:Elevator rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Hall
+seas:Hall rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Kitchen
+seas:Kitchen rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Office
+seas:Office rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/OfficeBuilding
+seas:OfficeBuilding rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Room
+seas:Room rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Stairs
+seas:Stairs rdf:type owl:Class .
 
 
 #################################################################
@@ -982,6 +1288,7 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#MainEntrance1
 :MainEntrance1 rdf:type owl:NamedIndividual ,
+                        sbeo:BuildingEntrance ,
                         sbeo:BuildingExit ,
                         seas:Door .
 
@@ -1052,6 +1359,11 @@ The office space can be considered as a smart space as it is equipped with diffe
                     seas:Hall .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PDA1
+:PDA1 rdf:type owl:NamedIndividual ,
+               sbeo:HandheldDevice .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#POISegment1
 :POISegment1 rdf:type owl:NamedIndividual ,
                       sbeo:PointOfInterestSegment ;
@@ -1110,8 +1422,7 @@ The office space can be considered as a smart space as it is equipped with diffe
          sbeo:hasNavigationalType sbeo:AssistedNavigation ;
          sbeo:hasRole sbeo:Responsible ;
          sbeo:locatedIn :Office3 ;
-         sbeo:meansOfNotification :Phone2 ;
-         sbeo:uses :Phone2 ;
+         sbeo:meansOfNotification :PDA1 ;
          sbeo:ID 3 ;
          foaf:age 55 ;
          foaf:firstName "Brian"^^xsd:string ;
@@ -1199,11 +1510,6 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Phone1
 :Phone1 rdf:type owl:NamedIndividual ,
-                 sbeo:SmartPhone .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Phone2
-:Phone2 rdf:type owl:NamedIndividual ,
                  sbeo:SmartPhone .
 
 
@@ -1350,7 +1656,7 @@ The office space can be considered as a smart space as it is equipped with diffe
                                :RE9 .
 
 
-
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route1
 :Route1 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1362,32 +1668,18 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "5"^^xsd:nonNegativeInteger .
 
 
-
-:Route8 rdf:type owl:NamedIndividual ,
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route10
+:Route10 rdf:type owl:NamedIndividual ,
                   olo:OrderedList ,
                   sbeo:Route ;
-         olo:slot :Slot43 ,
-                  :Slot44 ,
-                  :Slot45 ,
-                  :Slot46 ,
-                  :Slot47 ,
-                  :Slot48 ,
-				  :Slot49 ;
-         sbeo:length "7"^^xsd:nonNegativeInteger .
+         olo:slot :Slot6 ,
+                  :Slot7 ,
+                  :Slot8 ,
+                  :Slot9 ;
+         sbeo:length "4"^^xsd:nonNegativeInteger .
 
 
-
-:Route10 rdf:type owl:NamedIndividual ,
-                 olo:OrderedList ,
-                 sbeo:Route ;
-        olo:slot :Slot6 ,
-                 :Slot7 ,
-                 :Slot8 ,
-                 :Slot9 ;
-        sbeo:length "4"^^xsd:nonNegativeInteger .
-
-
-
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route2
 :Route2 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1398,19 +1690,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "4"^^xsd:nonNegativeInteger .
 
 
-
-:Route4 rdf:type owl:NamedIndividual ,
-                 olo:OrderedList ,
-                 sbeo:Route ;
-        olo:slot :Slot14 ,
-                 :Slot15 ,
-                 :Slot16 ,
-                 :Slot17 ,
-				 :Slot50 ;
-        sbeo:length "4"^^xsd:nonNegativeInteger .
-
-
-
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route3
 :Route3 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1422,7 +1702,19 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "5"^^xsd:nonNegativeInteger .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route4
+:Route4 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot14 ,
+                 :Slot15 ,
+                 :Slot16 ,
+                 :Slot17 ,
+                 :Slot50 ;
+        sbeo:length "4"^^xsd:nonNegativeInteger .
 
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route5
 :Route5 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:ExitRoute ;
@@ -1433,17 +1725,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "4"^^xsd:nonNegativeInteger .
 
 
-
-:Route9 rdf:type owl:NamedIndividual ,
-                 olo:OrderedList ,
-                 sbeo:Route ;
-        olo:slot :Slot27 ,
-                 :Slot28 ,
-                 :Slot29 ;
-        sbeo:length "3"^^xsd:nonNegativeInteger .
-
-
-
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route6
 :Route6 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:Route ;
@@ -1455,7 +1737,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "5"^^xsd:nonNegativeInteger .
 
 
-
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route7
 :Route7 rdf:type owl:NamedIndividual ,
                  olo:OrderedList ,
                  sbeo:Route ;
@@ -1470,6 +1752,47 @@ The office space can be considered as a smart space as it is equipped with diffe
         sbeo:length "8"^^xsd:nonNegativeInteger .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route8
+:Route8 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot43 ,
+                 :Slot44 ,
+                 :Slot45 ,
+                 :Slot46 ,
+                 :Slot47 ,
+                 :Slot48 ,
+                 :Slot49 ;
+        sbeo:length "7"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route9
+:Route9 rdf:type owl:NamedIndividual ,
+                 olo:OrderedList ,
+                 sbeo:Route ;
+        olo:slot :Slot27 ,
+                 :Slot28 ,
+                 :Slot29 ;
+        sbeo:length "3"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Screen1
+:Screen1 rdf:type owl:NamedIndividual ,
+                  sbeo:DisplayScreen ;
+         sbeo:installedIn :KidsRoom .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Screen2
+:Screen2 rdf:type owl:NamedIndividual ,
+                  sbeo:DisplayScreen ;
+         sbeo:installedIn :Kitchen .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#ShoppingArcade
+:ShoppingArcade rdf:type owl:NamedIndividual ,
+                         sbeo:ShoppingMallBuilding .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot1
 :Slot1 rdf:type owl:NamedIndividual ,
                 olo:Slot ;
@@ -1477,6 +1800,8 @@ The office space can be considered as a smart space as it is equipped with diffe
        olo:next :Slot2 ;
        olo:ordered_list :Route1 ;
        olo:index "1"^^xsd:positiveInteger .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot10
 :Slot10 rdf:type owl:NamedIndividual ,
                  olo:Slot ;
@@ -1493,7 +1818,8 @@ The office space can be considered as a smart space as it is equipped with diffe
         olo:next :Slot12 ;
         olo:ordered_list :Route2 ;
         olo:index "2"^^xsd:positiveInteger .
-		
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot12
 :Slot12 rdf:type owl:NamedIndividual ,
                  olo:Slot ;
@@ -1509,9 +1835,6 @@ The office space can be considered as a smart space as it is equipped with diffe
         olo:item :FE2 ;
         olo:ordered_list :Route2 ;
         olo:index "4"^^xsd:positiveInteger .
-		
-	
-
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot14
@@ -1545,7 +1868,7 @@ The office space can be considered as a smart space as it is equipped with diffe
 :Slot17 rdf:type owl:NamedIndividual ,
                  olo:Slot ;
         olo:item :J1 ;
-		olo:next :Slot50 ;
+        olo:next :Slot50 ;
         olo:ordered_list :Route4 ;
         olo:index "4"^^xsd:positiveInteger .
 
@@ -1565,8 +1888,7 @@ The office space can be considered as a smart space as it is equipped with diffe
         olo:item :RE1 ;
         olo:next :Slot20 ;
         olo:ordered_list :Route3 ;
-        olo:index "2"^^xsd:positiveInteger .	
-
+        olo:index "2"^^xsd:positiveInteger .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot2
@@ -1610,7 +1932,8 @@ The office space can be considered as a smart space as it is equipped with diffe
         olo:item :J3 ;
         olo:next :Slot24 ;
         olo:ordered_list :Route5 ;
-        olo:index "1"^^xsd:positiveInteger .		
+        olo:index "1"^^xsd:positiveInteger .
+
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot24
 :Slot24 rdf:type owl:NamedIndividual ,
@@ -1638,8 +1961,6 @@ The office space can be considered as a smart space as it is equipped with diffe
         olo:index "4"^^xsd:positiveInteger .
 
 
-
-
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot27
 :Slot27 rdf:type owl:NamedIndividual ,
                  olo:Slot ;
@@ -1664,11 +1985,6 @@ The office space can be considered as a smart space as it is equipped with diffe
         olo:item :J2 ;
         olo:ordered_list :Route9 ;
         olo:index "3"^^xsd:positiveInteger .
-
-
-
-
-
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot3
@@ -1856,9 +2172,6 @@ The office space can be considered as a smart space as it is equipped with diffe
         olo:next :Slot49 ;
         olo:ordered_list :Route8 ;
         olo:index "6"^^xsd:positiveInteger .
-		
-		
-
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot49
@@ -1877,6 +2190,14 @@ The office space can be considered as a smart space as it is equipped with diffe
        olo:index "5"^^xsd:positiveInteger .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot50
+:Slot50 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE1 ;
+        olo:ordered_list :Route4 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot6
 :Slot6 rdf:type owl:NamedIndividual ,
                 olo:Slot ;
@@ -1893,14 +2214,6 @@ The office space can be considered as a smart space as it is equipped with diffe
        olo:next :Slot8 ;
        olo:ordered_list :Route10 ;
        olo:index "2"^^xsd:positiveInteger .
-	   
-
-:Slot50 rdf:type owl:NamedIndividual ,
-                olo:Slot ;
-       olo:item :FE1 ;
-       olo:ordered_list :Route4 ;
-       olo:index "5"^^xsd:positiveInteger .	   
-	   
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot8
@@ -1918,25 +2231,6 @@ The office space can be considered as a smart space as it is equipped with diffe
        olo:item :J4 ;
        olo:ordered_list :Route10 ;
        olo:index "4"^^xsd:positiveInteger .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Screen1
-:Screen1 rdf:type owl:NamedIndividual ,
-                  sbeo:DisplayScreen ;
-         sbeo:installedIn :KidsRoom .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Screen2
-:Screen2 rdf:type owl:NamedIndividual ,
-                  sbeo:DisplayScreen ;
-         sbeo:installedIn :Kitchen .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#ShoppingArcade
-:ShoppingArcade rdf:type owl:NamedIndividual ,
-                         sbeo:ShoppingMallBuilding .
-
-
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor1
@@ -2403,8 +2697,8 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SpecialPurposeDevice1
 :SpecialPurposeDevice1 rdf:type owl:NamedIndividual ,
-                                sbeo:AlertingDeviceForImpairedPerson ;
-                       sbeo:uses :Phone3 .
+                                sbeo:AlertingDeviceForImpairedPerson ,
+                                sbeo:HandheldDevice .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Stairs
@@ -2894,6 +3188,36 @@ The office space can be considered as a smart space as it is equipped with diffe
      sbeo:locatedIn :FirstFloor .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AssistedNavigation
+sbeo:AssistedNavigation rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
+sbeo:Autonomous rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#CollaborativeNavigation
+sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
+sbeo:Dependent rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Fit
+sbeo:Fit rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#MultiObjectiveNavigation
+sbeo:MultiObjectiveNavigation rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
+sbeo:Responsible rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Standing
+sbeo:Standing rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
