@@ -369,8 +369,8 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
                             rdfs:range sbeo:Description .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#ofPerson
-sbeo:ofPerson rdf:type owl:ObjectProperty ;
+###  http://www.ia.urjc.es/ontologies/building/sbeo#forPerson
+sbeo:forPerson rdf:type owl:ObjectProperty ;
               rdfs:domain sbeo:SafetyParameter ;
               rdfs:range foaf:Person .
 
@@ -493,7 +493,7 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
 sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
                                   owl:FunctionalProperty ;
-                         rdfs:domain foaf:Person ;
+                         rdfs:domain sbeo:Space ;
                          rdfs:range [ rdf:type rdfs:Datatype ;
                                       owl:onDatatype xsd:float ;
                                       owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
@@ -1578,7 +1578,7 @@ sbeo:RoutePoint rdf:type owl:Class ;
 sbeo:SafetyParameter rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:Parameter ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:ofPerson ;
+                                       owl:onProperty sbeo:forPerson ;
                                        owl:someValuesFrom foaf:Person
                                      ] ,
                                      [ rdf:type owl:Restriction ;
