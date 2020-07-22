@@ -21,9 +21,6 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
-
-
-
 #################################################################
 #    Object Properties
 #################################################################
@@ -470,16 +467,6 @@ sbeo:uses rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
-sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
-                           owl:FunctionalProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( foaf:Person
-                                            )
-                              ] ;
-                  rdfs:range xsd:float .
-
-
 ###  http://purl.org/ontology/olo/core#index
 olo:index rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
@@ -500,6 +487,16 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:integer ;
         rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
         rdfs:label "Identification Number"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
+sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( foaf:Person
+                                                   )
+                                     ] ;
+                         rdfs:range xsd:float .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
@@ -771,10 +768,6 @@ olo:Slot rdf:type owl:Class ;
 sbeo:AccessibilityParameter rdf:type owl:Class ;
                             rdfs:subClassOf sbeo:Parameter ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty sbeo:forPerson ;
-                                              owl:someValuesFrom foaf:Person
-                                            ] ,
-                                            [ rdf:type owl:Restriction ;
                                               owl:onProperty sbeo:ofSpace ;
                                               owl:someValuesFrom sbeo:RouteElement
                                             ] ,
@@ -783,12 +776,16 @@ sbeo:AccessibilityParameter rdf:type owl:Class ;
                                               owl:someValuesFrom sbeo:Space
                                             ] ,
                                             [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:forPerson ;
+                                              owl:allValuesFrom foaf:Person
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
                                               owl:onProperty sbeo:ofSpace ;
                                               owl:cardinality "1"^^xsd:nonNegativeInteger
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty sbeo:hasValue ;
-                                              owl:someValuesFrom xsd:float
+                                              owl:allValuesFrom xsd:float
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty sbeo:hasValue ;
@@ -1590,16 +1587,16 @@ sbeo:RoutePoint rdf:type owl:Class ;
 sbeo:SafetyParameter rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:Parameter ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:forPerson ;
-                                       owl:someValuesFrom foaf:Person
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:ofSpace ;
                                        owl:someValuesFrom sbeo:RouteElement
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:ofSpace ;
                                        owl:someValuesFrom sbeo:Space
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:forPerson ;
+                                       owl:allValuesFrom foaf:Person
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:hasValue ;
@@ -1816,7 +1813,11 @@ sbeo:WaitingZone rdf:type owl:Class ;
 
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:SocialUnit ;
+            rdfs:subClassOf sbeo:SocialUnit ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sbeo:accessibilityFactor ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
             rdfs:comment "It represents a single individual of any age and having any type of characteristics."@en ;
             rdfs:label "Person"@en .
 
