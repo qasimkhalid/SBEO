@@ -492,17 +492,6 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
         rdfs:label "Identification Number"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
-sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
-                                  owl:FunctionalProperty ;
-                         rdfs:domain [ rdf:type owl:Class ;
-                                       owl:unionOf ( sbeo:RouteElement
-                                                     sbeo:Space
-                                                   )
-                                     ] ;
-                         rdfs:range xsd:float .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
 sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
