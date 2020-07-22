@@ -1603,6 +1603,10 @@ sbeo:SafetyParameter rdf:type owl:Class ;
                                        owl:allValuesFrom xsd:float
                                      ] ,
                                      [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:ofSpace ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                      ] ,
+                                     [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:hasValue ;
                                        owl:cardinality "1"^^xsd:nonNegativeInteger
                                      ] ;
