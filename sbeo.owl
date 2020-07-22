@@ -22,6 +22,8 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
 
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -184,6 +186,12 @@ sbeo:familiarWith rdf:type owl:ObjectProperty ;
                              ] ;
                   rdfs:comment "States the familiarity of any social unit with a physical space or point of interest."@en ;
                   rdfs:label "Familiar With"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#forPerson
+sbeo:forPerson rdf:type owl:ObjectProperty ;
+               rdfs:domain sbeo:Parameter ;
+               rdfs:range foaf:Person .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasActivityStatus
@@ -369,15 +377,9 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
                             rdfs:range sbeo:Description .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#forPerson
-sbeo:forPerson rdf:type owl:ObjectProperty ;
-              rdfs:domain sbeo:SafetyParameter ;
-              rdfs:range foaf:Person .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace
 sbeo:ofSpace rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:SafetyParameter ;
+             rdfs:domain sbeo:Parameter ;
              rdfs:range [ rdf:type owl:Class ;
                           owl:unionOf ( sbeo:RouteElement
                                         sbeo:Space
@@ -493,15 +495,12 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
 sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
                                   owl:FunctionalProperty ;
-                         rdfs:domain sbeo:Space ;
-                         rdfs:range [ rdf:type rdfs:Datatype ;
-                                      owl:onDatatype xsd:float ;
-                                      owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
-                                                             ]
-                                                             [ xsd:maxInclusive "1.0"^^xsd:float
-                                                             ]
-                                                           )
-                                    ] .
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( sbeo:RouteElement
+                                                     sbeo:Space
+                                                   )
+                                     ] ;
+                         rdfs:range xsd:float .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
@@ -581,15 +580,6 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                  rdfs:label "Ended At Time"@en .
 
 
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasLowerLimit
-sbeo:hasLowerLimit rdf:type owl:DatatypeProperty ;
-                   rdfs:domain sbeo:Parameter ;
-                   rdfs:range xsd:float;
-                 rdfs:comment "Specifies the lower limit a numeric property value must acquire."@en ;
-                 rdfs:label "Has Lower Limit"@en.
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke
 sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
               rdfs:domain sbeo:SmokeSensor ;
@@ -598,19 +588,11 @@ sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
               rdfs:label "Has Smoke"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasUpperLimit
-sbeo:hasUpperLimit rdf:type owl:DatatypeProperty ;
-
-                   rdfs:domain sbeo:Parameter ;
-                   rdfs:range xsd:float;
-                 rdfs:comment "Specifies the upper limit a numeric property value must acquire."@en ;
-                 rdfs:label "Has Upper Limit"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasValue
 sbeo:hasValue rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
-              rdfs:domain sbeo:Device ;
+              rdfs:domain owl:Thing ;
+              rdfs:range xsd:float ;
               rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
               rdfs:label "Value"@en .
 
@@ -644,14 +626,7 @@ sbeo:safetyFactor rdf:type owl:DatatypeProperty ,
                                               sbeo:Space
                                             )
                               ] ;
-                  rdfs:range [ rdf:type rdfs:Datatype ;
-                               owl:onDatatype xsd:float ;
-                               owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
-                                                      ]
-                                                      [ xsd:maxInclusive "1.0"^^xsd:float
-                                                      ]
-                                                    )
-                             ] .
+                  rdfs:range xsd:float .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speed
@@ -791,6 +766,35 @@ olo:Slot rdf:type owl:Class ;
          rdfs:comment "A slot in an ordered list with a fixed index."@en ;
          rdfs:isDefinedBy olo: ;
          rdfs:label "Slot"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AccessibilityParameter
+sbeo:AccessibilityParameter rdf:type owl:Class ;
+                            rdfs:subClassOf sbeo:Parameter ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:forPerson ;
+                                              owl:someValuesFrom foaf:Person
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:ofSpace ;
+                                              owl:someValuesFrom sbeo:RouteElement
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:ofSpace ;
+                                              owl:someValuesFrom sbeo:Space
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:ofSpace ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:accessibilityFactor ;
+                                              owl:someValuesFrom xsd:float
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty sbeo:accessibilityFactor ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                            ] .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActiveFireProtectionDevice
@@ -1563,6 +1567,15 @@ sbeo:Route rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement
 sbeo:RouteElement rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty sbeo:hasAvailabilityStatus ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass sbeo:AvailabilityStatus
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sbeo:safetyFactor ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
                   rdfs:comment "It represents the physical or conceptual elements of a navigation path."@en ;
                   rdfs:label "Route Element"@en .
 
@@ -1583,37 +1596,22 @@ sbeo:SafetyParameter rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:ofSpace ;
-                                       owl:someValuesFrom [ rdf:type owl:Class ;
-                                                            owl:unionOf ( sbeo:RouteElement
-                                                                          sbeo:Space
-                                                                        )
-                                                          ]
+                                       owl:someValuesFrom sbeo:RouteElement
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:ofSpace ;
+                                       owl:someValuesFrom sbeo:Space
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:hasValue ;
-                                       owl:allValuesFrom [ rdf:type rdfs:Datatype ;
-                                                           owl:onDatatype xsd:float ;
-                                                           owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
-                                                                                  ]
-                                                                                  [ xsd:maxInclusive "1.0"^^xsd:float
-                                                                                  ]
-                                                                                )
-                                                         ]
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasLowerLimit ;
-                                       owl:cardinality "1"^^xsd:nonNegativeInteger
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasUpperLimit ;
-                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       owl:allValuesFrom xsd:float
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:hasValue ;
                                        owl:cardinality "1"^^xsd:nonNegativeInteger
                                      ] ;
                      rdfs:comment "A parameter to express the safety of any space for a specific person (or type of persons) in terms of accessibility."@en ;
-                     rdfs:label "Saftery Parameter"@en .
+                     rdfs:label "Saftey Parameter"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SeatingArrangementRoute
@@ -1675,6 +1673,11 @@ sbeo:SocialUnit rdf:type owl:Class ;
 sbeo:Space rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty sbeo:hasAvailabilityStatus ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass sbeo:AvailabilityStatus
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:safetyFactor ;
                              owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            rdfs:comment "A physical, three dimensional, and one of the most important elements in the design of architecture that can further be divided to create more spaces from it."@en ;
