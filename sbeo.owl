@@ -470,6 +470,16 @@ sbeo:uses rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
+sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( foaf:Person
+                                            )
+                              ] ;
+                  rdfs:range xsd:float .
+
+
 ###  http://purl.org/ontology/olo/core#index
 olo:index rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
