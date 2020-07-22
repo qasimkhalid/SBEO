@@ -777,11 +777,11 @@ sbeo:AccessibilityParameter rdf:type owl:Class ;
                                               owl:cardinality "1"^^xsd:nonNegativeInteger
                                             ] ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty sbeo:accessibilityFactor ;
+                                              owl:onProperty sbeo:hasValue ;
                                               owl:someValuesFrom xsd:float
                                             ] ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty sbeo:accessibilityFactor ;
+                                              owl:onProperty sbeo:hasValue ;
                                               owl:cardinality "1"^^xsd:nonNegativeInteger
                                             ] .
 
