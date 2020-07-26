@@ -21,6 +21,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -353,19 +354,6 @@ sbeo:meansOfNotification rdf:type owl:ObjectProperty ;
                                     ] ;
                          rdfs:comment "A method of notifying a social unit."@en ;
                          rdfs:label "Means of Notification"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo
-sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( sbeo:PointOfInterest
-                                                 sbeo:RouteElement
-                                                 sbeo:Space
-                                               )
-                                 ] ;
-                     rdfs:range sbeo:SocialUnit ;
-                     rdfs:comment "Expresses the prohibition of access of any specific foaf:Person to a specific physical space."@en ;
-                     rdfs:label "Not Accessible To"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#notificationPreference
@@ -1599,13 +1587,13 @@ sbeo:SafetyParameter rdf:type owl:Class ;
                                        owl:allValuesFrom foaf:Person
                                      ] ,
                                      [ rdf:type owl:Restriction ;
+                                       owl:onProperty sbeo:ofSpace ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:hasValue ;
                                        owl:allValuesFrom xsd:float
                                      ] ,
-                                     [ rdf:type owl:Restriction ;
-                                              owl:onProperty sbeo:ofSpace ;
-                                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty sbeo:hasValue ;
                                        owl:cardinality "1"^^xsd:nonNegativeInteger
