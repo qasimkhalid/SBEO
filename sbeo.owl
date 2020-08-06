@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
@@ -21,7 +22,6 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
-
 #################################################################
 #    Object Properties
 #################################################################
@@ -451,6 +451,10 @@ sbeo:uses rdf:type owl:ObjectProperty ;
           rdfs:label "Uses"@en .
 
 
+###  http://www.w3.org/ns/sosa/observes
+sosa:observes rdf:type owl:ObjectProperty .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -556,7 +560,6 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke
 sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
-              rdfs:domain sbeo:SmokeSensor ;
               rdfs:range xsd:boolean ;
               rdfs:comment "It is used to describe if a smoke sensor detects smoke. It is expressed as Boolean in which true means the smoke is detected and the false means there is no smoke detected by the smoke sensor."@en ;
               rdfs:label "Has Smoke"@en .
@@ -1238,18 +1241,6 @@ sbeo:KidsArea rdf:type owl:Class ;
               rdfs:label "Kids Area"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensor
-sbeo:LocationSensor rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:Sensor ;
-                    rdfs:comment "The location sensor is a part of indoor positioning system to detect the location of each person within the building."@en ;
-                    rdfs:label "Location Sensor"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensorEvent
-sbeo:LocationSensorEvent rdf:type owl:Class ;
-                         rdfs:subClassOf sbeo:SensorEvent .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LowStaminaPerson
 sbeo:LowStaminaPerson rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:PhysicallyImpairedPerson ;
@@ -1561,13 +1552,6 @@ sbeo:SeatingArrangementRoute rdf:type owl:Class ;
                              rdfs:label "Seating Arrangement Route"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Sensor
-sbeo:Sensor rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Device ;
-            rdfs:comment "A sensor is a device that detects or measures a physical property and records, indicates, or otherwise responds to it (Oxford Dictionary of English)."@en ;
-            rdfs:label "Sensor"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SensorEvent
 sbeo:SensorEvent rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:Event ;
@@ -1601,18 +1585,6 @@ sbeo:SmartPhone rdf:type owl:Class ;
                 rdfs:subClassOf sbeo:MobilePhone ;
                 rdfs:comment "A mobile phone that is able to perform many of the functions of a computer, typically having a relatively large screen and an operating system capable of running general-purpose applications (Oxford Dictionary of English)."@en ;
                 rdfs:label "Smartphone"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensor
-sbeo:SmokeSensor rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Sensor ;
-                 rdfs:comment "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."@en ;
-                 rdfs:label "Smoke Sensor"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensorEvent
-sbeo:SmokeSensorEvent rdf:type owl:Class ;
-                      rdfs:subClassOf sbeo:SensorEvent .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit
@@ -1702,18 +1674,6 @@ sbeo:Telephone rdf:type owl:Class ;
                rdfs:label "Telephone"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#TemperatureSensor
-sbeo:TemperatureSensor rdf:type owl:Class ;
-                       rdfs:subClassOf sbeo:Sensor ;
-                       rdfs:comment "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."@en ;
-                       rdfs:label "Temperature Sensor"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#TemperatureSensorEvent
-sbeo:TemperatureSensorEvent rdf:type owl:Class ;
-                            rdfs:subClassOf sbeo:SensorEvent .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TerroristAttack
 sbeo:TerroristAttack rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:Incident ;
@@ -1797,6 +1757,21 @@ sbeo:WaitingZone rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:RoutePoint ;
                  rdfs:comment "A space (normally with seating), where people can wait to do some specific activity. During emergency condtions, it is also used for several purposes, such as unification of people with their family members, acquaintances or emergency rescue teams, etc."@en ;
                  rdfs:label "Waiting Zone"@en .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+sosa:ObservableProperty rdf:type owl:Class ;
+                        rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                        rdfs:isDefinedBy sosa: ;
+                        rdfs:label "Observable Property"@en .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+sosa:Sensor rdf:type owl:Class ;
+            rdfs:subClassOf sbeo:Device ;
+            rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+            rdfs:isDefinedBy sosa: ;
+            rdfs:label "Sensor"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
