@@ -587,7 +587,7 @@ sbeo:length rdf:type owl:DatatypeProperty ,
                                         sbeo:Passage
                                       )
                         ] ;
-            rdfs:range xsd:nonNegativeInteger ;
+            rdfs:range xsd:float ;
             rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
             rdfs:label "Length"@en .
 
@@ -659,6 +659,7 @@ sbeo:travelTime rdf:type owl:DatatypeProperty ;
 sbeo:width rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain sbeo:Passage ;
+           rdfs:range xsd:float ;
            rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
            rdfs:label "Width"@en .
 
