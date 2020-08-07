@@ -22,6 +22,9 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
+
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -135,13 +138,20 @@ sbeo:connectedTo rdf:type owl:ObjectProperty ,
                  rdfs:label "Connected To"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#context
+sbeo:context rdf:type owl:ObjectProperty ;
+             rdfs:domain sbeo:RoleInContext ;
+             rdfs:comment "The circumstances that form the setting for an event, statement, or idea, and in terms of which it can be fully understood and assessed (Oxford Dictionary of English)."@en ;
+             rdfs:label "Context"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#dependentOn
 sbeo:dependentOn rdf:type owl:ObjectProperty ;
                  owl:inverseOf sbeo:responsibleTo ;
                  rdf:type owl:TransitiveProperty ;
                  rdfs:domain [ owl:intersectionOf ( foaf:Person
                                                     [ rdf:type owl:Restriction ;
-                                                      owl:onProperty sbeo:hasRole ;
+                                                      owl:onProperty sbeo:role ;
                                                       owl:hasValue sbeo:Dependent
                                                     ]
                                                   ) ;
@@ -149,7 +159,7 @@ sbeo:dependentOn rdf:type owl:ObjectProperty ;
                              ] ;
                  rdfs:range [ owl:intersectionOf ( foaf:Person
                                                    [ rdf:type owl:Restriction ;
-                                                     owl:onProperty sbeo:hasRole ;
+                                                     owl:onProperty sbeo:role ;
                                                      owl:hasValue sbeo:Responsible
                                                    ]
                                                  ) ;
@@ -275,14 +285,6 @@ sbeo:hasNavigationalType rdf:type owl:ObjectProperty ;
                          rdfs:label "Has Navigation Type"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
-sbeo:hasRole rdf:type owl:ObjectProperty ;
-             rdfs:domain foaf:Person ;
-             rdfs:range sbeo:Role ;
-             rdfs:comment "Expresses a relation between a person and a role."@en ;
-             rdfs:label "Has Role"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
 sbeo:installedIn rdf:type owl:ObjectProperty ,
                           owl:TransitiveProperty ;
@@ -397,12 +399,20 @@ sbeo:performedBy rdf:type owl:ObjectProperty ;
                  rdfs:label "Performed by"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#player
+sbeo:player rdf:type owl:ObjectProperty ;
+            rdfs:domain sbeo:RoleInContext ;
+            rdfs:range foaf:Person ;
+            rdfs:comment "It express an agent that plays a role in a specific context."@en ;
+            rdfs:label "Player"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo
 sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                             owl:TransitiveProperty ;
                    rdfs:domain [ owl:intersectionOf ( foaf:Person
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty sbeo:hasRole ;
+                                                        owl:onProperty sbeo:role ;
                                                         owl:hasValue sbeo:Responsible
                                                       ]
                                                     ) ;
@@ -410,7 +420,7 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                                ] ;
                    rdfs:range [ owl:intersectionOf ( foaf:Person
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty sbeo:hasRole ;
+                                                       owl:onProperty sbeo:role ;
                                                        owl:hasValue sbeo:Dependent
                                                      ]
                                                    ) ;
@@ -418,6 +428,14 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                               ] ;
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#role
+sbeo:role rdf:type owl:ObjectProperty ;
+          rdfs:domain sbeo:RoleInContext ;
+          rdfs:range sbeo:Role ;
+          rdfs:comment "Expresses a role of an agent."@en ;
+          rdfs:label "Role"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#routePreference
@@ -1490,11 +1508,42 @@ sbeo:Role rdf:type owl:Class ;
                                             sbeo:Dependent
                                             sbeo:Leader
                                             sbeo:Responsible
-                                            sbeo:Visitor
                                           )
                               ] ;
           rdfs:comment "The function assumed or part played by a person or thing in a particular situation (Oxford Dictionary of English)."@en ;
           rdfs:label "Role"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#RoleInContext
+sbeo:RoleInContext rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:context ;
+                                     owl:someValuesFrom owl:Thing
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:player ;
+                                     owl:allValuesFrom foaf:Person
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:role ;
+                                     owl:allValuesFrom sbeo:Role
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:player ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass foaf:Person
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:context ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:role ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass sbeo:Role
+                                   ] ;
+                   rdfs:comment "A concept to express that an agent is playing a role in a given context."@en ;
+                   rdfs:label "Role In Context"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomEntrance
@@ -2244,12 +2293,6 @@ sbeo:Visiting rdf:type owl:NamedIndividual ;
               rdfs:label "Visiting"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
-sbeo:Visitor rdf:type owl:NamedIndividual ;
-             rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
-             rdfs:label "Visitor"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Walking
 sbeo:Walking rdf:type owl:NamedIndividual ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
@@ -2265,7 +2308,7 @@ sbeo:Walking rdf:type owl:NamedIndividual ;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
   owl:onClass [ owl:intersectionOf ( foaf:Person
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasRole ;
+                                       owl:onProperty sbeo:role ;
                                        owl:hasValue sbeo:Leader
                                      ]
                                    ) ;
@@ -2280,7 +2323,7 @@ sbeo:Walking rdf:type owl:NamedIndividual ;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
   owl:onClass [ owl:intersectionOf ( foaf:Person
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasRole ;
+                                       owl:onProperty sbeo:role ;
                                        owl:hasValue sbeo:Responsible
                                      ]
                                    ) ;
