@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
@@ -21,6 +22,8 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
+
+
 
 #################################################################
 #    Object Properties
@@ -135,13 +138,20 @@ sbeo:connectedTo rdf:type owl:ObjectProperty ,
                  rdfs:label "Connected To"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#context
+sbeo:context rdf:type owl:ObjectProperty ;
+             rdfs:domain sbeo:RoleInContext ;
+             rdfs:comment "The circumstances that form the setting for an event, statement, or idea, and in terms of which it can be fully understood and assessed (Oxford Dictionary of English)."@en ;
+             rdfs:label "Context"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#dependentOn
 sbeo:dependentOn rdf:type owl:ObjectProperty ;
                  owl:inverseOf sbeo:responsibleTo ;
                  rdf:type owl:TransitiveProperty ;
                  rdfs:domain [ owl:intersectionOf ( foaf:Person
                                                     [ rdf:type owl:Restriction ;
-                                                      owl:onProperty sbeo:hasRole ;
+                                                      owl:onProperty sbeo:role ;
                                                       owl:hasValue sbeo:Dependent
                                                     ]
                                                   ) ;
@@ -149,7 +159,7 @@ sbeo:dependentOn rdf:type owl:ObjectProperty ;
                              ] ;
                  rdfs:range [ owl:intersectionOf ( foaf:Person
                                                    [ rdf:type owl:Restriction ;
-                                                     owl:onProperty sbeo:hasRole ;
+                                                     owl:onProperty sbeo:role ;
                                                      owl:hasValue sbeo:Responsible
                                                    ]
                                                  ) ;
@@ -184,6 +194,12 @@ sbeo:familiarWith rdf:type owl:ObjectProperty ;
                              ] ;
                   rdfs:comment "States the familiarity of any social unit with a physical space or point of interest."@en ;
                   rdfs:label "Familiar With"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#forPerson
+sbeo:forPerson rdf:type owl:ObjectProperty ;
+               rdfs:domain sbeo:Parameter ;
+               rdfs:range foaf:Person .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasActivityStatus
@@ -269,14 +285,6 @@ sbeo:hasNavigationalType rdf:type owl:ObjectProperty ;
                          rdfs:label "Has Navigation Type"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
-sbeo:hasRole rdf:type owl:ObjectProperty ;
-             rdfs:domain foaf:Person ;
-             rdfs:range sbeo:Role ;
-             rdfs:comment "Expresses a relation between a person and a role."@en ;
-             rdfs:label "Has Role"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
 sbeo:installedIn rdf:type owl:ObjectProperty ,
                           owl:TransitiveProperty ;
@@ -350,34 +358,15 @@ sbeo:meansOfNotification rdf:type owl:ObjectProperty ;
                          rdfs:label "Means of Notification"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo
-sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( sbeo:PointOfInterest
-                                                 sbeo:RouteElement
-                                                 sbeo:Space
-                                               )
-                                 ] ;
-                     rdfs:range sbeo:SocialUnit ;
-                     rdfs:comment "Expresses the prohibition of access of any specific foaf:Person to a specific physical space."@en ;
-                     rdfs:label "Not Accessible To"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#notificationPreference
 sbeo:notificationPreference rdf:type owl:ObjectProperty ;
                             rdfs:domain sbeo:SocialUnit ;
                             rdfs:range sbeo:Description .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#forPerson
-sbeo:forPerson rdf:type owl:ObjectProperty ;
-              rdfs:domain sbeo:SafetyParameter ;
-              rdfs:range foaf:Person .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace
 sbeo:ofSpace rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:SafetyParameter ;
+             rdfs:domain sbeo:Parameter ;
              rdfs:range [ rdf:type owl:Class ;
                           owl:unionOf ( sbeo:RouteElement
                                         sbeo:Space
@@ -410,12 +399,20 @@ sbeo:performedBy rdf:type owl:ObjectProperty ;
                  rdfs:label "Performed by"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#player
+sbeo:player rdf:type owl:ObjectProperty ;
+            rdfs:domain sbeo:RoleInContext ;
+            rdfs:range foaf:Person ;
+            rdfs:comment "It express an agent that plays a role in a specific context."@en ;
+            rdfs:label "Player"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo
 sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                             owl:TransitiveProperty ;
                    rdfs:domain [ owl:intersectionOf ( foaf:Person
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty sbeo:hasRole ;
+                                                        owl:onProperty sbeo:role ;
                                                         owl:hasValue sbeo:Responsible
                                                       ]
                                                     ) ;
@@ -423,7 +420,7 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                                ] ;
                    rdfs:range [ owl:intersectionOf ( foaf:Person
                                                      [ rdf:type owl:Restriction ;
-                                                       owl:onProperty sbeo:hasRole ;
+                                                       owl:onProperty sbeo:role ;
                                                        owl:hasValue sbeo:Dependent
                                                      ]
                                                    ) ;
@@ -431,6 +428,14 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ,
                               ] ;
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#role
+sbeo:role rdf:type owl:ObjectProperty ;
+          rdfs:domain sbeo:RoleInContext ;
+          rdfs:range sbeo:Role ;
+          rdfs:comment "Expresses a role of an agent."@en ;
+          rdfs:label "Role"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#routePreference
@@ -464,6 +469,10 @@ sbeo:uses rdf:type owl:ObjectProperty ;
           rdfs:label "Uses"@en .
 
 
+###  http://www.w3.org/ns/sosa/observes
+sosa:observes rdf:type owl:ObjectProperty .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -488,20 +497,6 @@ sbeo:ID rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:integer ;
         rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
         rdfs:label "Identification Number"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#accessibilityFactor
-sbeo:accessibilityFactor rdf:type owl:DatatypeProperty ,
-                                  owl:FunctionalProperty ;
-                         rdfs:domain sbeo:Space ;
-                         rdfs:range [ rdf:type rdfs:Datatype ;
-                                      owl:onDatatype xsd:float ;
-                                      owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
-                                                             ]
-                                                             [ xsd:maxInclusive "1.0"^^xsd:float
-                                                             ]
-                                                           )
-                                    ] .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
@@ -581,36 +576,18 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                  rdfs:label "Ended At Time"@en .
 
 
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasLowerLimit
-sbeo:hasLowerLimit rdf:type owl:DatatypeProperty ;
-                   rdfs:domain sbeo:Parameter ;
-                   rdfs:range xsd:float;
-                 rdfs:comment "Specifies the lower limit a numeric property value must acquire."@en ;
-                 rdfs:label "Has Lower Limit"@en.
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke
 sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
-              rdfs:domain sbeo:SmokeSensor ;
               rdfs:range xsd:boolean ;
               rdfs:comment "It is used to describe if a smoke sensor detects smoke. It is expressed as Boolean in which true means the smoke is detected and the false means there is no smoke detected by the smoke sensor."@en ;
               rdfs:label "Has Smoke"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasUpperLimit
-sbeo:hasUpperLimit rdf:type owl:DatatypeProperty ;
-
-                   rdfs:domain sbeo:Parameter ;
-                   rdfs:range xsd:float;
-                 rdfs:comment "Specifies the upper limit a numeric property value must acquire."@en ;
-                 rdfs:label "Has Upper Limit"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasValue
 sbeo:hasValue rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
-              rdfs:domain sbeo:Device ;
+              rdfs:domain owl:Thing ;
+              rdfs:range xsd:float ;
               rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
               rdfs:label "Value"@en .
 
@@ -631,27 +608,9 @@ sbeo:length rdf:type owl:DatatypeProperty ,
                                         sbeo:Passage
                                       )
                         ] ;
-            rdfs:range xsd:nonNegativeInteger ;
+            rdfs:range xsd:float ;
             rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
             rdfs:label "Length"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#safetyFactor
-sbeo:safetyFactor rdf:type owl:DatatypeProperty ,
-                           owl:FunctionalProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( sbeo:RouteElement
-                                              sbeo:Space
-                                            )
-                              ] ;
-                  rdfs:range [ rdf:type rdfs:Datatype ;
-                               owl:onDatatype xsd:float ;
-                               owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
-                                                      ]
-                                                      [ xsd:maxInclusive "1.0"^^xsd:float
-                                                      ]
-                                                    )
-                             ] .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speed
@@ -721,6 +680,7 @@ sbeo:travelTime rdf:type owl:DatatypeProperty ;
 sbeo:width rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain sbeo:Passage ;
+           rdfs:range xsd:float ;
            rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
            rdfs:label "Width"@en .
 
@@ -1299,13 +1259,6 @@ sbeo:KidsArea rdf:type owl:Class ;
               rdfs:label "Kids Area"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensor
-sbeo:LocationSensor rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:Sensor ;
-                    rdfs:comment "The location sensor is a part of indoor positioning system to detect the location of each person within the building."@en ;
-                    rdfs:label "Location Sensor"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LowStaminaPerson
 sbeo:LowStaminaPerson rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:PhysicallyImpairedPerson ;
@@ -1480,6 +1433,37 @@ sbeo:PassiveFireProtectionDevice rdf:type owl:Class ;
                                  rdfs:label "Passive Fire Protection"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PersonAccessibility
+sbeo:PersonAccessibility rdf:type owl:Class ;
+                         rdfs:subClassOf sbeo:Parameter ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:ofSpace ;
+                                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                owl:unionOf ( sbeo:RouteElement
+                                                                              sbeo:Space
+                                                                            )
+                                                              ]
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:forPerson ;
+                                           owl:allValuesFrom foaf:Person
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:ofSpace ;
+                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:hasValue ;
+                                           owl:allValuesFrom xsd:float
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:hasValue ;
+                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                         ] ;
+                         rdfs:comment "A parameter to express the accessibility of any space for a specific person (or type of persons) in terms of some value."@en ;
+                         rdfs:label "Person Accessibility"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#PhysicallyImpairedPerson
 sbeo:PhysicallyImpairedPerson rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:ImpairedPerson ;
@@ -1524,11 +1508,42 @@ sbeo:Role rdf:type owl:Class ;
                                             sbeo:Dependent
                                             sbeo:Leader
                                             sbeo:Responsible
-                                            sbeo:Visitor
                                           )
                               ] ;
           rdfs:comment "The function assumed or part played by a person or thing in a particular situation (Oxford Dictionary of English)."@en ;
           rdfs:label "Role"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#RoleInContext
+sbeo:RoleInContext rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:context ;
+                                     owl:someValuesFrom owl:Thing
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:player ;
+                                     owl:allValuesFrom foaf:Person
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:role ;
+                                     owl:allValuesFrom sbeo:Role
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:player ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass foaf:Person
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:context ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:role ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass sbeo:Role
+                                   ] ;
+                   rdfs:comment "A concept to express that an agent is playing a role in a given context."@en ;
+                   rdfs:label "Role In Context"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomEntrance
@@ -1563,6 +1578,11 @@ sbeo:Route rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement
 sbeo:RouteElement rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty sbeo:hasAvailabilityStatus ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass sbeo:AvailabilityStatus
+                                  ] ;
                   rdfs:comment "It represents the physical or conceptual elements of a navigation path."@en ;
                   rdfs:label "Route Element"@en .
 
@@ -1574,48 +1594,6 @@ sbeo:RoutePoint rdf:type owl:Class ;
                 rdfs:label "Route Point"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SafetyParameter
-sbeo:SafetyParameter rdf:type owl:Class ;
-                     rdfs:subClassOf sbeo:Parameter ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:forPerson ;
-                                       owl:someValuesFrom foaf:Person
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:ofSpace ;
-                                       owl:someValuesFrom [ rdf:type owl:Class ;
-                                                            owl:unionOf ( sbeo:RouteElement
-                                                                          sbeo:Space
-                                                                        )
-                                                          ]
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasValue ;
-                                       owl:allValuesFrom [ rdf:type rdfs:Datatype ;
-                                                           owl:onDatatype xsd:float ;
-                                                           owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
-                                                                                  ]
-                                                                                  [ xsd:maxInclusive "1.0"^^xsd:float
-                                                                                  ]
-                                                                                )
-                                                         ]
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasLowerLimit ;
-                                       owl:cardinality "1"^^xsd:nonNegativeInteger
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasUpperLimit ;
-                                       owl:cardinality "1"^^xsd:nonNegativeInteger
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasValue ;
-                                       owl:cardinality "1"^^xsd:nonNegativeInteger
-                                     ] ;
-                     rdfs:comment "A parameter to express the safety of any space for a specific person (or type of persons) in terms of accessibility."@en ;
-                     rdfs:label "Saftery Parameter"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SeatingArrangementRoute
 sbeo:SeatingArrangementRoute rdf:type owl:Class ;
                              rdfs:subClassOf sbeo:Route ;
@@ -1623,11 +1601,11 @@ sbeo:SeatingArrangementRoute rdf:type owl:Class ;
                              rdfs:label "Seating Arrangement Route"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Sensor
-sbeo:Sensor rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Device ;
-            rdfs:comment "A sensor is a device that detects or measures a physical property and records, indicates, or otherwise responds to it (Oxford Dictionary of English)."@en ;
-            rdfs:label "Sensor"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SensorEvent
+sbeo:SensorEvent rdf:type owl:Class ;
+                 rdfs:subClassOf sbeo:Event ;
+                 rdfs:comment "This concept is used to express an event detected by any sensor."@en ;
+                 rdfs:label "Sensor Event"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SensoryImpairedPerson
@@ -1658,13 +1636,6 @@ sbeo:SmartPhone rdf:type owl:Class ;
                 rdfs:label "Smartphone"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensor
-sbeo:SmokeSensor rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Sensor ;
-                 rdfs:comment "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."@en ;
-                 rdfs:label "Smoke Sensor"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit
 sbeo:SocialUnit rdf:type owl:Class ;
                 rdfs:comment "An individual, or a group or community, considered as a discrete constituent of a society or larger group (Oxford Dictionary of English)."@en ;
@@ -1675,10 +1646,42 @@ sbeo:SocialUnit rdf:type owl:Class ;
 sbeo:Space rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty sbeo:hasAvailabilityStatus ;
-                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass sbeo:AvailabilityStatus
                            ] ;
            rdfs:comment "A physical, three dimensional, and one of the most important elements in the design of architecture that can further be divided to create more spaces from it."@en ;
            rdfs:label "Space"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SpaceSafety
+sbeo:SpaceSafety rdf:type owl:Class ;
+                 rdfs:subClassOf sbeo:Parameter ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:ofSpace ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( sbeo:RouteElement
+                                                                      sbeo:Space
+                                                                    )
+                                                      ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:forPerson ;
+                                   owl:allValuesFrom foaf:Person
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:ofSpace ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:hasValue ;
+                                   owl:allValuesFrom xsd:float
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:hasValue ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "A parameter to express the safety of any space for a specific person (or type of persons) in terms of some value."@en ;
+                 rdfs:label "Space Saftey"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#StadiumBuilding
@@ -1718,13 +1721,6 @@ sbeo:Telephone rdf:type owl:Class ;
                rdfs:subClassOf sbeo:Device ;
                rdfs:comment "A device for transmitting voices over a distance using wire or radio, by converting acoustic vibrations to electrical signals (Oxford Dictionary of English)."@en ;
                rdfs:label "Telephone"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#TemperatureSensor
-sbeo:TemperatureSensor rdf:type owl:Class ;
-                       rdfs:subClassOf sbeo:Sensor ;
-                       rdfs:comment "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."@en ;
-                       rdfs:label "Temperature Sensor"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TerroristAttack
@@ -1810,6 +1806,21 @@ sbeo:WaitingZone rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:RoutePoint ;
                  rdfs:comment "A space (normally with seating), where people can wait to do some specific activity. During emergency condtions, it is also used for several purposes, such as unification of people with their family members, acquaintances or emergency rescue teams, etc."@en ;
                  rdfs:label "Waiting Zone"@en .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+sosa:ObservableProperty rdf:type owl:Class ;
+                        rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                        rdfs:isDefinedBy sosa: ;
+                        rdfs:label "Observable Property"@en .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+sosa:Sensor rdf:type owl:Class ;
+            rdfs:subClassOf sbeo:Device ;
+            rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+            rdfs:isDefinedBy sosa: ;
+            rdfs:label "Sensor"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -2282,12 +2293,6 @@ sbeo:Visiting rdf:type owl:NamedIndividual ;
               rdfs:label "Visiting"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
-sbeo:Visitor rdf:type owl:NamedIndividual ;
-             rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
-             rdfs:label "Visitor"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Walking
 sbeo:Walking rdf:type owl:NamedIndividual ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
@@ -2303,7 +2308,7 @@ sbeo:Walking rdf:type owl:NamedIndividual ;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
   owl:onClass [ owl:intersectionOf ( foaf:Person
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasRole ;
+                                       owl:onProperty sbeo:role ;
                                        owl:hasValue sbeo:Leader
                                      ]
                                    ) ;
@@ -2318,7 +2323,7 @@ sbeo:Walking rdf:type owl:NamedIndividual ;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
   owl:onClass [ owl:intersectionOf ( foaf:Person
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty sbeo:hasRole ;
+                                       owl:onProperty sbeo:role ;
                                        owl:hasValue sbeo:Responsible
                                      ]
                                    ) ;

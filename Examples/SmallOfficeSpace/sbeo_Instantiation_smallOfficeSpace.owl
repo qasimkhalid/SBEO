@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/office_space_scenario> .
 
@@ -18,314 +19,6 @@
 
 The office space can be considered as a smart space as it is equipped with different sensors such as location, temperature and smoke. In addition, fire incident equipment, alerting device such as speakers, and a monitor screen are also installed in it."""@en ;
                                                                    owl:versionInfo "0.1"@en .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://purl.org/ontology/olo/core#item
-olo:item rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/ontology/olo/core#next
-olo:next rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/ontology/olo/core#ordered_list
-olo:ordered_list rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/ontology/olo/core#slot
-olo:slot rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#accompanying
-sbeo:accompanying rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#connectedTo
-sbeo:connectedTo rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#dependentOn
-sbeo:dependentOn rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#familiarWith
-sbeo:familiarWith rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasFitnessStatus
-sbeo:hasFitnessStatus rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMember
-sbeo:hasMember rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMotionState
-sbeo:hasMotionState rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasNavigationalType
-sbeo:hasNavigationalType rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
-sbeo:hasRole rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
-sbeo:installedIn rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#leadsTo
-sbeo:leadsTo rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#locatedIn
-sbeo:locatedIn rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#meansOfNotification
-sbeo:meansOfNotification rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#partOf
-sbeo:partOf rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#performedBy
-sbeo:performedBy rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo
-sbeo:responsibleTo rdf:type owl:ObjectProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#uses
-sbeo:uses rdf:type owl:ObjectProperty .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  http://purl.org/ontology/olo/core#index
-olo:index rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#ID
-sbeo:ID rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#length
-sbeo:length rdf:type owl:DatatypeProperty .
-
-
-###  http://xmlns.com/foaf/0.1/age
-foaf:age rdf:type owl:DatatypeProperty .
-
-
-###  http://xmlns.com/foaf/0.1/firstName
-foaf:firstName rdf:type owl:DatatypeProperty .
-
-
-###  http://xmlns.com/foaf/0.1/gender
-foaf:gender rdf:type owl:DatatypeProperty .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://purl.org/ontology/olo/core#OrderedList
-olo:OrderedList rdf:type owl:Class .
-
-
-###  http://purl.org/ontology/olo/core#Slot
-olo:Slot rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#AlertingDevice
-sbeo:AlertingDevice rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#AlertingDeviceForImpairedPerson
-sbeo:AlertingDeviceForImpairedPerson rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#BlindPerson
-sbeo:BlindPerson rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingEntrance
-sbeo:BuildingEntrance rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingExit
-sbeo:BuildingExit rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#CorridorSegment
-sbeo:CorridorSegment rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#DeafPerson
-sbeo:DeafPerson rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#DisplayScreen
-sbeo:DisplayScreen rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#EmergencyEvacuationGroup
-sbeo:EmergencyEvacuationGroup rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#EmergencyExit
-sbeo:EmergencyExit rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#EndPoint
-sbeo:EndPoint rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#ExitRoute
-sbeo:ExitRoute rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Family
-sbeo:Family rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FireExtinguisher
-sbeo:FireExtinguisher rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#FloorExit
-sbeo:FloorExit rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Group
-sbeo:Group rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#HallSegment
-sbeo:HallSegment rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#HandheldDevice
-sbeo:HandheldDevice rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Junction
-sbeo:Junction rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#KidsArea
-sbeo:KidsArea rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensor
-sbeo:LocationSensor rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#MotorisedWheelchairPerson
-sbeo:MotorisedWheelchairPerson rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#OpenAreaExit
-sbeo:OpenAreaExit rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest
-sbeo:PointOfInterest rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterestSegment
-sbeo:PointOfInterestSegment rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomExit
-sbeo:RoomExit rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomSegment
-sbeo:RoomSegment rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Route
-sbeo:Route rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#ShoppingMallBuilding
-sbeo:ShoppingMallBuilding rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SmartPhone
-sbeo:SmartPhone rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensor
-sbeo:SmokeSensor rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#TemperatureSensor
-sbeo:TemperatureSensor rdf:type owl:Class .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Visit
-sbeo:Visit rdf:type owl:Class .
-
-
-###  http://xmlns.com/foaf/0.1/Person
-foaf:Person rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Bathroom
-seas:Bathroom rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/BuildingStorey
-seas:BuildingStorey rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Corridor
-seas:Corridor rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Door
-seas:Door rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Elevator
-seas:Elevator rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Hall
-seas:Hall rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Kitchen
-seas:Kitchen rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Office
-seas:Office rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/OfficeBuilding
-seas:OfficeBuilding rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Room
-seas:Room rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Stairs
-seas:Stairs rdf:type owl:Class .
-
 
 #################################################################
 #    Individuals
@@ -346,7 +39,10 @@ seas:Stairs rdf:type owl:Class .
                             :J1 ,
                             :MainEntrance1 ,
                             :PV1 ;
-           sbeo:locatedIn :GroundFloor .
+           sbeo:locatedIn :GroundFloor ;
+           sbeo:currentOccupancy 5 ;
+           sbeo:length 10 ;
+           sbeo:width 5 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Corridor10
@@ -412,7 +108,8 @@ seas:Stairs rdf:type owl:Class .
                             :J2 ,
                             :Office2 ,
                             :OpenHall2 ;
-           sbeo:locatedIn :GroundFloor .
+           sbeo:locatedIn :GroundFloor ;
+           sbeo:currentOccupancy 1 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Corridor6
@@ -644,13 +341,21 @@ seas:Stairs rdf:type owl:Class .
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Elevator1
 :Elevator1 rdf:type owl:NamedIndividual ,
                     seas:Elevator ;
+           owl:sameAs :PV1 ;
            sbeo:locatedIn :FirstFloor ,
                           :GroundFloor .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#ElevatorLocationSensor
-:ElevatorLocationSensor rdf:type owl:NamedIndividual ,
-                                 sbeo:LocationSensor .
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Email
+:Email rdf:type owl:NamedIndividual ,
+                sbeo:TextualDescription .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#EmergencyEvacuationGroup1
+:EmergencyEvacuationGroup1 rdf:type owl:NamedIndividual ,
+                                    sbeo:EmergencyEvacuationGroup ;
+                           sbeo:hasMember :Person2 ,
+                                          :Person7 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#EmergencyExit1
@@ -691,7 +396,14 @@ seas:Stairs rdf:type owl:Class .
                   sbeo:EmergencyEvacuationGroup ,
                   sbeo:Family ;
          sbeo:hasMember :Person3 ,
-                        :Person6 .
+                        :Person6 ;
+         sbeo:locatedIn :OfficeBuilding1 .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Fire1
+:Fire1 rdf:type owl:NamedIndividual ,
+                sbeo:Fire ;
+       sbeo:locatedIn :Kitchen .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FireExtinguisher1
@@ -702,15 +414,13 @@ seas:Stairs rdf:type owl:Class .
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FireExtinguisher2
 :FireExtinguisher2 rdf:type owl:NamedIndividual ,
-                            sbeo:FireExtinguisher ,
-                            sbeo:PointOfInterest ;
+                            sbeo:FireExtinguisher ;
                    sbeo:locatedIn :PointOfInterest2 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FireExtinguisher3
 :FireExtinguisher3 rdf:type owl:NamedIndividual ,
-                            sbeo:FireExtinguisher ,
-                            sbeo:PointOfInterest ;
+                            sbeo:FireExtinguisher ;
                    sbeo:locatedIn :PointOfInterest3 .
 
 
@@ -724,13 +434,6 @@ seas:Stairs rdf:type owl:Class .
 :GroundFloor rdf:type owl:NamedIndividual ,
                       seas:BuildingStorey ;
              sbeo:locatedIn :OfficeBuilding1 .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Group1
-:Group1 rdf:type owl:NamedIndividual ,
-                 sbeo:Group ;
-        sbeo:hasMember :Person2 ,
-                       :Person7 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#HallSegment1
@@ -810,480 +513,554 @@ seas:Stairs rdf:type owl:Class .
 :KidsRoom rdf:type owl:NamedIndividual ,
                    sbeo:KidsArea ,
                    seas:Room ;
+          sbeo:adjacentTo :WC2 ;
           sbeo:locatedIn :FirstFloor .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Kitchen
 :Kitchen rdf:type owl:NamedIndividual ,
                   seas:Kitchen ;
+         sbeo:adjacentTo :WC2 ;
          sbeo:locatedIn :FirstFloor .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor1
 :LocationSensor1 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment1 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment1 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor10
 :LocationSensor10 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment10 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment10 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor11
 :LocationSensor11 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment11 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment11 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor12
 :LocationSensor12 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment12 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment12 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor13
 :LocationSensor13 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment13 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment13 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor14
 :LocationSensor14 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment14 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment14 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor15
 :LocationSensor15 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment15 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment15 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor16
 :LocationSensor16 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment16 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment16 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor17
 :LocationSensor17 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment17 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment17 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor18
 :LocationSensor18 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment18 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment18 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor19
 :LocationSensor19 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment19 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment19 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor2
 :LocationSensor2 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment2 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment2 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor20
 :LocationSensor20 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment20 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment20 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor21
 :LocationSensor21 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment21 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment21 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor22
 :LocationSensor22 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment22 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment22 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor23
 :LocationSensor23 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :CorridorSegment23 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :CorridorSegment23 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor24
 :LocationSensor24 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor25
 :LocationSensor25 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor26
 :LocationSensor26 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor27
 :LocationSensor27 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment4 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment4 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor28
 :LocationSensor28 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment5 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment5 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor29
 :LocationSensor29 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment6 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment6 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor3
 :LocationSensor3 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment3 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment3 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor30
 :LocationSensor30 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment7 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment7 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor31
 :LocationSensor31 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment8 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment8 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor32
 :LocationSensor32 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment9 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment9 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor33
 :LocationSensor33 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RoomSegment10 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RoomSegment10 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor34
 :LocationSensor34 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :HallSegment1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :HallSegment1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor35
 :LocationSensor35 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :HallSegment2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :HallSegment2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor36
 :LocationSensor36 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :HallSegment3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :HallSegment3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor37
 :LocationSensor37 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :HallSegment4 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :HallSegment4 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor38
 :LocationSensor38 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :POISegment1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :POISegment1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor39
 :LocationSensor39 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :POISegment2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :POISegment2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor4
 :LocationSensor4 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment4 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment4 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor40
 :LocationSensor40 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :POISegment3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :POISegment3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor41
 :LocationSensor41 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :Office1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :Office1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor42
 :LocationSensor42 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :Office2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :Office2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor43
 :LocationSensor43 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :Office3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :Office3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor44
 :LocationSensor44 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :Office4 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :Office4 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor45
 :LocationSensor45 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :Office5 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :Office5 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor46
 :LocationSensor46 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :OpenHall1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :OpenHall1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor47
 :LocationSensor47 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :OpenHall2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :OpenHall2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor48
 :LocationSensor48 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :FE1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :FE1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor49
 :LocationSensor49 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :FE2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :FE2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor5
 :LocationSensor5 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment5 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment5 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor50
 :LocationSensor50 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :FE3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :FE3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor51
 :LocationSensor51 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :PointOfInterest1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :PointOfInterest1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor52
 :LocationSensor52 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :PointOfInterest2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :PointOfInterest2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor53
 :LocationSensor53 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :PointOfInterest3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :PointOfInterest3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor54
 :LocationSensor54 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :WC1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :WC1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor55
 :LocationSensor55 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :WC2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :WC2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor56
 :LocationSensor56 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :KidsRoom .
+                           sosa:Sensor ;
+                  sbeo:installedIn :KidsRoom ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor57
 :LocationSensor57 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :Kitchen .
+                           sosa:Sensor ;
+                  sbeo:installedIn :Kitchen ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor58
 :LocationSensor58 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor59
 :LocationSensor59 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor6
 :LocationSensor6 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment6 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment6 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor60
 :LocationSensor60 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor61
 :LocationSensor61 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE4 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE4 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor62
 :LocationSensor62 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE5 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE5 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor63
 :LocationSensor63 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE6 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE6 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor64
 :LocationSensor64 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE7 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE7 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor65
 :LocationSensor65 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE8 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE8 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor66
 :LocationSensor66 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :RE9 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :RE9 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor67
 :LocationSensor67 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :OE1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :OE1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor68
 :LocationSensor68 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :OE2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :OE2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor69
 :LocationSensor69 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :OE3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :OE3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor7
 :LocationSensor7 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment7 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment7 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor70
 :LocationSensor70 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :OE4 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :OE4 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor71
 :LocationSensor71 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :J1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :J1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor72
 :LocationSensor72 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :J2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :J2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor73
 :LocationSensor73 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :J3 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :J3 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor74
 :LocationSensor74 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :J4 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :J4 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor75
 :LocationSensor75 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :EP1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :EP1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor76
 :LocationSensor76 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :PV1 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :PV1 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor77
 :LocationSensor77 rdf:type owl:NamedIndividual ,
-                           sbeo:LocationSensor ;
-                  sbeo:installedIn :PV2 .
+                           sosa:Sensor ;
+                  sbeo:installedIn :PV2 ;
+                  sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor8
 :LocationSensor8 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment8 .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment8 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensor9
 :LocationSensor9 rdf:type owl:NamedIndividual ,
-                          sbeo:LocationSensor ;
-                 sbeo:installedIn :CorridorSegment9 .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#LocationSensorRoom
-:LocationSensorRoom rdf:type owl:NamedIndividual ,
-                             sbeo:LocationSensor .
+                          sosa:Sensor ;
+                 sbeo:installedIn :CorridorSegment9 ;
+                 sosa:observes :PersonLocation .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#MainEntrance1
@@ -1364,6 +1141,16 @@ seas:Stairs rdf:type owl:Class .
                sbeo:HandheldDevice .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PDA1AudioDescription
+:PDA1AudioDescription rdf:type owl:NamedIndividual ,
+                               sbeo:AudioDescription .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PDA1ImageDescription
+:PDA1ImageDescription rdf:type owl:NamedIndividual ,
+                               sbeo:ImageDescription .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#POISegment1
 :POISegment1 rdf:type owl:NamedIndividual ,
                       sbeo:PointOfInterestSegment ;
@@ -1394,6 +1181,7 @@ seas:Stairs rdf:type owl:Class .
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PV2
 :PV2 rdf:type owl:NamedIndividual ,
               seas:Stairs ;
+     owl:sameAs :Stairs ;
      sbeo:leadsTo :J1 .
 
 
@@ -1409,6 +1197,7 @@ seas:Stairs rdf:type owl:Class .
          sbeo:meansOfNotification :Phone1 ;
          sbeo:uses :Phone1 ;
          sbeo:ID 2 ;
+         foaf:age 35 ;
          foaf:firstName "Alice"^^xsd:string ;
          foaf:gender "female"^^xsd:string .
 
@@ -1419,8 +1208,10 @@ seas:Stairs rdf:type owl:Class .
          sbeo:familiarWith :OfficeBuilding1 ;
          sbeo:hasFitnessStatus sbeo:Fit ;
          sbeo:hasMotionState sbeo:Standing ;
-         sbeo:hasNavigationalType sbeo:AssistedNavigation ;
-         sbeo:hasRole sbeo:Responsible ;
+         sbeo:hasNavigationalType sbeo:AssistedNavigation ,
+                                  sbeo:CollaborativeNavigation ;
+         sbeo:hasRole sbeo:Leader ,
+                      sbeo:Responsible ;
          sbeo:locatedIn :Office3 ;
          sbeo:meansOfNotification :PDA1 ;
          sbeo:ID 3 ;
@@ -1432,6 +1223,7 @@ seas:Stairs rdf:type owl:Class .
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person3
 :Person3 rdf:type owl:NamedIndividual ,
                   foaf:Person ;
+         sbeo:assignedRoute :Route12 ;
          sbeo:hasFitnessStatus sbeo:Fit ;
          sbeo:hasMotionState sbeo:Standing ;
          sbeo:hasNavigationalType sbeo:CollaborativeNavigation ;
@@ -1439,6 +1231,7 @@ seas:Stairs rdf:type owl:Class .
          sbeo:locatedIn :KidsRoom ;
          sbeo:meansOfNotification :Screen1 ;
          sbeo:ID 4 ;
+         foaf:age 12 ;
          foaf:firstName "Chris"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
 
@@ -1449,12 +1242,15 @@ seas:Stairs rdf:type owl:Class .
          sbeo:familiarWith :OfficeBuilding1 ;
          sbeo:hasFitnessStatus sbeo:Fit ;
          sbeo:hasMotionState sbeo:Standing ;
+         sbeo:hasNavigationalState sbeo:FollowingPath ;
          sbeo:hasNavigationalType sbeo:AssistedNavigation ;
          sbeo:hasRole sbeo:Autonomous ;
          sbeo:locatedIn :Office2 ;
          sbeo:meansOfNotification :SpecialPurposeDevice1 ;
          sbeo:uses :SpecialPurposeDevice1 ;
          sbeo:ID 5 ;
+         sbeo:hasXTimesDeviated 1 ;
+         foaf:age 28 ;
          foaf:firstName "Dan"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
 
@@ -1469,8 +1265,10 @@ seas:Stairs rdf:type owl:Class .
          sbeo:hasRole sbeo:Autonomous ;
          sbeo:locatedIn :Office5 ;
          sbeo:meansOfNotification :Phone3 ;
+         sbeo:notificationPreference :Email ;
          sbeo:uses :Phone3 ;
          sbeo:ID 6 ;
+         foaf:age 37 ;
          foaf:firstName "Elliot"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
 
@@ -1478,17 +1276,24 @@ seas:Stairs rdf:type owl:Class .
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person6
 :Person6 rdf:type owl:NamedIndividual ,
                   foaf:Person ;
+         sbeo:assignedRoute :Route12 ;
          sbeo:familiarWith :OfficeBuilding1 ;
+         sbeo:hasActivityStatus sbeo:Evacuating ,
+                                sbeo:PickingUpDependents ;
          sbeo:hasFitnessStatus sbeo:Fit ;
          sbeo:hasMotionState sbeo:Standing ;
          sbeo:hasNavigationalType sbeo:AssistedNavigation ,
+                                  sbeo:CollaborativeNavigation ,
                                   sbeo:MultiObjectiveNavigation ;
-         sbeo:hasRole sbeo:Responsible ;
+         sbeo:hasRole sbeo:Leader ,
+                      sbeo:Responsible ;
          sbeo:locatedIn :Office1 ;
          sbeo:meansOfNotification :Phone4 ;
+         sbeo:notificationPreference :Email ;
          sbeo:responsibleTo :Person3 ;
          sbeo:uses :Phone4 ;
          sbeo:ID 1 ;
+         foaf:age 29 ;
          foaf:firstName "Maria"^^xsd:string ;
          foaf:gender "female"^^xsd:string .
 
@@ -1500,12 +1305,20 @@ seas:Stairs rdf:type owl:Class .
          sbeo:dependentOn :Person2 ;
          sbeo:hasFitnessStatus sbeo:Fit ;
          sbeo:hasMotionState sbeo:Standing ;
-         sbeo:hasNavigationalType sbeo:CollaborativeNavigation ;
-         sbeo:hasRole sbeo:Dependent ;
+         sbeo:hasNavigationalType sbeo:AssistedNavigation ,
+                                  sbeo:CollaborativeNavigation ;
+         sbeo:hasRole sbeo:Dependent ,
+                      sbeo:Visitor ;
          sbeo:locatedIn :Office3 ;
          sbeo:ID 7 ;
+         foaf:age 25 ;
          foaf:firstName "Victor"^^xsd:string ;
          foaf:gender "male"^^xsd:string .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#PersonLocation
+:PersonLocation rdf:type owl:NamedIndividual ,
+                         sosa:ObservableProperty .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Phone1
@@ -1677,6 +1490,92 @@ seas:Stairs rdf:type owl:Class .
                   :Slot8 ,
                   :Slot9 ;
          sbeo:length "4"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route11
+:Route11 rdf:type owl:NamedIndividual ,
+                  olo:OrderedList ,
+                  sbeo:Route ;
+         olo:slot :Slot51 ,
+                  :Slot52 ,
+                  :Slot53 ,
+                  :Slot54 ,
+                  :Slot55 ,
+                  :Slot56 ,
+                  :Slot57 ,
+                  :Slot58 ,
+                  :Slot59 ,
+                  :Slot60 ,
+                  :Slot61 ,
+                  :Slot62 ;
+         sbeo:length "12"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route12
+:Route12 rdf:type owl:NamedIndividual ,
+                  olo:OrderedList ,
+                  sbeo:EmergencyEvacuationRoute ;
+         olo:slot :Slot63 ,
+                  :Slot64 ,
+                  :Slot65 ,
+                  :Slot66 ;
+         sbeo:hasAvailabilityStatus sbeo:Available ;
+         sbeo:length "4"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route13
+:Route13 rdf:type owl:NamedIndividual ,
+                  olo:OrderedList ,
+                  sbeo:EmergencyEvacuationRoute ;
+         olo:slot :Slot67 ,
+                  :Slot68 ,
+                  :Slot69 ,
+                  :Slot85 ,
+                  :Slot86 ,
+                  :Slot87 ,
+                  :Slot88 ;
+         sbeo:routeType sbeo:SimplestPath ;
+         sbeo:length "7"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route14
+:Route14 rdf:type owl:NamedIndividual ,
+                  olo:OrderedList ,
+                  sbeo:EmergencyEvacuationRoute ;
+         olo:slot :Slot70 ,
+                  :Slot71 ,
+                  :Slot72 ,
+                  :Slot73 ,
+                  :Slot74 ,
+                  :Slot75 ,
+                  :Slot76 ,
+                  :Slot77 ,
+                  :Slot78 ;
+         sbeo:length "9"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route15
+:Route15 rdf:type owl:NamedIndividual ,
+                  olo:OrderedList ,
+                  sbeo:EmergencyEvacuationRoute ;
+         olo:slot :Slot79 ,
+                  :Slot80 ,
+                  :Slot81 ,
+                  :Slot82 ,
+                  :Slot83 ;
+         sbeo:length "5"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route16
+:Route16 rdf:type owl:NamedIndividual ,
+                  olo:OrderedList ,
+                  sbeo:EmergencyEvacuationRoute ;
+         olo:slot :Slot89 ,
+                  :Slot90 ,
+                  :Slot91 ;
+         sbeo:routeType sbeo:ShortestPath ;
+         sbeo:length "3"^^xsd:nonNegativeInteger ;
+         sbeo:travelTime 80 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route2
@@ -2198,6 +2097,87 @@ seas:Stairs rdf:type owl:Class .
         olo:index "5"^^xsd:positiveInteger .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot51
+:Slot51 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :Office1 ;
+        olo:next :Slot52 ;
+        olo:ordered_list :Route11 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot52
+:Slot52 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE1 ;
+        olo:next :Slot53 ;
+        olo:ordered_list :Route11 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot53
+:Slot53 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE2 ;
+        olo:next :Slot54 ;
+        olo:ordered_list :Route11 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot54
+:Slot54 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J1 ;
+        olo:next :Slot55 ;
+        olo:ordered_list :Route11 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot55
+:Slot55 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :PV1 ;
+        olo:next :Slot56 ;
+        olo:ordered_list :Route11 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot56
+:Slot56 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J3 ;
+        olo:next :Slot57 ;
+        olo:ordered_list :Route11 ;
+        olo:index "6"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot57
+:Slot57 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE4 ;
+        olo:next :Slot58 ;
+        olo:ordered_list :Route11 ;
+        olo:index "7"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot58
+:Slot58 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE5 ;
+        olo:next :Slot59 ;
+        olo:ordered_list :Route11 ;
+        olo:index "8"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot59
+:Slot59 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J4 ;
+        olo:next :Slot60 ;
+        olo:ordered_list :Route11 ;
+        olo:index "9"^^xsd:positiveInteger .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot6
 :Slot6 rdf:type owl:NamedIndividual ,
                 olo:Slot ;
@@ -2205,6 +2185,91 @@ seas:Stairs rdf:type owl:Class .
        olo:next :Slot7 ;
        olo:ordered_list :Route10 ;
        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot60
+:Slot60 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE7 ;
+        olo:next :Slot61 ;
+        olo:ordered_list :Route11 ;
+        olo:index "10"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot61
+:Slot61 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE8 ;
+        olo:next :Slot62 ;
+        olo:ordered_list :Route11 ;
+        olo:index "11"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot62
+:Slot62 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :KidsRoom ;
+        olo:ordered_list :Route11 ;
+        olo:index "12"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot63
+:Slot63 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :KidsRoom ;
+        olo:ordered_list :Route12 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot64
+:Slot64 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE8 ;
+        olo:ordered_list :Route12 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot65
+:Slot65 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE9 ;
+        olo:ordered_list :Route12 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot66
+:Slot66 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE3 ;
+        olo:ordered_list :Route12 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot67
+:Slot67 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :Office2 ;
+        olo:next :Slot68 ;
+        olo:ordered_list :Route13 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot68
+:Slot68 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE2 ;
+        olo:next :Slot69 ;
+        olo:ordered_list :Route13 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot69
+:Slot69 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J2 ;
+        olo:next :Slot85 ;
+        olo:ordered_list :Route13 ;
+        olo:index "3"^^xsd:positiveInteger .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot7
@@ -2216,6 +2281,95 @@ seas:Stairs rdf:type owl:Class .
        olo:index "2"^^xsd:positiveInteger .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot70
+:Slot70 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :Office4 ;
+        olo:next :Slot71 ;
+        olo:ordered_list :Route14 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot71
+:Slot71 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE7 ;
+        olo:next :Slot72 ;
+        olo:ordered_list :Route14 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot72
+:Slot72 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J4 ;
+        olo:next :Slot73 ;
+        olo:ordered_list :Route14 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot73
+:Slot73 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE5 ;
+        olo:next :Slot74 ;
+        olo:ordered_list :Route14 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot74
+:Slot74 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE4 ;
+        olo:next :Slot75 ;
+        olo:ordered_list :Route14 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot75
+:Slot75 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J3 ;
+        olo:next :Slot76 ;
+        olo:ordered_list :Route14 ;
+        olo:index "6"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot76
+:Slot76 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :PV1 ;
+        olo:next :Slot77 ;
+        olo:ordered_list :Route14 ;
+        olo:index "7"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot77
+:Slot77 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J1 ;
+        olo:next :Slot78 ;
+        olo:ordered_list :Route14 ;
+        olo:index "8"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot78
+:Slot78 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE1 ;
+        olo:ordered_list :Route14 ;
+        olo:index "9"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot79
+:Slot79 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :Office4 ;
+        olo:next :Slot81 ;
+        olo:ordered_list :Route15 ;
+        olo:index "1"^^xsd:positiveInteger .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot8
 :Slot8 rdf:type owl:NamedIndividual ,
                 olo:Slot ;
@@ -2223,6 +2377,89 @@ seas:Stairs rdf:type owl:Class .
        olo:next :Slot9 ;
        olo:ordered_list :Route10 ;
        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot80
+:Slot80 rdf:type owl:NamedIndividual .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot81
+:Slot81 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE7 ;
+        olo:next :Slot82 ;
+        olo:ordered_list :Route15 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot82
+:Slot82 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE8 ;
+        olo:next :Slot83 ;
+        olo:ordered_list :Route15 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot83
+:Slot83 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE9 ;
+        olo:next :Slot84 ;
+        olo:ordered_list :Route15 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot84
+:Slot84 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE3 ;
+        olo:ordered_list :Route15 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot85
+:Slot85 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE1 ;
+        olo:next :Slot86 ;
+        olo:ordered_list :Route13 ;
+        olo:index "4"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot86
+:Slot86 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :OE2 ;
+        olo:next :Slot87 ;
+        olo:ordered_list :Route13 ;
+        olo:index "5"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot87
+:Slot87 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :J1 ;
+        olo:next :Slot88 ;
+        olo:ordered_list :Route13 ;
+        olo:index "6"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot88
+:Slot88 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE1 ;
+        olo:ordered_list :Route13 ;
+        olo:index "7"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot89
+:Slot89 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :Office5 ;
+        olo:next :Slot90 ;
+        olo:ordered_list :Route16 ;
+        olo:index "1"^^xsd:positiveInteger .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot9
@@ -2233,466 +2470,564 @@ seas:Stairs rdf:type owl:Class .
        olo:index "4"^^xsd:positiveInteger .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot90
+:Slot90 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :RE9 ;
+        olo:next :Slot91 ;
+        olo:ordered_list :Route16 ;
+        olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot91
+:Slot91 rdf:type owl:NamedIndividual ,
+                 olo:Slot ;
+        olo:item :FE3 ;
+        olo:ordered_list :Route16 ;
+        olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Smoke
+:Smoke rdf:type owl:NamedIndividual ,
+                sosa:ObservableProperty .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor1
 :SmokeSensor1 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment1 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment1 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor10
 :SmokeSensor10 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment10 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment10 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor11
 :SmokeSensor11 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment11 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment11 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor12
 :SmokeSensor12 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment12 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment12 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor13
 :SmokeSensor13 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment13 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment13 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor14
 :SmokeSensor14 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment14 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment14 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor15
 :SmokeSensor15 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment15 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment15 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor16
 :SmokeSensor16 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment16 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment16 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor17
 :SmokeSensor17 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment17 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment17 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor18
 :SmokeSensor18 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment18 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment18 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor19
 :SmokeSensor19 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment19 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment19 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor2
 :SmokeSensor2 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment2 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment2 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor20
 :SmokeSensor20 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment20 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment20 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor21
 :SmokeSensor21 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment21 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment21 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor22
 :SmokeSensor22 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment22 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment22 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor23
 :SmokeSensor23 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :CorridorSegment23 .
+                        sosa:Sensor ;
+               sbeo:installedIn :CorridorSegment23 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor24
 :SmokeSensor24 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor25
 :SmokeSensor25 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor26
 :SmokeSensor26 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor27
 :SmokeSensor27 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment4 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment4 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor28
 :SmokeSensor28 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment5 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment5 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor29
 :SmokeSensor29 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment6 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment6 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor3
 :SmokeSensor3 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment3 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment3 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor30
 :SmokeSensor30 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment7 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment7 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor31
 :SmokeSensor31 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment8 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment8 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor32
 :SmokeSensor32 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment9 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment9 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor33
 :SmokeSensor33 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RoomSegment10 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RoomSegment10 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor34
 :SmokeSensor34 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :HallSegment1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :HallSegment1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor35
 :SmokeSensor35 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :HallSegment2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :HallSegment2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor36
 :SmokeSensor36 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :HallSegment3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :HallSegment3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor37
 :SmokeSensor37 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :HallSegment4 .
+                        sosa:Sensor ;
+               sbeo:installedIn :HallSegment4 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor38
 :SmokeSensor38 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :POISegment1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :POISegment1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor39
 :SmokeSensor39 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :POISegment2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :POISegment2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor4
 :SmokeSensor4 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment4 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment4 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor40
 :SmokeSensor40 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :POISegment3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :POISegment3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor41
 :SmokeSensor41 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :Office1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :Office1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor42
 :SmokeSensor42 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :Office2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :Office2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor43
 :SmokeSensor43 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :Office3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :Office3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor44
 :SmokeSensor44 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :Office4 .
+                        sosa:Sensor ;
+               sbeo:installedIn :Office4 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor45
 :SmokeSensor45 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :Office5 .
+                        sosa:Sensor ;
+               sbeo:installedIn :Office5 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor46
 :SmokeSensor46 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :OpenHall1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :OpenHall1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor47
 :SmokeSensor47 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :OpenHall2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :OpenHall2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor48
 :SmokeSensor48 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :FE1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :FE1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor49
 :SmokeSensor49 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :FE2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :FE2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor5
 :SmokeSensor5 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment5 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment5 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor50
 :SmokeSensor50 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :FE3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :FE3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor51
 :SmokeSensor51 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :PointOfInterest1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :PointOfInterest1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor52
 :SmokeSensor52 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :PointOfInterest2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :PointOfInterest2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor53
 :SmokeSensor53 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :PointOfInterest3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :PointOfInterest3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor54
 :SmokeSensor54 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :WC1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :WC1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor55
 :SmokeSensor55 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :WC2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :WC2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor56
 :SmokeSensor56 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :KidsRoom .
+                        sosa:Sensor ;
+               sbeo:installedIn :KidsRoom ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor57
 :SmokeSensor57 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :Kitchen .
+                        sosa:Sensor ;
+               sbeo:installedIn :Kitchen ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor58
 :SmokeSensor58 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor59
 :SmokeSensor59 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor6
 :SmokeSensor6 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment6 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment6 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor60
 :SmokeSensor60 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor61
 :SmokeSensor61 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE4 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE4 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor62
 :SmokeSensor62 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE5 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE5 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor63
 :SmokeSensor63 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE6 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE6 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor64
 :SmokeSensor64 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE7 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE7 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor65
 :SmokeSensor65 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE8 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE8 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor66
 :SmokeSensor66 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :RE9 .
+                        sosa:Sensor ;
+               sbeo:installedIn :RE9 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor67
 :SmokeSensor67 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :OE1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :OE1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor68
 :SmokeSensor68 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :OE2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :OE2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor69
 :SmokeSensor69 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :OE3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :OE3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor7
 :SmokeSensor7 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
+                       sosa:Sensor ;
               sbeo:installedIn :CorridorSegment7 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor70
 :SmokeSensor70 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :OE4 .
+                        sosa:Sensor ;
+               sbeo:installedIn :OE4 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor71
 :SmokeSensor71 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :J1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :J1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor72
 :SmokeSensor72 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :J2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :J2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor73
 :SmokeSensor73 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :J3 .
+                        sosa:Sensor ;
+               sbeo:installedIn :J3 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor74
 :SmokeSensor74 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :J4 .
+                        sosa:Sensor ;
+               sbeo:installedIn :J4 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor75
 :SmokeSensor75 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :EP1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :EP1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor76
 :SmokeSensor76 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :PV1 .
+                        sosa:Sensor ;
+               sbeo:installedIn :PV1 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor77
 :SmokeSensor77 rdf:type owl:NamedIndividual ,
-                        sbeo:SmokeSensor ;
-               sbeo:installedIn :PV2 .
+                        sosa:Sensor ;
+               sbeo:installedIn :PV2 ;
+               sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor8
 :SmokeSensor8 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment8 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment8 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SmokeSensor9
 :SmokeSensor9 rdf:type owl:NamedIndividual ,
-                       sbeo:SmokeSensor ;
-              sbeo:installedIn :CorridorSegment9 .
+                       sosa:Sensor ;
+              sbeo:installedIn :CorridorSegment9 ;
+              sosa:observes :Smoke .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SpecialPurposeDevice1
@@ -2704,470 +3039,554 @@ seas:Stairs rdf:type owl:Class .
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Stairs
 :Stairs rdf:type owl:NamedIndividual ,
                  seas:Stairs ;
+        sbeo:excludedFor :Person1 ;
+        sbeo:hasAvailabilityStatus sbeo:Available ;
         sbeo:locatedIn :FirstFloor ,
                        :GroundFloor .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Temperature
+:Temperature rdf:type owl:NamedIndividual ,
+                      sosa:ObservableProperty .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor1
 :TemperatureSensor1 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment1 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment1 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor10
 :TemperatureSensor10 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment10 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment10 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor11
 :TemperatureSensor11 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment11 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment11 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor12
 :TemperatureSensor12 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment12 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment12 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor13
 :TemperatureSensor13 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment13 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment13 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor14
 :TemperatureSensor14 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment14 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment14 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor15
 :TemperatureSensor15 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment15 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment15 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor16
 :TemperatureSensor16 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment16 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment16 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor17
 :TemperatureSensor17 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment17 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment17 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor18
 :TemperatureSensor18 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment18 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment18 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor19
 :TemperatureSensor19 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment19 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment19 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor2
 :TemperatureSensor2 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment2 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment2 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor20
 :TemperatureSensor20 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment20 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment20 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor21
 :TemperatureSensor21 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment21 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment21 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor22
 :TemperatureSensor22 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment22 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment22 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor23
 :TemperatureSensor23 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :CorridorSegment23 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :CorridorSegment23 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor24
 :TemperatureSensor24 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor25
 :TemperatureSensor25 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor26
 :TemperatureSensor26 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor27
 :TemperatureSensor27 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment4 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment4 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor28
 :TemperatureSensor28 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment5 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment5 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor29
 :TemperatureSensor29 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment6 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment6 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor3
 :TemperatureSensor3 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment3 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment3 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor30
 :TemperatureSensor30 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment7 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment7 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor31
 :TemperatureSensor31 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment8 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment8 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor32
 :TemperatureSensor32 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment9 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment9 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor33
 :TemperatureSensor33 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RoomSegment10 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RoomSegment10 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor34
 :TemperatureSensor34 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :HallSegment1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :HallSegment1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor35
 :TemperatureSensor35 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :HallSegment2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :HallSegment2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor36
 :TemperatureSensor36 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :HallSegment3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :HallSegment3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor37
 :TemperatureSensor37 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :HallSegment4 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :HallSegment4 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor38
 :TemperatureSensor38 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :POISegment1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :POISegment1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor39
 :TemperatureSensor39 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :POISegment2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :POISegment2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor4
 :TemperatureSensor4 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment4 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment4 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor40
 :TemperatureSensor40 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :POISegment3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :POISegment3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor41
 :TemperatureSensor41 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :Office1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :Office1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor42
 :TemperatureSensor42 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :Office2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :Office2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor43
 :TemperatureSensor43 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :Office3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :Office3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor44
 :TemperatureSensor44 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :Office4 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :Office4 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor45
 :TemperatureSensor45 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :Office5 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :Office5 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor46
 :TemperatureSensor46 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :OpenHall1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :OpenHall1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor47
 :TemperatureSensor47 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :OpenHall2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :OpenHall2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor48
 :TemperatureSensor48 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :FE1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :FE1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor49
 :TemperatureSensor49 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :FE2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :FE2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor5
 :TemperatureSensor5 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment5 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment5 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor50
 :TemperatureSensor50 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :FE3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :FE3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor51
 :TemperatureSensor51 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :PointOfInterest1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :PointOfInterest1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor52
 :TemperatureSensor52 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :PointOfInterest2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :PointOfInterest2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor53
 :TemperatureSensor53 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :PointOfInterest3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :PointOfInterest3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor54
 :TemperatureSensor54 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :WC1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :WC1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor55
 :TemperatureSensor55 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :WC2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :WC2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor56
 :TemperatureSensor56 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :KidsRoom .
+                              sosa:Sensor ;
+                     sbeo:installedIn :KidsRoom ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor57
 :TemperatureSensor57 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :Kitchen .
+                              sosa:Sensor ;
+                     sbeo:installedIn :Kitchen ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor58
 :TemperatureSensor58 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor59
 :TemperatureSensor59 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor6
 :TemperatureSensor6 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment6 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment6 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor60
 :TemperatureSensor60 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor61
 :TemperatureSensor61 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE4 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE4 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor62
 :TemperatureSensor62 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE5 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE5 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor63
 :TemperatureSensor63 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE6 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE6 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor64
 :TemperatureSensor64 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE7 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE7 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor65
 :TemperatureSensor65 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE8 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE8 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor66
 :TemperatureSensor66 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :RE9 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :RE9 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor67
 :TemperatureSensor67 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :OE1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :OE1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor68
 :TemperatureSensor68 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :OE2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :OE2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor69
 :TemperatureSensor69 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :OE3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :OE3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor7
 :TemperatureSensor7 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment7 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment7 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor70
 :TemperatureSensor70 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :OE4 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :OE4 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor71
 :TemperatureSensor71 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :J1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :J1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor72
 :TemperatureSensor72 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :J2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :J2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor73
 :TemperatureSensor73 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :J3 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :J3 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor74
 :TemperatureSensor74 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :J4 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :J4 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor75
 :TemperatureSensor75 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :EP1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :EP1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor76
 :TemperatureSensor76 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :PV1 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :PV1 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor77
 :TemperatureSensor77 rdf:type owl:NamedIndividual ,
-                              sbeo:TemperatureSensor ;
-                     sbeo:installedIn :PV2 .
+                              sosa:Sensor ;
+                     sbeo:installedIn :PV2 ;
+                     sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor8
 :TemperatureSensor8 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment8 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment8 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TemperatureSensor9
 :TemperatureSensor9 rdf:type owl:NamedIndividual ,
-                             sbeo:TemperatureSensor ;
-                    sbeo:installedIn :CorridorSegment9 .
+                             sosa:Sensor ;
+                    sbeo:installedIn :CorridorSegment9 ;
+                    sosa:observes :Temperature .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#VictorVisit
@@ -3186,38 +3605,6 @@ seas:Stairs rdf:type owl:Class .
 :WC2 rdf:type owl:NamedIndividual ,
               seas:Bathroom ;
      sbeo:locatedIn :FirstFloor .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#AssistedNavigation
-sbeo:AssistedNavigation rdf:type owl:NamedIndividual .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
-sbeo:Autonomous rdf:type owl:NamedIndividual .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#CollaborativeNavigation
-sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
-sbeo:Dependent rdf:type owl:NamedIndividual .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Fit
-sbeo:Fit rdf:type owl:NamedIndividual .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#MultiObjectiveNavigation
-sbeo:MultiObjectiveNavigation rdf:type owl:NamedIndividual .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
-sbeo:Responsible rdf:type owl:NamedIndividual .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Standing
-sbeo:Standing rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
