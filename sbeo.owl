@@ -114,7 +114,7 @@ sbeo:adjacentTo rdf:type owl:ObjectProperty ,
 sbeo:assignedRoute rdf:type owl:ObjectProperty ;
                    rdfs:domain sbeo:SocialUnit ;
                    rdfs:range sbeo:Route ;
-                   rdfs:comment "A set of connected spaces(normally in the form of rdf:list) assigned to a social unit."@en ;
+                   rdfs:comment "A set of connected spaces assigned to a social unit."@en ;
                    rdfs:label "Assigned Route"@en .
 
 
