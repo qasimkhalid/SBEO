@@ -110,7 +110,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ORDER BY ?office 
     ```
 
-   ** Who is using a hand-held device and which one? ** 
+   **Who is using a hand-held device and which one? ** 
     ```
     SELECT ?person ?device (?allTypeDevice AS ?deviceType)
     WHERE {
@@ -124,7 +124,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ORDER BY ?person
     ```
 
-   ** What type of sensors are installed in the building?   **
+   **What type of sensors are installed in the building?   **
     ```
     SELECT DISTINCT (?allTypeSensor AS ?sensorType)
     WHERE {
@@ -138,7 +138,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 3. ### Route graph-related competency questions:
 
-   ** What are the types of routes in terms of from graph-based representation?   **
+   **What are the types of routes in terms of from graph-based representation?   **
     ```
     ```
 
@@ -146,7 +146,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
     ```
 
-   ** How many nodes and edges are generated from the layout of the building?   **
+   **How many nodes and edges are generated from the layout of the building?   **
     ```
     ```
 
@@ -155,15 +155,15 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 4. ### Users’ characteristics and preferences-related questions.
 
-   ** What are the notification preferences of each person?  **
+   **What are the notification preferences of each person?  **
     ```
     ```
 
-   ** What are route preferences of each person?   **
+   **What are route preferences of each person?   **
     ```
     ```
 
-   ** How many families are located in the office building?  **
+   **How many families are located in the office building?  **
     ```
     ```
 
@@ -185,7 +185,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
     ```
 
-   ** Finding out all the activities being done in an indoor environment? **  
+   **Finding out all the activities being done in an indoor environment? **  
     ```
     ```
 
@@ -201,27 +201,27 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 6. ### Users situation awareness-related competency questions:
 
-   ** Where is each person located in the building?   **
+   **Where is each person located in the building?   **
     ```
     ```
 
-   ** Which route is assigned to each person of each group (e.g., a family)?  **
+   **Which route is assigned to each person of each group (e.g., a family)?  **
     ```
     ```
 
-   ** What are the navigational states of each person?  **
+   **What are the navigational states of each person?  **
     ```
     ```
 
-   ** What are the motion states of each person?  **
+   **What are the motion states of each person?  **
     ```
     ```
 
-   ** How many times a person has deviated from one's provided path?**   
+   **How many times a person has deviated from one's provided path?**   
     ```
     ```
 
-   ** What is the fitness status of each person?   **
+   **What is the fitness status of each person?   **
     ```
     ```
 
