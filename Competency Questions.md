@@ -348,7 +348,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 7.  ### Emergency evacuation-related competency questions:
 
-    1. What is the availability status of all emergency evacuation routes?
+   1. What is the availability status of all emergency evacuation routes?
     ```
     SELECT ?route ?avStatus
         WHERE { 
@@ -357,7 +357,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-    2. How many emergency evacuation groups are located in building?
+   2. How many emergency evacuation groups are located in building?
     ```
     SELECT (COUNT (DISTINCT ?group) AS ?emergencyEvacGroups)
     WHERE { 
@@ -365,7 +365,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-    3. Who has evacuated the building successfully?
+   3. Who has evacuated the building successfully?
     ```
     SELECT ?person 
     WHERE { 
