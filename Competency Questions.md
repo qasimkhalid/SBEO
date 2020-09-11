@@ -140,10 +140,22 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
    **What are the types of routes in terms of from graph-based representation?**
     ```
+    SELECT ?route ?graphBasedtype 
+    WHERE {
+        ?route rdf:type ?allTypeRoute ;
+                     sbeo:routeType ?graphBasedtype . 
+        ?allTypeRoute rdfs:subClassOf* sbeo:Route .
+    }
     ```
 
     **What is the travel time of each route?**
     ```
+    SELECT ?route ?time 
+    WHERE {
+        ?route rdf:type ?allTypeRoute ;
+                     sbeo:travelTime ?time . 
+        ?allTypeRoute rdfs:subClassOf* sbeo:Route .
+    }
     ```
 
    **How many nodes and edges are generated from the layout of the building?**
