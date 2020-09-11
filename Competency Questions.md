@@ -5,69 +5,69 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 1. Spatial Information-related competency questions.
     1. Which building blocks are the part of which specific building?   
 
-```
-SELECT ?buildingBlock ?specificBuilding
-WHERE {
-    ?buildingBlock rdf:type ?building .
-    ?building rdfs:subClassOf* seas:Building .
-    ?buildingBlock sbeo:partOf ?specificBuilding . 
-}
-```
-   2. What is the length and width of all corridors (excluding corridor segments)?  
+    ```
+    SELECT ?buildingBlock ?specificBuilding
+    WHERE {
+        ?buildingBlock rdf:type ?building .
+        ?building rdfs:subClassOf* seas:Building .
+        ?buildingBlock sbeo:partOf ?specificBuilding . 
+    }
+    ```
+    2. What is the length and width of all corridors (excluding corridor segments)?  
  
- ```
-SELECT ?corridor ?length ?width 
-WHERE {
-    ?corridor rdf:type seas:Corridor .
-    ?corridor sbeo:length ?length . 
-    ?corridor sbeo:width ?width . 
-}
- ```
+     ```
+    SELECT ?corridor ?length ?width 
+    WHERE {
+        ?corridor rdf:type seas:Corridor .
+        ?corridor sbeo:length ?length . 
+        ?corridor sbeo:width ?width . 
+    }
+     ```
     
-How many points of interests are located on each floor of the building?   
-```
-SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
-WHERE {
-    ?poi rdf:type sbeo:PointOfInterest .
-    ?poi sbeo:locatedIn ?space . 
-    ?space sbeo:locatedIn ?floor . 
-    ?floor rdf:type seas:BuildingStorey .
-}
-GROUP BY ?floor 
-```
+    How many points of interests are located on each floor of the building?   
+    ```
+    SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
+    WHERE {
+        ?poi rdf:type sbeo:PointOfInterest .
+        ?poi sbeo:locatedIn ?space . 
+        ?space sbeo:locatedIn ?floor . 
+        ?floor rdf:type seas:BuildingStorey .
+    }
+    GROUP BY ?floor 
+    ```
     
-Which other spaces are adjacent to the kitchen?   
-```
-SELECT ?adjacentSpace
-WHERE {
-    ?kitchen a seas:Kitchen .
-    ?kitchen sbeo:adjacentTo ?adjacentSpace . 
-    ?adjacentSpace rdf:type ?space . 
-    ?space rdfs:subClassOf* sbeo:Space .
-}
-```
+    Which other spaces are adjacent to the kitchen?   
+    ```
+    SELECT ?adjacentSpace
+    WHERE {
+        ?kitchen a seas:Kitchen .
+        ?kitchen sbeo:adjacentTo ?adjacentSpace . 
+        ?adjacentSpace rdf:type ?space . 
+        ?space rdfs:subClassOf* sbeo:Space .
+    }
+    ```
 
-What is the current occupancy of all corridors?  
-```
-SELECT ?corridor ?value
-WHERE {
-    ?corridor a seas:Corridor .
-    ?corridor sbeo:currentOccupancy ?value . 
-}
-```
+    What is the current occupancy of all corridors?  
+    ```
+    SELECT ?corridor ?value
+    WHERE {
+        ?corridor a seas:Corridor .
+        ?corridor sbeo:currentOccupancy ?value . 
+    }
+    ```
 
-Which spaces are excluded for which person?   
-```
-SELECT ?space ?person
-WHERE {
-    ?person rdf:type ?allType . 
-    ?allType rdfs:subClassOf* foaf:Person . 
-    ?space rdf:type ?allTypeSpace ;
-           sbeo:excludedFor ?person . 
+    Which spaces are excluded for which person?   
+    ```
+    SELECT ?space ?person
+    WHERE {
+        ?person rdf:type ?allType . 
+        ?allType rdfs:subClassOf* foaf:Person . 
+        ?space rdf:type ?allTypeSpace ;
+               sbeo:excludedFor ?person . 
 
-    ?allTypeSpace rdfs:subClassOf* sbeo:Space .
-}
-```
+        ?allTypeSpace rdfs:subClassOf* sbeo:Space .
+    }
+    ```
 
 
 
