@@ -8,9 +8,9 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
     SELECT ?buildingBlock ?specificBuilding
     WHERE {
-        ?buildingBlock rdf:type ?building .
-        ?building rdfs:subClassOf* seas:Building .
-        ?buildingBlock sbeo:partOf ?specificBuilding . 
+        ?buildingBlock rdf:type ?building ;
+                       sbeo:partOf ?specificBuilding .
+        ?building rdfs:subClassOf* seas:Building . 
     }
     ```
     2. What is the length and width of all corridors (excluding corridor segments)? 
@@ -18,9 +18,9 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
      ```
     SELECT ?corridor ?length ?width 
     WHERE {
-        ?corridor rdf:type seas:Corridor .
-        ?corridor sbeo:length ?length . 
-        ?corridor sbeo:width ?width . 
+        ?corridor rdf:type seas:Corridor ;
+                  sbeo:length ?length ; 
+                  sbeo:width ?width . 
     }
      ```
     
@@ -28,8 +28,8 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
     SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
     WHERE {
-        ?poi rdf:type sbeo:PointOfInterest .
-        ?poi sbeo:locatedIn ?space . 
+        ?poi rdf:type sbeo:PointOfInterest ;
+             sbeo:locatedIn ?space . 
         ?space sbeo:locatedIn ?floor . 
         ?floor rdf:type seas:BuildingStorey .
     }
@@ -40,8 +40,8 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
     SELECT ?adjacentSpace
     WHERE {
-        ?kitchen a seas:Kitchen .
-        ?kitchen sbeo:adjacentTo ?adjacentSpace . 
+        ?kitchen rdf:type seas:Kitchen ;
+                 sbeo:adjacentTo ?adjacentSpace . 
         ?adjacentSpace rdf:type ?space . 
         ?space rdfs:subClassOf* sbeo:Space .
     }
@@ -51,8 +51,8 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
     SELECT ?corridor ?value
     WHERE {
-        ?corridor a seas:Corridor .
-        ?corridor sbeo:currentOccupancy ?value . 
+        ?corridor rdf:type seas:Corridor ;
+                  sbeo:currentOccupancy ?value . 
     }
     ```
 
@@ -77,23 +77,23 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT DISTINCT ?device ?person
     WHERE {
         ?device rdf:type ?allTypeIncidentProtection ;
-                       sbeo:locatedIn ?poi .
+                sbeo:locatedIn ?poi .
         ?poi rdf:type sbeo:PointOfInterest ; 
-                 sbeo:locatedIn ?space2 . 
+             sbeo:locatedIn ?space2 . 
         ?space1 rdf:type ?allTypeSpace1 ; 
-                         sbeo:locatedIn ?floor .
+                sbeo:locatedIn ?floor .
 
         ?person rdf:type ?allTypePerson ;
-                    sbeo:locatedIn ?space1 . 
+                sbeo:locatedIn ?space1 . 
         ?space2 rdf:type ?allTypeSpace2 ;
-                         sbeo:locatedIn ?floor . 
+                sbeo:locatedIn ?floor . 
 
         ?floor rdf:type seas:BuildingStorey .
 
-        ?allTypeIncidentProtection  rdfs:subClassOf* sbeo:IncidentProtectionDevice .
         ?allTypePerson rdfs:subClassOf* foaf:Person . 
         ?allTypeSpace1 rdfs:subClassOf* sbeo:Space .
         ?allTypeSpace2 rdfs:subClassOf* sbeo:Space .
+        ?allTypeIncidentProtection  rdfs:subClassOf* sbeo:IncidentProtectionDevice .
     }
     ```
 
@@ -102,7 +102,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?office ?sensor
     WHERE {
         ?sensor rdf:type ?allTypeSensor ;
-                        sbeo:installedIn ?office . 
+                sbeo:installedIn ?office . 
         ?allTypeSensor rdfs:subClassOf* sbeo:Sensor . 
 
         ?office rdf:type seas:Office . 
@@ -115,7 +115,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?person ?device (?allTypeDevice AS ?deviceType)
     WHERE {
         ?person rdf:type ?allTypePerson ;
-                        sbeo:uses ?device . 
+                sbeo:uses ?device . 
         ?allTypePerson rdfs:subClassOf* foaf:Person . 
 
         ?device rdf:type ?allTypeDevice . 
@@ -143,7 +143,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?route ?graphBasedtype 
     WHERE {
         ?route rdf:type ?allTypeRoute ;
-                     sbeo:routeType ?graphBasedtype . 
+               sbeo:routeType ?graphBasedtype . 
         ?allTypeRoute rdfs:subClassOf* sbeo:Route .
     }
     ```
@@ -153,7 +153,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?route ?time 
     WHERE {
         ?route rdf:type ?allTypeRoute ;
-                     sbeo:travelTime ?time . 
+               sbeo:travelTime ?time . 
         ?allTypeRoute rdfs:subClassOf* sbeo:Route .
     }
     ```
@@ -190,7 +190,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT  ?person ?rp
     WHERE {
         ?person rdf:type ?allTypePerson ;
-                        sbeo:routePreference ?rp .
+                sbeo:routePreference ?rp .
         ?allTypePerson rdfs:subClassOf* foaf:Person  .  
     }
     ```
@@ -221,11 +221,11 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT DISTINCT ?person ?role ?group
     WHERE {
         ?person rdf:type ?allTypePerson ;
-                        sbeo:hasRole ?role .  
+                sbeo:hasRole ?role .  
         ?allTypePerson rdfs:subClassOf* foaf:Person .
 
         ?group rdf:type ?allTypeGroup ;
-                        sbeo:hasMember ?person .  
+               sbeo:hasMember ?person .  
         ?allTypeGroup rdfs:subClassOf* sbeo:Group .
     }
     ```
@@ -256,7 +256,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?incident ?startedTime
     WHERE {
         ?incident rdf:type ?allTypeIncident ;
-                          sbeo:startedAtTime ?startedTime . 
+                  sbeo:startedAtTime ?startedTime . 
         ?allTypeIncident rdfs:subClassOf* sbeo:Incident .
     }
     ```
@@ -266,7 +266,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?space ?status
     WHERE {
         ?space rdf:type ?allTypeSpace ;
-                       sbeo:hasAvailabilityStatus ?status . 
+               sbeo:hasAvailabilityStatus ?status . 
         ?allTypeSpace rdfs:subClassOf* sbeo:Space .
     }
     ```
@@ -280,7 +280,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?person ?space
     WHERE {
         ?person rdf:type ?allTypePerson ;
-                       sbeo:locatedIn ?space . 
+                sbeo:locatedIn ?space . 
         ?allTypePerson rdfs:subClassOf* foaf:Person .
     }
     ```
@@ -290,7 +290,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT DISTINCT ?group ?person ?route
     WHERE {
         ?group rdf:type ?allTypeGroup ;
-                      sbeo:hasMember ?person .  
+               sbeo:hasMember ?person .  
         ?allTypeGroup rdfs:subClassOf* sbeo:Group . 
 
         ?person rdf:type ?allTypePerson ;
@@ -353,7 +353,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?route ?avStatus
         WHERE { 
         ?route rdf:type sbeo:EmergencyEvacuationRoute ;
-                sbeo:hasAvailabilityStatus ?avStatus .
+               sbeo:hasAvailabilityStatus ?avStatus .
     }
     ```
 
@@ -380,7 +380,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     SELECT ?group 
     WHERE { 
         ?group rdf:type ?allTypeGroup ;
-                sbeo:hasActivityStatus sbeo:Evacuating . 
+               sbeo:hasActivityStatus sbeo:Evacuating . 
         ?allTypeGroup rdfs:subClassOf* sbeo:Group .
     }
     ```
