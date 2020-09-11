@@ -2,7 +2,7 @@
 
 The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
 
-**1. Spatial Information-related competency questions.**
+1. **Spatial Information-related competency questions.**
     1. Which building blocks are the part of which specific building?   
 
     ```
@@ -70,7 +70,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
 
 
-**2. Devices and components of the indoor environment-related competency questions.**
+2. **Devices and components of the indoor environment-related competency questions.**
 
     What are the fire incident protection devices located at the same floor where a person is located?  
     ```
