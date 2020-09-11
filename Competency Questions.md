@@ -7,6 +7,11 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 	
 Which building blocks are the part of which specific building?   
     ```
+    WHERE {
+    ?buildingBlock rdf:type ?building .
+    ?building rdfs:subClassOf* seas:Building .
+    ?buildingBlock sbeo:partOf ?specificBuilding . 
+}
     ```
     
 What is the length and width of all corridors (excluding corridor segments)?  
