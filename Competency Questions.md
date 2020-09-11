@@ -3,7 +3,7 @@
 The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
 
 1. ### Spatial Information-related competency questions:
-    1. Which building blocks are the part of which specific building?   
+    1. _Which building blocks are the part of which specific building?_   
 
     ```
     SELECT ?buildingBlock ?specificBuilding
@@ -13,7 +13,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ?buildingBlock sbeo:partOf ?specificBuilding . 
     }
     ```
-    2. What is the length and width of all corridors (excluding corridor segments)?  
+    2. _What is the length and width of all corridors (excluding corridor segments)?_  
  
      ```
     SELECT ?corridor ?length ?width 
@@ -24,7 +24,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
      ```
     
-    3. How many points of interests are located on each floor of the building?   
+    3. _How many points of interests are located on each floor of the building?_   
     ```
     SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
     WHERE {
