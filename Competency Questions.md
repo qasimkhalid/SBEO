@@ -3,7 +3,7 @@
 The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
 
 1. ### Spatial Information-related competency questions:
-    1. _Which building blocks are the part of which specific building?_   
+    1. **Which building blocks are the part of which specific building?**   
 
     ```
     SELECT ?buildingBlock ?specificBuilding
@@ -13,7 +13,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ?buildingBlock sbeo:partOf ?specificBuilding . 
     }
     ```
-    2. _What is the length and width of all corridors (excluding corridor segments)?_  
+    2. **What is the length and width of all corridors (excluding corridor segments)?**  
  
      ```
     SELECT ?corridor ?length ?width 
@@ -24,7 +24,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
      ```
     
-    3. _How many points of interests are located on each floor of the building?_   
+    3. **How many points of interests are located on each floor of the building?**   
     ```
     SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
     WHERE {
@@ -56,7 +56,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-    6. Which spaces are excluded for which person?   
+    6. **Which spaces are excluded for which person? **  
     ```
     SELECT ?space ?person
     WHERE {
@@ -72,7 +72,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 2. ### Devices and components of the indoor environment-related competency questions:
 
-    What are the fire incident protection devices located at the same floor where a person is located?  
+    **What are the fire incident protection devices located at the same floor where a person is located? ** 
     ```
     SELECT DISTINCT ?device ?person
     WHERE {
@@ -97,7 +97,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-    Which sensors are installed in each office?   
+    **Which sensors are installed in each office?   **
     ```
     SELECT ?office ?sensor
     WHERE {
@@ -110,7 +110,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ORDER BY ?office 
     ```
 
-    Who is using a hand-held device and which one?  
+   ** Who is using a hand-held device and which one? ** 
     ```
     SELECT ?person ?device (?allTypeDevice AS ?deviceType)
     WHERE {
@@ -124,7 +124,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ORDER BY ?person
     ```
 
-    What type of sensors are installed in the building?   
+   ** What type of sensors are installed in the building?   **
     ```
     SELECT DISTINCT (?allTypeSensor AS ?sensorType)
     WHERE {
@@ -138,15 +138,15 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 3. ### Route graph-related competency questions:
 
-    What are the types of routes in terms of from graph-based representation?   
+   ** What are the types of routes in terms of from graph-based representation?   **
     ```
     ```
 
-    What is the travel time of each route?   
+    **What is the travel time of each route?   **
     ```
     ```
 
-    How many nodes and edges are generated from the layout of the building?   
+   ** How many nodes and edges are generated from the layout of the building?   **
     ```
     ```
 
@@ -155,23 +155,23 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 4. ### Users’ characteristics and preferences-related questions.
 
-    What are the notification preferences of each person?   
+   ** What are the notification preferences of each person?  **
     ```
     ```
 
-    What are route preferences of each person?   
+   ** What are route preferences of each person?   **
     ```
     ```
 
-    How many families are located in the office building?  
+   ** How many families are located in the office building?  **
     ```
     ```
 
-    How people are classified with respect to their physical characteristics?   
+    **How people are classified with respect to their physical characteristics?  ** 
     ```
     ```
 
-    What is the role of each member within any group?   
+    **What is the role of each member within any group?   **
     ```
     ```
 
@@ -181,19 +181,19 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 5. ### Building situation awareness-related competency questions:
 
-    Finding out any incident occurred in the building?   
+    **Finding out any incident occurred in the building?   **
     ```
     ```
 
-    Finding out all the activities being done in an indoor environment?   
+   ** Finding out all the activities being done in an indoor environment? **  
     ```
     ```
 
-    At what time any incident occurred?   
+   **At what time any incident occurred?   **
     ```
     ```
 
-    What is the availability status of each space?   
+    **What is the availability status of each space?   **
     ```
     ```
 
@@ -201,27 +201,27 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 6. ### Users situation awareness-related competency questions:
 
-    Where is each person located in the building?   
+   ** Where is each person located in the building?   **
     ```
     ```
 
-    Which route is assigned to each person of each group (e.g., a family)?  
+   ** Which route is assigned to each person of each group (e.g., a family)?  **
     ```
     ```
 
-    What are the navigational states of each person?  
+   ** What are the navigational states of each person?  **
     ```
     ```
 
-    What are the motion states of each person?  
+   ** What are the motion states of each person?  **
     ```
     ```
 
-    How many times a person has deviated from one's provided path?   
+   ** How many times a person has deviated from one's provided path?**   
     ```
     ```
 
-    What is the fitness status of each person?   
+   ** What is the fitness status of each person?   **
     ```
     ```
 
@@ -231,19 +231,19 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 7.  ### Emergency evacuation-related competency questions:
 
-    What is the availability status of all emergency evacuation routes?   
+   ** What is the availability status of all emergency evacuation routes?   **
     ```
     ```
 
-    How many emergency evacuation groups are located in building?   
+   ** How many emergency evacuation groups are located in building?   **
     ```
     ```
 
-    Who has evacuated the building successfully?   
+   ** Who has evacuated the building successfully?   **
     ```
     ```
 
-    How many groups are still in the process of evacuating the building?   
+    **How many groups are still in the process of evacuating the building?   **
     ```
     ```
 
