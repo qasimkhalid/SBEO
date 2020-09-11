@@ -36,7 +36,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     GROUP BY ?floor 
     ```
     
-    4. Which other spaces are adjacent to the kitchen?   
+    4. **Which other spaces are adjacent to the kitchen?**   
     ```
     SELECT ?adjacentSpace
     WHERE {
@@ -47,7 +47,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-    5. What is the current occupancy of all corridors?  
+    5. **What is the current occupancy of all corridors?  **
     ```
     SELECT ?corridor ?value
     WHERE {
