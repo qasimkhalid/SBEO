@@ -12,7 +12,7 @@ WHERE {
     ?buildingBlock sbeo:partOf ?specificBuilding . 
 }
 ```
- 2. What is the length and width of all corridors (excluding corridor segments)?  
+    2. What is the length and width of all corridors (excluding corridor segments)?  
  
  ```
 SELECT ?corridor ?length ?width 
