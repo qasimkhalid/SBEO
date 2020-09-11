@@ -5,7 +5,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 1. Spatial Information-related competency questions.
 
 	
-Which building blocks are the part of which specific building?   
+  A. Which building blocks are the part of which specific building?   
 ```
 SELECT ?buildingBlock ?specificBuilding
 WHERE {
@@ -15,7 +15,7 @@ WHERE {
 }
 ```
     
-What is the length and width of all corridors (excluding corridor segments)?  
+  B. What is the length and width of all corridors (excluding corridor segments)?  
     ```
     ```
     
