@@ -355,15 +355,15 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ?route rdf:type sbeo:EmergencyEvacuationRoute ;
                sbeo:hasAvailabilityStatus ?avStatus .
     }
-    ```
+   ```
 
    2. How many emergency evacuation groups are located in building?
-    ```
+   ```
     SELECT (COUNT (DISTINCT ?group) AS ?emergencyEvacGroups)
     WHERE { 
         ?group rdf:type sbeo:EmergencyEvacuationGroup .
     }
-    ```
+   ```
 
    3. Who has evacuated the building successfully?
     ```
@@ -373,7 +373,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
                 sbeo:hasActivityStatus sbeo:Evacuated . 
         ?allTypePerson rdfs:subClassOf* foaf:Person .
     }
-    ```
+   ```
     
    4. How many groups are still in the process of evacuating the building?
     ```
@@ -384,4 +384,6 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ?allTypeGroup rdfs:subClassOf* sbeo:Group .
     }
     ```
+
+  
 
