@@ -275,7 +275,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 6. ### Users situation awareness-related competency questions:
 
-   1. Where is each person located in the building?
+    1. Where is each person located in the building?
     ```
     SELECT ?person ?space
     WHERE {
@@ -285,7 +285,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-   2. Which route is assigned to each person of each group (e.g., a family)?
+    2. Which route is assigned to each person of each group (e.g., a family)?
     ```
     SELECT DISTINCT ?group ?person ?route
     WHERE {
@@ -302,7 +302,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-   3. What are the navigational states of each person?
+    3. What are the navigational states of each person?
     ```
     SELECT ?person ?state
     WHERE { 
@@ -312,7 +312,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-   4. What are the motion states of each person?
+    4. What are the motion states of each person?
     ```
     SELECT ?person ?state
     WHERE { 
@@ -322,7 +322,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }   
     ```
 
-   5. How many times a person has deviated from one's provided path?   
+    5. How many times a person has deviated from one's provided path?   
     ```
     SELECT ?person ?deviation
     WHERE { 
@@ -332,7 +332,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-   6. What is the fitness status of each person?
+    6. What is the fitness status of each person?
     ```
     SELECT ?person ?fitStatus
     WHERE { 
@@ -348,24 +348,24 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 7.  ### Emergency evacuation-related competency questions:
 
-   1. What is the availability status of all emergency evacuation routes?
+    1. What is the availability status of all emergency evacuation routes?
     ```
     SELECT ?route ?avStatus
         WHERE { 
         ?route rdf:type sbeo:EmergencyEvacuationRoute ;
                sbeo:hasAvailabilityStatus ?avStatus .
     }
-   ```
+    ```
 
-   2. How many emergency evacuation groups are located in building?
-   ```
+    2. How many emergency evacuation groups are located in building?
+    ```
     SELECT (COUNT (DISTINCT ?group) AS ?emergencyEvacGroups)
     WHERE { 
         ?group rdf:type sbeo:EmergencyEvacuationGroup .
     }
-   ```
+    ```
 
-   3. Who has evacuated the building successfully?
+    3. Who has evacuated the building successfully?
     ```
     SELECT ?person 
     WHERE { 
@@ -373,9 +373,9 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
                 sbeo:hasActivityStatus sbeo:Evacuated . 
         ?allTypePerson rdfs:subClassOf* foaf:Person .
     }
-   ```
+    ```
     
-   4. How many groups are still in the process of evacuating the building?
+    4. How many groups are still in the process of evacuating the building?
     ```
     SELECT ?group 
     WHERE { 
