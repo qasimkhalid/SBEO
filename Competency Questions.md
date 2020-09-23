@@ -4,7 +4,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 1. ### User model-related competency questions:
 
-   * __Users’ characteristics.__
+   * ***Users’ characteristics.***
 
         * How many families are located in the office building?
     ```
@@ -27,7 +27,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-   * __Users’ preferences.__
+   * ***Users’ preferences.***
 
       * What are the notification preferences of each person?
        ```
@@ -52,7 +52,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 2. ### Building model-related competency questions:
 
 
-    * __Spatial information__.
+    * ***Spatial information.***
         * Which building blocks are the part of which specific building?   
 
         ```
@@ -125,7 +125,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-    * __Devices and components of the indoor environment__.
+    * ***Devices and components of the indoor environment.***
 
         * What are the fire incident protection devices located at the same floor where a person is located? 
         ```
@@ -190,7 +190,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-    * __Route graph__.
+    * ***Route graph***.
 
 
         * What are the types of routes in terms of from graph-based representation?
@@ -227,5 +227,173 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-3. ### Context model-related competency questions:        
+3. ### Context model-related competency questions:       
+
+    * ***Building situation awareness***.
+        * Finding out any incident occurred in the building?
+        ```
+        SELECT ?incident
+        WHERE {
+            ?incident rdf:type ?allTypeIncident .
+            ?allTypeIncident rdfs:subClassOf* sbeo:Incident .
+        }
+        ```
+
+         * Finding out all the activities being done in an indoor environment?  
+        ```
+        SELECT ?activity
+        WHERE {
+            ?activity rdf:type ?allTypeActivity .
+            ?allTypeActivity rdfs:subClassOf* sbeo:Activity .
+        }
+        ```
+
+        *  At what time any incident occurred?
+        ```
+        SELECT ?incident ?startedTime
+        WHERE {
+            ?incident rdf:type ?allTypeIncident ;
+                      sbeo:startedAtTime ?startedTime . 
+            ?allTypeIncident rdfs:subClassOf* sbeo:Incident .
+        }
+        ```
+
+        * What is the availability status of each space?
+        ```
+        SELECT ?space ?status
+        WHERE {
+            ?space rdf:type ?allTypeSpace ;
+                   sbeo:hasAvailabilityStatus ?status . 
+            ?allTypeSpace rdfs:subClassOf* sbeo:Space .
+        }
+        ```
+
+
+
+    * ***Users situation awareness***.
+        * Where is each person located in the building?
+        ```
+        SELECT ?person ?space
+        WHERE {
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:locatedIn ?space . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
+
+        *  Which route is assigned to each person of each group (e.g., a family)?
+        ```
+        SELECT DISTINCT ?group ?person ?route
+        WHERE {
+            ?group rdf:type ?allTypeGroup ;
+                   sbeo:hasMember ?person .  
+            ?allTypeGroup rdfs:subClassOf* sbeo:Group . 
+
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:assignedRoute ?route . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+
+            ?route rdf:type ?allTypeRoute . 
+            ?allTypeRoute rdfs:subClassOf* sbeo:Route .
+        }
+        ```
+
+        *  What are the navigational states of each person?
+        ```
+        SELECT ?person ?state
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasNavigationalState ?state . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
+
+        * What are the motion states of each person?
+        ```
+        SELECT ?person ?state
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasMotionState ?state . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }   
+        ```
+
+        * How many times a person has deviated from one's provided path?   
+        ```
+        SELECT ?person ?deviation
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasXTimesDeviated ?deviation . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
+
+        * What is the fitness status of each person?
+        ```
+        SELECT ?person ?fitStatus
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasFitnessStatus ?fitStatus . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
+    
+        * What is the role of each member within any group?
+        ```
+        SELECT DISTINCT ?person ?role ?group
+        WHERE {
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasRole ?role .  
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+
+            ?group rdf:type ?allTypeGroup ;
+                   sbeo:hasMember ?person .  
+            ?allTypeGroup rdfs:subClassOf* sbeo:Group .
+        }
+        ```
+
+
+
+
+
+    * ***Emergency evacuation***.
+
+        * What is the availability status of all emergency evacuation routes?
+        ```
+        SELECT ?route ?avStatus
+            WHERE { 
+            ?route rdf:type sbeo:EmergencyEvacuationRoute ;
+                   sbeo:hasAvailabilityStatus ?avStatus .
+        }
+        ```
+
+        * How many emergency evacuation groups are located in building?
+        ```
+        SELECT (COUNT (DISTINCT ?group) AS ?emergencyEvacGroups)
+        WHERE { 
+            ?group rdf:type sbeo:EmergencyEvacuationGroup .
+        }
+        ```
+
+        * Who has evacuated the building successfully?
+        ```
+        SELECT ?person 
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasActivityStatus sbeo:Evacuated . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
+    
+        * How many groups are still in the process of evacuating the building?
+        ```
+        SELECT ?group 
+        WHERE { 
+            ?group rdf:type ?allTypeGroup ;
+                   sbeo:hasActivityStatus sbeo:Evacuating . 
+            ?allTypeGroup rdfs:subClassOf* sbeo:Group .
+        }
+        ```
+
+
         
