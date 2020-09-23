@@ -7,25 +7,25 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
    * ***Users’ characteristics.***
 
         * How many families are located in the office building?
-    ```
-    SELECT (COUNT (DISTINCT ?family) AS ?familyCount)
-    WHERE {
-        ?family rdf:type sbeo:Family ;
-                sbeo:locatedIn ?space .
+        ```
+        SELECT (COUNT (DISTINCT ?family) AS ?familyCount)
+        WHERE {
+            ?family rdf:type sbeo:Family ;
+                    sbeo:locatedIn ?space .
 
-        ?space rdf:type ?allTypeBuilding . 
-        ?allTypeBuilding rdfs:subClassOf* seas:Building .
-    }
-    ```
+            ?space rdf:type ?allTypeBuilding . 
+            ?allTypeBuilding rdfs:subClassOf* seas:Building .
+        }
+        ```
 
       * What are types of people with respect to their physical characteristics? 
-    ```
-    SELECT ?person (?allTypePerson AS ?type)
-    WHERE {
-        ?person rdf:type ?allTypePerson . 
-        ?allTypePerson rdfs:subClassOf* foaf:Person .
-    }
-    ```
+        ```
+        SELECT ?person (?allTypePerson AS ?type)
+        WHERE {
+            ?person rdf:type ?allTypePerson . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
 
    * ***Users’ preferences.***
 
