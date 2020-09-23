@@ -18,7 +18,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-      * What are types of people with respect to their physical characteristics? 
+        * What are types of people with respect to their physical characteristics? 
         ```
         SELECT ?person (?allTypePerson AS ?type)
         WHERE {
