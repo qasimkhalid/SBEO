@@ -207,7 +207,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-    4. How people are classified with respect to their physical characteristics? 
+    4. What are types of people with respect to their physical characteristics? 
     ```
     SELECT ?person (?allTypePerson AS ?type)
     WHERE {
