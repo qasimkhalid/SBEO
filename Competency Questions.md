@@ -5,8 +5,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 1. ### User model-related competency questions:
 
 2. ### Building model-related competency questions:
-
-    a. #### Spatial information.
+a. Spatial information.
         i. Which building blocks are the part of which specific building?   
 
         ```
@@ -18,7 +17,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
        
-        ii. What is the length and width of all corridors (excluding corridor segments)? 
+ii. What is the length and width of all corridors (excluding corridor segments)? 
 
          ```
         SELECT ?corridor ?length ?width 
@@ -29,7 +28,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
          ```
 
-        iii. How many points of interests are located on each floor of the building?   
+iii. How many points of interests are located on each floor of the building?   
         ```
         SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
         WHERE {
@@ -41,7 +40,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         GROUP BY ?floor 
         ```
 
-        iv. Which other spaces are adjacent to the kitchen?   
+iv. Which other spaces are adjacent to the kitchen?   
         ```
         SELECT ?adjacentSpace
         WHERE {
@@ -52,7 +51,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        v. What is the current occupancy of all corridors?
+v. What is the current occupancy of all corridors?
         ```
         SELECT ?corridor ?value
         WHERE {
@@ -61,7 +60,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        vi. Which spaces are excluded for which person?  
+vi. Which spaces are excluded for which person?  
         ```
         SELECT ?space ?person
         WHERE {
@@ -74,9 +73,8 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-
-    b. #### Devices and components of the indoor environment.
-        i. What are the fire incident protection devices located at the same floor where a person is located? 
+b. Devices and components of the indoor environment.
+i. What are the fire incident protection devices located at the same floor where a person is located? 
         ```
         SELECT DISTINCT ?device ?person
         WHERE {
@@ -101,7 +99,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        ii. Which sensors are installed in each office?
+ii. Which sensors are installed in each office?
         ```
         SELECT ?office ?sensor
         WHERE {
@@ -113,8 +111,8 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ORDER BY ?office 
         ```
-
-        iii. Who is using a hand-held device and which one? 
+        
+iii. Who is using a hand-held device and which one? 
         ```
         SELECT ?person ?device (?allTypeDevice AS ?deviceType)
         WHERE {
@@ -140,9 +138,9 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 
 
-    c. #### Route graph.
+c. #### Route graph.
 
-        i. What are the types of routes in terms of from graph-based representation?
+i. What are the types of routes in terms of from graph-based representation?
         ```
         SELECT ?route ?graphBasedtype 
         WHERE {
@@ -152,7 +150,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        ii. What is the travel time of each route?
+ii. What is the travel time of each route?
         ```
         SELECT ?route ?time 
         WHERE {
@@ -162,7 +160,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        iii. How many nodes and edges are generated from the layout of the building?
+iii. How many nodes and edges are generated from the layout of the building?
         ```
         SELECT  (COUNT (DISTINCT ?edge) AS ?edgeCount) (COUNT (DISTINCT ?node) AS ?nodeCount) 
         WHERE {
