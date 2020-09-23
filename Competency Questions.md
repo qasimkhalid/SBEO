@@ -216,21 +216,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     }
     ```
 
-    5. What is the role of each member within any group?
-    ```
-    SELECT DISTINCT ?person ?role ?group
-    WHERE {
-        ?person rdf:type ?allTypePerson ;
-                sbeo:hasRole ?role .  
-        ?allTypePerson rdfs:subClassOf* foaf:Person .
-
-        ?group rdf:type ?allTypeGroup ;
-               sbeo:hasMember ?person .  
-        ?allTypeGroup rdfs:subClassOf* sbeo:Group .
-    }
-    ```
-
-
+    
 5. ### Building situation awareness-related competency questions:
 
     1. Finding out any incident occurred in the building?
@@ -339,6 +325,20 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ?person rdf:type ?allTypePerson ;
                 sbeo:hasFitnessStatus ?fitStatus . 
         ?allTypePerson rdfs:subClassOf* foaf:Person .
+    }
+    ```
+    
+    7. What is the role of each member within any group?
+    ```
+    SELECT DISTINCT ?person ?role ?group
+    WHERE {
+        ?person rdf:type ?allTypePerson ;
+                sbeo:hasRole ?role .  
+        ?allTypePerson rdfs:subClassOf* foaf:Person .
+
+        ?group rdf:type ?allTypeGroup ;
+               sbeo:hasMember ?person .  
+        ?allTypeGroup rdfs:subClassOf* sbeo:Group .
     }
     ```
 
