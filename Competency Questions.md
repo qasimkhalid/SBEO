@@ -2,7 +2,7 @@
 
 The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
 
-1. ### Spatial Information-related competency questions:
+1. ### Spatial information.
     1. Which building blocks are the part of which specific building?   
 
     ```
@@ -70,8 +70,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
 
 
-2. ### Devices and components of the indoor environment-related competency questions:
-
+2. ### Devices and components of the indoor environment.
     1. What are the fire incident protection devices located at the same floor where a person is located? 
     ```
     SELECT DISTINCT ?device ?person
@@ -136,7 +135,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 
 
-3. ### Route graph-related competency questions:
+3. ### Route graph.
 
    1. What are the types of routes in terms of from graph-based representation?
     ```
@@ -173,7 +172,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 
 
-4. ### Users’ characteristics and preferences-related questions.
+4. ### Users’ characteristics.
 
    1. What are the notification preferences of each person?
     ```
@@ -217,7 +216,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     ```
 
     
-5. ### Building situation awareness-related competency questions:
+5. ### Building situation awareness.
 
     1. Finding out any incident occurred in the building?
     ```
@@ -259,8 +258,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 
 
-6. ### Users situation awareness-related competency questions:
-
+6. ### Users situation awareness.
     1. Where is each person located in the building?
     ```
     SELECT ?person ?space
@@ -346,7 +344,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 
 
-7.  ### Emergency evacuation-related competency questions:
+7.  ### Emergency evacuation.
 
     1. What is the availability status of all emergency evacuation routes?
     ```
