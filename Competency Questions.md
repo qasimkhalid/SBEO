@@ -2,12 +2,58 @@
 
 The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
 
-1. User model-related competency questions:
+1. ### User model-related competency questions:
 
-2. Building model-related competency questions:
+   * __Users’ characteristics.__
+
+        * How many families are located in the office building?
+    ```
+    SELECT (COUNT (DISTINCT ?family) AS ?familyCount)
+    WHERE {
+        ?family rdf:type sbeo:Family ;
+                sbeo:locatedIn ?space .
+
+        ?space rdf:type ?allTypeBuilding . 
+        ?allTypeBuilding rdfs:subClassOf* seas:Building .
+    }
+    ```
+
+      * What are types of people with respect to their physical characteristics? 
+    ```
+    SELECT ?person (?allTypePerson AS ?type)
+    WHERE {
+        ?person rdf:type ?allTypePerson . 
+        ?allTypePerson rdfs:subClassOf* foaf:Person .
+    }
+    ```
+
+   * __Users’ preferences.__
+
+      * What are the notification preferences of each person?
+       ```
+       SELECT  ?person ?np
+       WHERE {
+           ?person rdf:type ?allTypePerson ;
+                   sbeo:notificationPreference ?np .
+           ?allTypePerson rdfs:subClassOf* foaf:Person  .  
+       }
+       ```
+
+      * What are route preferences of each person?
+       ```   
+       SELECT  ?person ?rp
+       WHERE {
+           ?person rdf:type ?allTypePerson ;
+                   sbeo:routePreference ?rp .
+           ?allTypePerson rdfs:subClassOf* foaf:Person  .  
+       }
+       ```
+
+2. ### Building model-related competency questions:
+
 
     * __Spatial information__.
-        * i. Which building blocks are the part of which specific building?   
+        * Which building blocks are the part of which specific building?   
 
         ```
         SELECT ?buildingBlock ?specificBuilding
@@ -18,7 +64,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
         
-        * ii. What is the length and width of all corridors (excluding corridor segments)? 
+        * What is the length and width of all corridors (excluding corridor segments)? 
 
          ```
         SELECT ?corridor ?length ?width 
@@ -30,7 +76,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
          ```
 
 
-        * iii. How many points of interests are located on each floor of the building?   
+        * How many points of interests are located on each floor of the building?   
         ```
         SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
         WHERE {
@@ -43,7 +89,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-        * iv. Which other spaces are adjacent to the kitchen?   
+        * Which other spaces are adjacent to the kitchen?   
         ```
         SELECT ?adjacentSpace
         WHERE {
@@ -55,7 +101,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-        * v. What is the current occupancy of all corridors?
+        * What is the current occupancy of all corridors?
         ```
         SELECT ?corridor ?value
         WHERE {
@@ -65,7 +111,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-        * vi. Which spaces are excluded for which person?  
+        * Which spaces are excluded for which person?  
         ```
         SELECT ?space ?person
         WHERE {
@@ -81,7 +127,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
     * __Devices and components of the indoor environment__.
 
-        * i. What are the fire incident protection devices located at the same floor where a person is located? 
+        * What are the fire incident protection devices located at the same floor where a person is located? 
         ```
         SELECT DISTINCT ?device ?person
         WHERE {
@@ -107,7 +153,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-        * ii. Which sensors are installed in each office?
+        * Which sensors are installed in each office?
         ```
         SELECT ?office ?sensor
         WHERE {
@@ -121,7 +167,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
         
 
-        * iii. Who is using a hand-held device and which one? 
+        * Who is using a hand-held device and which one? 
         ```
         SELECT ?person ?device (?allTypeDevice AS ?deviceType)
         WHERE {
@@ -135,7 +181,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ORDER BY ?person
         ```
 
-        * iv. What type of sensors are installed in the building?
+        * What type of sensors are installed in the building?
         ```
         SELECT DISTINCT (?allTypeSensor AS ?sensorType)
         WHERE {
@@ -147,7 +193,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     * __Route graph__.
 
 
-        * i. What are the types of routes in terms of from graph-based representation?
+        * What are the types of routes in terms of from graph-based representation?
         ```
         SELECT ?route ?graphBasedtype 
         WHERE {
@@ -158,7 +204,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-        * ii. What is the travel time of each route?
+        * What is the travel time of each route?
         ```
         SELECT ?route ?time 
         WHERE {
@@ -169,7 +215,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-        * iii. How many nodes and edges are generated from the layout of the building?
+        * How many nodes and edges are generated from the layout of the building?
         ```
         SELECT  (COUNT (DISTINCT ?edge) AS ?edgeCount) (COUNT (DISTINCT ?node) AS ?nodeCount) 
         WHERE {
@@ -180,3 +226,6 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
             ?allTypeRoutePoint rdfs:subClassOf* sbeo:RoutePoint . 
         }
         ```
+
+3. ### Context model-related competency questions:        
+        
