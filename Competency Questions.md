@@ -2,11 +2,11 @@
 
 The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
 
-* 1. User model-related competency questions:
+1. User model-related competency questions:
 
-* 2. Building model-related competency questions:
+2. Building model-related competency questions:
 
-    * Spatial information.
+    * __Spatial information__.
         * i. Which building blocks are the part of which specific building?   
 
         ```
@@ -79,7 +79,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-    * b. Devices and components of the indoor environment.
+    * __Devices and components of the indoor environment__.
 
         * i. What are the fire incident protection devices located at the same floor where a person is located? 
         ```
@@ -144,7 +144,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-    * c. Route graph.
+    * __Route graph__.
 
 
         * i. What are the types of routes in terms of from graph-based representation?
