@@ -28,7 +28,7 @@ Real-time context-aware route recommendation system in indoor envrionments durin
 There are some ontolgies such as, ONALIN [2],  ONTONAV [3], INO and UNO [4], that described the context-aware route recommendation, but all of them have not described the concepts to represent the groups as well as none of them is available on internet. 
 
 3. **Target audience (MUST)**
-All types of persons whose interest is to know model a building by taking the characteristics and preferences of user into the account, ecommendation of routes, knowing about emergency evacuation in building is vital for their safety and equanimity. 
+As the proposed ontology is verstile in nature, therefore the individuals who design the applications where safety and equanimity of people are important such as emergency management, emergency response, recommendation of routes, context awareness, hazard detection, management of groups of people, and so forth, can use this ontology.   
 
 ## C. Scope, requirements, development community
 1. **Scope and coverage (MUST)**
