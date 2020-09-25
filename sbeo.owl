@@ -299,8 +299,8 @@ sbeo:locatedIn rdf:type owl:ObjectProperty ,
 sbeo:lower rdf:type owl:ObjectProperty ;
            owl:inverseOf sbeo:upper ;
            rdf:type owl:InverseFunctionalProperty ;
-           rdfs:domain sbeo:RoleInContext ;
-           rdfs:range sbeo:RoleInContext ;
+           rdfs:domain seas:BuildingStorey ;
+           rdfs:range seas:BuildingStorey ;
            rdfs:comment "Associates the lower storey in a building."@en ;
            rdfs:label "Lower"@en .
 
@@ -405,8 +405,8 @@ sbeo:routeType rdf:type owl:ObjectProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#upper
 sbeo:upper rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain sbeo:RoleInContext ;
-           rdfs:range sbeo:RoleInContext ;
+           rdfs:domain seas:BuildingStorey ;
+           rdfs:range seas:BuildingStorey ;
            rdfs:comment "Associates the upper storey in a building."@en ;
            rdfs:label "Upper"@en .
 
