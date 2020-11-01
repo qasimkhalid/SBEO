@@ -22,31 +22,8 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   dcterms:language "en" ;
                                                   dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
-                                                  owl:versionInfo 0.1 .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/elements/1.1/rights
-dc:rights rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/language
-dcterms:language rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
+												  owl:versionInfo 0.1 .
+  
 
 #################################################################
 #    Object Properties
@@ -632,9 +609,6 @@ sbeo:width rdf:type owl:DatatypeProperty ,
 #################################################################
 #    Classes
 #################################################################
-
-###  http://purl.org/ontology/olo/core#OrderedList
-olo:OrderedList rdf:type owl:Class .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActiveFireProtectionDevice
@@ -1696,40 +1670,9 @@ sbeo:WaitingZone rdf:type owl:Class ;
                  rdfs:label "Waiting Zone"@en .
 
 
-###  http://xmlns.com/foaf/0.1/Person
-foaf:Person rdf:type owl:Class .
 
 
-###  https://w3id.org/seas/AssemblyBuilding
-seas:AssemblyBuilding rdf:type owl:Class .
 
-
-###  https://w3id.org/seas/BuildingSpace
-seas:BuildingSpace rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/BuildingStorey
-seas:BuildingStorey rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Corridor
-seas:Corridor rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Hall
-seas:Hall rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/MercantileBuilding
-seas:MercantileBuilding rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/ResidentialBuilding
-seas:ResidentialBuilding rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Room
-seas:Room rdf:type owl:Class .
 
 
 #################################################################
