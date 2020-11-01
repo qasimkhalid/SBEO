@@ -25,6 +25,30 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   owl:versionInfo 0.1 .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+dcterms:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -681,7 +705,6 @@ sbeo:AlzheimersDiseasedPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Apartment
 sbeo:Apartment rdf:type owl:Class ;
-               owl:equivalentClass sbeo:Suite ;
                rdfs:subClassOf seas:BuildingSpace ;
                rdfs:comment "A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary)."@en ;
                rdfs:label "Apartment"@en .
@@ -1088,6 +1111,7 @@ sbeo:HearingImpairedPerson rdf:type owl:Class ;
 sbeo:HorizontalMovingPavement rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:HorizontalPassage ,
                                               sbeo:MovingPavement ;
+                              owl:disjointWith sbeo:VerticalMovingPavement ;
                               rdfs:comment "A slow-moving conveyor mechanism that transports people across a horizontal plane over a short to medium distance."@en ;
                               rdfs:label "Horizontal Moving Pavement"@en .
 
@@ -1095,6 +1119,7 @@ sbeo:HorizontalMovingPavement rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage
 sbeo:HorizontalPassage rdf:type owl:Class ;
                        rdfs:subClassOf sbeo:Passage ;
+                       owl:disjointWith sbeo:VerticalPassage ;
                        rdfs:comment "A type of a passage that connects spatial elements located on the same storey or floor."@en ;
                        rdfs:label "Horizontal Passage"@en .
 
@@ -1699,6 +1724,42 @@ sbeo:WaitingZone rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:RoutePoint ;
                  rdfs:comment "A space (normally with seating), where people can wait to do some specific activity. During emergency condtions, it is also used for several purposes, such as unification of people with their family members, acquaintances or emergency rescue teams, etc."@en ;
                  rdfs:label "Waiting Zone"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/AssemblyBuilding
+seas:AssemblyBuilding rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/BuildingSpace
+seas:BuildingSpace rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/BuildingStorey
+seas:BuildingStorey rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Corridor
+seas:Corridor rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Hall
+seas:Hall rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/MercantileBuilding
+seas:MercantileBuilding rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/ResidentialBuilding
+seas:ResidentialBuilding rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Room
+seas:Room rdf:type owl:Class .
 
 
 #################################################################
