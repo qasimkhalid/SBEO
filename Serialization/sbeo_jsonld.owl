@@ -19,83 +19,39 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid102",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid106",
+  "@id" : "_:genid104",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
     }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid107",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
     }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
-    }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
     } ]
   } ]
 }, {
-  "@id" : "_:genid111",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid116",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid122",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid125",
+  "@id" : "_:genid110",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "http://purl.org/ontology/olo/core#OrderedList"
     }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Group"
+    }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Passage"
     } ]
   } ]
 }, {
-  "@id" : "_:genid128",
+  "@id" : "_:genid114",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -105,17 +61,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid13",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://xmlns.com/foaf/0.1/Person"
-    }, {
-      "@id" : "_:genid15"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid131",
+  "@id" : "_:genid117",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -131,7 +77,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid137",
+  "@id" : "_:genid123",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -141,7 +87,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid140",
+  "@id" : "_:genid126",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -151,57 +97,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid143",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#length"
-  } ]
-}, {
-  "@id" : "_:genid144",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#next"
-  } ]
-}, {
-  "@id" : "_:genid145",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#ordered_list"
-  } ]
-}, {
-  "@id" : "_:genid146",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#previous"
-  } ]
-}, {
-  "@id" : "_:genid147",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#index"
-  } ]
-}, {
-  "@id" : "_:genid148",
+  "@id" : "_:genid129",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -215,16 +111,19 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid15",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Dependent"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasRole"
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
+    } ]
   } ]
 }, {
-  "@id" : "_:genid153",
+  "@id" : "_:genid134",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -234,7 +133,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid156",
+  "@id" : "_:genid137",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -248,7 +147,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid161",
+  "@id" : "_:genid142",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -258,7 +157,7 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasAvailabilityStatus"
   } ]
 }, {
-  "@id" : "_:genid162",
+  "@id" : "_:genid143",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -270,7 +169,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid166",
+  "@id" : "_:genid147",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -280,7 +179,36 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid169",
+  "@id" : "_:genid150",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasMember"
+  } ]
+}, {
+  "@id" : "_:genid151",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#length"
+  } ]
+}, {
+  "@id" : "_:genid152",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#length"
+  } ]
+}, {
+  "@id" : "_:genid153",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -296,17 +224,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid17",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://xmlns.com/foaf/0.1/Person"
-    }, {
-      "@id" : "_:genid19"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid175",
+  "@id" : "_:genid159",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -320,7 +238,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid180",
+  "@id" : "_:genid164",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -330,20 +248,203 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid183",
+  "@id" : "_:genid167",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "_:genid168"
+  } ]
+}, {
+  "@id" : "_:genid168",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous"
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
     }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Dependent"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Leader"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Responsible"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Visitor"
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
     } ]
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid171",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#forPerson"
+  } ]
+}, {
+  "@id" : "_:genid172",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace"
+  } ]
+}, {
+  "@id" : "_:genid173",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasValue"
+  } ]
+}, {
+  "@id" : "_:genid174",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasValue"
+  } ]
+}, {
+  "@id" : "_:genid175",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#context"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "_:genid176",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#player"
+  } ]
+}, {
+  "@id" : "_:genid177",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Role"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#role"
+  } ]
+}, {
+  "@id" : "_:genid178",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#player"
+  } ]
+}, {
+  "@id" : "_:genid179",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#context"
+  } ]
+}, {
+  "@id" : "_:genid180",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Role"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#role"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid181",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#AvailabilityStatus"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasAvailabilityStatus"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid182",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#AvailabilityStatus"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasAvailabilityStatus"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid183",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#AvailabilityStatus"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasAvailabilityStatus"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid184",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "_:genid185"
+  } ]
+}, {
+  "@id" : "_:genid185",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid188",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#forPerson"
   } ]
 }, {
   "@id" : "_:genid189",
@@ -353,26 +454,26 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasAvailabilityStatus"
-  } ]
-}, {
-  "@id" : "_:genid19",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Responsible"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasRole"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace"
   } ]
 }, {
   "@id" : "_:genid190",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasValue"
+  } ]
+}, {
+  "@id" : "_:genid191",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasAvailabilityStatus"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasValue"
   } ]
 }, {
   "@id" : "_:genid21",
@@ -381,21 +482,21 @@
     "@list" : [ {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
     }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
+    }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
     } ]
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
     } ]
@@ -405,23 +506,25 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid34",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid37",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
     }, {
@@ -441,41 +544,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid41",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid44",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid49",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid52",
+  "@id" : "_:genid42",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -487,7 +556,19 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid56",
+  "@id" : "_:genid46",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid50",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -505,7 +586,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid63",
+  "@id" : "_:genid57",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -517,7 +598,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid67",
+  "@id" : "_:genid61",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -528,6 +609,26 @@
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HandheldDevice"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Telephone"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid66",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid69",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
     } ]
   } ]
 }, {
@@ -545,83 +646,13 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
-    }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
     }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
     } ]
   } ]
 }, {
-  "@id" : "_:genid76",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid79",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
-    }, {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid82",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://xmlns.com/foaf/0.1/Person"
-    }, {
-      "@id" : "_:genid84"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid84",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Responsible"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasRole"
-  } ]
-}, {
-  "@id" : "_:genid86",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://xmlns.com/foaf/0.1/Person"
-    }, {
-      "@id" : "_:genid88"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid88",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Dependent"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasRole"
-  } ]
-}, {
-  "@id" : "_:genid90",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
-    }, {
-      "@id" : "http://xmlns.com/foaf/0.1/Person"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid93",
+  "@id" : "_:genid75",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -637,13 +668,69 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid99",
+  "@id" : "_:genid81",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid85",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
+    }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
     }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
+    }, {
       "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid90",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid93",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid98",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PointOfInterest"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
+    }, {
+      "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
     } ]
   } ]
 }, {
@@ -663,164 +750,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/ontology/olo/core#OrderedList",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An ordered list with a given length an indexed items."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Ordered List"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid143"
-  } ]
-}, {
-  "@id" : "http://purl.org/ontology/olo/core#Slot",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A slot in an ordered list with a fixed index."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Slot"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid144"
-  }, {
-    "@id" : "_:genid145"
-  }, {
-    "@id" : "_:genid146"
-  }, {
-    "@id" : "_:genid147"
-  } ]
-}, {
-  "@id" : "http://purl.org/ontology/olo/core#index",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An index of a slot in an ordered list."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has index"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
-  } ]
-}, {
-  "@id" : "http://purl.org/ontology/olo/core#item",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An item of a slot in an ordered list."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has item"
-  } ]
-}, {
-  "@id" : "http://purl.org/ontology/olo/core#next",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Associates the next slot in an ordered list."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has next"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#previous"
-  } ]
-}, {
-  "@id" : "http://purl.org/ontology/olo/core#ordered_list",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An ordered list of an slot."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has ordered list"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#OrderedList"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#slot"
-  } ]
-}, {
-  "@id" : "http://purl.org/ontology/olo/core#previous",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Associates the previous slot in an ordered list"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has previous"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ]
-}, {
-  "@id" : "http://purl.org/ontology/olo/core#slot",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A slot in an ordered list."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#OrderedList"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has slot"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://purl.org/ontology/olo/core#Slot"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
@@ -884,11 +814,8 @@
     "@language" : "en",
     "@value" : "Activity Status"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Status"
-  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid148"
+    "@id" : "_:genid129"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#AlertingDevice",
@@ -921,6 +848,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#AlzheimersDiseasedPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person having an Alzheimer's disease."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Alzheimer's Diseased Person"
@@ -931,6 +862,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Apartment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Apartment"
@@ -992,17 +927,6 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Description"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An individual who performs one's actions on his/her own."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Autonomous"
-  } ]
-}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousMobilityPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1038,11 +962,8 @@
     "@language" : "en",
     "@value" : "Availability Status"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Status"
-  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid153"
+    "@id" : "_:genid134"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Available",
@@ -1058,6 +979,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#BlindPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person who has lost the vision completly and can neither see naturally nor with the help of any device."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Blind Person"
@@ -1068,6 +993,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#BuildingEntrance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A logical point that is used to represent the entrance to a building."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Building Entrance"
@@ -1120,6 +1049,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Classroom",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A room, typically in a school, in which a class of students is taught (Oxford Dictionary of English)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Classroom"
@@ -1141,6 +1074,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ColourBlindPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person having the decreased ability to see color or differences in color."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Colour Blind Person"
@@ -1165,6 +1102,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#CorridorEntrance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A logical point that is used to represent the entrance to a corridor."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Corridor Entrance"
@@ -1203,33 +1144,16 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#DayCare",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A place where infants and young children are provided a supervision and care of during the daytime, particularly so that their parents can hold jobs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Day Care"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#DeafPerson",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Deaf Person"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HearingImpairedPerson"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Dependent",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An individual who is dependent on one or more individuals."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Dependent"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Description",
@@ -1257,17 +1181,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "It models the user's deviation state from one's proposed route. For example, NoDeviate (0 deviation), RareDeviate (between 1 and 5 deviations, both included), OftenDeviate (between 6 and 10, both included), and TooOftenDeviate (11 and above deviations)."
+    "@value" : "It models the user's deviation state from one's proposed route. For example, NoDeviate, RareDeviate, OftenDeviate, and TooOftenDeviate."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Deviation State"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#State"
-  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid156"
+    "@id" : "_:genid137"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device",
@@ -1281,7 +1202,7 @@
     "@value" : "Device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid161"
+    "@id" : "_:genid142"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#DisplayScreen",
@@ -1302,11 +1223,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Down Syndrome Person"
+    "@value" : "A person with Down's syndrome."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "A person having Down's syndrome."
+    "@value" : "Down Syndrome Person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MentalImpairedPerson"
@@ -1629,15 +1550,16 @@
     "@language" : "en",
     "@value" : "Fitness Status"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Status"
-  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid162"
+    "@id" : "_:genid143"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#FloorEntrance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A logical point that is used to represent the entrance to a floor."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Floor Entrance"
@@ -1693,7 +1615,7 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid166"
+    "@id" : "_:genid147"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Group",
@@ -1708,10 +1630,20 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
+  }, {
+    "@id" : "_:genid150"
+  }, {
+    "@id" : "_:genid151"
+  }, {
+    "@id" : "_:genid152"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HallEntrance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A logical point that is used to represent the entrance to a hall."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Hall Entrance"
@@ -1790,6 +1722,9 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"
   }, {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MovingPavement"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#VerticalMovingPavement"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage",
@@ -1804,6 +1739,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Passage"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#VerticalPassage"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HotelBuilding",
@@ -1818,23 +1756,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/seas/ResidentialBuilding"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ID",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An unique identification number of something such as, social unit, device, etc."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid99"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Identification Number"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ImageDescription",
@@ -1920,37 +1841,16 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#KidsArea",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A place where infants or young children can play which is surrounded by a boundary normally. It can be both indoor and outdoor."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Kids Area"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Leader",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An individual who leads one or more individuals during a specific activity."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Leader"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The location sensor is a part of indoor positioning system to detect the location of each person within the building."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Location Sensor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Sensor"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#LowStaminaPerson",
@@ -1979,6 +1879,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MeetingRoom",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A type of room designated for social gathering of people, especially professional meetings."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Meeting Room"
@@ -2003,6 +1907,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MildHearingImpairedPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person who is only able to hear the sounds that are between 25 and 40 dB."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Mild Hearing Impaired Person"
@@ -2023,9 +1931,11 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HandheldDevice"
+  }, {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Telephone"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithOtherAssistedDevicePerson",
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithAssistedDevicePerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -2033,7 +1943,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "MobilityWithOtherAssistedDevicePerson"
+    "@value" : "Mobility With Assisted Device Person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MotorImpairedPerson"
@@ -2055,6 +1965,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ModerateHearingImpairedPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person who cannot hear sounds that are less than 40-75 dB."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Moderate Hearing Impaired Person"
@@ -2073,15 +1987,16 @@
     "@language" : "en",
     "@value" : "Motion State"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#State"
-  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid169"
+    "@id" : "_:genid153"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MotorImpairedPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person who has either partial or total loss of function of a body part, usually a limb or limbs."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Motor Impaired Person"
@@ -2101,13 +2016,17 @@
     "@value" : "Motorised Wheelchair Person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithOtherAssistedDevicePerson"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithAssistedDevicePerson"
   }, {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithWheelchairPerson"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MovingPavement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A slow-moving conveyor mechanism that transports people across a horizontal or inclined plane over a short to medium distance (Oxford Dictionary of English)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Moving Pavement"
@@ -2141,7 +2060,7 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Activity"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid175"
+    "@id" : "_:genid159"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#NavigationalPoint",
@@ -2168,11 +2087,8 @@
     "@language" : "en",
     "@value" : "Navigational State"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#State"
-  } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid180"
+    "@id" : "_:genid164"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#NoDeviate",
@@ -2204,7 +2120,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This instance is used to express when someone is deviating frequently between 6 to 10 times while following the provided path."
+    "@value" : "This instance is used to express when someone is deviating frequently while following the provided path."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2213,6 +2129,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#OpenAreaEntrance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A logical point that is used to represent the entrance to an open area."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Open Area Entrance"
@@ -2249,6 +2169,17 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Incident"
   } ]
 }, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Parameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A numerical or other measurable factor forming one of a set that defines a system or sets the conditions of its operation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Parameter"
+  } ]
+}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Passage",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2275,6 +2206,30 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#FireProtectionDevice"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PersonAccessibility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A parameter to express the accessibility of any space for a specific person (or type of persons) in terms of some value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Person Accessibility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Parameter"
+  }, {
+    "@id" : "_:genid167"
+  }, {
+    "@id" : "_:genid171"
+  }, {
+    "@id" : "_:genid172"
+  }, {
+    "@id" : "_:genid173"
+  }, {
+    "@id" : "_:genid174"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#PhysicallyImpairedPerson",
@@ -2330,6 +2285,19 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"
   } ]
 }, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ProfoundHearingImpairedPerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time."
+  }, {
+    "@language" : "en",
+    "@value" : "Profound Hearing Impaired Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HearingImpairedPerson"
+  } ]
+}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Ramp",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2350,22 +2318,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This instance is used to express when someone rarely deviates (between 1 to 5 times) while following the provided path."
+    "@value" : "This instance is used to express when someone rarely deviates while following the provided path."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Rare Deviate"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Responsible",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An individual who is responsible to one or more individuals."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Responsible"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Road",
@@ -2393,9 +2350,30 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Role"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RoleInContext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A concept to express that an agent is playing a role in a given context."
   } ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid183"
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Role In Context"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid175"
+  }, {
+    "@id" : "_:genid176"
+  }, {
+    "@id" : "_:genid177"
+  }, {
+    "@id" : "_:genid178"
+  }, {
+    "@id" : "_:genid179"
+  }, {
+    "@id" : "_:genid180"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Rolling",
@@ -2411,6 +2389,10 @@
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RoomEntrance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A logical point that is used to represent the entrance to a room."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Room Entrance"
@@ -2458,7 +2440,9 @@
     "@value" : "Route"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid189"
+    "@id" : "http://purl.org/ontology/olo/core#OrderedList"
+  }, {
+    "@id" : "_:genid181"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement",
@@ -2470,6 +2454,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Route Element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid182"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RoutePoint",
@@ -2522,18 +2509,18 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Sensor",
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SensorEvent",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A sensor is a device that detects or measures a physical property and records, indicates, or otherwise responds to it (Oxford Dictionary of English)."
+    "@value" : "This concept is used to express an event detected by any sensor."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Sensor"
+    "@value" : "Sensor Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Event"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SensoryImpairedPerson",
@@ -2548,6 +2535,20 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ImpairedPerson"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SevereHearingImpairedPerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person who is unable to hear anything without wearing a hearing aid."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Severe Hearing Impaired Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HearingImpairedPerson"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ShoppingMallBuilding",
@@ -2614,20 +2615,6 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#MobilePhone"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Smoke Sensor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Sensor"
-  } ]
-}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2650,7 +2637,31 @@
     "@value" : "Space"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid183"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SpaceSafety",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A parameter to express the safety of any space for a specific person (or type of persons) in terms of some value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Space Saftey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Parameter"
+  }, {
+    "@id" : "_:genid184"
+  }, {
+    "@id" : "_:genid188"
+  }, {
+    "@id" : "_:genid189"
+  }, {
     "@id" : "_:genid190"
+  }, {
+    "@id" : "_:genid191"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#StadiumBuilding",
@@ -2692,30 +2703,12 @@
     "@value" : "Standing"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#State",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The particular condition that someone or something is in at a specific time."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "State"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Status",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The situation at a particular time during a process."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Status"
-  } ]
-}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Suite",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary). This term is normally used in hotels, resorts, guesthouses, etc."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Suite"
@@ -2736,20 +2729,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#TemperatureSensor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Temperature Sensor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Sensor"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#TerroristAttack",
@@ -2798,7 +2777,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This instance is used to express when someone is deviating frequently between 11 or more times while following the provided path."
+    "@value" : "This instance is used to express when someone is deviating frequently while following the provided path."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2927,17 +2906,6 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Group"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Visitor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Visitor"
-  } ]
-}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#VisuallyImpairedPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2978,13 +2946,13 @@
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The accommodating capacity (in terms of persons) of a particular space."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid102"
+    "@id" : "_:genid81"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3069,11 +3037,14 @@
     "@value" : "The time at which an activity or event occurred."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid106"
+    "@id" : "_:genid85"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "At Time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#connectedTo",
@@ -3093,6 +3064,23 @@
     "@id" : "_:genid10"
   } ]
 }, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#context",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The circumstances that form the setting for an event, statement, or idea, and in terms of which it can be fully understood and assessed (Oxford Dictionary of English)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RoleInContext"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Context"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid13"
+  } ]
+}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#cost",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -3100,16 +3088,14 @@
     "@value" : "A numeric value associated with an edge or a complete route(path). It is also reffered to as a weight."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
-  }, {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement"
+    "@id" : "_:genid90"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Cost"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#currentOccupancy",
@@ -3119,7 +3105,7 @@
     "@value" : "The current occupancy (in terms of persons) of a particular space."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid111"
+    "@id" : "_:genid93"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3129,26 +3115,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#dependentOn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Requiring someone to perform a specific activity."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid13"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Dependent On"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid17"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo"
-  } ]
-}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#dynamicDescription",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -3156,7 +3122,7 @@
     "@value" : "A dynamic or momentary information about a specific activity, event, social unit, or a space."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid116"
+    "@id" : "_:genid98"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3173,11 +3139,14 @@
     "@value" : "The time at which an activity ended."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid122"
+    "@id" : "_:genid104"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Ended At Time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ],
   "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#startedAtTime"
@@ -3190,7 +3159,7 @@
     "@value" : "Expresses the removal of any physical space or point of interest for the consideration of any social unit."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid21"
+    "@id" : "_:genid17"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3214,7 +3183,24 @@
     "@value" : "Familiar With"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid25"
+    "@id" : "_:genid21"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#forPerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A property to express a foaf:Person in a n-ary relation for sbeo:Parameter."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Parameter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "For Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasActivityStatus",
@@ -3241,7 +3227,7 @@
     "@value" : "The status of something in terms of availability. For example, available or unavailable."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid30"
+    "@id" : "_:genid26"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3258,7 +3244,7 @@
     "@value" : "Expresses a descriptive information about any specific space, point, activiy, event or device."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid34"
+    "@id" : "_:genid30"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3274,9 +3260,15 @@
     "@language" : "en",
     "@value" : "A deviation status of a person depending on how ofthen one deviates from the proposed route."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Has Deviation State"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#DeviationState"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasFitnessStatus",
@@ -3364,38 +3356,21 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Navigation"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasRole",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Expresses a relation between a person and a role."
+    "@value" : "Provides a value that is a direct representation of an entity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://xmlns.com/foaf/0.1/Person"
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Has Role"
+    "@value" : "Value"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Role"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "It is used to describe if a smoke sensor detects smoke. It is expressed as Boolean in which true means the smoke is detected and the false means there is no smoke detected by the smoke sensor."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Has Smoke"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#hasXTimesDeviated",
@@ -3415,21 +3390,38 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#id",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An unique identification number of something such as, social unit, device, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid107"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Identification Number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#installedIn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Place or fix (equipment or machinery) in position ready for use (Oxford Dictionary of English)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid41"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Installed In"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid44"
+    "@id" : "_:genid37"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#leadsTo",
@@ -3439,14 +3431,14 @@
     "@value" : "Be a means of access to a particular space or point."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid49"
+    "@id" : "_:genid42"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Lead To"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid52"
+    "@id" : "_:genid46"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#length",
@@ -3456,31 +3448,51 @@
     "@value" : "The measurement or extent of something from end to end (Oxford Dictionary of English)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid125"
+    "@id" : "_:genid110"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Length"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#locatedIn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "States the location of any social unit, activity, event, physical space, or a point of interest at any other physical space."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid56"
+    "@id" : "_:genid50"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Located In"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid63"
+    "@id" : "_:genid57"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#lower",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Associates the lower storey in a building."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/seas/BuildingStorey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Lower"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/seas/BuildingStorey"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#upper"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#meansOfNotification",
@@ -3497,24 +3509,58 @@
     "@value" : "Means of Notification"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid67"
+    "@id" : "_:genid61"
   } ]
 }, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo",
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#notificationPreference",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Expresses the prohibition of access of any specific foaf:Person to a specific physical space."
+    "@value" : "A notification preference for any kind of social unit."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid72"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Not Accessible To"
+    "@value" : "Notification Preference"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Description"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#number",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A number assigned to anything."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Has Number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A property to express a sbeo:Space  in a n-ary relation for sbeo:Parameter."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Parameter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Of Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid66"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#partOf",
@@ -3524,14 +3570,14 @@
     "@value" : "Expresses a physical space as a part or a fragment of another physical space. For example, a block of apartments can be a part of apartment building, etc."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid76"
+    "@id" : "_:genid69"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Part Of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid79"
+    "@id" : "_:genid72"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#performedBy",
@@ -3551,6 +3597,23 @@
     "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
   } ]
 }, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#player",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "It express an agent that plays a role in a specific context."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RoleInContext"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ]
+}, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -3558,14 +3621,34 @@
     "@value" : "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid82"
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Responsible To"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid86"
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#acquaintanceOf"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#role",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Expresses a role of an agent."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#RoleInContext"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Role"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Role"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#routePreference",
@@ -3582,7 +3665,7 @@
     "@value" : "Route Preference"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#GraphBasedRoute"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Route"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#routeType",
@@ -3614,6 +3697,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Speed"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#speedFactor",
@@ -3640,11 +3726,14 @@
     "@value" : "Start is when an activity is deemed to have been started by an entity, known as trigger."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid128"
+    "@id" : "_:genid114"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Started At Time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#staticDescription",
@@ -3653,7 +3742,7 @@
     "@value" : "A static or a fix information about any activity, event, space, social unit, or point of interest."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid131"
+    "@id" : "_:genid117"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3670,11 +3759,14 @@
     "@value" : "The length of time during which any activity or event lasts."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid137"
+    "@id" : "_:genid123"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Time Duration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#travelTime",
@@ -3684,11 +3776,31 @@
     "@value" : "A specific period of time required to move from one place to another."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid140"
+    "@id" : "_:genid126"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Travel Time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ]
+}, {
+  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#upper",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Associates the upper storey in a building."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/seas/BuildingStorey"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Upper"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/seas/BuildingStorey"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#uses",
@@ -3698,32 +3810,18 @@
     "@value" : "Expresses a momentary information about a physical space or a point being used by a social unit."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid90"
+    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Uses"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid93"
-  } ]
-}, {
-  "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#value",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Provides a value that is a direct representation of an entity."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Device"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Value"
+    "@id" : "_:genid75"
   } ]
 }, {
   "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#width",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The measurement or extent of something from side to side (Oxford Dictionary of English)."
@@ -3734,680 +3832,8 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Width"
-  } ]
-}, {
-  "@id" : "http://xmlns.com/foaf/0.1/Person",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "It represents a single individual of any age and having any type of characteristics."
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Person"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"
-  } ]
-}, {
-  "@id" : "http://xmlns.com/foaf/0.1/age",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The age of the person."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://xmlns.com/foaf/0.1/Person"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Age"
-  } ]
-}, {
-  "@id" : "http://xmlns.com/foaf/0.1/firstName",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The first name of the person."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://xmlns.com/foaf/0.1/Person"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "First Name"
-  } ]
-}, {
-  "@id" : "http://xmlns.com/foaf/0.1/gender",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The gender of a person. It is typically but not necessarily 'male' or 'female'."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://xmlns.com/foaf/0.1/Person"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Gender"
-  } ]
-}, {
-  "@id" : "http://xmlns.com/foaf/0.1/lastName",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The last name of the person."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://xmlns.com/foaf/0.1/Person"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Last Name"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/AssemblyBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Assembly Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/NonResidentialBuilding"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Attic",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "the part of a building, especially of a house, directly under a roof; garret."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Attic"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Balcony",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An accessible structure extending from a building, especially outside a window."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Balcony"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Basement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A story of a building, partly or wholly underground."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Basement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Bathroom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Bathroom is mainly used for bathing &amp; washing up related activities."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Bathroom"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Bedroom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Bedroom is used mainly for sleeping."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Bedroom"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Building",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Buildings are roofed constructions which can be used separately, have been built for permanent purposes, can be entered by persons and are suitable or intended for protecting persons, animals or objects."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-  }, {
-    "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/BuildingSpace",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A Space is a 3D volume bounded by surfaces. It represents the physical spaces of the building."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Building Space"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/BuildingSpatialStructure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A man made structure with spatial properties."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Building Spatial Structure"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/BuildingStorey",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Building Storey"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/BuildingSpatialStructure"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Corridor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A gallery or passage connecting parts of a building; hallway."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Corridor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"
-  }, {
-    "@id" : "https://w3id.org/seas/Lobby"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/DiningRoom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A room in which meals are eaten, as in a home or hotel, especially the room in which the major or more formal meals are eaten."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Dining Room"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Door",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "the large flat piece of wood, glass etc that you move when you go into or out of a building, room, vehicle etc, or when you open a cupboard (Longman Dictionary of Contemporary English Online)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Door"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/EducationalBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Schools and day care centers."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Educational Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/NonResidentialBuilding"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Elevator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Elevator is used to transport people between different floors."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Elevator"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#VerticalPassage"
-  }, {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Greenhouse",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A building, room, or zone, usually chiefly of glass, in which the temperature is maintained within a desired range, used for cultivating tender plants or growing plants out of season."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Greenhouse"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Hall",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A large entrance room of a house or building."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Hall"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"
-  }, {
-    "@id" : "https://w3id.org/seas/Lobby"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/HomeOffice",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A work or office space set up in a person's home and used exclusively for business on a regular basis."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Tree house"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Office"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/IndustrialBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Buildings used for industrial production, e.g. factories, workshops, slaughterhouses, breweries, assembly plants, etc."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Industrial Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/NonResidentialBuilding"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/InstitutionalBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Institutions such as hospitals providing medical and surgical treatment and nursing care for ill or injured people."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Institutional Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/NonResidentialBuilding"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Kitchen",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Kitchen is a room used mainly for cooking and possibly eating."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Kitchen"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Laundry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A room or zone, as in a home or apartment building, reserved for doing the family wash."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Laundry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/LivingRoom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Living Room is the main room of daytime activity."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Living Room"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Lobby",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Lobby"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/MercantileBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Mercantile Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/NonResidentialBuilding"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/NonResidentialBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A  non-residential building is a building at least half of which is used for other than residential purposes. "
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Non-Residential Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Building"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Office",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A room, set of rooms, or building where the business of a commercial or industrial organization or of a professional person is conducted."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Office"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/OfficeBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Places where services are provided. Examples: banks, insurance agencies."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Business Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/NonResidentialBuilding"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/ResidentialBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A residential building is a building at least half of which is used for residential purposes. "
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Residential Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Building"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Room",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Room"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/SiteOfBuilding",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Building site is a locale containing one or more separate buildings. They are zones."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Site Of Building"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#Space"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/Stairs",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A construction designed to bridge a large vertical distance by dividing it into smaller vertical distances, called steps."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Stairs"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.ia.urjc.es/ontologies/building/sbeo#VerticalPassage"
-  }, {
-    "@id" : "https://w3id.org/seas/BuildingSpace"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/StorageRoom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Room for storage."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Storage Room"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/SwimmingPool",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A tank or large artificial basin, as of concrete, for filling with water for swimming."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Swimming Pool"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
-  } ]
-}, {
-  "@id" : "https://w3id.org/seas/UtilityRoom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Room for other special utilities and hobbies."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/seas/BuildingOntology"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Utility Room"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/seas/Room"
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
   } ]
 } ]

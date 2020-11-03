@@ -24,29 +24,6 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
 
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/elements/1.1/rights
-dc:rights rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/language
-dcterms:language rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
 
 #################################################################
 #    Object Properties
@@ -1183,6 +1160,7 @@ sbeo:LowStaminaPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LowVisionPerson
 sbeo:LowVisionPerson rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:VisuallyImpairedPerson ;
+                     rdfs:comment "A person having an visual impairment that cannot be fixed with glasses, contact lenses, or other standard treatments like medicine or surgery, such that it makes hard to do his/her everyday activities."@en ;
                      rdfs:label "Low Vision Person"@en .
 
 
@@ -1407,8 +1385,8 @@ sbeo:PointOfInterestSegment rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ProfoundHearingImpairedPerson
 sbeo:ProfoundHearingImpairedPerson rdf:type owl:Class ;
                                    rdfs:subClassOf sbeo:HearingImpairedPerson ;
-                                   rdfs:label "A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time."@en ,
-                                              "Profound Hearing Impaired Person"@en .
+                                   rdfs:comment "A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time."@en ;
+                                   rdfs:label "Profound Hearing Impaired Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Ramp
@@ -1725,41 +1703,6 @@ sbeo:WaitingZone rdf:type owl:Class ;
                  rdfs:comment "A space (normally with seating), where people can wait to do some specific activity. During emergency condtions, it is also used for several purposes, such as unification of people with their family members, acquaintances or emergency rescue teams, etc."@en ;
                  rdfs:label "Waiting Zone"@en .
 
-
-###  http://xmlns.com/foaf/0.1/Person
-foaf:Person rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/AssemblyBuilding
-seas:AssemblyBuilding rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/BuildingSpace
-seas:BuildingSpace rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/BuildingStorey
-seas:BuildingStorey rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Corridor
-seas:Corridor rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Hall
-seas:Hall rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/MercantileBuilding
-seas:MercantileBuilding rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/ResidentialBuilding
-seas:ResidentialBuilding rdf:type owl:Class .
-
-
-###  https://w3id.org/seas/Room
-seas:Room rdf:type owl:Class .
 
 
 #################################################################

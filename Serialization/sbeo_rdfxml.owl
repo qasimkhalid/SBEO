@@ -978,7 +978,6 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- http://www.ia.urjc.es/ontologies/building/sbeo#Apartment -->
 
     <owl:Class rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo#Apartment">
-        <owl:equivalentClass rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#Suite"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
         <rdfs:comment xml:lang="en">A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary).</rdfs:comment>
         <rdfs:label xml:lang="en">Apartment</rdfs:label>
@@ -1564,6 +1563,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <owl:Class rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalMovingPavement">
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"/>
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#MovingPavement"/>
+        <owl:disjointWith rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#VerticalMovingPavement"/>
         <rdfs:comment xml:lang="en">A slow-moving conveyor mechanism that transports people across a horizontal plane over a short to medium distance.</rdfs:comment>
         <rdfs:label xml:lang="en">Horizontal Moving Pavement</rdfs:label>
     </owl:Class>
@@ -1574,6 +1574,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <owl:Class rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage">
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#Passage"/>
+        <owl:disjointWith rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#VerticalPassage"/>
         <rdfs:comment xml:lang="en">A type of a passage that connects spatial elements located on the same storey or floor.</rdfs:comment>
         <rdfs:label xml:lang="en">Horizontal Passage</rdfs:label>
     </owl:Class>
@@ -1664,6 +1665,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <owl:Class rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo#LowVisionPerson">
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#VisuallyImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person having an visual impairment that cannot be fixed with glasses, contact lenses, or other standard treatments like medicine or surgery, such that it makes hard to do his/her everyday activities.</rdfs:comment>
         <rdfs:label xml:lang="en">Low Vision Person</rdfs:label>
     </owl:Class>
     
@@ -1988,7 +1990,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <owl:Class rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo#ProfoundHearingImpairedPerson">
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#HearingImpairedPerson"/>
-        <rdfs:label xml:lang="en">A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time.</rdfs:label>
+        <rdfs:comment xml:lang="en">A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time.</rdfs:comment>
         <rdfs:label xml:lang="en">Profound Hearing Impaired Person</rdfs:label>
     </owl:Class>
     
@@ -2446,6 +2448,8 @@ The core SBEO covers the concepts related to the geometry of building, devices a
         <rdfs:label xml:lang="en">Waiting Zone</rdfs:label>
     </owl:Class>
     
+
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
