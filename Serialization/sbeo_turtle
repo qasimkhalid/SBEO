@@ -1,3 +1,4 @@
+@prefix : <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -8,6 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
@@ -22,57 +24,10 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
 
+
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://purl.org/ontology/olo/core#item
-olo:item rdf:type owl:ObjectProperty ;
-         rdfs:domain olo:Slot ;
-         rdfs:comment "An item of a slot in an ordered list."@en ;
-         rdfs:label "has item"@en .
-
-
-###  http://purl.org/ontology/olo/core#next
-olo:next rdf:type owl:ObjectProperty ;
-         owl:inverseOf olo:previous ;
-         rdf:type owl:FunctionalProperty ;
-         rdfs:domain olo:Slot ;
-         rdfs:range olo:Slot ;
-         rdfs:comment "Associates the next slot in an ordered list."@en ;
-         rdfs:isDefinedBy olo: ;
-         rdfs:label "has next"@en .
-
-
-###  http://purl.org/ontology/olo/core#ordered_list
-olo:ordered_list rdf:type owl:ObjectProperty ;
-                 owl:inverseOf olo:slot ;
-                 rdf:type owl:FunctionalProperty ;
-                 rdfs:domain olo:Slot ;
-                 rdfs:range olo:OrderedList ;
-                 rdfs:comment "An ordered list of an slot."@en ;
-                 rdfs:isDefinedBy olo: ;
-                 rdfs:label "has ordered list"@en .
-
-
-###  http://purl.org/ontology/olo/core#previous
-olo:previous rdf:type owl:ObjectProperty ,
-                      owl:InverseFunctionalProperty ;
-             rdfs:domain olo:Slot ;
-             rdfs:range olo:Slot ;
-             rdfs:comment "Associates the previous slot in an ordered list"@en ;
-             rdfs:isDefinedBy olo: ;
-             rdfs:label "has previous"@en .
-
-
-###  http://purl.org/ontology/olo/core#slot
-olo:slot rdf:type owl:ObjectProperty ;
-         rdfs:domain olo:OrderedList ;
-         rdfs:range olo:Slot ;
-         rdfs:comment "A slot in an ordered list."@en ;
-         rdfs:isDefinedBy olo: ;
-         rdfs:label "has slot"@en .
-
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accompanying
 sbeo:accompanying rdf:type owl:ObjectProperty ,
@@ -135,28 +90,17 @@ sbeo:connectedTo rdf:type owl:ObjectProperty ,
                  rdfs:label "Connected To"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#dependentOn
-sbeo:dependentOn rdf:type owl:ObjectProperty ;
-                 owl:inverseOf sbeo:responsibleTo ;
-                 rdf:type owl:TransitiveProperty ;
-                 rdfs:domain [ owl:intersectionOf ( foaf:Person
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty sbeo:hasRole ;
-                                                      owl:hasValue sbeo:Dependent
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
-                 rdfs:range [ owl:intersectionOf ( foaf:Person
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty sbeo:hasRole ;
-                                                     owl:hasValue sbeo:Responsible
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
-                 rdfs:comment "Requiring someone to perform a specific activity."@en ;
-                 rdfs:label "Dependent On"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#context
+sbeo:context rdf:type owl:ObjectProperty ;
+             rdfs:domain sbeo:RoleInContext ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:Activity
+                                        sbeo:Event
+                                        sbeo:SocialUnit
+                                      )
+                        ] ;
+             rdfs:comment "The circumstances that form the setting for an event, statement, or idea, and in terms of which it can be fully understood and assessed (Oxford Dictionary of English)."@en ;
+             rdfs:label "Context"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#excludedFor
@@ -184,6 +128,14 @@ sbeo:familiarWith rdf:type owl:ObjectProperty ;
                              ] ;
                   rdfs:comment "States the familiarity of any social unit with a physical space or point of interest."@en ;
                   rdfs:label "Familiar With"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#forPerson
+sbeo:forPerson rdf:type owl:ObjectProperty ;
+               rdfs:domain sbeo:Parameter ;
+               rdfs:range foaf:Person ;
+               rdfs:comment "A property to express a foaf:Person in a n-ary relation for sbeo:Parameter."@en ;
+               rdfs:label "For Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasActivityStatus
@@ -225,6 +177,8 @@ sbeo:hasDescription rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasDeviationState
 sbeo:hasDeviationState rdf:type owl:ObjectProperty ;
+                       rdfs:domain foaf:Person ;
+                       rdfs:range sbeo:DeviationState ;
                        rdfs:comment "A deviation status of a person depending on how ofthen one deviates from the proposed route."@en ;
                        rdfs:label "Has Deviation State"@en .
 
@@ -269,22 +223,9 @@ sbeo:hasNavigationalType rdf:type owl:ObjectProperty ;
                          rdfs:label "Has Navigation Type"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasRole
-sbeo:hasRole rdf:type owl:ObjectProperty ;
-             rdfs:domain foaf:Person ;
-             rdfs:range sbeo:Role ;
-             rdfs:comment "Expresses a relation between a person and a role."@en ;
-             rdfs:label "Has Role"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
-sbeo:installedIn rdf:type owl:ObjectProperty ,
-                          owl:TransitiveProperty ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( sbeo:Device
-                                             sbeo:PointOfInterest
-                                           )
-                             ] ;
+sbeo:installedIn rdf:type owl:ObjectProperty ;
+                 rdfs:domain sbeo:Device ;
                  rdfs:range [ rdf:type owl:Class ;
                               owl:unionOf ( sbeo:PointOfInterest
                                             sbeo:Route
@@ -300,7 +241,8 @@ sbeo:installedIn rdf:type owl:ObjectProperty ,
 sbeo:leadsTo rdf:type owl:ObjectProperty ,
                       owl:SymmetricProperty ;
              rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( sbeo:RouteElement
+                           owl:unionOf ( sbeo:PointOfInterest
+                                         sbeo:RouteElement
                                          sbeo:Space
                                        )
                          ] ;
@@ -315,8 +257,7 @@ sbeo:leadsTo rdf:type owl:ObjectProperty ,
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#locatedIn
-sbeo:locatedIn rdf:type owl:ObjectProperty ,
-                        owl:TransitiveProperty ;
+sbeo:locatedIn rdf:type owl:ObjectProperty ;
                rdfs:domain [ rdf:type owl:Class ;
                              owl:unionOf ( sbeo:Activity
                                            sbeo:Event
@@ -336,6 +277,16 @@ sbeo:locatedIn rdf:type owl:ObjectProperty ,
                rdfs:label "Located In"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#lower
+sbeo:lower rdf:type owl:ObjectProperty ;
+           owl:inverseOf sbeo:upper ;
+           rdf:type owl:InverseFunctionalProperty ;
+           rdfs:domain seas:BuildingStorey ;
+           rdfs:range seas:BuildingStorey ;
+           rdfs:comment "Associates the lower storey in a building."@en ;
+           rdfs:label "Lower"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#meansOfNotification
 sbeo:meansOfNotification rdf:type owl:ObjectProperty ;
                          rdfs:domain foaf:Person ;
@@ -350,17 +301,24 @@ sbeo:meansOfNotification rdf:type owl:ObjectProperty ;
                          rdfs:label "Means of Notification"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#notAccessibleTo
-sbeo:notAccessibleTo rdf:type owl:ObjectProperty ;
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( sbeo:PointOfInterest
-                                                 sbeo:RouteElement
-                                                 sbeo:Space
-                                               )
-                                 ] ;
-                     rdfs:range sbeo:SocialUnit ;
-                     rdfs:comment "Expresses the prohibition of access of any specific foaf:Person to a specific physical space."@en ;
-                     rdfs:label "Not Accessible To"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#notificationPreference
+sbeo:notificationPreference rdf:type owl:ObjectProperty ;
+                            rdfs:domain sbeo:SocialUnit ;
+                            rdfs:range sbeo:Description ;
+                            rdfs:comment "A notification preference for any kind of social unit."@en ;
+                            rdfs:label "Notification Preference"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace
+sbeo:ofSpace rdf:type owl:ObjectProperty ;
+             rdfs:domain sbeo:Parameter ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:RouteElement
+                                        sbeo:Space
+                                      )
+                        ] ;
+             rdfs:comment "A property to express a sbeo:Space  in a n-ary relation for sbeo:Parameter."@en ;
+             rdfs:label "Of Space"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#partOf
@@ -388,33 +346,36 @@ sbeo:performedBy rdf:type owl:ObjectProperty ;
                  rdfs:label "Performed by"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#player
+sbeo:player rdf:type owl:ObjectProperty ;
+            rdfs:domain sbeo:RoleInContext ;
+            rdfs:range foaf:Person ;
+            rdfs:comment "It express an agent that plays a role in a specific context."@en ;
+            rdfs:label "Player"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#responsibleTo
-sbeo:responsibleTo rdf:type owl:ObjectProperty ,
-                            owl:TransitiveProperty ;
-                   rdfs:domain [ owl:intersectionOf ( foaf:Person
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty sbeo:hasRole ;
-                                                        owl:hasValue sbeo:Responsible
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
-                   rdfs:range [ owl:intersectionOf ( foaf:Person
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty sbeo:hasRole ;
-                                                       owl:hasValue sbeo:Dependent
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ;
+sbeo:responsibleTo rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf sbeo:acquaintanceOf ;
+                   rdf:type owl:TransitiveProperty ;
+                   rdfs:domain foaf:Person ;
+                   rdfs:range foaf:Person ;
                    rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
                    rdfs:label "Responsible To"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#role
+sbeo:role rdf:type owl:ObjectProperty ;
+          rdfs:domain sbeo:RoleInContext ;
+          rdfs:range sbeo:Role ;
+          rdfs:comment "Expresses a role of an agent."@en ;
+          rdfs:label "Role"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#routePreference
 sbeo:routePreference rdf:type owl:ObjectProperty ;
                      rdfs:domain foaf:Person ;
-                     rdfs:range sbeo:GraphBasedRoute ;
+                     rdfs:range sbeo:Route ;
                      rdfs:comment "Route preference of a social unit to perform an activity."@en ;
                      rdfs:label "Route Preference"@en .
 
@@ -427,13 +388,18 @@ sbeo:routeType rdf:type owl:ObjectProperty ;
                rdfs:label "Route Type"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#upper
+sbeo:upper rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain seas:BuildingStorey ;
+           rdfs:range seas:BuildingStorey ;
+           rdfs:comment "Associates the upper storey in a building."@en ;
+           rdfs:label "Upper"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#uses
 sbeo:uses rdf:type owl:ObjectProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( sbeo:SocialUnit
-                                      foaf:Person
-                                    )
-                      ] ;
+          rdfs:domain sbeo:SocialUnit ;
           rdfs:range [ rdf:type owl:Class ;
                        owl:unionOf ( sbeo:Device
                                      sbeo:PointOfInterest
@@ -450,30 +416,9 @@ sbeo:uses rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://purl.org/ontology/olo/core#index
-olo:index rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:domain olo:Slot ;
-          rdfs:range xsd:positiveInteger ;
-          rdfs:comment "An index of a slot in an ordered list."@en ;
-          rdfs:isDefinedBy olo: ;
-          rdfs:label "has index"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#ID
-sbeo:ID rdf:type owl:DatatypeProperty ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( sbeo:Device
-                                    sbeo:SocialUnit
-                                  )
-                    ] ;
-        rdfs:range xsd:integer ;
-        rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
-        rdfs:label "Identification Number"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
-sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ;
+sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
                            rdfs:domain [ rdf:type owl:Class ;
                                          owl:unionOf ( sbeo:PointOfInterest
                                                        sbeo:RouteElement
@@ -494,15 +439,19 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
                                         sbeo:SocialUnit
                                       )
                         ] ;
+            rdfs:range xsd:float ;
             rdfs:comment "The time at which an activity or event occurred."@en ;
             rdfs:label "At Time"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#cost
 sbeo:cost rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf owl:topDataProperty ;
-          rdfs:domain sbeo:Route ,
-                      sbeo:RouteElement ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( sbeo:Route
+                                      sbeo:RouteElement
+                                    )
+                      ] ;
+          rdfs:range xsd:float ;
           rdfs:comment "A numeric value associated with an edge or a complete route(path). It is also reffered to as a weight."@en ;
           rdfs:label "Cost"@en .
 
@@ -543,17 +492,19 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                                              sbeo:Event
                                            )
                              ] ;
+                 rdfs:range xsd:float ;
                  owl:propertyDisjointWith sbeo:startedAtTime ;
                  rdfs:comment "The time at which an activity ended."@en ;
                  rdfs:label "Ended At Time"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSmoke
-sbeo:hasSmoke rdf:type owl:DatatypeProperty ;
-              rdfs:domain sbeo:SmokeSensor ;
-              rdfs:range xsd:boolean ;
-              rdfs:comment "It is used to describe if a smoke sensor detects smoke. It is expressed as Boolean in which true means the smoke is detected and the false means there is no smoke detected by the smoke sensor."@en ;
-              rdfs:label "Has Smoke"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasValue
+sbeo:hasValue rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range xsd:float ;
+              rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
+              rdfs:label "Value"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasXTimesDeviated
@@ -564,22 +515,44 @@ sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
                        rdfs:label "Has X Time Deviated"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#id
+sbeo:id rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( sbeo:Device
+                                    sbeo:SocialUnit
+                                  )
+                    ] ;
+        rdfs:range xsd:integer ;
+        rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
+        rdfs:label "Identification Number"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#length
 sbeo:length rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( olo:OrderedList
+                                        sbeo:Group
                                         sbeo:Passage
                                       )
                         ] ;
-            rdfs:range xsd:nonNegativeInteger ;
+            rdfs:range xsd:float ;
             rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
             rdfs:label "Length"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#number
+sbeo:number rdf:type owl:DatatypeProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "A number assigned to anything."@en ;
+            rdfs:label "Has Number"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speed
 sbeo:speed rdf:type owl:DatatypeProperty ;
            rdfs:domain sbeo:SocialUnit ;
+           rdfs:range xsd:float ;
            rdfs:comment "The average speed of a person."@en ;
            rdfs:label "Speed"@en .
 
@@ -599,6 +572,7 @@ sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
                                                sbeo:Event
                                              )
                                ] ;
+                   rdfs:range xsd:float ;
                    rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger."@en ;
                    rdfs:label "Started At Time"@en .
 
@@ -625,6 +599,7 @@ sbeo:timeDuration rdf:type owl:DatatypeProperty ;
                                               sbeo:Event
                                             )
                               ] ;
+                  rdfs:range xsd:float ;
                   rdfs:comment "The length of time during which any activity or event lasts."@en ;
                   rdfs:label "Time Duration"@en .
 
@@ -636,52 +611,18 @@ sbeo:travelTime rdf:type owl:DatatypeProperty ;
                                             sbeo:Route
                                           )
                             ] ;
+                rdfs:range xsd:float ;
                 rdfs:comment "A specific period of time required to move from one place to another."@en ;
                 rdfs:label "Travel Time"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#value
-sbeo:value rdf:type owl:DatatypeProperty ;
-           rdfs:domain sbeo:Device ;
-           rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
-           rdfs:label "Value"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#width
-sbeo:width rdf:type owl:DatatypeProperty ;
+sbeo:width rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain sbeo:Passage ;
+           rdfs:range xsd:float ;
            rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
            rdfs:label "Width"@en .
-
-
-###  http://xmlns.com/foaf/0.1/age
-foaf:age rdf:type owl:DatatypeProperty ,
-                  owl:FunctionalProperty ;
-         rdfs:domain foaf:Person ;
-         rdfs:comment "The age of the person."@en ;
-         rdfs:label "Age"@en .
-
-
-###  http://xmlns.com/foaf/0.1/firstName
-foaf:firstName rdf:type owl:DatatypeProperty ;
-               rdfs:domain foaf:Person ;
-               rdfs:comment "The first name of the person."@en ;
-               rdfs:label "First Name"@en .
-
-
-###  http://xmlns.com/foaf/0.1/gender
-foaf:gender rdf:type owl:DatatypeProperty ,
-                     owl:FunctionalProperty ;
-            rdfs:domain foaf:Person ;
-            rdfs:comment "The gender of a person. It is typically but not necessarily 'male' or 'female'."@en ;
-            rdfs:label "Gender"@en .
-
-
-###  http://xmlns.com/foaf/0.1/lastName
-foaf:lastName rdf:type owl:DatatypeProperty ;
-              rdfs:domain foaf:Person ;
-              rdfs:comment "The last name of the person."@en ;
-              rdfs:label "Last Name"@en .
 
 
 #################################################################
@@ -689,37 +630,7 @@ foaf:lastName rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  http://purl.org/ontology/olo/core#OrderedList
-olo:OrderedList rdf:type owl:Class ;
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty sbeo:length ;
-                                  owl:cardinality "1"^^xsd:nonNegativeInteger
-                                ] ;
-                rdfs:comment "An ordered list with a given length an indexed items."@en ;
-                rdfs:isDefinedBy olo: ;
-                rdfs:label "Ordered List"@en .
-
-
-###  http://purl.org/ontology/olo/core#Slot
-olo:Slot rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty olo:next ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty olo:ordered_list ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty olo:previous ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty olo:index ;
-                           owl:cardinality "1"^^xsd:nonNegativeInteger
-                         ] ;
-         rdfs:comment "A slot in an ordered list with a fixed index."@en ;
-         rdfs:isDefinedBy olo: ;
-         rdfs:label "Slot"@en .
+olo:OrderedList rdf:type owl:Class .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActiveFireProtectionDevice
@@ -744,7 +655,6 @@ sbeo:ActivityStatus rdf:type owl:Class ;
                                                       sbeo:Visiting
                                                     )
                                         ] ;
-                    rdfs:subClassOf sbeo:Status ;
                     rdfs:comment "It expresses the status of a specific activity being performed by a person."@en ;
                     rdfs:label "Activity Status"@en .
 
@@ -766,12 +676,14 @@ sbeo:AlertingDeviceForImpairedPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AlzheimersDiseasedPerson
 sbeo:AlzheimersDiseasedPerson rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:MentalImpairedPerson ;
+                              rdfs:comment "A person having an Alzheimer's disease."@en ;
                               rdfs:label "Alzheimer's Diseased Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Apartment
 sbeo:Apartment rdf:type owl:Class ;
                rdfs:subClassOf seas:BuildingSpace ;
+               rdfs:comment "A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary)."@en ;
                rdfs:label "Apartment"@en .
 
 
@@ -810,7 +722,6 @@ sbeo:AvailabilityStatus rdf:type owl:Class ;
                                                           sbeo:UnAvailable
                                                         )
                                             ] ;
-                        rdfs:subClassOf sbeo:Status ;
                         rdfs:comment "It expresses the status of something that is either available or not."@en ;
                         rdfs:label "Availability Status"@en .
 
@@ -818,12 +729,14 @@ sbeo:AvailabilityStatus rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#BlindPerson
 sbeo:BlindPerson rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:VisuallyImpairedPerson ;
+                 rdfs:comment "A person who has lost the vision completly and can neither see naturally nor with the help of any device."@en ;
                  rdfs:label "Blind Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#BuildingEntrance
 sbeo:BuildingEntrance rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:Entrance ;
+                      rdfs:comment "A logical point that is used to represent the entrance to a building."@en ;
                       rdfs:label "Building Entrance"@en .
 
 
@@ -851,12 +764,14 @@ sbeo:CinemaBuilding rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Classroom
 sbeo:Classroom rdf:type owl:Class ;
                rdfs:subClassOf seas:Room ;
+               rdfs:comment "A room, typically in a school, in which a class of students is taught (Oxford Dictionary of English)."@en ;
                rdfs:label "Classroom"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ColourBlindPerson
 sbeo:ColourBlindPerson rdf:type owl:Class ;
                        rdfs:subClassOf sbeo:VisuallyImpairedPerson ;
+                       rdfs:comment "A person having the decreased ability to see color or differences in color."@en ;
                        rdfs:label "Colour Blind Person"@en .
 
 
@@ -870,6 +785,7 @@ sbeo:Congestion rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#CorridorEntrance
 sbeo:CorridorEntrance rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:Entrance ;
+                      rdfs:comment "A logical point that is used to represent the entrance to a corridor."@en ;
                       rdfs:label "Corridor Entrance"@en .
 
 
@@ -890,13 +806,8 @@ sbeo:CorridorSegment rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#DayCare
 sbeo:DayCare rdf:type owl:Class ;
              rdfs:subClassOf seas:BuildingSpace ;
+             rdfs:comment "A place where infants and young children are provided a supervision and care of during the daytime, particularly so that their parents can hold jobs."@en ;
              rdfs:label "Day Care"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#DeafPerson
-sbeo:DeafPerson rdf:type owl:Class ;
-                rdfs:subClassOf sbeo:HearingImpairedPerson ;
-                rdfs:label "Deaf Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Description
@@ -914,8 +825,7 @@ sbeo:DeviationState rdf:type owl:Class ;
                                                       sbeo:TooOftenDeviate
                                                     )
                                         ] ;
-                    rdfs:subClassOf sbeo:State ;
-                    rdfs:comment "It models the user's deviation state from one's proposed route. For example, NoDeviate (0 deviation), RareDeviate (between 1 and 5 deviations, both included), OftenDeviate (between 6 and 10, both included), and TooOftenDeviate (11 and above deviations)."@en ;
+                    rdfs:comment "It models the user's deviation state from one's proposed route. For example, NoDeviate, RareDeviate, OftenDeviate, and TooOftenDeviate."@en ;
                     rdfs:label "Deviation State"@en .
 
 
@@ -939,8 +849,8 @@ sbeo:DisplayScreen rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#DownSyndromePerson
 sbeo:DownSyndromePerson rdf:type owl:Class ;
                         rdfs:subClassOf sbeo:MentalImpairedPerson ;
-                        rdfs:comment "Down Syndrome Person"@en ;
-                        rdfs:label "A person having Down's syndrome."@en .
+                        rdfs:comment "A person with Down's syndrome."@en ;
+                        rdfs:label "Down Syndrome Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Earthquake
@@ -1084,7 +994,6 @@ sbeo:FitnessStatus rdf:type owl:Class ;
                                                      sbeo:Injured
                                                    )
                                        ] ;
-                   rdfs:subClassOf sbeo:Status ;
                    rdfs:comment "A fitness status is associated with a person that represent the quality of being suitable for a specific activity."@en ;
                    rdfs:label "Fitness Status"@en .
 
@@ -1092,6 +1001,7 @@ sbeo:FitnessStatus rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#FloorEntrance
 sbeo:FloorEntrance rdf:type owl:Class ;
                    rdfs:subClassOf sbeo:Entrance ;
+                   rdfs:comment "A logical point that is used to represent the entrance to a floor."@en ;
                    rdfs:label "Floor Entrance"@en .
 
 
@@ -1122,7 +1032,19 @@ sbeo:GraphBasedRoute rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Group
 sbeo:Group rdf:type owl:Class ;
-           rdfs:subClassOf sbeo:SocialUnit ;
+           rdfs:subClassOf sbeo:SocialUnit ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:hasMember ;
+                             owl:minCardinality "2"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:length ;
+                             owl:allValuesFrom xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:length ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
            rdfs:comment "It represents a collection of two or more people who interact with each other and may have the similar characteristics or objectives."@en ;
            rdfs:label "Group"@en .
 
@@ -1130,6 +1052,7 @@ sbeo:Group rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#HallEntrance
 sbeo:HallEntrance rdf:type owl:Class ;
                   rdfs:subClassOf sbeo:Entrance ;
+                  rdfs:comment "A logical point that is used to represent the entrance to a hall."@en ;
                   rdfs:label "Hall Entrance"@en .
 
 
@@ -1165,6 +1088,7 @@ sbeo:HearingImpairedPerson rdf:type owl:Class ;
 sbeo:HorizontalMovingPavement rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:HorizontalPassage ,
                                               sbeo:MovingPavement ;
+                              owl:disjointWith sbeo:VerticalMovingPavement ;
                               rdfs:comment "A slow-moving conveyor mechanism that transports people across a horizontal plane over a short to medium distance."@en ;
                               rdfs:label "Horizontal Moving Pavement"@en .
 
@@ -1172,6 +1096,7 @@ sbeo:HorizontalMovingPavement rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage
 sbeo:HorizontalPassage rdf:type owl:Class ;
                        rdfs:subClassOf sbeo:Passage ;
+                       owl:disjointWith sbeo:VerticalPassage ;
                        rdfs:comment "A type of a passage that connects spatial elements located on the same storey or floor."@en ;
                        rdfs:label "Horizontal Passage"@en .
 
@@ -1221,14 +1146,8 @@ sbeo:Junction rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#KidsArea
 sbeo:KidsArea rdf:type owl:Class ;
               rdfs:subClassOf seas:BuildingSpace ;
+              rdfs:comment "A place where infants or young children can play which is surrounded by a boundary normally. It can be both indoor and outdoor."@en ;
               rdfs:label "Kids Area"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#LocationSensor
-sbeo:LocationSensor rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:Sensor ;
-                    rdfs:comment "The location sensor is a part of indoor positioning system to detect the location of each person within the building."@en ;
-                    rdfs:label "Location Sensor"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LowStaminaPerson
@@ -1241,12 +1160,14 @@ sbeo:LowStaminaPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LowVisionPerson
 sbeo:LowVisionPerson rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:VisuallyImpairedPerson ;
+                     rdfs:comment "A person having an visual impairment that cannot be fixed with glasses, contact lenses, or other standard treatments like medicine or surgery, such that it makes hard to do his/her everyday activities."@en ;
                      rdfs:label "Low Vision Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MeetingRoom
 sbeo:MeetingRoom rdf:type owl:Class ;
                  rdfs:subClassOf seas:Room ;
+                 rdfs:comment "A type of room designated for social gathering of people, especially professional meetings."@en ;
                  rdfs:label "Meeting Room"@en .
 
 
@@ -1260,21 +1181,23 @@ sbeo:MentalImpairedPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MildHearingImpairedPerson
 sbeo:MildHearingImpairedPerson rdf:type owl:Class ;
                                rdfs:subClassOf sbeo:HearingImpairedPerson ;
+                               rdfs:comment "A person who is only able to hear the sounds that are between 25 and 40 dB."@en ;
                                rdfs:label "Mild Hearing Impaired Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilePhone
 sbeo:MobilePhone rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:HandheldDevice ;
+                 rdfs:subClassOf sbeo:HandheldDevice ,
+                                 sbeo:Telephone ;
                  rdfs:comment "A telephone with access to a cellular radio system so it can be used over a wide area, without a physical connection to a network (Oxford Dictionary of English)."@en ;
                  rdfs:label "Mobile Phone"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithOtherAssistedDevicePerson
-sbeo:MobilityWithOtherAssistedDevicePerson rdf:type owl:Class ;
-                                           rdfs:subClassOf sbeo:MotorImpairedPerson ;
-                                           rdfs:comment "A person who used a motorised device for moving, such as motorised wheelchair or scooter, etc."@en ;
-                                           rdfs:label "MobilityWithOtherAssistedDevicePerson"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithAssistedDevicePerson
+sbeo:MobilityWithAssistedDevicePerson rdf:type owl:Class ;
+                                      rdfs:subClassOf sbeo:MotorImpairedPerson ;
+                                      rdfs:comment "A person who used a motorised device for moving, such as motorised wheelchair or scooter, etc."@en ;
+                                      rdfs:label "Mobility With Assisted Device Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithWheelchairPerson
@@ -1287,6 +1210,7 @@ sbeo:MobilityWithWheelchairPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ModerateHearingImpairedPerson
 sbeo:ModerateHearingImpairedPerson rdf:type owl:Class ;
                                    rdfs:subClassOf sbeo:HearingImpairedPerson ;
+                                   rdfs:comment "A person who cannot hear sounds that are less than 40-75 dB."@en ;
                                    rdfs:label "Moderate Hearing Impaired Person"@en .
 
 
@@ -1300,7 +1224,6 @@ sbeo:MotionState rdf:type owl:Class ;
                                                    sbeo:Walking
                                                  )
                                      ] ;
-                 rdfs:subClassOf sbeo:State ;
                  rdfs:comment "It describes the movement of a person."@en ;
                  rdfs:label "Motion State"@en .
 
@@ -1308,12 +1231,13 @@ sbeo:MotionState rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MotorImpairedPerson
 sbeo:MotorImpairedPerson rdf:type owl:Class ;
                          rdfs:subClassOf sbeo:PhysicallyImpairedPerson ;
+                         rdfs:comment "A person who has either partial or total loss of function of a body part, usually a limb or limbs."@en ;
                          rdfs:label "Motor Impaired Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MotorisedWheelchairPerson
 sbeo:MotorisedWheelchairPerson rdf:type owl:Class ;
-                               rdfs:subClassOf sbeo:MobilityWithOtherAssistedDevicePerson ,
+                               rdfs:subClassOf sbeo:MobilityWithAssistedDevicePerson ,
                                                sbeo:MobilityWithWheelchairPerson ;
                                rdfs:comment "It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair."@en ;
                                rdfs:label "Motorised Wheelchair Person"@en .
@@ -1322,6 +1246,7 @@ sbeo:MotorisedWheelchairPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MovingPavement
 sbeo:MovingPavement rdf:type owl:Class ;
                     rdfs:subClassOf seas:BuildingSpace ;
+                    rdfs:comment "A slow-moving conveyor mechanism that transports people across a horizontal or inclined plane over a short to medium distance (Oxford Dictionary of English)."@en ;
                     rdfs:label "Moving Pavement"@en .
 
 
@@ -1353,7 +1278,6 @@ sbeo:NavigationalState rdf:type owl:Class ;
                                                          sbeo:FollowingPath
                                                        )
                                            ] ;
-                       rdfs:subClassOf sbeo:State ;
                        rdfs:comment "It models the user's navigational state while following the path."@en ;
                        rdfs:label "Navigational State"@en .
 
@@ -1368,6 +1292,7 @@ sbeo:NonMotorisedWheelchairPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#OpenAreaEntrance
 sbeo:OpenAreaEntrance rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:Entrance ;
+                      rdfs:comment "A logical point that is used to represent the entrance to an open area."@en ;
                       rdfs:label "Open Area Entrance"@en .
 
 
@@ -1385,6 +1310,12 @@ sbeo:Panic rdf:type owl:Class ;
            rdfs:label "Panic"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Parameter
+sbeo:Parameter rdf:type owl:Class ;
+               rdfs:comment "A numerical or other measurable factor forming one of a set that defines a system or sets the conditions of its operation."@en ;
+               rdfs:label "Parameter"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Passage
 sbeo:Passage rdf:type owl:Class ;
              rdfs:subClassOf sbeo:RouteElement ;
@@ -1397,6 +1328,37 @@ sbeo:PassiveFireProtectionDevice rdf:type owl:Class ;
                                  rdfs:subClassOf sbeo:FireProtectionDevice ;
                                  rdfs:comment "It is an integral component installed in the building while construction to resist the fire."@en ;
                                  rdfs:label "Passive Fire Protection"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PersonAccessibility
+sbeo:PersonAccessibility rdf:type owl:Class ;
+                         rdfs:subClassOf sbeo:Parameter ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:ofSpace ;
+                                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                owl:unionOf ( sbeo:RouteElement
+                                                                              sbeo:Space
+                                                                            )
+                                                              ]
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:forPerson ;
+                                           owl:allValuesFrom foaf:Person
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:ofSpace ;
+                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:hasValue ;
+                                           owl:allValuesFrom xsd:float
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty sbeo:hasValue ;
+                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                         ] ;
+                         rdfs:comment "A parameter to express the accessibility of any space for a specific person (or type of persons) in terms of some value."@en ;
+                         rdfs:label "Person Accessibility"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#PhysicallyImpairedPerson
@@ -1420,6 +1382,13 @@ sbeo:PointOfInterestSegment rdf:type owl:Class ;
                             rdfs:label "Point Of Interest Segement"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ProfoundHearingImpairedPerson
+sbeo:ProfoundHearingImpairedPerson rdf:type owl:Class ;
+                                   rdfs:subClassOf sbeo:HearingImpairedPerson ;
+                                   rdfs:comment "A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time."@en ;
+                                   rdfs:label "Profound Hearing Impaired Person"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Ramp
 sbeo:Ramp rdf:type owl:Class ;
           rdfs:subClassOf sbeo:VerticalPassage ,
@@ -1438,21 +1407,46 @@ sbeo:Road rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Role
 sbeo:Role rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Class ;
-                                owl:oneOf ( sbeo:Autonomous
-                                            sbeo:Dependent
-                                            sbeo:Leader
-                                            sbeo:Responsible
-                                            sbeo:Visitor
-                                          )
-                              ] ;
           rdfs:comment "The function assumed or part played by a person or thing in a particular situation (Oxford Dictionary of English)."@en ;
           rdfs:label "Role"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#RoleInContext
+sbeo:RoleInContext rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:context ;
+                                     owl:someValuesFrom owl:Thing
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:player ;
+                                     owl:allValuesFrom foaf:Person
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:role ;
+                                     owl:allValuesFrom sbeo:Role
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:player ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass foaf:Person
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:context ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:role ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass sbeo:Role
+                                   ] ;
+                   rdfs:comment "A concept to express that an agent is playing a role in a given context."@en ;
+                   rdfs:label "Role In Context"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RoomEntrance
 sbeo:RoomEntrance rdf:type owl:Class ;
                   rdfs:subClassOf sbeo:Entrance ;
+                  rdfs:comment "A logical point that is used to represent the entrance to a room."@en ;
                   rdfs:label "Room Entrance"@en .
 
 
@@ -1472,9 +1466,11 @@ sbeo:RoomSegment rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Route
 sbeo:Route rdf:type owl:Class ;
-           rdfs:subClassOf [ rdf:type owl:Restriction ;
+           rdfs:subClassOf olo:OrderedList ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty sbeo:hasAvailabilityStatus ;
-                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass sbeo:AvailabilityStatus
                            ] ;
            rdfs:comment "A set of connected spaces represented by a starting and ending point, that ultimately leads to some specific position or place."@en ;
            rdfs:label "Route"@en .
@@ -1482,6 +1478,11 @@ sbeo:Route rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RouteElement
 sbeo:RouteElement rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty sbeo:hasAvailabilityStatus ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass sbeo:AvailabilityStatus
+                                  ] ;
                   rdfs:comment "It represents the physical or conceptual elements of a navigation path."@en ;
                   rdfs:label "Route Element"@en .
 
@@ -1500,11 +1501,11 @@ sbeo:SeatingArrangementRoute rdf:type owl:Class ;
                              rdfs:label "Seating Arrangement Route"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Sensor
-sbeo:Sensor rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:Device ;
-            rdfs:comment "A sensor is a device that detects or measures a physical property and records, indicates, or otherwise responds to it (Oxford Dictionary of English)."@en ;
-            rdfs:label "Sensor"@en .
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SensorEvent
+sbeo:SensorEvent rdf:type owl:Class ;
+                 rdfs:subClassOf sbeo:Event ;
+                 rdfs:comment "This concept is used to express an event detected by any sensor."@en ;
+                 rdfs:label "Sensor Event"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SensoryImpairedPerson
@@ -1512,6 +1513,13 @@ sbeo:SensoryImpairedPerson rdf:type owl:Class ;
                            rdfs:subClassOf sbeo:ImpairedPerson ;
                            rdfs:comment "Sensory impairment is when one of the senses such as sight, hearing, smell, touch, taste and spatial awareness, is no longer normal."@en ;
                            rdfs:label "Sensory Impairmed Person"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SevereHearingImpairedPerson
+sbeo:SevereHearingImpairedPerson rdf:type owl:Class ;
+                                 rdfs:subClassOf sbeo:HearingImpairedPerson ;
+                                 rdfs:comment "A person who is unable to hear anything without wearing a hearing aid."@en ;
+                                 rdfs:label "Severe Hearing Impaired Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ShoppingMallBuilding
@@ -1535,13 +1543,6 @@ sbeo:SmartPhone rdf:type owl:Class ;
                 rdfs:label "Smartphone"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#SmokeSensor
-sbeo:SmokeSensor rdf:type owl:Class ;
-                 rdfs:subClassOf sbeo:Sensor ;
-                 rdfs:comment "The smoke sensor is a type of sensors that detects the presence of smoke in a particular space where it has been installed."@en ;
-                 rdfs:label "Smoke Sensor"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit
 sbeo:SocialUnit rdf:type owl:Class ;
                 rdfs:comment "An individual, or a group or community, considered as a discrete constituent of a society or larger group (Oxford Dictionary of English)."@en ;
@@ -1552,10 +1553,42 @@ sbeo:SocialUnit rdf:type owl:Class ;
 sbeo:Space rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty sbeo:hasAvailabilityStatus ;
-                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass sbeo:AvailabilityStatus
                            ] ;
            rdfs:comment "A physical, three dimensional, and one of the most important elements in the design of architecture that can further be divided to create more spaces from it."@en ;
            rdfs:label "Space"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SpaceSafety
+sbeo:SpaceSafety rdf:type owl:Class ;
+                 rdfs:subClassOf sbeo:Parameter ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:ofSpace ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( sbeo:RouteElement
+                                                                      sbeo:Space
+                                                                    )
+                                                      ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:forPerson ;
+                                   owl:allValuesFrom foaf:Person
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:ofSpace ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:hasValue ;
+                                   owl:allValuesFrom xsd:float
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:hasValue ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "A parameter to express the safety of any space for a specific person (or type of persons) in terms of some value."@en ;
+                 rdfs:label "Space Saftey"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#StadiumBuilding
@@ -1572,21 +1605,10 @@ sbeo:Stampeding rdf:type owl:Class ;
                 rdfs:label "Stampeding"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#State
-sbeo:State rdf:type owl:Class ;
-           rdfs:comment "The particular condition that someone or something is in at a specific time."@en ;
-           rdfs:label "State"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Status
-sbeo:Status rdf:type owl:Class ;
-            rdfs:comment "The situation at a particular time during a process."@en ;
-            rdfs:label "Status"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Suite
 sbeo:Suite rdf:type owl:Class ;
            rdfs:subClassOf seas:BuildingSpace ;
+           rdfs:comment "A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary). This term is normally used in hotels, resorts, guesthouses, etc."@en ;
            rdfs:label "Suite"@en .
 
 
@@ -1595,13 +1617,6 @@ sbeo:Telephone rdf:type owl:Class ;
                rdfs:subClassOf sbeo:Device ;
                rdfs:comment "A device for transmitting voices over a distance using wire or radio, by converting acoustic vibrations to electrical signals (Oxford Dictionary of English)."@en ;
                rdfs:label "Telephone"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#TemperatureSensor
-sbeo:TemperatureSensor rdf:type owl:Class ;
-                       rdfs:subClassOf sbeo:Sensor ;
-                       rdfs:comment "The temperature sensor is a type of sensors that detects the ambient temperature of a space where it has been installed."@en ;
-                       rdfs:label "Temperature Sensor"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TerroristAttack
@@ -1689,297 +1704,6 @@ sbeo:WaitingZone rdf:type owl:Class ;
                  rdfs:label "Waiting Zone"@en .
 
 
-###  http://xmlns.com/foaf/0.1/Person
-foaf:Person rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:SocialUnit ;
-            rdfs:comment "It represents a single individual of any age and having any type of characteristics."@en ;
-            rdfs:label "Person"@en .
-
-
-###  https://w3id.org/seas/AssemblyBuilding
-seas:AssemblyBuilding rdf:type owl:Class ;
-                      rdfs:subClassOf seas:NonResidentialBuilding ;
-                      rdfs:comment "places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants."@en ;
-                      rdfs:isDefinedBy seas:BuildingOntology ;
-                      rdfs:label "Assembly Building"@en .
-
-
-###  https://w3id.org/seas/Attic
-seas:Attic rdf:type owl:Class ;
-           rdfs:subClassOf seas:Room ;
-           rdfs:comment "the part of a building, especially of a house, directly under a roof; garret."@en ;
-           rdfs:isDefinedBy seas:BuildingOntology ;
-           rdfs:label "Attic"@en .
-
-
-###  https://w3id.org/seas/Balcony
-seas:Balcony rdf:type owl:Class ;
-             rdfs:subClassOf seas:BuildingSpace ;
-             rdfs:comment "An accessible structure extending from a building, especially outside a window."@en ;
-             rdfs:isDefinedBy seas:BuildingOntology ;
-             rdfs:label "Balcony"@en .
-
-
-###  https://w3id.org/seas/Basement
-seas:Basement rdf:type owl:Class ;
-              rdfs:subClassOf seas:Room ;
-              rdfs:comment "A story of a building, partly or wholly underground."@en ;
-              rdfs:isDefinedBy seas:BuildingOntology ;
-              rdfs:label "Basement"@en .
-
-
-###  https://w3id.org/seas/Bathroom
-seas:Bathroom rdf:type owl:Class ;
-              rdfs:subClassOf seas:Room ;
-              rdfs:comment "Bathroom is mainly used for bathing &amp; washing up related activities."@en ;
-              rdfs:isDefinedBy seas:BuildingOntology ;
-              rdfs:label "Bathroom"@en .
-
-
-###  https://w3id.org/seas/Bedroom
-seas:Bedroom rdf:type owl:Class ;
-             rdfs:subClassOf seas:Room ;
-             rdfs:comment "Bedroom is used mainly for sleeping."@en ;
-             rdfs:isDefinedBy seas:BuildingOntology ;
-             rdfs:label "Bedroom"@en .
-
-
-###  https://w3id.org/seas/Building
-seas:Building rdf:type owl:Class ;
-              rdfs:subClassOf sbeo:Space ,
-                              seas:BuildingSpace ;
-              rdfs:comment "Buildings are roofed constructions which can be used separately, have been built for permanent purposes, can be entered by persons and are suitable or intended for protecting persons, animals or objects."@en ;
-              rdfs:isDefinedBy seas:BuildingOntology ;
-              rdfs:label "Building"@en .
-
-
-###  https://w3id.org/seas/BuildingSpace
-seas:BuildingSpace rdf:type owl:Class ;
-                   rdfs:subClassOf sbeo:Space ;
-                   rdfs:comment "A Space is a 3D volume bounded by surfaces. It represents the physical spaces of the building."@en ;
-                   rdfs:isDefinedBy seas:BuildingOntology ;
-                   rdfs:label "Building Space"@en .
-
-
-###  https://w3id.org/seas/BuildingSpatialStructure
-seas:BuildingSpatialStructure rdf:type owl:Class ;
-                              rdfs:subClassOf seas:BuildingSpace ;
-                              rdfs:comment "A man made structure with spatial properties."@en ;
-                              rdfs:isDefinedBy seas:BuildingOntology ;
-                              rdfs:label "Building Spatial Structure"@en .
-
-
-###  https://w3id.org/seas/BuildingStorey
-seas:BuildingStorey rdf:type owl:Class ;
-                    rdfs:subClassOf seas:BuildingSpatialStructure ;
-                    rdfs:comment "The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound."@en ;
-                    rdfs:isDefinedBy seas:BuildingOntology ;
-                    rdfs:label "Building Storey"@en .
-
-
-###  https://w3id.org/seas/Corridor
-seas:Corridor rdf:type owl:Class ;
-              rdfs:subClassOf sbeo:HorizontalPassage ,
-                              seas:Lobby ;
-              rdfs:comment "A gallery or passage connecting parts of a building; hallway."@en ;
-              rdfs:isDefinedBy seas:BuildingOntology ;
-              rdfs:label "Corridor"@en .
-
-
-###  https://w3id.org/seas/DiningRoom
-seas:DiningRoom rdf:type owl:Class ;
-                rdfs:subClassOf seas:Room ;
-                rdfs:comment "A room in which meals are eaten, as in a home or hotel, especially the room in which the major or more formal meals are eaten."@en ;
-                rdfs:isDefinedBy seas:BuildingOntology ;
-                rdfs:label "Dining Room"@en .
-
-
-###  https://w3id.org/seas/Door
-seas:Door rdf:type owl:Class ;
-          rdfs:subClassOf sbeo:HorizontalPassage ;
-          rdfs:comment "the large flat piece of wood, glass etc that you move when you go into or out of a building, room, vehicle etc, or when you open a cupboard (Longman Dictionary of Contemporary English Online)"@en ;
-          rdfs:isDefinedBy seas:BuildingOntology ;
-          rdfs:label "Door"@en .
-
-
-###  https://w3id.org/seas/EducationalBuilding
-seas:EducationalBuilding rdf:type owl:Class ;
-                         rdfs:subClassOf seas:NonResidentialBuilding ;
-                         rdfs:comment "Schools and day care centers."@en ;
-                         rdfs:isDefinedBy seas:BuildingOntology ;
-                         rdfs:label "Educational Building"@en .
-
-
-###  https://w3id.org/seas/Elevator
-seas:Elevator rdf:type owl:Class ;
-              rdfs:subClassOf sbeo:VerticalPassage ,
-                              seas:Room ;
-              rdfs:comment "Elevator is used to transport people between different floors."@en ;
-              rdfs:isDefinedBy seas:BuildingOntology ;
-              rdfs:label "Elevator"@en .
-
-
-###  https://w3id.org/seas/Greenhouse
-seas:Greenhouse rdf:type owl:Class ;
-                rdfs:subClassOf seas:BuildingSpace ;
-                rdfs:comment "A building, room, or zone, usually chiefly of glass, in which the temperature is maintained within a desired range, used for cultivating tender plants or growing plants out of season."@en ;
-                rdfs:isDefinedBy seas:BuildingOntology ;
-                rdfs:label "Greenhouse"@en .
-
-
-###  https://w3id.org/seas/Hall
-seas:Hall rdf:type owl:Class ;
-          rdfs:subClassOf sbeo:HorizontalPassage ,
-                          seas:Lobby ;
-          rdfs:comment "A large entrance room of a house or building."@en ;
-          rdfs:isDefinedBy seas:BuildingOntology ;
-          rdfs:label "Hall"@en .
-
-
-###  https://w3id.org/seas/HomeOffice
-seas:HomeOffice rdf:type owl:Class ;
-                rdfs:subClassOf seas:Office ;
-                rdfs:comment "A work or office space set up in a person's home and used exclusively for business on a regular basis."@en ;
-                rdfs:isDefinedBy seas:BuildingOntology ;
-                rdfs:label "Tree house"@en .
-
-
-###  https://w3id.org/seas/IndustrialBuilding
-seas:IndustrialBuilding rdf:type owl:Class ;
-                        rdfs:subClassOf seas:NonResidentialBuilding ;
-                        rdfs:comment "Buildings used for industrial production, e.g. factories, workshops, slaughterhouses, breweries, assembly plants, etc."@en ;
-                        rdfs:isDefinedBy seas:BuildingOntology ;
-                        rdfs:label "Industrial Building"@en .
-
-
-###  https://w3id.org/seas/InstitutionalBuilding
-seas:InstitutionalBuilding rdf:type owl:Class ;
-                           rdfs:subClassOf seas:NonResidentialBuilding ;
-                           rdfs:comment "Institutions such as hospitals providing medical and surgical treatment and nursing care for ill or injured people."@en ;
-                           rdfs:isDefinedBy seas:BuildingOntology ;
-                           rdfs:label "Institutional Building"@en .
-
-
-###  https://w3id.org/seas/Kitchen
-seas:Kitchen rdf:type owl:Class ;
-             rdfs:subClassOf seas:Room ;
-             rdfs:comment "Kitchen is a room used mainly for cooking and possibly eating."@en ;
-             rdfs:isDefinedBy seas:BuildingOntology ;
-             rdfs:label "Kitchen"@en .
-
-
-###  https://w3id.org/seas/Laundry
-seas:Laundry rdf:type owl:Class ;
-             rdfs:subClassOf seas:Room ;
-             rdfs:comment "A room or zone, as in a home or apartment building, reserved for doing the family wash."@en ;
-             rdfs:isDefinedBy seas:BuildingOntology ;
-             rdfs:label "Laundry"@en .
-
-
-###  https://w3id.org/seas/LivingRoom
-seas:LivingRoom rdf:type owl:Class ;
-                rdfs:subClassOf seas:Room ;
-                rdfs:comment "Living Room is the main room of daytime activity."@en ;
-                rdfs:isDefinedBy seas:BuildingOntology ;
-                rdfs:label "Living Room"@en .
-
-
-###  https://w3id.org/seas/Lobby
-seas:Lobby rdf:type owl:Class ;
-           rdfs:subClassOf seas:BuildingSpace ;
-           rdfs:comment "An entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer."@en ;
-           rdfs:isDefinedBy seas:BuildingOntology ;
-           rdfs:label "Lobby"@en .
-
-
-###  https://w3id.org/seas/MercantileBuilding
-seas:MercantileBuilding rdf:type owl:Class ;
-                        rdfs:subClassOf seas:NonResidentialBuilding ;
-                        rdfs:comment "Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations."@en ;
-                        rdfs:isDefinedBy seas:BuildingOntology ;
-                        rdfs:label "Mercantile Building"@en .
-
-
-###  https://w3id.org/seas/NonResidentialBuilding
-seas:NonResidentialBuilding rdf:type owl:Class ;
-                            rdfs:subClassOf seas:Building ;
-                            rdfs:comment "A  non-residential building is a building at least half of which is used for other than residential purposes. "@en ;
-                            rdfs:isDefinedBy seas:BuildingOntology ;
-                            rdfs:label "Non-Residential Building"@en .
-
-
-###  https://w3id.org/seas/Office
-seas:Office rdf:type owl:Class ;
-            rdfs:subClassOf seas:Room ;
-            rdfs:comment "A room, set of rooms, or building where the business of a commercial or industrial organization or of a professional person is conducted."@en ;
-            rdfs:isDefinedBy seas:BuildingOntology ;
-            rdfs:label "Office"@en .
-
-
-###  https://w3id.org/seas/OfficeBuilding
-seas:OfficeBuilding rdf:type owl:Class ;
-                    rdfs:subClassOf seas:NonResidentialBuilding ;
-                    rdfs:comment "Places where services are provided. Examples: banks, insurance agencies."@en ;
-                    rdfs:isDefinedBy seas:BuildingOntology ;
-                    rdfs:label "Business Building"@en .
-
-
-###  https://w3id.org/seas/ResidentialBuilding
-seas:ResidentialBuilding rdf:type owl:Class ;
-                         rdfs:subClassOf seas:Building ;
-                         rdfs:comment "A residential building is a building at least half of which is used for residential purposes. "@en ;
-                         rdfs:isDefinedBy seas:BuildingOntology ;
-                         rdfs:label "Residential Building"@en .
-
-
-###  https://w3id.org/seas/Room
-seas:Room rdf:type owl:Class ;
-          rdfs:subClassOf seas:BuildingSpace ;
-          rdfs:comment "A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself."@en ;
-          rdfs:isDefinedBy seas:BuildingOntology ;
-          rdfs:label "Room"@en .
-
-
-###  https://w3id.org/seas/SiteOfBuilding
-seas:SiteOfBuilding rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:Space ;
-                    rdfs:comment "Building site is a locale containing one or more separate buildings. They are zones."@en ;
-                    rdfs:isDefinedBy seas:BuildingOntology ;
-                    rdfs:label "Site Of Building"@en .
-
-
-###  https://w3id.org/seas/Stairs
-seas:Stairs rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:VerticalPassage ,
-                            seas:BuildingSpace ;
-            rdfs:comment "A construction designed to bridge a large vertical distance by dividing it into smaller vertical distances, called steps."@en ;
-            rdfs:isDefinedBy seas:BuildingOntology ;
-            rdfs:label "Stairs"@en .
-
-
-###  https://w3id.org/seas/StorageRoom
-seas:StorageRoom rdf:type owl:Class ;
-                 rdfs:subClassOf seas:Room ;
-                 rdfs:comment "Room for storage."@en ;
-                 rdfs:isDefinedBy seas:BuildingOntology ;
-                 rdfs:label "Storage Room"@en .
-
-
-###  https://w3id.org/seas/SwimmingPool
-seas:SwimmingPool rdf:type owl:Class ;
-                  rdfs:subClassOf seas:Room ;
-                  rdfs:comment "A tank or large artificial basin, as of concrete, for filling with water for swimming."@en ;
-                  rdfs:isDefinedBy seas:BuildingOntology ;
-                  rdfs:label "Swimming Pool"@en .
-
-
-###  https://w3id.org/seas/UtilityRoom
-seas:UtilityRoom rdf:type owl:Class ;
-                 rdfs:subClassOf seas:Room ;
-                 rdfs:comment "Room for other special utilities and hobbies."@en ;
-                 rdfs:isDefinedBy seas:BuildingOntology ;
-                 rdfs:label "Utility Room"@en .
-
 
 #################################################################
 #    Individuals
@@ -1989,12 +1713,6 @@ seas:UtilityRoom rdf:type owl:Class ;
 sbeo:AssistedNavigation rdf:type owl:NamedIndividual ;
                         rdfs:comment "A type of navigation in which a person is assisted by a person or a machine to perform a specific activity."@en ;
                         rdfs:label "Assisted Navigation"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Autonomous
-sbeo:Autonomous rdf:type owl:NamedIndividual ;
-                rdfs:comment "An individual who performs one's actions on his/her own."@en ;
-                rdfs:label "Autonomous"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#AutonomousNavigation
@@ -2013,12 +1731,6 @@ sbeo:Available rdf:type owl:NamedIndividual ;
 sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ;
                              rdfs:comment "A type of navigation in which two or more persons are involved that may or may not have same objectives."@en ;
                              rdfs:label "Collaborative Navigation"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Dependent
-sbeo:Dependent rdf:type owl:NamedIndividual ;
-               rdfs:comment "An individual who is dependent on one or more individuals."@en ;
-               rdfs:label "Dependent"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#DeviatingFromPath
@@ -2063,12 +1775,6 @@ sbeo:Injured rdf:type owl:NamedIndividual ;
              rdfs:label "Injured"@en .
 
 
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Leader
-sbeo:Leader rdf:type owl:NamedIndividual ;
-            rdfs:comment "An individual who leads one or more individuals during a specific activity."@en ;
-            rdfs:label "Leader"@en .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MultiObjectiveNavigation
 sbeo:MultiObjectiveNavigation rdf:type owl:NamedIndividual ;
                               rdfs:comment "A type of navigation in which multiple point of interests are supposed to be visited by a person."@en ;
@@ -2083,7 +1789,7 @@ sbeo:NoDeviate rdf:type owl:NamedIndividual ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#OftenDeviate
 sbeo:OftenDeviate rdf:type owl:NamedIndividual ;
-                  rdfs:comment "This instance is used to express when someone is deviating frequently between 6 to 10 times while following the provided path."@en ;
+                  rdfs:comment "This instance is used to express when someone is deviating frequently while following the provided path."@en ;
                   rdfs:label "Often Deviate"@en .
 
 
@@ -2095,14 +1801,8 @@ sbeo:PickingUpDependents rdf:type owl:NamedIndividual ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#RareDeviate
 sbeo:RareDeviate rdf:type owl:NamedIndividual ;
-                 rdfs:comment "This instance is used to express when someone rarely deviates (between 1 to 5 times) while following the provided path."@en ;
+                 rdfs:comment "This instance is used to express when someone rarely deviates while following the provided path."@en ;
                  rdfs:label "Rare Deviate"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Responsible
-sbeo:Responsible rdf:type owl:NamedIndividual ;
-                 rdfs:comment "An individual who is responsible to one or more individuals."@en ;
-                 rdfs:label "Responsible"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Rolling
@@ -2143,7 +1843,7 @@ sbeo:Standing rdf:type owl:NamedIndividual ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#TooOftenDeviate
 sbeo:TooOftenDeviate rdf:type owl:NamedIndividual ;
-                     rdfs:comment "This instance is used to express when someone is deviating frequently between 11 or more times while following the provided path."@en ;
+                     rdfs:comment "This instance is used to express when someone is deviating frequently while following the provided path."@en ;
                      rdfs:label "Too Often Deviate"@en .
 
 
@@ -2157,12 +1857,6 @@ sbeo:UnAvailable rdf:type owl:NamedIndividual ;
 sbeo:Visiting rdf:type owl:NamedIndividual ;
               rdfs:comment "The activity of making visits."@en ;
               rdfs:label "Visiting"@en .
-
-
-###  http://www.ia.urjc.es/ontologies/building/sbeo#Visitor
-sbeo:Visitor rdf:type owl:NamedIndividual ;
-             rdfs:comment "An individual visiting someone or somewhere, especially socially or as a tourist (Oxford Dictionary of English)."@en ;
-             rdfs:label "Visitor"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Walking
