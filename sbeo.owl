@@ -646,7 +646,9 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 #################################################################
 
 ###  http://purl.org/ontology/olo/core#OrderedList
-<http://purl.org/ontology/olo/core#OrderedList> rdf:type owl:Class .
+<http://purl.org/ontology/olo/core#OrderedList> rdf:type owl:Class ;
+                                                rdfs:comment "An ordered list with a given length an indexed items."@en ;
+                                                rdfs:label "OrderedList"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActiveFireProtectionDevice
@@ -1043,7 +1045,9 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                    :SimplestPath
                                                  )
                                      ] ;
-                 rdfs:subClassOf :Route .
+                 rdfs:subClassOf :Route ;
+                 rdfs:comment "A graph-based route is a graphical way of representing a route in terms of nodes (sometimes called vertices) and edges (sometimes called arcs)."@en ;
+                 rdfs:label "Graph-Based Route"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Group
@@ -1176,6 +1180,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LowVisionPerson
 :LowVisionPerson rdf:type owl:Class ;
                  rdfs:subClassOf :VisuallyImpairedPerson ;
+                 rdfs:comment "A person whose visual acuity is 20/70 or poorer in the better-seeing eye and cannot be corrected or improved with regular eyeglasses."@en ;
                  rdfs:label "Low Vision Person"@en .
 
 
@@ -1400,8 +1405,8 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ProfoundHearingImpairedPerson
 :ProfoundHearingImpairedPerson rdf:type owl:Class ;
                                rdfs:subClassOf :HearingImpairedPerson ;
-                               rdfs:label "A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time."@en ,
-                                          "Profound Hearing Impaired Person"@en .
+                               rdfs:comment "A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time."@en ;
+                               rdfs:label "Profound Hearing Impaired Person"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Ramp
@@ -1720,39 +1725,57 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
 ###  http://xmlns.com/foaf/0.1/Person
-<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:comment "A person."@en ;
+                                   rdfs:label "Person"@en .
 
 
 ###  https://w3id.org/seas/AssemblyBuilding
-<https://w3id.org/seas/AssemblyBuilding> rdf:type owl:Class .
+<https://w3id.org/seas/AssemblyBuilding> rdf:type owl:Class ;
+                                         rdfs:comment "places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants."@en ;
+                                         rdfs:label "AssemblyBuilding"@en .
 
 
 ###  https://w3id.org/seas/BuildingSpace
-<https://w3id.org/seas/BuildingSpace> rdf:type owl:Class .
+<https://w3id.org/seas/BuildingSpace> rdf:type owl:Class ;
+                                      rdfs:comment "A Space is a 3D volume bounded by surfaces. According to the FIEMSER definition, a building space in SAREF defines the physical spaces of the building."@en ;
+                                      rdfs:label "BuildingSpace"@en .
 
 
 ###  https://w3id.org/seas/BuildingStorey
-<https://w3id.org/seas/BuildingStorey> rdf:type owl:Class .
+<https://w3id.org/seas/BuildingStorey> rdf:type owl:Class ;
+                                       rdfs:comment "The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound."@en ;
+                                       rdfs:label "BuildingStorey"@en .
 
 
 ###  https://w3id.org/seas/Corridor
-<https://w3id.org/seas/Corridor> rdf:type owl:Class .
+<https://w3id.org/seas/Corridor> rdf:type owl:Class ;
+                                 rdfs:comment "A gallery or passage connecting parts of a building; hallway."@en ;
+                                 rdfs:label "Corridor"@en .
 
 
 ###  https://w3id.org/seas/Hall
-<https://w3id.org/seas/Hall> rdf:type owl:Class .
+<https://w3id.org/seas/Hall> rdf:type owl:Class ;
+                             rdfs:comment "A large entrance room of a house or building."@en ;
+                             rdfs:label "Hall"@en .
 
 
 ###  https://w3id.org/seas/MercantileBuilding
-<https://w3id.org/seas/MercantileBuilding> rdf:type owl:Class .
+<https://w3id.org/seas/MercantileBuilding> rdf:type owl:Class ;
+                                           rdfs:comment "Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations."@en ;
+                                           rdfs:label "MercantileBuilding"@en .
 
 
 ###  https://w3id.org/seas/ResidentialBuilding
-<https://w3id.org/seas/ResidentialBuilding> rdf:type owl:Class .
+<https://w3id.org/seas/ResidentialBuilding> rdf:type owl:Class ;
+                                            rdfs:comment "A residential building is a building at least half of which is used for residential purposes."@en ;
+                                            rdfs:label "ResidentalBuilding"@en .
 
 
 ###  https://w3id.org/seas/Room
-<https://w3id.org/seas/Room> rdf:type owl:Class .
+<https://w3id.org/seas/Room> rdf:type owl:Class ;
+                             rdfs:comment "A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself."@en ;
+                             rdfs:label "Room"@en .
 
 
 #################################################################

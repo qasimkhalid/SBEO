@@ -939,7 +939,10 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://purl.org/ontology/olo/core#OrderedList -->
 
-    <owl:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList"/>
+    <owl:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList">
+        <rdfs:comment xml:lang="en">An ordered list with a given length an indexed items.</rdfs:comment>
+        <rdfs:label xml:lang="en">OrderedList</rdfs:label>
+    </owl:Class>
     
 
 
@@ -1512,6 +1515,8 @@ The core SBEO covers the concepts related to the geometry of building, devices a
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#Route"/>
+        <rdfs:comment xml:lang="en">A graph-based route is a graphical way of representing a route in terms of nodes (sometimes called vertices) and edges (sometimes called arcs).</rdfs:comment>
+        <rdfs:label xml:lang="en">Graph-Based Route</rdfs:label>
     </owl:Class>
     
 
@@ -1701,6 +1706,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <owl:Class rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo#LowVisionPerson">
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#VisuallyImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person whose visual acuity is 20/70 or poorer in the better-seeing eye and cannot be corrected or improved with regular eyeglasses.</rdfs:comment>
         <rdfs:label xml:lang="en">Low Vision Person</rdfs:label>
     </owl:Class>
     
@@ -2025,7 +2031,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <owl:Class rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo#ProfoundHearingImpairedPerson">
         <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#HearingImpairedPerson"/>
-        <rdfs:label xml:lang="en">A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time.</rdfs:label>
+        <rdfs:comment xml:lang="en">A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time.</rdfs:comment>
         <rdfs:label xml:lang="en">Profound Hearing Impaired Person</rdfs:label>
     </owl:Class>
     
@@ -2487,55 +2493,82 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:comment xml:lang="en">A person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/AssemblyBuilding -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/AssemblyBuilding"/>
+    <owl:Class rdf:about="https://w3id.org/seas/AssemblyBuilding">
+        <rdfs:comment xml:lang="en">places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants.</rdfs:comment>
+        <rdfs:label xml:lang="en">AssemblyBuilding</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/BuildingSpace -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/BuildingSpace"/>
+    <owl:Class rdf:about="https://w3id.org/seas/BuildingSpace">
+        <rdfs:comment xml:lang="en">A Space is a 3D volume bounded by surfaces. According to the FIEMSER definition, a building space in SAREF defines the physical spaces of the building.</rdfs:comment>
+        <rdfs:label xml:lang="en">BuildingSpace</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/BuildingStorey -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/BuildingStorey"/>
+    <owl:Class rdf:about="https://w3id.org/seas/BuildingStorey">
+        <rdfs:comment xml:lang="en">The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound.</rdfs:comment>
+        <rdfs:label xml:lang="en">BuildingStorey</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/Corridor -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/Corridor"/>
+    <owl:Class rdf:about="https://w3id.org/seas/Corridor">
+        <rdfs:comment xml:lang="en">A gallery or passage connecting parts of a building; hallway.</rdfs:comment>
+        <rdfs:label xml:lang="en">Corridor</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/Hall -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/Hall"/>
+    <owl:Class rdf:about="https://w3id.org/seas/Hall">
+        <rdfs:comment xml:lang="en">A large entrance room of a house or building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hall</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/MercantileBuilding -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/MercantileBuilding"/>
+    <owl:Class rdf:about="https://w3id.org/seas/MercantileBuilding">
+        <rdfs:comment xml:lang="en">Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations.</rdfs:comment>
+        <rdfs:label xml:lang="en">MercantileBuilding</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/ResidentialBuilding -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/ResidentialBuilding"/>
+    <owl:Class rdf:about="https://w3id.org/seas/ResidentialBuilding">
+        <rdfs:comment xml:lang="en">A residential building is a building at least half of which is used for residential purposes.</rdfs:comment>
+        <rdfs:label xml:lang="en">ResidentalBuilding</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/seas/Room -->
 
-    <owl:Class rdf:about="https://w3id.org/seas/Room"/>
+    <owl:Class rdf:about="https://w3id.org/seas/Room">
+        <rdfs:comment xml:lang="en">A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself.</rdfs:comment>
+        <rdfs:label xml:lang="en">Room</rdfs:label>
+    </owl:Class>
     
 
 
