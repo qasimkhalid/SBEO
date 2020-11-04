@@ -2,20 +2,27 @@
 <rdf:RDF xmlns="http://www.ia.urjc.es/ontologies/building/sbeo#"
      xml:base="http://www.ia.urjc.es/ontologies/building/sbeo"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:olo="http://purl.org/ontology/olo/core#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms/">
+     xmlns:sbeo="http://www.ia.urjc.es/ontologies/building/sbeo#"
+     xmlns:seas="https://w3id.org/seas/"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:schema="http://schema.org/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo">
         <dc:rights rdf:resource="https://www.gnu.org/licenses/gpl.html"/>
-        <terms:creator>Qasim Khalid</terms:creator>
-        <terms:description xml:lang="en">Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
+        <dcterms:creator>Qasim Khalid</dcterms:creator>
+        <dcterms:description xml:lang="en">Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
-The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</terms:description>
-        <terms:language>en</terms:language>
-        <terms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</terms:title>
+The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</dcterms:description>
+        <dcterms:language>en</dcterms:language>
+        <dcterms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</dcterms:title>
         <rdfs:seeAlso rdf:resource="https://github.com/qasimkhalid/SBEO"/>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
     </owl:Ontology>
@@ -63,6 +70,30 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     
 
 
+    <!-- http://schema.org/domainIncludes -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/domainIncludes"/>
+    
+
+
+    <!-- http://schema.org/rangeIncludes -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/rangeIncludes"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -71,6 +102,69 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#item -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#item">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">An item of a slot in an ordered list.</rdfs:comment>
+        <rdfs:label xml:lang="en">has item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#next -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#next">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#previous"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">Associates the next slot in an ordered list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has next</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#ordered_list -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#ordered_list">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#slot"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
+        <rdfs:comment xml:lang="en">An ordered list of an slot.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has ordered list</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#previous -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#previous">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">Associates the previous slot in an ordered list</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has previous</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#slot -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#slot">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">A slot in an ordered list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has slot</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -616,6 +710,19 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     
 
 
+    <!-- http://www.w3.org/ns/sosa/observes -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observes">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <schema:rangeIncludes rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:comment xml:lang="en">Relation between a Sensor and an ObservableProperty that it is capable of sensing.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">observes</rdfs:label>
+        <skos:definition xml:lang="en">Relation between a Sensor and an ObservableProperty that it is capable of sensing.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -624,6 +731,19 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#index -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontology/olo/core#index">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment xml:lang="en">An index of a slot in an ordered list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has index</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -926,6 +1046,48 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The age of the person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The first name of the person.</rdfs:comment>
+        <rdfs:label xml:lang="en">First Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/gender -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The gender of a person. It is typically but not necessarily &apos;male&apos; or &apos;female&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gender</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/lastName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The last name of the person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Last Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -940,8 +1102,49 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- http://purl.org/ontology/olo/core#OrderedList -->
 
     <owl:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#length"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An ordered list with a given length an indexed items.</rdfs:comment>
-        <rdfs:label xml:lang="en">OrderedList</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">Ordered List</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#Slot -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/olo/core#Slot">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#next"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#ordered_list"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#previous"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#index"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A slot in an ordered list with a fixed index.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">Slot</rdfs:label>
     </owl:Class>
     
 
@@ -2491,10 +2694,35 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     
 
 
+    <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty">
+        <rdfs:comment xml:lang="en">An observable quality (property, characteristic) of a FeatureOfInterest.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Observable Property</rdfs:label>
+        <skos:definition xml:lang="en">An observable quality (property, characteristic) of a FeatureOfInterest.</skos:definition>
+        <skos:example xml:lang="en">The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:comment xml:lang="en">Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Sensor</rdfs:label>
+        <skos:definition xml:lang="en">Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</skos:definition>
+        <skos:example xml:lang="en">Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes.</skos:example>
+    </owl:Class>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
-        <rdfs:comment xml:lang="en">A person.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#SocialUnit"/>
+        <rdfs:comment xml:lang="en">It represents a single individual of any age and having any type of characteristics.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
@@ -2503,8 +2731,77 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/AssemblyBuilding -->
 
     <owl:Class rdf:about="https://w3id.org/seas/AssemblyBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
         <rdfs:comment xml:lang="en">places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants.</rdfs:comment>
-        <rdfs:label xml:lang="en">AssemblyBuilding</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Assembly Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Attic -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Attic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">the part of a building, especially of a house, directly under a roof; garret.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Attic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Balcony -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Balcony">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">An accessible structure extending from a building, especially outside a window.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Balcony</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Basement -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Basement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A story of a building, partly or wholly underground.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Basement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Bathroom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Bathroom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Bathroom is mainly used for bathing &amp;amp; washing up related activities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Bathroom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Bedroom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Bedroom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Bedroom is used mainly for sleeping.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Bedroom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Building -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Building">
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#Space"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">Buildings are roofed constructions which can be used separately, have been built for permanent purposes, can be entered by persons and are suitable or intended for protecting persons, animals or objects.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building</rdfs:label>
     </owl:Class>
     
 
@@ -2512,8 +2809,21 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/BuildingSpace -->
 
     <owl:Class rdf:about="https://w3id.org/seas/BuildingSpace">
-        <rdfs:comment xml:lang="en">A Space is a 3D volume bounded by surfaces. According to the FIEMSER definition, a building space in SAREF defines the physical spaces of the building.</rdfs:comment>
-        <rdfs:label xml:lang="en">BuildingSpace</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#Space"/>
+        <rdfs:comment xml:lang="en">A Space is a 3D volume bounded by surfaces. It represents the physical spaces of the building.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/BuildingSpatialStructure -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/BuildingSpatialStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A man made structure with spatial properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building Spatial Structure</rdfs:label>
     </owl:Class>
     
 
@@ -2521,8 +2831,10 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/BuildingStorey -->
 
     <owl:Class rdf:about="https://w3id.org/seas/BuildingStorey">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpatialStructure"/>
         <rdfs:comment xml:lang="en">The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound.</rdfs:comment>
-        <rdfs:label xml:lang="en">BuildingStorey</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building Storey</rdfs:label>
     </owl:Class>
     
 
@@ -2530,8 +2842,67 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/Corridor -->
 
     <owl:Class rdf:about="https://w3id.org/seas/Corridor">
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Lobby"/>
         <rdfs:comment xml:lang="en">A gallery or passage connecting parts of a building; hallway.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
         <rdfs:label xml:lang="en">Corridor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/DiningRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/DiningRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A room in which meals are eaten, as in a home or hotel, especially the room in which the major or more formal meals are eaten.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Dining Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Door -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Door">
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"/>
+        <rdfs:comment xml:lang="en">the large flat piece of wood, glass etc that you move when you go into or out of a building, room, vehicle etc, or when you open a cupboard (Longman Dictionary of Contemporary English Online)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Door</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/EducationalBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/EducationalBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Schools and day care centers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Educational Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Elevator -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Elevator">
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#VerticalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Elevator is used to transport people between different floors.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Elevator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Greenhouse -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Greenhouse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A building, room, or zone, usually chiefly of glass, in which the temperature is maintained within a desired range, used for cultivating tender plants or growing plants out of season.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Greenhouse</rdfs:label>
     </owl:Class>
     
 
@@ -2539,8 +2910,88 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/Hall -->
 
     <owl:Class rdf:about="https://w3id.org/seas/Hall">
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#HorizontalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Lobby"/>
         <rdfs:comment xml:lang="en">A large entrance room of a house or building.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
         <rdfs:label xml:lang="en">Hall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/HomeOffice -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/HomeOffice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Office"/>
+        <rdfs:comment xml:lang="en">A work or office space set up in a person&apos;s home and used exclusively for business on a regular basis.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Tree house</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/IndustrialBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/IndustrialBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Buildings used for industrial production, e.g. factories, workshops, slaughterhouses, breweries, assembly plants, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Industrial Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/InstitutionalBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/InstitutionalBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Institutions such as hospitals providing medical and surgical treatment and nursing care for ill or injured people.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Institutional Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Kitchen -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Kitchen">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Kitchen is a room used mainly for cooking and possibly eating.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Kitchen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Laundry -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Laundry">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A room or zone, as in a home or apartment building, reserved for doing the family wash.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Laundry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/LivingRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/LivingRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Living Room is the main room of daytime activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Living Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Lobby -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Lobby">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">An entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Lobby</rdfs:label>
     </owl:Class>
     
 
@@ -2548,8 +2999,43 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/MercantileBuilding -->
 
     <owl:Class rdf:about="https://w3id.org/seas/MercantileBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
         <rdfs:comment xml:lang="en">Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations.</rdfs:comment>
-        <rdfs:label xml:lang="en">MercantileBuilding</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Mercantile Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/NonResidentialBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/NonResidentialBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Building"/>
+        <rdfs:comment xml:lang="en">A  non-residential building is a building at least half of which is used for other than residential purposes. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Non-Residential Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Office -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Office">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A room, set of rooms, or building where the business of a commercial or industrial organization or of a professional person is conducted.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Office</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/OfficeBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/OfficeBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Places where services are provided. Examples: banks, insurance agencies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Business Building</rdfs:label>
     </owl:Class>
     
 
@@ -2557,8 +3043,10 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/ResidentialBuilding -->
 
     <owl:Class rdf:about="https://w3id.org/seas/ResidentialBuilding">
-        <rdfs:comment xml:lang="en">A residential building is a building at least half of which is used for residential purposes.</rdfs:comment>
-        <rdfs:label xml:lang="en">ResidentalBuilding</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Building"/>
+        <rdfs:comment xml:lang="en">A residential building is a building at least half of which is used for residential purposes. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Residential Building</rdfs:label>
     </owl:Class>
     
 
@@ -2566,8 +3054,66 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     <!-- https://w3id.org/seas/Room -->
 
     <owl:Class rdf:about="https://w3id.org/seas/Room">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
         <rdfs:comment xml:lang="en">A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
         <rdfs:label xml:lang="en">Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/SiteOfBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/SiteOfBuilding">
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#Space"/>
+        <rdfs:comment xml:lang="en">Building site is a locale containing one or more separate buildings. They are zones.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Site Of Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Stairs -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Stairs">
+        <rdfs:subClassOf rdf:resource="http://www.ia.urjc.es/ontologies/building/sbeo#VerticalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A construction designed to bridge a large vertical distance by dividing it into smaller vertical distances, called steps.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Stairs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/StorageRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/StorageRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Room for storage.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Storage Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/SwimmingPool -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/SwimmingPool">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A tank or large artificial basin, as of concrete, for filling with water for swimming.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Swimming Pool</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/UtilityRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/UtilityRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Room for other special utilities and hobbies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Utility Room</rdfs:label>
     </owl:Class>
     
 

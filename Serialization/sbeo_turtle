@@ -10,6 +10,7 @@
 @prefix sbeo: <http://www.ia.urjc.es/ontologies/building/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ia.urjc.es/ontologies/building/sbeo> .
 
@@ -24,10 +25,97 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                                                   rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                                                   owl:versionInfo 0.1 .
 
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+dcterms:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/domainIncludes
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/rangeIncludes
+schema:rangeIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://purl.org/ontology/olo/core#item
+olo:item rdf:type owl:ObjectProperty ;
+         rdfs:domain olo:Slot ;
+         rdfs:comment "An item of a slot in an ordered list."@en ;
+         rdfs:label "has item"@en .
+
+
+###  http://purl.org/ontology/olo/core#next
+olo:next rdf:type owl:ObjectProperty ;
+         owl:inverseOf olo:previous ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain olo:Slot ;
+         rdfs:range olo:Slot ;
+         rdfs:comment "Associates the next slot in an ordered list."@en ;
+         rdfs:isDefinedBy olo: ;
+         rdfs:label "has next"@en .
+
+
+###  http://purl.org/ontology/olo/core#ordered_list
+olo:ordered_list rdf:type owl:ObjectProperty ;
+                 owl:inverseOf olo:slot ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain olo:Slot ;
+                 rdfs:range olo:OrderedList ;
+                 rdfs:comment "An ordered list of an slot."@en ;
+                 rdfs:isDefinedBy olo: ;
+                 rdfs:label "has ordered list"@en .
+
+
+###  http://purl.org/ontology/olo/core#previous
+olo:previous rdf:type owl:ObjectProperty ,
+                      owl:InverseFunctionalProperty ;
+             rdfs:domain olo:Slot ;
+             rdfs:range olo:Slot ;
+             rdfs:comment "Associates the previous slot in an ordered list"@en ;
+             rdfs:isDefinedBy olo: ;
+             rdfs:label "has previous"@en .
+
+
+###  http://purl.org/ontology/olo/core#slot
+olo:slot rdf:type owl:ObjectProperty ;
+         rdfs:domain olo:OrderedList ;
+         rdfs:range olo:Slot ;
+         rdfs:comment "A slot in an ordered list."@en ;
+         rdfs:isDefinedBy olo: ;
+         rdfs:label "has slot"@en .
+
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accompanying
 sbeo:accompanying rdf:type owl:ObjectProperty ,
@@ -412,9 +500,29 @@ sbeo:uses rdf:type owl:ObjectProperty ;
           rdfs:label "Uses"@en .
 
 
+###  http://www.w3.org/ns/sosa/observes
+sosa:observes rdf:type owl:ObjectProperty ;
+              schema:domainIncludes sosa:Sensor ;
+              schema:rangeIncludes sosa:ObservableProperty ;
+              rdfs:comment "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en ;
+              rdfs:isDefinedBy sosa: ;
+              rdfs:label "observes"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://purl.org/ontology/olo/core#index
+olo:index rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain olo:Slot ;
+          rdfs:range xsd:positiveInteger ;
+          rdfs:comment "An index of a slot in an ordered list."@en ;
+          rdfs:isDefinedBy olo: ;
+          rdfs:label "has index"@en .
+
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#accommodationCapacity
 sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
@@ -625,12 +733,72 @@ sbeo:width rdf:type owl:DatatypeProperty ,
            rdfs:label "Width"@en .
 
 
+###  http://xmlns.com/foaf/0.1/age
+foaf:age rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain foaf:Person ;
+         rdfs:comment "The age of the person."@en ;
+         rdfs:label "Age"@en .
+
+
+###  http://xmlns.com/foaf/0.1/firstName
+foaf:firstName rdf:type owl:DatatypeProperty ;
+               rdfs:domain foaf:Person ;
+               rdfs:comment "The first name of the person."@en ;
+               rdfs:label "First Name"@en .
+
+
+###  http://xmlns.com/foaf/0.1/gender
+foaf:gender rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain foaf:Person ;
+            rdfs:comment "The gender of a person. It is typically but not necessarily 'male' or 'female'."@en ;
+            rdfs:label "Gender"@en .
+
+
+###  http://xmlns.com/foaf/0.1/lastName
+foaf:lastName rdf:type owl:DatatypeProperty ;
+              rdfs:domain foaf:Person ;
+              rdfs:comment "The last name of the person."@en ;
+              rdfs:label "Last Name"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
 
 ###  http://purl.org/ontology/olo/core#OrderedList
-olo:OrderedList rdf:type owl:Class .
+olo:OrderedList rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:length ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "An ordered list with a given length an indexed items."@en ;
+                rdfs:isDefinedBy olo: ;
+                rdfs:label "Ordered List"@en .
+
+
+###  http://purl.org/ontology/olo/core#Slot
+olo:Slot rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:next ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:ordered_list ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:previous ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty olo:index ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "A slot in an ordered list with a fixed index."@en ;
+         rdfs:isDefinedBy olo: ;
+         rdfs:label "Slot"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActiveFireProtectionDevice
@@ -1027,7 +1195,9 @@ sbeo:GraphBasedRoute rdf:type owl:Class ;
                                                        sbeo:SimplestPath
                                                      )
                                          ] ;
-                     rdfs:subClassOf sbeo:Route .
+                     rdfs:subClassOf sbeo:Route ;
+                     rdfs:comment "A graph-based route is a graphical way of representing a route in terms of nodes (sometimes called vertices) and edges (sometimes called arcs)."@en ;
+                     rdfs:label "Graph-Based Route"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Group
@@ -1160,7 +1330,7 @@ sbeo:LowStaminaPerson rdf:type owl:Class ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#LowVisionPerson
 sbeo:LowVisionPerson rdf:type owl:Class ;
                      rdfs:subClassOf sbeo:VisuallyImpairedPerson ;
-                     rdfs:comment "A person having an visual impairment that cannot be fixed with glasses, contact lenses, or other standard treatments like medicine or surgery, such that it makes hard to do his/her everyday activities."@en ;
+                     rdfs:comment "A person whose visual acuity is 20/70 or poorer in the better-seeing eye and cannot be corrected or improved with regular eyeglasses."@en ;
                      rdfs:label "Low Vision Person"@en .
 
 
@@ -1703,6 +1873,315 @@ sbeo:WaitingZone rdf:type owl:Class ;
                  rdfs:comment "A space (normally with seating), where people can wait to do some specific activity. During emergency condtions, it is also used for several purposes, such as unification of people with their family members, acquaintances or emergency rescue teams, etc."@en ;
                  rdfs:label "Waiting Zone"@en .
 
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+sosa:ObservableProperty rdf:type owl:Class ;
+                        rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                        rdfs:isDefinedBy sosa: ;
+                        rdfs:label "Observable Property"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                        <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+sosa:Sensor rdf:type owl:Class ;
+            rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+            rdfs:isDefinedBy sosa: ;
+            rdfs:label "Sensor"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+            <http://www.w3.org/2004/02/skos/core#example> "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:subClassOf sbeo:SocialUnit ;
+            rdfs:comment "It represents a single individual of any age and having any type of characteristics."@en ;
+            rdfs:label "Person"@en .
+
+
+###  https://w3id.org/seas/AssemblyBuilding
+seas:AssemblyBuilding rdf:type owl:Class ;
+                      rdfs:subClassOf seas:NonResidentialBuilding ;
+                      rdfs:comment "places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants."@en ;
+                      rdfs:isDefinedBy seas:BuildingOntology ;
+                      rdfs:label "Assembly Building"@en .
+
+
+###  https://w3id.org/seas/Attic
+seas:Attic rdf:type owl:Class ;
+           rdfs:subClassOf seas:Room ;
+           rdfs:comment "the part of a building, especially of a house, directly under a roof; garret."@en ;
+           rdfs:isDefinedBy seas:BuildingOntology ;
+           rdfs:label "Attic"@en .
+
+
+###  https://w3id.org/seas/Balcony
+seas:Balcony rdf:type owl:Class ;
+             rdfs:subClassOf seas:BuildingSpace ;
+             rdfs:comment "An accessible structure extending from a building, especially outside a window."@en ;
+             rdfs:isDefinedBy seas:BuildingOntology ;
+             rdfs:label "Balcony"@en .
+
+
+###  https://w3id.org/seas/Basement
+seas:Basement rdf:type owl:Class ;
+              rdfs:subClassOf seas:Room ;
+              rdfs:comment "A story of a building, partly or wholly underground."@en ;
+              rdfs:isDefinedBy seas:BuildingOntology ;
+              rdfs:label "Basement"@en .
+
+
+###  https://w3id.org/seas/Bathroom
+seas:Bathroom rdf:type owl:Class ;
+              rdfs:subClassOf seas:Room ;
+              rdfs:comment "Bathroom is mainly used for bathing &amp; washing up related activities."@en ;
+              rdfs:isDefinedBy seas:BuildingOntology ;
+              rdfs:label "Bathroom"@en .
+
+
+###  https://w3id.org/seas/Bedroom
+seas:Bedroom rdf:type owl:Class ;
+             rdfs:subClassOf seas:Room ;
+             rdfs:comment "Bedroom is used mainly for sleeping."@en ;
+             rdfs:isDefinedBy seas:BuildingOntology ;
+             rdfs:label "Bedroom"@en .
+
+
+###  https://w3id.org/seas/Building
+seas:Building rdf:type owl:Class ;
+              rdfs:subClassOf sbeo:Space ,
+                              seas:BuildingSpace ;
+              rdfs:comment "Buildings are roofed constructions which can be used separately, have been built for permanent purposes, can be entered by persons and are suitable or intended for protecting persons, animals or objects."@en ;
+              rdfs:isDefinedBy seas:BuildingOntology ;
+              rdfs:label "Building"@en .
+
+
+###  https://w3id.org/seas/BuildingSpace
+seas:BuildingSpace rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:Space ;
+                   rdfs:comment "A Space is a 3D volume bounded by surfaces. It represents the physical spaces of the building."@en ;
+                   rdfs:isDefinedBy seas:BuildingOntology ;
+                   rdfs:label "Building Space"@en .
+
+
+###  https://w3id.org/seas/BuildingSpatialStructure
+seas:BuildingSpatialStructure rdf:type owl:Class ;
+                              rdfs:subClassOf seas:BuildingSpace ;
+                              rdfs:comment "A man made structure with spatial properties."@en ;
+                              rdfs:isDefinedBy seas:BuildingOntology ;
+                              rdfs:label "Building Spatial Structure"@en .
+
+
+###  https://w3id.org/seas/BuildingStorey
+seas:BuildingStorey rdf:type owl:Class ;
+                    rdfs:subClassOf seas:BuildingSpatialStructure ;
+                    rdfs:comment "The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound."@en ;
+                    rdfs:isDefinedBy seas:BuildingOntology ;
+                    rdfs:label "Building Storey"@en .
+
+
+###  https://w3id.org/seas/Corridor
+seas:Corridor rdf:type owl:Class ;
+              rdfs:subClassOf sbeo:HorizontalPassage ,
+                              seas:Lobby ;
+              rdfs:comment "A gallery or passage connecting parts of a building; hallway."@en ;
+              rdfs:isDefinedBy seas:BuildingOntology ;
+              rdfs:label "Corridor"@en .
+
+
+###  https://w3id.org/seas/DiningRoom
+seas:DiningRoom rdf:type owl:Class ;
+                rdfs:subClassOf seas:Room ;
+                rdfs:comment "A room in which meals are eaten, as in a home or hotel, especially the room in which the major or more formal meals are eaten."@en ;
+                rdfs:isDefinedBy seas:BuildingOntology ;
+                rdfs:label "Dining Room"@en .
+
+
+###  https://w3id.org/seas/Door
+seas:Door rdf:type owl:Class ;
+          rdfs:subClassOf sbeo:HorizontalPassage ;
+          rdfs:comment "the large flat piece of wood, glass etc that you move when you go into or out of a building, room, vehicle etc, or when you open a cupboard (Longman Dictionary of Contemporary English Online)"@en ;
+          rdfs:isDefinedBy seas:BuildingOntology ;
+          rdfs:label "Door"@en .
+
+
+###  https://w3id.org/seas/EducationalBuilding
+seas:EducationalBuilding rdf:type owl:Class ;
+                         rdfs:subClassOf seas:NonResidentialBuilding ;
+                         rdfs:comment "Schools and day care centers."@en ;
+                         rdfs:isDefinedBy seas:BuildingOntology ;
+                         rdfs:label "Educational Building"@en .
+
+
+###  https://w3id.org/seas/Elevator
+seas:Elevator rdf:type owl:Class ;
+              rdfs:subClassOf sbeo:VerticalPassage ,
+                              seas:Room ;
+              rdfs:comment "Elevator is used to transport people between different floors."@en ;
+              rdfs:isDefinedBy seas:BuildingOntology ;
+              rdfs:label "Elevator"@en .
+
+
+###  https://w3id.org/seas/Greenhouse
+seas:Greenhouse rdf:type owl:Class ;
+                rdfs:subClassOf seas:BuildingSpace ;
+                rdfs:comment "A building, room, or zone, usually chiefly of glass, in which the temperature is maintained within a desired range, used for cultivating tender plants or growing plants out of season."@en ;
+                rdfs:isDefinedBy seas:BuildingOntology ;
+                rdfs:label "Greenhouse"@en .
+
+
+###  https://w3id.org/seas/Hall
+seas:Hall rdf:type owl:Class ;
+          rdfs:subClassOf sbeo:HorizontalPassage ,
+                          seas:Lobby ;
+          rdfs:comment "A large entrance room of a house or building."@en ;
+          rdfs:isDefinedBy seas:BuildingOntology ;
+          rdfs:label "Hall"@en .
+
+
+###  https://w3id.org/seas/HomeOffice
+seas:HomeOffice rdf:type owl:Class ;
+                rdfs:subClassOf seas:Office ;
+                rdfs:comment "A work or office space set up in a person's home and used exclusively for business on a regular basis."@en ;
+                rdfs:isDefinedBy seas:BuildingOntology ;
+                rdfs:label "Tree house"@en .
+
+
+###  https://w3id.org/seas/IndustrialBuilding
+seas:IndustrialBuilding rdf:type owl:Class ;
+                        rdfs:subClassOf seas:NonResidentialBuilding ;
+                        rdfs:comment "Buildings used for industrial production, e.g. factories, workshops, slaughterhouses, breweries, assembly plants, etc."@en ;
+                        rdfs:isDefinedBy seas:BuildingOntology ;
+                        rdfs:label "Industrial Building"@en .
+
+
+###  https://w3id.org/seas/InstitutionalBuilding
+seas:InstitutionalBuilding rdf:type owl:Class ;
+                           rdfs:subClassOf seas:NonResidentialBuilding ;
+                           rdfs:comment "Institutions such as hospitals providing medical and surgical treatment and nursing care for ill or injured people."@en ;
+                           rdfs:isDefinedBy seas:BuildingOntology ;
+                           rdfs:label "Institutional Building"@en .
+
+
+###  https://w3id.org/seas/Kitchen
+seas:Kitchen rdf:type owl:Class ;
+             rdfs:subClassOf seas:Room ;
+             rdfs:comment "Kitchen is a room used mainly for cooking and possibly eating."@en ;
+             rdfs:isDefinedBy seas:BuildingOntology ;
+             rdfs:label "Kitchen"@en .
+
+
+###  https://w3id.org/seas/Laundry
+seas:Laundry rdf:type owl:Class ;
+             rdfs:subClassOf seas:Room ;
+             rdfs:comment "A room or zone, as in a home or apartment building, reserved for doing the family wash."@en ;
+             rdfs:isDefinedBy seas:BuildingOntology ;
+             rdfs:label "Laundry"@en .
+
+
+###  https://w3id.org/seas/LivingRoom
+seas:LivingRoom rdf:type owl:Class ;
+                rdfs:subClassOf seas:Room ;
+                rdfs:comment "Living Room is the main room of daytime activity."@en ;
+                rdfs:isDefinedBy seas:BuildingOntology ;
+                rdfs:label "Living Room"@en .
+
+
+###  https://w3id.org/seas/Lobby
+seas:Lobby rdf:type owl:Class ;
+           rdfs:subClassOf seas:BuildingSpace ;
+           rdfs:comment "An entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer."@en ;
+           rdfs:isDefinedBy seas:BuildingOntology ;
+           rdfs:label "Lobby"@en .
+
+
+###  https://w3id.org/seas/MercantileBuilding
+seas:MercantileBuilding rdf:type owl:Class ;
+                        rdfs:subClassOf seas:NonResidentialBuilding ;
+                        rdfs:comment "Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations."@en ;
+                        rdfs:isDefinedBy seas:BuildingOntology ;
+                        rdfs:label "Mercantile Building"@en .
+
+
+###  https://w3id.org/seas/NonResidentialBuilding
+seas:NonResidentialBuilding rdf:type owl:Class ;
+                            rdfs:subClassOf seas:Building ;
+                            rdfs:comment "A  non-residential building is a building at least half of which is used for other than residential purposes. "@en ;
+                            rdfs:isDefinedBy seas:BuildingOntology ;
+                            rdfs:label "Non-Residential Building"@en .
+
+
+###  https://w3id.org/seas/Office
+seas:Office rdf:type owl:Class ;
+            rdfs:subClassOf seas:Room ;
+            rdfs:comment "A room, set of rooms, or building where the business of a commercial or industrial organization or of a professional person is conducted."@en ;
+            rdfs:isDefinedBy seas:BuildingOntology ;
+            rdfs:label "Office"@en .
+
+
+###  https://w3id.org/seas/OfficeBuilding
+seas:OfficeBuilding rdf:type owl:Class ;
+                    rdfs:subClassOf seas:NonResidentialBuilding ;
+                    rdfs:comment "Places where services are provided. Examples: banks, insurance agencies."@en ;
+                    rdfs:isDefinedBy seas:BuildingOntology ;
+                    rdfs:label "Business Building"@en .
+
+
+###  https://w3id.org/seas/ResidentialBuilding
+seas:ResidentialBuilding rdf:type owl:Class ;
+                         rdfs:subClassOf seas:Building ;
+                         rdfs:comment "A residential building is a building at least half of which is used for residential purposes. "@en ;
+                         rdfs:isDefinedBy seas:BuildingOntology ;
+                         rdfs:label "Residential Building"@en .
+
+
+###  https://w3id.org/seas/Room
+seas:Room rdf:type owl:Class ;
+          rdfs:subClassOf seas:BuildingSpace ;
+          rdfs:comment "A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself."@en ;
+          rdfs:isDefinedBy seas:BuildingOntology ;
+          rdfs:label "Room"@en .
+
+
+###  https://w3id.org/seas/SiteOfBuilding
+seas:SiteOfBuilding rdf:type owl:Class ;
+                    rdfs:subClassOf sbeo:Space ;
+                    rdfs:comment "Building site is a locale containing one or more separate buildings. They are zones."@en ;
+                    rdfs:isDefinedBy seas:BuildingOntology ;
+                    rdfs:label "Site Of Building"@en .
+
+
+###  https://w3id.org/seas/Stairs
+seas:Stairs rdf:type owl:Class ;
+            rdfs:subClassOf sbeo:VerticalPassage ,
+                            seas:BuildingSpace ;
+            rdfs:comment "A construction designed to bridge a large vertical distance by dividing it into smaller vertical distances, called steps."@en ;
+            rdfs:isDefinedBy seas:BuildingOntology ;
+            rdfs:label "Stairs"@en .
+
+
+###  https://w3id.org/seas/StorageRoom
+seas:StorageRoom rdf:type owl:Class ;
+                 rdfs:subClassOf seas:Room ;
+                 rdfs:comment "Room for storage."@en ;
+                 rdfs:isDefinedBy seas:BuildingOntology ;
+                 rdfs:label "Storage Room"@en .
+
+
+###  https://w3id.org/seas/SwimmingPool
+seas:SwimmingPool rdf:type owl:Class ;
+                  rdfs:subClassOf seas:Room ;
+                  rdfs:comment "A tank or large artificial basin, as of concrete, for filling with water for swimming."@en ;
+                  rdfs:isDefinedBy seas:BuildingOntology ;
+                  rdfs:label "Swimming Pool"@en .
+
+
+###  https://w3id.org/seas/UtilityRoom
+seas:UtilityRoom rdf:type owl:Class ;
+                 rdfs:subClassOf seas:Room ;
+                 rdfs:comment "Room for other special utilities and hobbies."@en ;
+                 rdfs:isDefinedBy seas:BuildingOntology ;
+                 rdfs:label "Utility Room"@en .
 
 
 #################################################################
