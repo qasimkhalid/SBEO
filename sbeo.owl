@@ -123,7 +123,7 @@ sbeo:accompanying rdf:type owl:ObjectProperty ,
                            owl:TransitiveProperty ;
                   rdfs:domain foaf:Person ;
                   rdfs:range foaf:Person ;
-                  rdfs:comment "Be present or associated with a social unit."@en ;
+                  rdfs:comment "Be present or associated with a person."@en ;
                   rdfs:label "Accompanying"@en .
 
 
@@ -228,9 +228,9 @@ sbeo:forPerson rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasActivityStatus
 sbeo:hasActivityStatus rdf:type owl:ObjectProperty ;
-                       rdfs:domain foaf:Person ;
+                       rdfs:domain sbeo:SocialUnit ;
                        rdfs:range sbeo:ActivityStatus ;
-                       rdfs:comment "The status of an activity being performed by a person."@en ;
+                       rdfs:comment "The status of an activity being performed by a social unit."@en ;
                        rdfs:label "Has Activity Status"@en .
 
 
@@ -265,7 +265,7 @@ sbeo:hasDescription rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasDeviationState
 sbeo:hasDeviationState rdf:type owl:ObjectProperty ;
-                       rdfs:domain foaf:Person ;
+                       rdfs:domain sbeo:SocialUnit ;
                        rdfs:range sbeo:DeviationState ;
                        rdfs:comment "A deviation status of a person depending on how ofthen one deviates from the proposed route."@en ;
                        rdfs:label "Has Deviation State"@en .
@@ -289,9 +289,9 @@ sbeo:hasMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMotionState
 sbeo:hasMotionState rdf:type owl:ObjectProperty ;
-                    rdfs:domain sbeo:SocialUnit ;
+                    rdfs:domain foaf:Person ;
                     rdfs:range sbeo:MotionState ;
-                    rdfs:comment "The motion state of a person or a device."@en ;
+                    rdfs:comment "The motion state of a person."@en ;
                     rdfs:label "Has Motion State"@en .
 
 
@@ -299,15 +299,15 @@ sbeo:hasMotionState rdf:type owl:ObjectProperty ;
 sbeo:hasNavigationalState rdf:type owl:ObjectProperty ;
                           rdfs:domain sbeo:SocialUnit ;
                           rdfs:range sbeo:NavigationalState ;
-                          rdfs:comment "A navigational state of a person while following any path."@en ;
+                          rdfs:comment "A navigational state of a social unit while following any path."@en ;
                           rdfs:label "Has Navigational State"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasNavigationalType
 sbeo:hasNavigationalType rdf:type owl:ObjectProperty ;
-                         rdfs:domain sbeo:SocialUnit ;
+                         rdfs:domain foaf:Person ;
                          rdfs:range sbeo:Navigation ;
-                         rdfs:comment "A type of navigational provided to a social unit to perform a specific activity."@en ;
+                         rdfs:comment "A type of navigation provided to a person to perform a specific activity."@en ;
                          rdfs:label "Has Navigation Type"@en .
 
 
@@ -377,7 +377,7 @@ sbeo:lower rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#meansOfNotification
 sbeo:meansOfNotification rdf:type owl:ObjectProperty ;
-                         rdfs:domain foaf:Person ;
+                         rdfs:domain sbeo:SocialUnit ;
                          rdfs:range [ rdf:type owl:Class ;
                                       owl:unionOf ( sbeo:AlertingDevice
                                                     sbeo:DisplayScreen
@@ -462,7 +462,7 @@ sbeo:role rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#routePreference
 sbeo:routePreference rdf:type owl:ObjectProperty ;
-                     rdfs:domain foaf:Person ;
+                     rdfs:domain sbeo:SocialUnit ;
                      rdfs:range sbeo:Route ;
                      rdfs:comment "Route preference of a social unit to perform an activity."@en ;
                      rdfs:label "Route Preference"@en .
@@ -644,6 +644,7 @@ sbeo:length rdf:type owl:DatatypeProperty ,
                           owl:unionOf ( olo:OrderedList
                                         sbeo:Group
                                         sbeo:Passage
+                                        sbeo:Space
                                       )
                         ] ;
             rdfs:range xsd:float ;
@@ -669,8 +670,12 @@ sbeo:speed rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#speedFactor
 sbeo:speedFactor rdf:type owl:DatatypeProperty ;
-                 rdfs:domain sbeo:RouteElement ;
-                 rdfs:range xsd:decimal ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( sbeo:RouteElement
+                                             sbeo:Space
+                                           )
+                             ] ;
+                 rdfs:range xsd:float ;
                  rdfs:comment "A multiplying factor that may affect the speed of person while passing through a specific space."@en ;
                  rdfs:label "Speed Factor"@en .
 
@@ -729,7 +734,11 @@ sbeo:travelTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#width
 sbeo:width rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain sbeo:Passage ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( sbeo:Passage
+                                       sbeo:Space
+                                     )
+                       ] ;
            rdfs:range xsd:float ;
            rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
            rdfs:label "Width"@en .
