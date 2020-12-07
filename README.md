@@ -6,6 +6,10 @@ Smart Building Evacuation Ontology (SBEO) is an ontology that couples the inform
 
 The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.
 
+Namespace URI: 
+
+> <i class="icon-file"></i>`https://w3id.org/SBEO#`
+
 ## Diagram 
 
 ### Class Diagram
@@ -13,3 +17,10 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 <p align="center">
   <img src="Figures/SBEO_Class_Diagram_updated.png"/>
 </p>
+
+## Contacts
+
+- Qasim Khalid <`qasim.khalid [at] urjc.es`>
+- Alberto Fernandez Gil <`alberto.fernandez [at] urjc.es`>
+- Marin Lujak <`marin.lujak [at] imt-lille-douai.fr `>
+- Arnaud Doniec <`arnaud.doniec [at] imt-lille-douai.fr `>
