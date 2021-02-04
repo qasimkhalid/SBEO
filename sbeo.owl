@@ -226,6 +226,14 @@ sbeo:forPerson rdf:type owl:ObjectProperty ;
                rdfs:label "For Person"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasAbility
+sbeo:hasAbility rdf:type owl:ObjectProperty ;
+                rdfs:domain sbeo:PersonAbility ;
+                rdfs:range sbeo:Ability ;
+                rdfs:comment "A property to express a sbeo:Ability in a n-ary relation for sbeo:PersonAbility."@en ;
+                rdfs:label "Has Ability"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasActivityStatus
 sbeo:hasActivityStatus rdf:type owl:ObjectProperty ;
                        rdfs:domain sbeo:SocialUnit ;
@@ -279,6 +287,18 @@ sbeo:hasFitnessStatus rdf:type owl:ObjectProperty ;
                       rdfs:label "Has Fitness Status"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasIntensity
+sbeo:hasIntensity rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( sbeo:Activity
+                                              sbeo:Incident
+                                            )
+                              ] ;
+                  rdfs:range sbeo:Intensity ;
+                  rdfs:comment "A property to express the intensity of a particular sbeo:Activity or sbeo:Event."@en ;
+                  rdfs:label "Has Intensity"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasMember
 sbeo:hasMember rdf:type owl:ObjectProperty ;
                rdfs:domain sbeo:Group ;
@@ -309,6 +329,27 @@ sbeo:hasNavigationalType rdf:type owl:ObjectProperty ;
                          rdfs:range sbeo:Navigation ;
                          rdfs:comment "A type of navigation provided to a person to perform a specific activity."@en ;
                          rdfs:label "Has Navigation Type"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasQuality
+sbeo:hasQuality rdf:type owl:ObjectProperty ;
+                rdfs:domain sbeo:PersonAbility ;
+                rdfs:range sbeo:Quality ;
+                rdfs:comment "A property to express a quality of something in terms of different levels. For example, good, bad, medium, perfect, mild, and so forth."@en ;
+                rdfs:label "Has Quality"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSeverity
+sbeo:hasSeverity rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( sbeo:ActivitySeverity
+                                             sbeo:EventSeverity
+                                           )
+                             ] ;
+                 rdfs:range sbeo:Severity ;
+                 rdfs:comment "A property to express a sbeo:Severity in a n-ary relation for sbeo:ActivitySeverity or  sbeo:EventSeverity."@en ;
+                 rdfs:label "Has Severity"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#installedIn
@@ -397,6 +438,23 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
                             rdfs:label "Notification Preference"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ofActivity
+sbeo:ofActivity rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain sbeo:ActivitySeverity ;
+                rdfs:range sbeo:Activity ;
+                rdfs:comment "A property to express a sbeo:Activity in a n-ary relation for sbeo:ActivitySeverity."@en ;
+                rdfs:label "Of Activity"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ofEvent
+sbeo:ofEvent rdf:type owl:ObjectProperty ;
+             rdfs:domain sbeo:EventSeverity ;
+             rdfs:range sbeo:Incident ;
+             rdfs:comment "A property to express a sbeo:Event in a n-ary relation for sbeo:EventSeverity."@en ;
+             rdfs:label "Of Event"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ofSpace
 sbeo:ofSpace rdf:type owl:ObjectProperty ;
              rdfs:domain sbeo:Parameter ;
@@ -405,7 +463,7 @@ sbeo:ofSpace rdf:type owl:ObjectProperty ;
                                         sbeo:Space
                                       )
                         ] ;
-             rdfs:comment "A property to express a sbeo:Space  in a n-ary relation for sbeo:Parameter."@en ;
+             rdfs:comment "A property to express a sbeo:Space in a n-ary relation for sbeo:Parameter."@en ;
              rdfs:label "Of Space"@en .
 
 
@@ -812,6 +870,61 @@ olo:Slot rdf:type owl:Class ;
          rdfs:label "Slot"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Ability
+sbeo:Ability rdf:type owl:Class ;
+             rdfs:comment "Possession of the means or skill to do something (Oxford Dictionary of English)."@en ;
+             rdfs:label "Ability"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AbilityToHear
+sbeo:AbilityToHear rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:SensoryAbility ;
+                   rdfs:comment "An ability to hear."@en ;
+                   rdfs:label "Ability To Hear"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AbilityToRun
+sbeo:AbilityToRun rdf:type owl:Class ;
+                  rdfs:subClassOf sbeo:MobilityAbility ;
+                  rdfs:comment "An ability to run."@en ;
+                  rdfs:label "Ability To Run"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AbilityToSee
+sbeo:AbilityToSee rdf:type owl:Class ;
+                  rdfs:subClassOf sbeo:SensoryAbility ;
+                  rdfs:comment "An ability to hear."@en ;
+                  rdfs:label "Ability To See"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AbilityToTalk
+sbeo:AbilityToTalk rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:SensoryAbility ;
+                   rdfs:comment "An ability to talk."@en ;
+                   rdfs:label "Ability To Talk"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AbilityToTouch
+sbeo:AbilityToTouch rdf:type owl:Class ;
+                    rdfs:subClassOf sbeo:SensoryAbility ;
+                    rdfs:comment "An ability to touch."@en ;
+                    rdfs:label "Ability To Touch"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AbilityToUseStairs
+sbeo:AbilityToUseStairs rdf:type owl:Class ;
+                        rdfs:subClassOf sbeo:MobilityAbility ;
+                        rdfs:comment "An ability to use the stairs. Note that the people on the wheelchair are not considered to have this ability no matter the stairs have a stairlift and a ramp."@en ;
+                        rdfs:label "Ability To Use Stairs"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#AbilityToWalk
+sbeo:AbilityToWalk rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:MobilityAbility ;
+                   rdfs:comment "An ability of a person to walk. A person who is using crutches is also considered to have this ability."@en ;
+                   rdfs:label "Ability To Walk"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActiveFireProtectionDevice
 sbeo:ActiveFireProtectionDevice rdf:type owl:Class ;
                                 rdfs:subClassOf sbeo:FireProtectionDevice ;
@@ -821,8 +934,39 @@ sbeo:ActiveFireProtectionDevice rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Activity
 sbeo:Activity rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:hasIntensity ;
+                                owl:someValuesFrom sbeo:Intensity
+                              ] ;
               rdfs:comment "A process that a person, group of persons, or machine does during a specific amount of time, such as visiting, shopping, etc."@en ;
               rdfs:label "Activity"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ActivitySeverity
+sbeo:ActivitySeverity rdf:type owl:Class ;
+                      rdfs:subClassOf sbeo:Parameter ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sbeo:ofActivity ;
+                                        owl:someValuesFrom sbeo:Activity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sbeo:forPerson ;
+                                        owl:allValuesFrom sbeo:SocialUnit
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sbeo:hasSeverity ;
+                                        owl:allValuesFrom sbeo:Severity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sbeo:hasSeverity ;
+                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sbeo:ofActivity ;
+                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                      ] ;
+                      rdfs:comment "A parameter to express the severity of an activity for a specific person (or type of persons) in terms of  potential severity levels."@en ;
+                      rdfs:label "Activity Severity"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActivityStatus
@@ -1109,6 +1253,33 @@ sbeo:Event rdf:type owl:Class ;
            rdfs:label "Event"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#EventSeverity
+sbeo:EventSeverity rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:Parameter ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:ofEvent ;
+                                     owl:someValuesFrom sbeo:Event
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:forPerson ;
+                                     owl:allValuesFrom sbeo:SocialUnit
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:hasSeverity ;
+                                     owl:allValuesFrom sbeo:Severity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:hasSeverity ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:ofEvent ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   rdfs:comment "A parameter to express the severity of an event for a specific person (or type of persons) in terms of  potential severity levels."@en ;
+                   rdfs:label "Event Severity"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Exit
 sbeo:Exit rdf:type owl:Class ;
           rdfs:subClassOf sbeo:TransitionPoint ;
@@ -1305,7 +1476,11 @@ sbeo:ImpairedPerson rdf:type owl:Class ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Incident
 sbeo:Incident rdf:type owl:Class ;
-              rdfs:subClassOf sbeo:Event ;
+              rdfs:subClassOf sbeo:Event ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:hasIntensity ;
+                                owl:someValuesFrom sbeo:Intensity
+                              ] ;
               rdfs:comment "An event or occurance that can be dangerous for the occupants of the building."@en ;
               rdfs:label "Incident"@en .
 
@@ -1315,6 +1490,12 @@ sbeo:IncidentProtectionDevice rdf:type owl:Class ;
                               rdfs:subClassOf sbeo:Device ;
                               rdfs:comment "Device that is used to avoid and minimize the effects of potentially danger events for the occupants of the building as well as for the structure of building itself."@en ;
                               rdfs:label "Incident Protection Device"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Intensity
+sbeo:Intensity rdf:type owl:Class ;
+               rdfs:comment "The measurable amount of a property, such as force, brightness, or a magnetic field (Oxford Dictionary of English)."@en ;
+               rdfs:label "Intensity"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Junction
@@ -1352,6 +1533,13 @@ sbeo:MeetingRoom rdf:type owl:Class ;
                  rdfs:label "Meeting Room"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#MentalAbility
+sbeo:MentalAbility rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:Ability ;
+                   rdfs:comment "The mental ability of an indi-vidual to remain focused on an external stimuli or an internal experience for a certain period of time (World Health Organisation)."@en ;
+                   rdfs:label "Mental Ability"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MentalImpairedPerson
 sbeo:MentalImpairedPerson rdf:type owl:Class ;
                           rdfs:subClassOf sbeo:ImpairedPerson ;
@@ -1372,6 +1560,13 @@ sbeo:MobilePhone rdf:type owl:Class ;
                                  sbeo:Telephone ;
                  rdfs:comment "A telephone with access to a cellular radio system so it can be used over a wide area, without a physical connection to a network (Oxford Dictionary of English)."@en ;
                  rdfs:label "Mobile Phone"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilityAbility
+sbeo:MobilityAbility rdf:type owl:Class ;
+                     rdfs:subClassOf sbeo:Ability ;
+                     rdfs:comment "This ability is used to represent all kinetic abilities a person may have."@en ;
+                     rdfs:label "Mobility Ability"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#MobilityWithAssistedDevicePerson
@@ -1511,6 +1706,33 @@ sbeo:PassiveFireProtectionDevice rdf:type owl:Class ;
                                  rdfs:label "Passive Fire Protection"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#PersonAbility
+sbeo:PersonAbility rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:Parameter ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:forPerson ;
+                                     owl:allValuesFrom foaf:Person
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:hasAbility ;
+                                     owl:allValuesFrom sbeo:Ability
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:hasQuality ;
+                                     owl:allValuesFrom sbeo:Quality
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:hasAbility ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:hasQuality ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   rdfs:comment "A parameter to express the quality of an ability a specific person (or type of persons) own."@en ;
+                   rdfs:label "Person Ability"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#PersonAccessibility
 sbeo:PersonAccessibility rdf:type owl:Class ;
                          rdfs:subClassOf sbeo:Parameter ,
@@ -1568,6 +1790,12 @@ sbeo:ProfoundHearingImpairedPerson rdf:type owl:Class ;
                                    rdfs:subClassOf sbeo:HearingImpairedPerson ;
                                    rdfs:comment "A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time."@en ;
                                    rdfs:label "Profound Hearing Impaired Person"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Quality
+sbeo:Quality rdf:type owl:Class ;
+             rdfs:comment "A degree or grade of excellence or worth."@en ;
+             rdfs:label "Quality"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#Ramp
@@ -1689,6 +1917,13 @@ sbeo:SensorEvent rdf:type owl:Class ;
                  rdfs:label "Sensor Event"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SensoryAbility
+sbeo:SensoryAbility rdf:type owl:Class ;
+                    rdfs:subClassOf sbeo:Ability ;
+                    rdfs:comment "Sensory ability is referred to the brain's ability to receive, interpret, and effectively use the information provided by the senses in human beings such as touch, hear, smell, vision, etc."@en ;
+                    rdfs:label "Sensor Ability"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#SensoryImpairedPerson
 sbeo:SensoryImpairedPerson rdf:type owl:Class ;
                            rdfs:subClassOf sbeo:ImpairedPerson ;
@@ -1701,6 +1936,12 @@ sbeo:SevereHearingImpairedPerson rdf:type owl:Class ;
                                  rdfs:subClassOf sbeo:HearingImpairedPerson ;
                                  rdfs:comment "A person who is unable to hear anything without wearing a hearing aid."@en ;
                                  rdfs:label "Severe Hearing Impaired Person"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Severity
+sbeo:Severity rdf:type owl:Class ;
+              rdfs:comment "The quality of being hard to endure, uninviting or formidable."@en ;
+              rdfs:label "Severity"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ShoppingMallBuilding
@@ -1770,6 +2011,13 @@ sbeo:SpaceSafety rdf:type owl:Class ;
                                  ] ;
                  rdfs:comment "A parameter to express the safety of any space for a specific person (or type of persons) in terms of some value."@en ;
                  rdfs:label "Space Saftey"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#SpatialAbility
+sbeo:SpatialAbility rdf:type owl:Class ;
+                    rdfs:subClassOf sbeo:Ability ;
+                    rdfs:comment "This ability expresses the capacity to understand, reason and remember the spatial relations among objects and spaces."@en ;
+                    rdfs:label "Spatial Ability"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#StadiumBuilding
