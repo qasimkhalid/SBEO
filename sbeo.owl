@@ -287,11 +287,23 @@ sbeo:hasFitnessStatus rdf:type owl:ObjectProperty ;
                       rdfs:label "Has Fitness Status"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#hasImpact
+sbeo:hasImpact rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( sbeo:ActivityImpact
+                                           sbeo:EventImpact
+                                         )
+                           ] ;
+               rdfs:range sbeo:Impact ;
+               rdfs:comment "A property to express the impact of a particular sbeo:Activity or sbeo:Event."@en ;
+               rdfs:label "Has Impact"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasIntensity
 sbeo:hasIntensity rdf:type owl:ObjectProperty ;
                   rdfs:domain [ rdf:type owl:Class ;
                                 owl:unionOf ( sbeo:Activity
-                                              sbeo:Incident
+                                              sbeo:Event
                                             )
                               ] ;
                   rdfs:range sbeo:Intensity ;
@@ -341,7 +353,6 @@ sbeo:hasQuality rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#hasSeverity
 sbeo:hasSeverity rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
                  rdfs:domain [ rdf:type owl:Class ;
                                owl:unionOf ( sbeo:ActivitySeverity
                                              sbeo:EventSeverity
@@ -440,8 +451,11 @@ sbeo:notificationPreference rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ofActivity
 sbeo:ofActivity rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain sbeo:ActivitySeverity ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( sbeo:ActivityImpact
+                                            sbeo:ActivitySeverity
+                                          )
+                            ] ;
                 rdfs:range sbeo:Activity ;
                 rdfs:comment "A property to express a sbeo:Activity in a n-ary relation for sbeo:ActivitySeverity."@en ;
                 rdfs:label "Of Activity"@en .
@@ -449,7 +463,11 @@ sbeo:ofActivity rdf:type owl:ObjectProperty ;
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ofEvent
 sbeo:ofEvent rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:EventSeverity ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( sbeo:ActivityImpact
+                                         sbeo:EventSeverity
+                                       )
+                         ] ;
              rdfs:range sbeo:Incident ;
              rdfs:comment "A property to express a sbeo:Event in a n-ary relation for sbeo:EventSeverity."@en ;
              rdfs:label "Of Event"@en .
@@ -942,13 +960,36 @@ sbeo:Activity rdf:type owl:Class ;
               rdfs:label "Activity"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#ActivityImpact
+sbeo:ActivityImpact rdf:type owl:Class ;
+                    rdfs:subClassOf sbeo:Parameter ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sbeo:forPerson ;
+                                      owl:allValuesFrom sbeo:SocialUnit
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sbeo:hasImpact ;
+                                      owl:allValuesFrom sbeo:Impact
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sbeo:ofActivity ;
+                                      owl:allValuesFrom sbeo:Activity
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sbeo:hasImpact ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sbeo:ofActivity ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] ;
+                    rdfs:comment "A parameter to express the impact of an activity on a specific person (or type of persons) in terms of any specific value or a type."@en ;
+                    rdfs:label "Activity Impact"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ActivitySeverity
 sbeo:ActivitySeverity rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:Parameter ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty sbeo:ofActivity ;
-                                        owl:someValuesFrom sbeo:Activity
-                                      ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty sbeo:forPerson ;
                                         owl:allValuesFrom sbeo:SocialUnit
@@ -956,6 +997,10 @@ sbeo:ActivitySeverity rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty sbeo:hasSeverity ;
                                         owl:allValuesFrom sbeo:Severity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sbeo:ofActivity ;
+                                        owl:allValuesFrom sbeo:Activity
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty sbeo:hasSeverity ;
@@ -1253,13 +1298,36 @@ sbeo:Event rdf:type owl:Class ;
            rdfs:label "Event"@en .
 
 
+###  http://www.ia.urjc.es/ontologies/building/sbeo#EventImpact
+sbeo:EventImpact rdf:type owl:Class ;
+                 rdfs:subClassOf sbeo:Parameter ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:forPerson ;
+                                   owl:allValuesFrom sbeo:SocialUnit
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:hasImpact ;
+                                   owl:allValuesFrom sbeo:Impact
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:ofEvent ;
+                                   owl:allValuesFrom sbeo:Event
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:hasImpact ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:ofEvent ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "A parameter to express the impact of an event on a specific person (or type of persons) in terms of any specific value or a type."@en ;
+                 rdfs:label "Event Impact"@en .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#EventSeverity
 sbeo:EventSeverity rdf:type owl:Class ;
                    rdfs:subClassOf sbeo:Parameter ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty sbeo:ofEvent ;
-                                     owl:someValuesFrom sbeo:Event
-                                   ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty sbeo:forPerson ;
                                      owl:allValuesFrom sbeo:SocialUnit
@@ -1267,6 +1335,10 @@ sbeo:EventSeverity rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty sbeo:hasSeverity ;
                                      owl:allValuesFrom sbeo:Severity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sbeo:ofEvent ;
+                                     owl:allValuesFrom sbeo:Event
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty sbeo:hasSeverity ;
@@ -1465,6 +1537,12 @@ sbeo:ImageDescription rdf:type owl:Class ;
                       rdfs:subClassOf sbeo:Description ;
                       rdfs:comment "A type of description in which images are given to provide information about any entity."@en ;
                       rdfs:label "Image Description"@en .
+
+
+###  http://www.ia.urjc.es/ontologies/building/sbeo#Impact
+sbeo:Impact rdf:type owl:Class ;
+            rdfs:comment "An impact is a long-lasting effect of an event (or activity), that continues to exist after the event (or activity) has taken place."@en ;
+            rdfs:label "Impact"@en .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/sbeo#ImpairedPerson
