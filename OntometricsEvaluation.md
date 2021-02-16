@@ -1,25 +1,9 @@
-| Name | Description          |
-| ------------- | ----------- |
-| Help      | Display the help window.|
-| Close     | Closes a window     |
-You can also include inline Markdown such as links, bold, italics, or strikethrough:
 
-| Name | Description          |
-| ------------- | ----------- |
-| Help      | ~~Display the~~ help window.|
-| Close     | _Closes_ a window     |
-Finally, by including colons : within the header row, you can define text to be left-aligned, right-aligned, or center-aligned:
-
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
 
 
 Ontology Metrics
 
-| Base Metrics                                       |           |
+| **Base Metrics**                                       |           |
 |----------------------------------------------------|-----------|
 | Axioms                                             | 1325      |
 | Logical axioms count                               | 406       |
