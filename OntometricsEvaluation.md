@@ -1,9 +1,9 @@
+#SBEO Evaluation Using Ontometrics:
 
 
+##Ontology Metrics
 
-Ontology Metrics
-
-| **Base Metrics**                                       |           |
+| Base Metrics                                       |           |
 |----------------------------------------------------|-----------|
 | Axioms                                             | 1325      |
 | Logical axioms count                               | 406       |
@@ -73,7 +73,7 @@ Ontology Metrics
 | Annotation property range axioms count:            | 0         |
 
 
-Schema, Knowledgebase, and Graph metrics
+##Schema, Knowledgebase, and Graph metrics
 
 | Schema metric                                       |           |
 |----------------------------------------------------|-----------|
