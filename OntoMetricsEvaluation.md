@@ -1,4 +1,4 @@
-# SBEO Evaluation Using Ontometrics:
+# SBEO Evaluation Using [OntoMetrics](https://ontometrics.informatik.uni-rostock.de/ontologymetrics/index.jsp):
 
 
 ## Ontology Metrics
