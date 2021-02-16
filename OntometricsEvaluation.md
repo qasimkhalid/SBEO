@@ -1,7 +1,7 @@
-#SBEO Evaluation Using Ontometrics:
+# SBEO Evaluation Using Ontometrics:
 
 
-##Ontology Metrics
+## Ontology Metrics
 
 | Base Metrics                                       |           |
 |----------------------------------------------------|-----------|
@@ -73,7 +73,7 @@
 | Annotation property range axioms count:            | 0         |
 
 
-##Schema, Knowledgebase, and Graph metrics
+## Schema, Knowledgebase, and Graph metrics
 
 | Schema metric                                       |           |
 |----------------------------------------------------|-----------|
