@@ -2,27 +2,22 @@
 <rdf:RDF xmlns="http://www.ia.urjc.es/ontologies/building/sbeo#"
      xml:base="http://www.ia.urjc.es/ontologies/building/sbeo"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:olo="http://purl.org/ontology/olo/core#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:sbeo="http://www.ia.urjc.es/ontologies/building/sbeo#"
-     xmlns:seas="https://w3id.org/seas/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:sosa="http://www.w3.org/ns/sosa/"
-     xmlns:schema="http://schema.org/"
-     xmlns:dcterms="http://purl.org/dc/terms/">
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="http://www.ia.urjc.es/ontologies/building/sbeo">
         <dc:rights rdf:resource="https://www.gnu.org/licenses/gpl.html"/>
-        <dcterms:creator>Qasim Khalid</dcterms:creator>
-        <dcterms:description xml:lang="en">Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
+        <terms:creator>Qasim Khalid</terms:creator>
+        <terms:description xml:lang="en">Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
-The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</dcterms:description>
-        <dcterms:language>en</dcterms:language>
-        <dcterms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</dcterms:title>
+The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</terms:description>
+        <terms:language>en</terms:language>
+        <terms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</terms:title>
         <rdfs:seeAlso rdf:resource="https://github.com/qasimkhalid/SBEO"/>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
     </owl:Ontology>
