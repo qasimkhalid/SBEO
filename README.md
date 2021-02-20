@@ -8,7 +8,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 Namespace URI: 
 
-> <i class="icon-file"></i>`https://w3id.org/SBEO#`
+> <i class="icon-file"></i>`https://w3id.org/sbeo#`
 
 ## Diagram 
 
