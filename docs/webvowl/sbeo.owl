@@ -1,0 +1,3864 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/sbeo#"
+     xml:base="https://w3id.org/sbeo"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:olo="http://purl.org/ontology/olo/core#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sbeo="https://w3id.org/sbeo#"
+     xmlns:seas="https://w3id.org/seas/"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:schema="http://schema.org/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/sbeo">
+        <dc:rights rdf:resource="https://www.gnu.org/licenses/gpl.html"/>
+        <dcterms:creator>Qasim Khalid</dcterms:creator>
+        <dcterms:description xml:lang="en">Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
+
+The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</dcterms:description>
+        <dcterms:language>en</dcterms:language>
+        <dcterms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</dcterms:title>
+        <rdfs:seeAlso rdf:resource="https://github.com/qasimkhalid/SBEO"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://schema.org/domainIncludes -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/domainIncludes"/>
+    
+
+
+    <!-- http://schema.org/rangeIncludes -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/rangeIncludes"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#item -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#item">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">An item of a slot in an ordered list.</rdfs:comment>
+        <rdfs:label xml:lang="en">has item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#next -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#next">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#previous"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">Associates the next slot in an ordered list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has next</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#ordered_list -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#ordered_list">
+        <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#slot"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
+        <rdfs:comment xml:lang="en">An ordered list of an slot.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has ordered list</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#previous -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#previous">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">Associates the previous slot in an ordered list</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has previous</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#slot -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#slot">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:comment xml:lang="en">A slot in an ordered list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has slot</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observes -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observes">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <schema:rangeIncludes rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:comment xml:lang="en">Relation between a Sensor and an ObservableProperty that it is capable of sensing.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">observes</rdfs:label>
+        <skos:definition xml:lang="en">Relation between a Sensor and an ObservableProperty that it is capable of sensing.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#accompanying -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#accompanying">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">Be present or associated with a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accompanying</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#acquaintanceOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#acquaintanceOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">Any friend or an acquaintance tie among occupants.</rdfs:comment>
+        <rdfs:label xml:lang="en">Acquaintance Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#adjacentTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#adjacentTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Nearest in space or position; immediately adjoining without intervening space or element; an exact neighbour.</rdfs:comment>
+        <rdfs:label xml:lang="en">Adjacent To</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#assignedRoute -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#assignedRoute">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Route"/>
+        <rdfs:comment xml:lang="en">A set of connected spaces(normally in the form of rdf:list) assigned to a social unit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assigned Route</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#connectedTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#connectedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Being joined by a common element; more specificially, a physical connection between two space elements.</rdfs:comment>
+        <rdfs:label xml:lang="en">Connected To</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#context -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#context">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#RoleInContext"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#SocialUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">The circumstances that form the setting for an event, statement, or idea, and in terms of which it can be fully understood and assessed (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Context</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#excludedFor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#excludedFor">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:comment xml:lang="en">Expresses the removal of any physical space or point of interest for the consideration of any social unit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Excluded For</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#familiarWith -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#familiarWith">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">States the familiarity of any social unit with a physical space or point of interest.</rdfs:comment>
+        <rdfs:label xml:lang="en">Familiar With</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#forPerson -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#forPerson">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">A property to express a foaf:Person in a n-ary relation for sbeo:Parameter.</rdfs:comment>
+        <rdfs:label xml:lang="en">For Person</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasAbility -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasAbility">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#PersonAbility"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Ability"/>
+        <rdfs:comment xml:lang="en">A property to express a sbeo:Ability in a n-ary relation for sbeo:PersonAbility.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Ability</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasActivityStatus -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasActivityStatus">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#ActivityStatus"/>
+        <rdfs:comment xml:lang="en">The status of an activity being performed by a social unit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Activity Status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasAvailabilityStatus -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasAvailabilityStatus">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Device"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#AvailabilityStatus"/>
+        <rdfs:comment xml:lang="en">The status of something in terms of availability. For example, available or unavailable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Availability Status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasDescription -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasDescription">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Device"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Description"/>
+        <rdfs:comment xml:lang="en">Expresses a descriptive information about any specific space, point, activiy, event or device.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Description</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasDeviationState -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasDeviationState">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#DeviationState"/>
+        <rdfs:comment xml:lang="en">A deviation status of a person depending on how ofthen one deviates from the proposed route.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Deviation State</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasFitnessStatus -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasFitnessStatus">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#FitnessStatus"/>
+        <rdfs:comment xml:lang="en">A fitness status is associated with a person that represent the quality of being suitable for a specific activity. There are three different levels of fitness levels are introduced that can be extended according to the needs of the application. These are &apos;Fit&apos;, &apos;Exhausted&apos; and &apos;Injured&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Fitness Status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasImpact -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasImpact">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#ActivityImpact"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#EventImpact"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Impact"/>
+        <rdfs:comment xml:lang="en">A property to express the impact of a particular sbeo:Activity or sbeo:Event.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Impact</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasIntensity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasIntensity">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Intensity"/>
+        <rdfs:comment xml:lang="en">A property to express the intensity of a particular sbeo:Activity or sbeo:Event.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Intensity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasMember -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasMember">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#Group"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">Expresses one of the persons who compose a social group.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasMotionState -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasMotionState">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#MotionState"/>
+        <rdfs:comment xml:lang="en">The motion state of a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Motion State</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasNavigationalState -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasNavigationalState">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#NavigationalState"/>
+        <rdfs:comment xml:lang="en">A navigational state of a social unit while following any path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Navigational State</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasNavigationalType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasNavigationalType">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Navigation"/>
+        <rdfs:comment xml:lang="en">A type of navigation provided to a person to perform a specific activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Navigation Type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasQuality">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#PersonAbility"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Quality"/>
+        <rdfs:comment xml:lang="en">A property to express a quality of something in terms of different levels. For example, good, bad, medium, perfect, mild, and so forth.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasSeverity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasSeverity">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#ActivitySeverity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#EventSeverity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Severity"/>
+        <rdfs:comment xml:lang="en">A property to express a sbeo:Severity in a n-ary relation for sbeo:ActivitySeverity or  sbeo:EventSeverity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Severity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#installedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#installedIn">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Place or fix (equipment or machinery) in position ready for use (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Installed In</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#leadsTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#leadsTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Be a means of access to a particular space or point.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lead To</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#locatedIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#SocialUnit"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">States the location of any social unit, activity, event, physical space, or a point of interest at any other physical space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Located In</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#lower -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#lower">
+        <owl:inverseOf rdf:resource="https://w3id.org/sbeo#upper"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/seas/BuildingStorey"/>
+        <rdfs:range rdf:resource="https://w3id.org/seas/BuildingStorey"/>
+        <rdfs:comment xml:lang="en">Associates the lower storey in a building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lower</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#meansOfNotification -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#meansOfNotification">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#AlertingDevice"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#DisplayScreen"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#HandheldDevice"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Telephone"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">A method of notifying a social unit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Means of Notification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#notificationPreference -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#notificationPreference">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Description"/>
+        <rdfs:comment xml:lang="en">A notification preference for any kind of social unit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Notification Preference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#ofActivity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#ofActivity">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#ActivityImpact"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#ActivitySeverity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Activity"/>
+        <rdfs:comment xml:lang="en">A property to express a sbeo:Activity in a n-ary relation for sbeo:ActivitySeverity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Of Activity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#ofEvent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#ofEvent">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#ActivityImpact"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#EventSeverity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:comment xml:lang="en">A property to express a sbeo:Event in a n-ary relation for sbeo:EventSeverity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Of Event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#ofSpace -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#ofSpace">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">A property to express a sbeo:Space in a n-ary relation for sbeo:Parameter.</rdfs:comment>
+        <rdfs:label xml:lang="en">Of Space</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#partOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#partOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Expresses a physical space as a part or a fragment of another physical space. For example, a block of apartments can be a part of apartment building, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Part Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#performedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#performedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#Activity"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:comment xml:lang="en">Expresses an activity carried out by a social unit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Performed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#player -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#player">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#RoleInContext"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">It express an agent that plays a role in a specific context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Player</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#responsibleTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#responsibleTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/sbeo#acquaintanceOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">Having an obligation to do something, or having control over or care for someone, as part of one&apos;s role (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Responsible To</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#role -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#role">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#RoleInContext"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Role"/>
+        <rdfs:comment xml:lang="en">Expresses a role of an agent.</rdfs:comment>
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#routePreference -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#routePreference">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Route"/>
+        <rdfs:comment xml:lang="en">Route preference of a social unit to perform an activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Route Preference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#routeType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#routeType">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#Route"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#GraphBasedRoute"/>
+        <rdfs:comment xml:lang="en">This property is used to express the type of a route in terms of graph-based routes, such as Shortest Path, Simplest Path etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Route Type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#upper -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#upper">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/seas/BuildingStorey"/>
+        <rdfs:range rdf:resource="https://w3id.org/seas/BuildingStorey"/>
+        <rdfs:comment xml:lang="en">Associates the upper storey in a building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Upper</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#uses -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#uses">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Device"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Expresses a momentary information about a physical space or a point being used by a social unit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Uses</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#index -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontology/olo/core#index">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment xml:lang="en">An index of a slot in an ordered list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">has index</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The age of the person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The first name of the person.</rdfs:comment>
+        <rdfs:label xml:lang="en">First Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/gender -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The gender of a person. It is typically but not necessarily &apos;male&apos; or &apos;female&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gender</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/lastName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">The last name of the person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Last Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#accommodationCapacity -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#accommodationCapacity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The accommodating capacity (in terms of persons) of a particular space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accommodation Capacity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#atTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#atTime">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Device"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#SocialUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The time at which an activity or event occurred.</rdfs:comment>
+        <rdfs:label xml:lang="en">At Time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#cost -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#cost">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">A numeric value associated with an edge or a complete route(path). It is also reffered to as a weight.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cost</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#currentOccupancy -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#currentOccupancy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The current occupancy (in terms of persons) of a particular space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Current Occupancy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#dynamicDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#dynamicDescription">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#SocialUnit"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A dynamic or momentary information about a specific activity, event, social unit, or a space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dynamic Description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#endedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#endedAtTime">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/sbeo#startedAtTime"/>
+        <rdfs:comment xml:lang="en">The time at which an activity ended.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ended At Time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#hasValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Provides a value that is a direct representation of an entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#hasXTimesDeviated -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#hasXTimesDeviated">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Number of times a social unit is deviated while following the provided path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has X Time Deviated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#id -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#id">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Device"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#SocialUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">An unique identification number of something such as, social unit, device, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Identification Number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#length -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#length">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ontology/olo/core#OrderedList"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Group"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Passage"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The measurement or extent of something from end to end (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Length</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#number -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#number">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">A number assigned to anything.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has Number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#speed -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#speed">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The average speed of a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Speed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#speedFactor -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#speedFactor">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">A multiplying factor that may affect the speed of person while passing through a specific space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Speed Factor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#startedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#startedAtTime">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Start is when an activity is deemed to have been started by an entity, known as trigger.</rdfs:comment>
+        <rdfs:label xml:lang="en">Started At Time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#staticDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#staticDescription">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PointOfInterest"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#SocialUnit"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A static or a fix information about any activity, event, space, social unit, or point of interest.</rdfs:comment>
+        <rdfs:label xml:lang="en">Static Description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#timeDuration -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#timeDuration">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Activity"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Event"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The length of time during which any activity or event lasts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Time Duration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#travelTime -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#travelTime">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Passage"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">A specific period of time required to move from one place to another.</rdfs:comment>
+        <rdfs:label xml:lang="en">Travel Time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/sbeo#width -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#width">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Passage"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The measurement or extent of something from side to side (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Width</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#OrderedList -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#length"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An ordered list with a given length an indexed items.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">Ordered List</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/olo/core#Slot -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/olo/core#Slot">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#next"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#ordered_list"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#previous"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ontology/olo/core#index"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A slot in an ordered list with a fixed index.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/olo/core#"/>
+        <rdfs:label xml:lang="en">Slot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty">
+        <rdfs:comment xml:lang="en">An observable quality (property, characteristic) of a FeatureOfInterest.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Observable Property</rdfs:label>
+        <skos:definition xml:lang="en">An observable quality (property, characteristic) of a FeatureOfInterest.</skos:definition>
+        <skos:example xml:lang="en">The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:comment xml:lang="en">Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">Sensor</rdfs:label>
+        <skos:definition xml:lang="en">Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</skos:definition>
+        <skos:example xml:lang="en">Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:comment xml:lang="en">It represents a single individual of any age and having any type of characteristics.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Ability -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Ability">
+        <rdfs:comment xml:lang="en">Possession of the means or skill to do something (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AbilityToHear -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToHear">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
+        <rdfs:comment xml:lang="en">An ability to hear.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability To Hear</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AbilityToRun -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToRun">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityAbility"/>
+        <rdfs:comment xml:lang="en">An ability to run.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability To Run</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AbilityToSee -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToSee">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
+        <rdfs:comment xml:lang="en">An ability to hear.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability To See</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AbilityToTalk -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToTalk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
+        <rdfs:comment xml:lang="en">An ability to talk.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability To Talk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AbilityToTouch -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToTouch">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
+        <rdfs:comment xml:lang="en">An ability to touch.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability To Touch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AbilityToUseStairs -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToUseStairs">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityAbility"/>
+        <rdfs:comment xml:lang="en">An ability to use the stairs. Note that the people on the wheelchair are not considered to have this ability no matter the stairs have a stairlift and a ramp.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability To Use Stairs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AbilityToWalk -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToWalk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityAbility"/>
+        <rdfs:comment xml:lang="en">An ability of a person to walk. A person who is using crutches is also considered to have this ability.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ability To Walk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ActiveFireProtectionDevice -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ActiveFireProtectionDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#FireProtectionDevice"/>
+        <rdfs:comment xml:lang="en">It is an integral part of the fire protection used as a first response to minimize the spread of fire and related effects.</rdfs:comment>
+        <rdfs:label xml:lang="en">Active Fire Protection Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Activity -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Activity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasIntensity"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/sbeo#Intensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A process that a person, group of persons, or machine does during a specific amount of time, such as visiting, shopping, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ActivityImpact -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ActivityImpact">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#forPerson"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasImpact"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofActivity"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasImpact"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofActivity"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A parameter to express the impact of an activity on a specific person (or type of persons) in terms of any specific value or a type.</rdfs:comment>
+        <rdfs:label xml:lang="en">Activity Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ActivitySeverity -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ActivitySeverity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#forPerson"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasSeverity"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Severity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofActivity"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasSeverity"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofActivity"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A parameter to express the severity of an activity for a specific person (or type of persons) in terms of  potential severity levels.</rdfs:comment>
+        <rdfs:label xml:lang="en">Activity Severity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ActivityStatus -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ActivityStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Evacuated"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Evacuating"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#PickingUpDependents"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Visiting"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">It expresses the status of a specific activity being performed by a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Activity Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AlertingDevice -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AlertingDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:comment xml:lang="en">Alerting devices are those devices that are used to react to normal as well as alarming situations to let people know that some specific condition is occuring.</rdfs:comment>
+        <rdfs:label xml:lang="en">Alerting Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AlertingDeviceForImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AlertingDeviceForImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#AlertingDevice"/>
+        <rdfs:comment xml:lang="en">An alerting device that is used to assist or notify people with impairments during a specific circumstance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Alerting Device For Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AlzheimersDiseasedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AlzheimersDiseasedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MentalImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person having an Alzheimer&apos;s disease.</rdfs:comment>
+        <rdfs:label xml:lang="en">Alzheimer&apos;s Diseased Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Apartment -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Apartment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary).</rdfs:comment>
+        <rdfs:label xml:lang="en">Apartment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AppartmentBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AppartmentBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/ResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">A set of one or more buildings that contain apartments in it.</rdfs:comment>
+        <rdfs:label xml:lang="en">Appartment Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AssemblyPoint -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AssemblyPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
+        <rdfs:comment xml:lang="en">A place where people in an office, etc. should go if there is an emergency, for example, a fire (Cambridge English Dictionary) .</rdfs:comment>
+        <rdfs:label xml:lang="en">Assembly Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AudioDescription -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AudioDescription">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Description"/>
+        <rdfs:comment xml:lang="en">A type of description in which sounds such as voices, are used to provide the information about any entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Audio Description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AutonomousMobilityPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AutonomousMobilityPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MotorImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who can walk on his/her with a help of a non-motorised device, e.g. crutches.</rdfs:comment>
+        <rdfs:label xml:lang="en">Autonomous Mobility Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#AvailabilityStatus -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#AvailabilityStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Available"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#UnAvailable"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">It expresses the status of something that is either available or not.</rdfs:comment>
+        <rdfs:label xml:lang="en">Availability Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#BlindPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#BlindPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisuallyImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who has lost the vision completly and can neither see naturally nor with the help of any device.</rdfs:comment>
+        <rdfs:label xml:lang="en">Blind Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#BuildingEntrance -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#BuildingEntrance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Building Entrance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#BuildingExit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#BuildingExit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the exit of a building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Building Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ChemicalSpill -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ChemicalSpill">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:comment xml:lang="en">A hazardous event that happens due to the spillage or leakge of any toxic chemical in the building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Chemical Spill</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#CinemaBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#CinemaBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/AssemblyBuilding"/>
+        <rdfs:comment xml:lang="en">A building in which movies are shown.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cinema Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Classroom -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Classroom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A room, typically in a school, in which a class of students is taught (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Classroom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ColourBlindPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ColourBlindPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisuallyImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person having the decreased ability to see color or differences in color.</rdfs:comment>
+        <rdfs:label xml:lang="en">Colour Blind Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Congestion -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Congestion">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:comment xml:lang="en">An event that happens at bottlenecks when the flow of people increases than a provided limit due to herding (and similar phenomena of human behaviour), especially during an emergency evacuation process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Congestion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#CorridorEntrance -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#CorridorEntrance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a corridor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Corridor Entrance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#CorridorExit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#CorridorExit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the exit of a corridor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Corridor Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#CorridorSegment -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#CorridorSegment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Corridor"/>
+        <rdfs:comment xml:lang="en">A fragment or an atomic element of a corridor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Corridor Segment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#DayCare -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#DayCare">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A place where infants and young children are provided a supervision and care of during the daytime, particularly so that their parents can hold jobs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Day Care</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Description -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Description">
+        <rdfs:comment xml:lang="en">A representation and detail of a person, object, or event. It is used to describe the details of anything.</rdfs:comment>
+        <rdfs:label xml:lang="en">Description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#DeviationState -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#DeviationState">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#NoDeviate"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#OftenDeviate"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#RareDeviate"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#TooOftenDeviate"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">It models the user&apos;s deviation state from one&apos;s proposed route. For example, NoDeviate, RareDeviate, OftenDeviate, and TooOftenDeviate.</rdfs:comment>
+        <rdfs:label xml:lang="en">Deviation State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Device -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Device">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasAvailabilityStatus"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#DisplayScreen -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#DisplayScreen">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:comment xml:lang="en">A display screen is an output device to represent the information in visual or tactile form.</rdfs:comment>
+        <rdfs:label xml:lang="en">Display Screen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#DownSyndromePerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#DownSyndromePerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MentalImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person with Down&apos;s syndrome.</rdfs:comment>
+        <rdfs:label xml:lang="en">Down Syndrome Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Earthquake -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Earthquake">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:comment xml:lang="en">A sudden violent shaking of the ground, typically causing great destruction, as a result of movements within the earth&apos;s crust or volcanic action (Oxford Dictionary of English). It may cause a sudden panic among the occupants of the building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Earthquake</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EmergencyActivity -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyActivity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Activity"/>
+        <rdfs:comment xml:lang="en">An activity that is done with an urgency and highest priority.</rdfs:comment>
+        <rdfs:label xml:lang="en">Emergency Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EmergencyEvacuation -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyEvacuation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#EmergencyActivity"/>
+        <rdfs:comment xml:lang="en">It represents an immediate escape of people away from a particular area that has ongoing or imminent hazard to their lives or property.</rdfs:comment>
+        <rdfs:label xml:lang="en">Emergency Evacuation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EmergencyEvacuationGroup -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyEvacuationGroup">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Group"/>
+        <rdfs:comment xml:lang="en">A group of two or more persons who are supposed to evacuate the building together.</rdfs:comment>
+        <rdfs:label xml:lang="en">Emergency Evacuation Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EmergencyEvacuationRoute -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyEvacuationRoute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ExitRoute"/>
+        <rdfs:comment xml:lang="en">A type of route in which only those spaces are mentioned that are potentially safe for its users as well as the ending point of it must be an exit from a particular space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Emergency Evacuation Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EmergencyExit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyExit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
+        <rdfs:comment xml:lang="en">Emergency exit is logical point that is only used in case of any emergency conditions such as fire, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Emergency Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EndPoint -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EndPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#NavigationalPoint"/>
+        <rdfs:comment xml:lang="en">A logic point that is used to indicate the end of a corridor.</rdfs:comment>
+        <rdfs:label xml:lang="en">End Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Entrance -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Entrance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#TransitionPoint"/>
+        <rdfs:comment xml:lang="en">Entrance represents a space or a door that is used to enter into a building. Normally, it is also used as an exit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Entrance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Escalator -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Escalator">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A moving staircase consisting of an endlessly circulating belt of steps driven by a motor, which conveys people between the floors of a public building (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Escalator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EscortSupportedWheelchairPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EscortSupportedWheelchairPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithWheelchairPerson"/>
+        <rdfs:comment xml:lang="en">A physical impaired person whose wheelchair is escorted by another person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Escort Supported Wheelchair Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Event -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Event">
+        <rdfs:comment xml:lang="en">An occurrence; something that happens (Oxford Dictionary of English). It represents when something planned or sudden happens.</rdfs:comment>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EventImpact -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EventImpact">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#forPerson"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasImpact"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofEvent"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasImpact"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofEvent"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A parameter to express the impact of an event on a specific person (or type of persons) in terms of any specific value or a type.</rdfs:comment>
+        <rdfs:label xml:lang="en">Event Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#EventSeverity -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#EventSeverity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#forPerson"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasSeverity"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Severity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofEvent"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasSeverity"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofEvent"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A parameter to express the severity of an event for a specific person (or type of persons) in terms of  potential severity levels.</rdfs:comment>
+        <rdfs:label xml:lang="en">Event Severity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Exit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Exit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#TransitionPoint"/>
+        <rdfs:comment xml:lang="en">Exit represents a logical representation for escaping or releasing from a specific phsyical space. Generally, an exit is as same as an entrance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ExitRoute -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ExitRoute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Route"/>
+        <rdfs:comment xml:lang="en">A type of route in which the ending point represents the exit of a specific space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Exit Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Family -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Family">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Group"/>
+        <rdfs:comment xml:lang="en">A group of two or more persons having family ties between them.</rdfs:comment>
+        <rdfs:label xml:lang="en">Family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Fire -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Fire">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:comment xml:lang="en">An event that may burn different parts of the building and hazourdous for both the people and the building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#FireDoor -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#FireDoor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PassiveFireProtectionDevice"/>
+        <rdfs:comment xml:lang="en">A type of door used to minimize the spread of fire and related effects by isolating two connected spaces or sections in the building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fire Door</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#FireEscapeLadder -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#FireEscapeLadder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PassiveFireProtectionDevice"/>
+        <rdfs:comment xml:lang="en">A type of ladder which is used to make an emergency exit through the window out of fire accident site.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fire Escape Ladder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#FireExtinguisher -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#FireExtinguisher">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ActiveFireProtectionDevice"/>
+        <rdfs:comment xml:lang="en">An active fire protection instrument used by persons to blow out small scale fire.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fire Extinguisher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#FireProtectionDevice -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#FireProtectionDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#IncidentProtectionDevice"/>
+        <rdfs:comment xml:lang="en">Device that is used to minimize the effects of potentially danger fires.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fire Protection Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#FitnessStatus -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#FitnessStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Exhausted"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Fit"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Injured"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">A fitness status is associated with a person that represent the quality of being suitable for a specific activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fitness Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#FloorEntrance -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#FloorEntrance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a floor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Floor Entrance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#FloorExit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#FloorExit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the exit of a specific floor and that leads to different floors of a building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Floor Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Footpath -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Footpath">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Thoroughfare"/>
+        <rdfs:comment xml:lang="en">A path for pedestrians in a built-up area; a pavement.</rdfs:comment>
+        <rdfs:label xml:lang="en">Footpath</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#GraphBasedRoute -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#GraphBasedRoute">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#ShortestPath"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#SimplestPath"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Route"/>
+        <rdfs:comment xml:lang="en">A graph-based route is a graphical way of representing a route in terms of nodes (sometimes called vertices) and edges (sometimes called arcs).</rdfs:comment>
+        <rdfs:label xml:lang="en">Graph-Based Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Group -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Group">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasMember"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#length"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#length"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">It represents a collection of two or more people who interact with each other and may have the similar characteristics or objectives.</rdfs:comment>
+        <rdfs:label xml:lang="en">Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HallEntrance -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HallEntrance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a hall.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hall Entrance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HallExit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HallExit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the exit of a Hall.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hall Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HallSegment -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HallSegment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Hall"/>
+        <rdfs:comment xml:lang="en">A fragment or an atomic element of a hall.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hall Segment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HandheldDevice -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HandheldDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:comment xml:lang="en">A smart device or a computer that is small enough to be used while holding it in the hands.</rdfs:comment>
+        <rdfs:label xml:lang="en">Handheld Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HearingImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HearingImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryImpairedPerson"/>
+        <rdfs:comment xml:lang="en">It is a partial or total unability to hear. It is also known as Hearing loss.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hearing Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HorizontalMovingPavement -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HorizontalMovingPavement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MovingPavement"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sbeo#VerticalMovingPavement"/>
+        <rdfs:comment xml:lang="en">A slow-moving conveyor mechanism that transports people across a horizontal plane over a short to medium distance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Horizontal Moving Pavement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HorizontalPassage -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HorizontalPassage">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Passage"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
+        <rdfs:comment xml:lang="en">A type of a passage that connects spatial elements located on the same storey or floor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Horizontal Passage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#HotelBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#HotelBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/ResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">A building that contains rooms, apartments or suites where people stay for a specific time period.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hotel Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ImageDescription -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ImageDescription">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Description"/>
+        <rdfs:comment xml:lang="en">A type of description in which images are given to provide information about any entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Image Description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Impact -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Impact">
+        <rdfs:comment xml:lang="en">An impact is a long-lasting effect of an event (or activity), that continues to exist after the event (or activity) has taken place.</rdfs:comment>
+        <rdfs:label xml:lang="en">Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ImpairedPerson">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">An individual whose natural senses or physical abilities are either diminished or damaged.</rdfs:comment>
+        <rdfs:label xml:lang="en">Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Incident -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Incident">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasIntensity"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/sbeo#Intensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An event or occurance that can be dangerous for the occupants of the building.</rdfs:comment>
+        <rdfs:label xml:lang="en">Incident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#IncidentProtectionDevice -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#IncidentProtectionDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:comment xml:lang="en">Device that is used to avoid and minimize the effects of potentially danger events for the occupants of the building as well as for the structure of building itself.</rdfs:comment>
+        <rdfs:label xml:lang="en">Incident Protection Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Intensity -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Intensity">
+        <rdfs:comment xml:lang="en">The measurable amount of a property, such as force, brightness, or a magnetic field (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Intensity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Junction -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Junction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#NavigationalPoint"/>
+        <rdfs:comment xml:lang="en">A logic point that connects more than two corridors.</rdfs:comment>
+        <rdfs:label xml:lang="en">Junction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#KidsArea -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#KidsArea">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A place where infants or young children can play which is surrounded by a boundary normally. It can be both indoor and outdoor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Kids Area</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#LowStaminaPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#LowStaminaPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PhysicallyImpairedPerson"/>
+        <rdfs:comment xml:lang="en">It is the unability to sustain physical or mental activity to a normal level.</rdfs:comment>
+        <rdfs:label xml:lang="en">Low Stamina Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#LowVisionPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#LowVisionPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisuallyImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person whose visual acuity is 20/70 or poorer in the better-seeing eye and cannot be corrected or improved with regular eyeglasses.</rdfs:comment>
+        <rdfs:label xml:lang="en">Low Vision Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MeetingRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MeetingRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A type of room designated for social gathering of people, especially professional meetings.</rdfs:comment>
+        <rdfs:label xml:lang="en">Meeting Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MentalAbility -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MentalAbility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
+        <rdfs:comment xml:lang="en">The mental ability of an indi-vidual to remain focused on an external stimuli or an internal experience for a certain period of time (World Health Organisation).</rdfs:comment>
+        <rdfs:label xml:lang="en">Mental Ability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MentalImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MentalImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person having mental impairment in which one&apos;s mind is damaged or is not working properly and one have issues such as consciousness, orientation, concentration.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mental Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MildHearingImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MildHearingImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who is only able to hear the sounds that are between 25 and 40 dB.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mild Hearing Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MobilePhone -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MobilePhone">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HandheldDevice"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Telephone"/>
+        <rdfs:comment xml:lang="en">A telephone with access to a cellular radio system so it can be used over a wide area, without a physical connection to a network (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Mobile Phone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MobilityAbility -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MobilityAbility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
+        <rdfs:comment xml:lang="en">This ability is used to represent all kinetic abilities a person may have.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mobility Ability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MobilityWithAssistedDevicePerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MobilityWithAssistedDevicePerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MotorImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who used a motorised device for moving, such as motorised wheelchair or scooter, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mobility With Assisted Device Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MobilityWithWheelchairPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MobilityWithWheelchairPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MotorImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person using a wheelchair (a mobility device that is used while having any kind of tempoary or permanent physical impairment).</rdfs:comment>
+        <rdfs:label xml:lang="en">Mobility With Wheelchair Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ModerateHearingImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ModerateHearingImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who cannot hear sounds that are less than 40-75 dB.</rdfs:comment>
+        <rdfs:label xml:lang="en">Moderate Hearing Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MotionState -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MotionState">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Rolling"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Running"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Scooting"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Standing"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#Walking"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">It describes the movement of a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Motion State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MotorImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MotorImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PhysicallyImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who has either partial or total loss of function of a body part, usually a limb or limbs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Motor Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MotorisedWheelchairPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MotorisedWheelchairPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithAssistedDevicePerson"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithWheelchairPerson"/>
+        <rdfs:comment xml:lang="en">It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair.</rdfs:comment>
+        <rdfs:label xml:lang="en">Motorised Wheelchair Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#MovingPavement -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MovingPavement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A slow-moving conveyor mechanism that transports people across a horizontal or inclined plane over a short to medium distance (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Moving Pavement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Navigation -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Navigation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#AssistedNavigation"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#AutonomousNavigation"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#CollaborativeNavigation"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#MultiObjectiveNavigation"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Activity"/>
+        <rdfs:comment xml:lang="en">The process or activity of accurately ascertaining one&apos;s position and planning and following a route (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Navigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#NavigationalPoint -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#NavigationalPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
+        <rdfs:comment xml:lang="en">It is a special type of point that connects more than two corridors or enforce change of direction to users or indicate the end of corridors.</rdfs:comment>
+        <rdfs:label xml:lang="en">Navigational Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#NavigationalState -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#NavigationalState">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#DeviatingFromPath"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#FollowingPath"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">It models the user&apos;s navigational state while following the path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Navigational State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#NonMotorisedWheelchairPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#NonMotorisedWheelchairPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithWheelchairPerson"/>
+        <rdfs:comment xml:lang="en">A traditional wheelchair that is used by hands. It has significantly lower speed than motorised wheelchairs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Non-Motorised Wheelchair Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#OpenAreaEntrance -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#OpenAreaEntrance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to an open area.</rdfs:comment>
+        <rdfs:label xml:lang="en">Open Area Entrance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#OpenAreaExit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#OpenAreaExit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the exit from a specifc open space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Open Area Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Panic -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Panic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:comment xml:lang="en">A  sudden uncontrollable fear or anxiety among the occupants of the building that often causes wildly unthinking behaviour (Oxford Dictionary of English). In indoor environments, it may happens due to several reasons such as earthquake, fire or other sudden hazardous situations.</rdfs:comment>
+        <rdfs:label xml:lang="en">Panic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Parameter -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Parameter">
+        <rdfs:comment xml:lang="en">A numerical or other measurable factor forming one of a set that defines a system or sets the conditions of its operation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Passage -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Passage">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RouteElement"/>
+        <rdfs:comment xml:lang="en">Any spatial element that is part of a path and traversable by persons. In addition, it may be used as a logic representation of physical passages to represent an edge (or an arc) in a route graph.</rdfs:comment>
+        <rdfs:label xml:lang="en">Passage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#PassiveFireProtectionDevice -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#PassiveFireProtectionDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#FireProtectionDevice"/>
+        <rdfs:comment xml:lang="en">It is an integral component installed in the building while construction to resist the fire.</rdfs:comment>
+        <rdfs:label xml:lang="en">Passive Fire Protection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#PersonAbility -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#PersonAbility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#forPerson"/>
+                <owl:allValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasAbility"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Ability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasQuality"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Quality"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasAbility"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasQuality"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A parameter to express the quality of an ability a specific person (or type of persons) own.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person Ability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#PersonAccessibility -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#PersonAccessibility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofSpace"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                            <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#forPerson"/>
+                <owl:allValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofSpace"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasValue"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A parameter to express the accessibility of any space for a specific person (or type of persons) in terms of some value.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person Accessibility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#PhysicallyImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#PhysicallyImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A physical impairment is a condition in which any part of person&apos;s body is either  damaged or is not working properly.</rdfs:comment>
+        <rdfs:label xml:lang="en">Physically Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#PointOfInterest -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#PointOfInterest">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
+        <rdfs:comment xml:lang="en">Any physical or virtual location or object, which may be of interest to a user and may serve as a navigation destination (e.g., room, water dispenser, waiting zone, assembly point, shop, seat, etc).</rdfs:comment>
+        <rdfs:label xml:lang="en">Point Of Interest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#PointOfInterestSegment -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#PointOfInterestSegment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:comment xml:lang="en">A traverasal part of a space that is connected to a specific Point of Interest.</rdfs:comment>
+        <rdfs:label xml:lang="en">Point Of Interest Segement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ProfoundHearingImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ProfoundHearingImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who cannot hear sounds softer than 90-120 dB. A person suffering from profound hearing loss, using a hearing aid is also ineffective most of the time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Profound Hearing Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Quality -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Quality">
+        <rdfs:comment xml:lang="en">A degree or grade of excellence or worth.</rdfs:comment>
+        <rdfs:label xml:lang="en">Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Ramp -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Ramp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A sloping surface joining two different levels, as at the entrance or between floors of a building (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Ramp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Road -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Road">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Thoroughfare"/>
+        <rdfs:comment xml:lang="en">A road is a way on land between two places that has been paved or otherwise improved to allow travel by foot or some form of conveyance, including a motor vehicle, cart, bicycle, or horse.</rdfs:comment>
+        <rdfs:label xml:lang="en">Road</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Role -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Role">
+        <rdfs:comment xml:lang="en">The function assumed or part played by a person or thing in a particular situation (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#RoleInContext -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#RoleInContext">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#context"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#player"/>
+                <owl:allValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#role"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/sbeo#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#player"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#context"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#role"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/sbeo#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A concept to express that an agent is playing a role in a given context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Role In Context</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#RoomEntrance -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#RoomEntrance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a room.</rdfs:comment>
+        <rdfs:label xml:lang="en">Room Entrance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#RoomExit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#RoomExit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
+        <rdfs:comment xml:lang="en">A logical point that is used to represent the exit of a room.</rdfs:comment>
+        <rdfs:label xml:lang="en">Room Exit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#RoomSegment -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#RoomSegment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:comment xml:lang="en">A traversable part in a room that is usually used to go the exit or the other part of the room.</rdfs:comment>
+        <rdfs:label xml:lang="en">Room Segment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Route -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Route">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasAvailabilityStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/sbeo#AvailabilityStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A set of connected spaces represented by a starting and ending point, that ultimately leads to some specific position or place.</rdfs:comment>
+        <rdfs:label xml:lang="en">Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#RouteElement -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#RouteElement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasAvailabilityStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/sbeo#AvailabilityStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">It represents the physical or conceptual elements of a navigation path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Route Element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#RoutePoint -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#RoutePoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RouteElement"/>
+        <rdfs:comment xml:lang="en">Any spatial element that is part of a path and traversable by persons. In addition, it may be used as a logic representation of physical passages to represent a node (or a vertex) in a route graph.</rdfs:comment>
+        <rdfs:label xml:lang="en">Route Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SeatingArrangementRoute -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SeatingArrangementRoute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Route"/>
+        <rdfs:comment xml:lang="en">A type of route in which the ending point represents the seat of one or more individuals such as in cinema, stadiums, auditoriums, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Seating Arrangement Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SensorEvent -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SensorEvent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Event"/>
+        <rdfs:comment xml:lang="en">This concept is used to express an event detected by any sensor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sensor Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SensoryAbility -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SensoryAbility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
+        <rdfs:comment xml:lang="en">Sensory ability is referred to the brain&apos;s ability to receive, interpret, and effectively use the information provided by the senses in human beings such as touch, hear, smell, vision, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sensor Ability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SensoryImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SensoryImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ImpairedPerson"/>
+        <rdfs:comment xml:lang="en">Sensory impairment is when one of the senses such as sight, hearing, smell, touch, taste and spatial awareness, is no longer normal.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sensory Impairmed Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SevereHearingImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SevereHearingImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
+        <rdfs:comment xml:lang="en">A person who is unable to hear anything without wearing a hearing aid.</rdfs:comment>
+        <rdfs:label xml:lang="en">Severe Hearing Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Severity -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Severity">
+        <rdfs:comment xml:lang="en">The quality of being hard to endure, uninviting or formidable.</rdfs:comment>
+        <rdfs:label xml:lang="en">Severity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ShoppingMallBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ShoppingMallBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/MercantileBuilding"/>
+        <rdfs:comment xml:lang="en">A set of one or more buildings forming a complex of shops representing merchandisers, with interconnecting walkways enabling visitors to easily walk from unit to unit, along with a parking area.</rdfs:comment>
+        <rdfs:label xml:lang="en">Shopping Mall Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#ShoppingRoute -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#ShoppingRoute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisitRoute"/>
+        <rdfs:comment xml:lang="en">A type of route in which the specific points of interest are mentioned in the form of connected spaces, according to the preferences or interests of a one or more individuals.</rdfs:comment>
+        <rdfs:label xml:lang="en">Shopping Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SmartPhone -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SmartPhone">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilePhone"/>
+        <rdfs:comment xml:lang="en">A mobile phone that is able to perform many of the functions of a computer, typically having a relatively large screen and an operating system capable of running general-purpose applications (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Smartphone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SocialUnit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SocialUnit">
+        <rdfs:comment xml:lang="en">An individual, or a group or community, considered as a discrete constituent of a society or larger group (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Social Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Space -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Space">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasAvailabilityStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/sbeo#AvailabilityStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A physical, three dimensional, and one of the most important elements in the design of architecture that can further be divided to create more spaces from it.</rdfs:comment>
+        <rdfs:label xml:lang="en">Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SpaceSafety -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SpaceSafety">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofSpace"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/sbeo#RouteElement"/>
+                            <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#forPerson"/>
+                <owl:allValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#ofSpace"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#hasValue"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A parameter to express the safety of any space for a specific person (or type of persons) in terms of some value.</rdfs:comment>
+        <rdfs:label xml:lang="en">Space Saftey</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#SpatialAbility -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#SpatialAbility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
+        <rdfs:comment xml:lang="en">This ability expresses the capacity to understand, reason and remember the spatial relations among objects and spaces.</rdfs:comment>
+        <rdfs:label xml:lang="en">Spatial Ability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#StadiumBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#StadiumBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/AssemblyBuilding"/>
+        <rdfs:comment xml:lang="en">A building that has a large open area surrounded by many rows of seats, and  used for sports events, concerts, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stadium Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Stampeding -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Stampeding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Panic"/>
+        <rdfs:comment xml:lang="en">A sudden and uncontrollable run by the group of people caused by panic.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stampeding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Suite -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Suite">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A suite of rooms usually on one floor of an apartment house (Cambridge English Dictionary). This term is normally used in hotels, resorts, guesthouses, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Suite</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Telephone -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Telephone">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:comment xml:lang="en">A device for transmitting voices over a distance using wire or radio, by converting acoustic vibrations to electrical signals (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Telephone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#TerroristAttack -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#TerroristAttack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:comment xml:lang="en">A surprise event involving the deliberate use of violence against the occupants of the buildings.</rdfs:comment>
+        <rdfs:label xml:lang="en">Terrorist Attack</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#TextualDescription -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#TextualDescription">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Description"/>
+        <rdfs:comment xml:lang="en">A type of description in which only text or writings are used to provide the information about any entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Textual Description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Thoroughfare -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Thoroughfare">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
+        <rdfs:comment xml:lang="en">A road or path forming a route between two places (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Thoroughfare</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#TransitionPoint -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#TransitionPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
+        <rdfs:comment xml:lang="en">A point at which person passes from one place to the next.</rdfs:comment>
+        <rdfs:label xml:lang="en">Transition Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#TurnPoint -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#TurnPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#NavigationalPoint"/>
+        <rdfs:comment xml:lang="en">A logic point that is used to enforce people to change their direction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Turn Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#VerticalMovingPavement -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#VerticalMovingPavement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MovingPavement"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
+        <rdfs:comment xml:lang="en">A slow-moving conveyor mechanism that transports people across an inclined plane over a short to medium distance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Vertical Moving Pavement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#VerticalPassage -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#VerticalPassage">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Passage"/>
+        <rdfs:comment xml:lang="en">A type of passage that connects spatial elements located on different storey or floor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Vertical Passage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#Visit -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#Visit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Activity"/>
+        <rdfs:comment xml:lang="en">An activity that represents an act of going to see a person or place as a guest, tourist or a spectator. Normally, this type of activity is considered as a leasiure or recreational activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Visit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#VisitRoute -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#VisitRoute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Route"/>
+        <rdfs:comment xml:lang="en">A type of route created for visiting purposes within an indoor environment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Visit Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#VisitingGroup -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#VisitingGroup">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Group"/>
+        <rdfs:comment xml:lang="en">A group of two or more people that has the same objective of visiting any space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Visiting Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#VisuallyImpairedPerson -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#VisuallyImpairedPerson">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryImpairedPerson"/>
+        <rdfs:comment xml:lang="en">It is a partial or total unability to see. It is also known as visual loss. Here, we considered a person having visual impairment who as severe low vision; 20/200 to 20/400 or higher.</rdfs:comment>
+        <rdfs:label xml:lang="en">Visually Impaired Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sbeo#WaitingZone -->
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#WaitingZone">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
+        <rdfs:comment xml:lang="en">A space (normally with seating), where people can wait to do some specific activity. During emergency condtions, it is also used for several purposes, such as unification of people with their family members, acquaintances or emergency rescue teams, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Waiting Zone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/AssemblyBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/AssemblyBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Assembly Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Attic -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Attic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">the part of a building, especially of a house, directly under a roof; garret.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Attic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Balcony -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Balcony">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">An accessible structure extending from a building, especially outside a window.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Balcony</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Basement -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Basement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A story of a building, partly or wholly underground.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Basement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Bathroom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Bathroom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Bathroom is mainly used for bathing &amp;amp; washing up related activities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Bathroom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Bedroom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Bedroom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Bedroom is used mainly for sleeping.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Bedroom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Building -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Building">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">Buildings are roofed constructions which can be used separately, have been built for permanent purposes, can be entered by persons and are suitable or intended for protecting persons, animals or objects.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/BuildingSpace -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/BuildingSpace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
+        <rdfs:comment xml:lang="en">A Space is a 3D volume bounded by surfaces. It represents the physical spaces of the building.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building Space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/BuildingSpatialStructure -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/BuildingSpatialStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A man made structure with spatial properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building Spatial Structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/BuildingStorey -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/BuildingStorey">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpatialStructure"/>
+        <rdfs:comment xml:lang="en">The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Building Storey</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Corridor -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Corridor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Lobby"/>
+        <rdfs:comment xml:lang="en">A gallery or passage connecting parts of a building; hallway.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Corridor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/DiningRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/DiningRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A room in which meals are eaten, as in a home or hotel, especially the room in which the major or more formal meals are eaten.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Dining Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Door -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Door">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:comment xml:lang="en">the large flat piece of wood, glass etc that you move when you go into or out of a building, room, vehicle etc, or when you open a cupboard (Longman Dictionary of Contemporary English Online)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Door</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/EducationalBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/EducationalBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Schools and day care centers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Educational Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Elevator -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Elevator">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Elevator is used to transport people between different floors.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Elevator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Greenhouse -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Greenhouse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A building, room, or zone, usually chiefly of glass, in which the temperature is maintained within a desired range, used for cultivating tender plants or growing plants out of season.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Greenhouse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Hall -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Hall">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Lobby"/>
+        <rdfs:comment xml:lang="en">A large entrance room of a house or building.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Hall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/HomeOffice -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/HomeOffice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Office"/>
+        <rdfs:comment xml:lang="en">A work or office space set up in a person&apos;s home and used exclusively for business on a regular basis.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Tree house</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/IndustrialBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/IndustrialBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Buildings used for industrial production, e.g. factories, workshops, slaughterhouses, breweries, assembly plants, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Industrial Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/InstitutionalBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/InstitutionalBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Institutions such as hospitals providing medical and surgical treatment and nursing care for ill or injured people.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Institutional Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Kitchen -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Kitchen">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Kitchen is a room used mainly for cooking and possibly eating.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Kitchen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Laundry -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Laundry">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A room or zone, as in a home or apartment building, reserved for doing the family wash.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Laundry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/LivingRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/LivingRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Living Room is the main room of daytime activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Living Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Lobby -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Lobby">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">An entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Lobby</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/MercantileBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/MercantileBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Mercantile Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/NonResidentialBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/NonResidentialBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Building"/>
+        <rdfs:comment xml:lang="en">A  non-residential building is a building at least half of which is used for other than residential purposes. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Non-Residential Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Office -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Office">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A room, set of rooms, or building where the business of a commercial or industrial organization or of a professional person is conducted.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Office</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/OfficeBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/OfficeBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
+        <rdfs:comment xml:lang="en">Places where services are provided. Examples: banks, insurance agencies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Business Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/ResidentialBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/ResidentialBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Building"/>
+        <rdfs:comment xml:lang="en">A residential building is a building at least half of which is used for residential purposes. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Residential Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Room -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Room">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/SiteOfBuilding -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/SiteOfBuilding">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
+        <rdfs:comment xml:lang="en">Building site is a locale containing one or more separate buildings. They are zones.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Site Of Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/Stairs -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/Stairs">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
+        <rdfs:comment xml:lang="en">A construction designed to bridge a large vertical distance by dividing it into smaller vertical distances, called steps.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Stairs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/StorageRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/StorageRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Room for storage.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Storage Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/SwimmingPool -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/SwimmingPool">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">A tank or large artificial basin, as of concrete, for filling with water for swimming.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Swimming Pool</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/seas/UtilityRoom -->
+
+    <owl:Class rdf:about="https://w3id.org/seas/UtilityRoom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
+        <rdfs:comment xml:lang="en">Room for other special utilities and hobbies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/seas/BuildingOntology"/>
+        <rdfs:label xml:lang="en">Utility Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/sbeo#AssistedNavigation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#AssistedNavigation">
+        <rdfs:comment xml:lang="en">A type of navigation in which a person is assisted by a person or a machine to perform a specific activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assisted Navigation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#AutonomousNavigation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#AutonomousNavigation">
+        <rdfs:comment xml:lang="en">A type of navigation in which a person plans and executes his or her path without any human or machine intervention.</rdfs:comment>
+        <rdfs:label xml:lang="en">Autonomous Navigation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Available -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Available">
+        <rdfs:comment xml:lang="en">Obtainable or accessible and ready for use or service.</rdfs:comment>
+        <rdfs:label xml:lang="en">Available</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#CollaborativeNavigation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#CollaborativeNavigation">
+        <rdfs:comment xml:lang="en">A type of navigation in which two or more persons are involved that may or may not have same objectives.</rdfs:comment>
+        <rdfs:label xml:lang="en">Collaborative Navigation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#DeviatingFromPath -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#DeviatingFromPath">
+        <rdfs:label xml:lang="en">Deviating From Path</rdfs:label>
+        <rdfs:label xml:lang="en">When someone is deviating from the provided path.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Evacuated -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Evacuated">
+        <rdfs:label xml:lang="en">Evacuated</rdfs:label>
+        <rdfs:label xml:lang="en">This instance is used to mention when a person has been evacuated successfully.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Evacuating -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Evacuating">
+        <rdfs:label xml:lang="en">Evacuating</rdfs:label>
+        <rdfs:label xml:lang="en">This instance is used to express when someone is in the process of evacuating some space.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Exhausted -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Exhausted">
+        <rdfs:comment xml:lang="en">This instance is used to express the when someone has drained of one&apos;s energy or effectiveness.</rdfs:comment>
+        <rdfs:label xml:lang="en">Exhausted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Fit -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Fit">
+        <rdfs:comment xml:lang="en">This instance is used to express when the physical and mental condition is sound of someone.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#FollowingPath -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#FollowingPath">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone is following one&apos;s provided path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Following Path</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Injured -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Injured">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone is not fit and has some injuries.</rdfs:comment>
+        <rdfs:label xml:lang="en">Injured</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#MultiObjectiveNavigation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#MultiObjectiveNavigation">
+        <rdfs:comment xml:lang="en">A type of navigation in which multiple point of interests are supposed to be visited by a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Multi-objective Navigation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#NoDeviate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#NoDeviate">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone is not deviating at all while following one&apos;s provided path.</rdfs:comment>
+        <rdfs:label xml:lang="en">No Deviate</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#OftenDeviate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#OftenDeviate">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone is deviating frequently while following the provided path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Often Deviate</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#PickingUpDependents -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#PickingUpDependents">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone is picking up the dependent member of one&apos;s group.</rdfs:comment>
+        <rdfs:label xml:lang="en">Picking Up Dependents</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#RareDeviate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#RareDeviate">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone rarely deviates while following the provided path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rare Deviate</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Rolling -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Rolling">
+        <rdfs:comment xml:lang="en">A type of movement by turning over and over on an axis, usually performed by a person using a wheelchair,</rdfs:comment>
+        <rdfs:label xml:lang="en">Rolling</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Running -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Running">
+        <rdfs:comment xml:lang="en">A movement of an able-bodied person at a speed faster than a walk</rdfs:comment>
+        <rdfs:label xml:lang="en">Running</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Scooting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Scooting">
+        <rdfs:comment xml:lang="en">A type of movement usually performed while sitting in (or riding on) an automatic or mechical device, such as electrical wheelchair, electric scooter, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Scooting</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#ShortestPath -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#ShortestPath">
+        <rdfs:comment xml:lang="en">A type of route having minimum cost in terms of distance or time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Shortest Path</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#SimplestPath -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#SimplestPath">
+        <rdfs:comment xml:lang="en">A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points.</rdfs:comment>
+        <rdfs:label xml:lang="en">Simplest Path</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Standing -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Standing">
+        <rdfs:comment xml:lang="en">Having or maintaining an upright position, supported by one&apos;s feet (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Standing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#TooOftenDeviate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#TooOftenDeviate">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone is deviating frequently while following the provided path.</rdfs:comment>
+        <rdfs:label xml:lang="en">Too Often Deviate</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#UnAvailable -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#UnAvailable">
+        <rdfs:comment xml:lang="en">Not available or accessible.</rdfs:comment>
+        <rdfs:label xml:lang="en">Unavailable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Visiting -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Visiting">
+        <rdfs:comment xml:lang="en">The activity of making visits.</rdfs:comment>
+        <rdfs:label xml:lang="en">Visiting</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sbeo#Walking -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Walking">
+        <rdfs:comment xml:lang="en">An unhurried rate of movement on foot (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Walking</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
