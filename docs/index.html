@@ -73,10 +73,12 @@ function loadTOC(){
 <dt>Version:</dt>
 <dd>0.1</dd>
 <dt>Authors:</dt>
-<dd>Qasim Khalid, URJC Spain and IMT Lille Douai France.</dd>
+<dd>Qasim Khalid, URJC Spain and IMT Lille Douai France. (<a href="https://orcid.org/0000-0002-7944-2594">ORCID</a>) </dd>   
 
 <dt>Contributors:</dt>
-<dd>Alberto Fernandez Gil, URJC, Spain</dd><dd>Marin Lujak, IMT Lille Douai, France</dd><dd>Arnaud Doniec, IMT Lille Douai, France</dd>
+<dd>Alberto Fernandez Gil, URJC, Spain (<a href="http://www.ia.urjc.es/GIA/albertofernandez/">Web</a>, <a href="https://orcid.org/0000-0002-8962-6856">ORCID</a>) </dd>
+<dd>Marin Lujak, IMT Lille Douai, France (<a href="http://marinlujak.eu/">Web</a>, <a href="https://orcid.org/0000-0001-8565-9194">ORCID</a>) </dd>
+<dd>Arnaud Doniec, IMT Lille Douai, France (<a href="http://ia.ur.imt-lille-douai.fr/en/chercheurs/doniec_arnaud/">Web</a>, <a href="https://orcid.org/0000-0002-3843-6729">ORCID</a>) </dd>
 
 
 <dt>Download serialization:</dt><dd><span><a href="https://github.com/qasimkhalid/SBEO/raw/master/Serialization/sbeo_jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="https://github.com/qasimkhalid/SBEO/raw/master/Serialization/sbeo_rdfxml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="https://github.com/qasimkhalid/SBEO/raw/master/Serialization/sbeo_nTriples" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="https://raw.githubusercontent.com/qasimkhalid/SBEO/master/sbeo.owl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd>
@@ -97,7 +99,10 @@ function loadTOC(){
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
 Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
-<p>The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation. Moreover, the concepts related to the intensity, severity, and the impact of the events and activites are also taken into account. </span>
+<p>The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.  
+
+<p>Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized. </span>
+       
 </div>
 <hr/>
 <div id="toc"></div> 
@@ -142,8 +147,10 @@ Smart Building Evacuation Ontology (SBEO) couples the information about any buil
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-The ontology used various concepts from existing ontologies such as <a href="http://xmlns.com/foaf/spec/">FOAF</a> and <a href="https://w3id.org/seas/BuildingOntology-1.0">SEAS Building Ontology</a>. As we know that FOAF (Friend of a Friend) specification is produced as a part of FOAF project (http://www.foaf-project.org/) that describes the characteristics of people and social groups. Also, the basic information about them such as age, gender, first name, last name and so forth. Regarding SEAS Building Ontology, it describes all the concepts related to the buildings and building spaces. On the other hand, some ontologies are not available online, such as Indoor Navigation Ontology (INO) and User Navigation Ontology (UNO) [1], User Tracking Ontology (UTO)[2]. Consequently, we have borrowed those concepts with our namespace. Figure 1 shows the core concepts of SBEO ontology, which are divided into three major parts. These are User Model, Building Model, and Context Model. 
 
+SBEO reuses various concepts from the existing ontologies such as <a href="http://xmlns.com/foaf/spec/">FOAF</a>, <a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a>, <a href="http://purl.org/ontology/olo/core">The Ordered List Ontology</a>, and <a href="https://w3id.org/seas/BuildingOntology-1.0">SEAS Building Ontology</a>. On the contrary, some ontologies e.g., Indoor Navigation Ontology (INO)[1], User Navigation Ontology (UNO)[1], User Tracking Ontology (UTO)[2], are not available online. Hence, the relevant concepts are borrowed with this ontology namespace (i.e., sbeo).
+
+<p> Figure 1 shows the core concepts of Smart Building Evacuation Ontology (SBEO). SBEO covers the knowledge for three different models; User Model, Building Model, and Context Model.
 
 </span>
 <div id="namespacedeclarations">
