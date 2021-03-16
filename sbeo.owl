@@ -1,5 +1,4 @@
-@prefix sbeo: <https://w3id.org/sbeo#> .
-
+@prefix : <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -8,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -26,14 +26,14 @@
 The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation. 
 
 Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."""@en ;
-                         dcterms:issued "2020-07-12" ;
+                         dcterms:issued "2020-07-12"^^rdfs:Literal ;
                          dcterms:language "en" ;
-                         dcterms:modified "2021-02-23" ;
+                         dcterms:modified "2021-09-12T17:44:00"^^xsd:dateTime ;
                          dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                          vann:preferredNamespacePrefix "sbeo" ;
                          vann:preferredNamespaceUri sbeo: ;
                          rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
-                         owl:versionInfo 0.1 .
+                         owl:versionInfo 0.3 .
 
 #################################################################
 #    Annotation properties
@@ -233,6 +233,18 @@ sbeo:context rdf:type owl:ObjectProperty ;
              rdfs:label "Context"@en .
 
 
+###  https://w3id.org/sbeo#destination
+sbeo:destination rdf:type owl:ObjectProperty ;
+                 rdfs:domain sbeo:TravelTime ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( sbeo:RoutePoint
+                                            seas:Door
+                                          )
+                            ] ;
+                 rdfs:comment "It represents the ending point of a movement."@en ;
+                 rdfs:label "Destination"@en .
+
+
 ###  https://w3id.org/sbeo#excludedFor
 sbeo:excludedFor rdf:type owl:ObjectProperty ;
                  rdfs:domain [ rdf:type owl:Class ;
@@ -266,6 +278,14 @@ sbeo:forPerson rdf:type owl:ObjectProperty ;
                rdfs:range foaf:Person ;
                rdfs:comment "A property to express a foaf:Person in a n-ary relation for sbeo:Parameter."@en ;
                rdfs:label "For Person"@en .
+
+
+###  https://w3id.org/sbeo#groupSubscription
+sbeo:groupSubscription rdf:type owl:ObjectProperty ;
+                       rdfs:domain foaf:Person ;
+                       rdfs:range sbeo:Group ;
+                       rdfs:comment "A prroperty to express an association with a specifc group."@en ;
+                       rdfs:label "Group Subscription"@en .
 
 
 ###  https://w3id.org/sbeo#hasAbility
@@ -527,6 +547,18 @@ sbeo:ofSpace rdf:type owl:ObjectProperty ;
              rdfs:label "Of Space"@en .
 
 
+###  https://w3id.org/sbeo#origin
+sbeo:origin rdf:type owl:ObjectProperty ;
+            rdfs:domain sbeo:TravelTime ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( sbeo:RouteElement
+                                       seas:Door
+                                     )
+                       ] ;
+            rdfs:comment "It represents the starting point of a movement."@en ;
+            rdfs:label "Origin"@en .
+
+
 ###  https://w3id.org/sbeo#partOf
 sbeo:partOf rdf:type owl:ObjectProperty ,
                      owl:TransitiveProperty ;
@@ -632,6 +664,14 @@ olo:index rdf:type owl:DatatypeProperty ,
           rdfs:label "has index"@en .
 
 
+###  http://purl.org/ontology/olo/core#length
+olo:length rdf:type owl:DatatypeProperty ;
+           rdfs:domain olo:OrderedList ;
+           rdfs:range xsd:nonNegativeInteger ;
+           rdfs:comment "The length of the Ordered List."@en ;
+           rdfs:label "Length of Ordered List"@en .
+
+
 ###  http://xmlns.com/foaf/0.1/age
 foaf:age rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
@@ -671,9 +711,22 @@ sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
                                                        sbeo:Space
                                                      )
                                        ] ;
-                           rdfs:range xsd:integer ;
+                           rdfs:range xsd:nonNegativeInteger ;
                            rdfs:comment "The accommodating capacity (in terms of persons) of a particular space."@en ;
                            rdfs:label "Accommodation Capacity"@en .
+
+
+###  https://w3id.org/sbeo#area
+sbeo:area rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( sbeo:Passage
+                                      sbeo:Space
+                                    )
+                      ] ;
+          rdfs:range xsd:float ;
+          rdfs:comment "Area is the quantity that expresses the occupied amount of the two-dimensional region, shape, or planar lamina, in the plane."@en ;
+          rdfs:label "Area (in sq. meters)"@en .
 
 
 ###  https://w3id.org/sbeo#atTime
@@ -685,9 +738,22 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
                                         sbeo:SocialUnit
                                       )
                         ] ;
-            rdfs:range xsd:float ;
+            rdfs:range xsd:dateTimeStamp ;
             rdfs:comment "The time at which an activity or event occurred."@en ;
             rdfs:label "At Time"@en .
+
+
+###  https://w3id.org/sbeo#base
+sbeo:base rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( sbeo:Passage
+                                      sbeo:Space
+                                    )
+                      ] ;
+          rdfs:range xsd:float ;
+          rdfs:comment "A base is a side (mostly the bottom) of a polygon or a face of a polyhedron. This term is commonly applied to triangles, parallelograms, trapezoids, cylinders, cones, and pyramids."@en ;
+          rdfs:label "Base (in meters)"@en .
 
 
 ###  https://w3id.org/sbeo#cost
@@ -700,20 +766,6 @@ sbeo:cost rdf:type owl:DatatypeProperty ;
           rdfs:range xsd:float ;
           rdfs:comment "A numeric value associated with an edge or a complete route(path). It is also reffered to as a weight."@en ;
           rdfs:label "Cost"@en .
-
-
-###  https://w3id.org/sbeo#currentOccupancy
-sbeo:currentOccupancy rdf:type owl:DatatypeProperty ;
-                      rdfs:domain [ rdf:type owl:Class ;
-                                    owl:unionOf ( sbeo:PointOfInterest
-                                                  sbeo:Route
-                                                  sbeo:RouteElement
-                                                  sbeo:Space
-                                                )
-                                  ] ;
-                      rdfs:range xsd:integer ;
-                      rdfs:comment "The current occupancy (in terms of persons) of a particular space."@en ;
-                      rdfs:label "Current Occupancy"@en .
 
 
 ###  https://w3id.org/sbeo#dynamicDescription
@@ -738,10 +790,24 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                                              sbeo:Event
                                            )
                              ] ;
-                 rdfs:range xsd:float ;
+                 rdfs:range xsd:dateTimeStamp ;
                  owl:propertyDisjointWith sbeo:startedAtTime ;
                  rdfs:comment "The time at which an activity ended."@en ;
                  rdfs:label "Ended At Time"@en .
+
+
+###  https://w3id.org/sbeo#hasCongestion
+sbeo:hasCongestion rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( sbeo:Route
+                                               sbeo:RouteElement
+                                               sbeo:Space
+                                             )
+                               ] ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "A property to express either a space has congestion or not."@en ;
+                   rdfs:label "Has Congestion"@en .
 
 
 ###  https://w3id.org/sbeo#hasValue
@@ -756,9 +822,22 @@ sbeo:hasValue rdf:type owl:DatatypeProperty ,
 ###  https://w3id.org/sbeo#hasXTimesDeviated
 sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
                        rdfs:domain sbeo:SocialUnit ;
-                       rdfs:range xsd:integer ;
+                       rdfs:range xsd:nonNegativeInteger ;
                        rdfs:comment "Number of times a social unit is deviated while following the provided path."@en ;
                        rdfs:label "Has X Time Deviated"@en .
+
+
+###  https://w3id.org/sbeo#height
+sbeo:height rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:Passage
+                                        sbeo:Space
+                                      )
+                        ] ;
+            rdfs:range xsd:float ;
+            rdfs:comment "A height is a vertical distance from the top to the base of the shape, object or space."@en ;
+            rdfs:label "Height  (in meters)"@en .
 
 
 ###  https://w3id.org/sbeo#id
@@ -768,7 +847,7 @@ sbeo:id rdf:type owl:DatatypeProperty ;
                                     sbeo:SocialUnit
                                   )
                     ] ;
-        rdfs:range xsd:integer ;
+        rdfs:range xsd:positiveInteger ;
         rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
         rdfs:label "Identification Number"@en .
 
@@ -777,15 +856,13 @@ sbeo:id rdf:type owl:DatatypeProperty ;
 sbeo:length rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( olo:OrderedList
-                                        sbeo:Group
-                                        sbeo:Passage
+                          owl:unionOf ( sbeo:Passage
                                         sbeo:Space
                                       )
                         ] ;
             rdfs:range xsd:float ;
             rdfs:comment "The measurement or extent of something from end to end (Oxford Dictionary of English)."@en ;
-            rdfs:label "Length"@en .
+            rdfs:label "Length (in meters)"@en .
 
 
 ###  https://w3id.org/sbeo#number
@@ -794,6 +871,42 @@ sbeo:number rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:integer ;
             rdfs:comment "A number assigned to anything."@en ;
             rdfs:label "Has Number"@en .
+
+
+###  https://w3id.org/sbeo#radius
+sbeo:radius rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( sbeo:Passage
+                                        sbeo:Space
+                                      )
+                        ] ;
+            rdfs:range xsd:float ;
+            rdfs:comment "The term radius is associated with circular shapes, objects and spacesn that represents the distance from the center of a circle to any point on the circle boundry. It is half of the diameter of a circle."@en ;
+            rdfs:label "Radius (in meters)"@en .
+
+
+###  https://w3id.org/sbeo#relativeOccupancyRatio
+sbeo:relativeOccupancyRatio rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            rdfs:domain [ rdf:type owl:Class ;
+                                          owl:unionOf ( sbeo:PointOfInterest
+                                                        sbeo:Route
+                                                        sbeo:RouteElement
+                                                        sbeo:Space
+                                                      )
+                                        ] ;
+                            rdfs:range xsd:float ;
+                            rdfs:comment "The relative occupancy ratio (in terms of persons) measures the ratio of occupied to total usable (i.e., capacity) space."@en ;
+                            rdfs:label "Has Relative Occupancy Ratio"@en .
+
+
+###  https://w3id.org/sbeo#size
+sbeo:size rdf:type owl:DatatypeProperty ;
+          rdfs:domain sbeo:Group ;
+          rdfs:range xsd:positiveInteger ;
+          rdfs:comment " the relative extent of something; a thing's overall dimensions or magnitude (Oxford Dictionary of English)."@en ;
+          rdfs:label "Size"@en .
 
 
 ###  https://w3id.org/sbeo#speed
@@ -823,7 +936,7 @@ sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
                                                sbeo:Event
                                              )
                                ] ;
-                   rdfs:range xsd:float ;
+                   rdfs:range xsd:dateTimeStamp ;
                    rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger."@en ;
                    rdfs:label "Started At Time"@en .
 
@@ -850,21 +963,9 @@ sbeo:timeDuration rdf:type owl:DatatypeProperty ;
                                               sbeo:Event
                                             )
                               ] ;
-                  rdfs:range xsd:float ;
+                  rdfs:range xsd:dateTimeStamp ;
                   rdfs:comment "The length of time during which any activity or event lasts."@en ;
                   rdfs:label "Time Duration"@en .
-
-
-###  https://w3id.org/sbeo#travelTime
-sbeo:travelTime rdf:type owl:DatatypeProperty ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( sbeo:Passage
-                                            sbeo:Route
-                                          )
-                            ] ;
-                rdfs:range xsd:float ;
-                rdfs:comment "A specific period of time required to move from one place to another."@en ;
-                rdfs:label "Travel Time"@en .
 
 
 ###  https://w3id.org/sbeo#width
@@ -877,7 +978,7 @@ sbeo:width rdf:type owl:DatatypeProperty ,
                        ] ;
            rdfs:range xsd:float ;
            rdfs:comment "The measurement or extent of something from side to side (Oxford Dictionary of English)."@en ;
-           rdfs:label "Width"@en .
+           rdfs:label "Width (in meters)"@en .
 
 
 #################################################################
@@ -1517,11 +1618,11 @@ sbeo:Group rdf:type owl:Class ;
                              owl:minCardinality "2"^^xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:length ;
-                             owl:allValuesFrom xsd:integer
+                             owl:onProperty sbeo:size ;
+                             owl:allValuesFrom xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:length ;
+                             owl:onProperty sbeo:size ;
                              owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            rdfs:comment "It represents a collection of two or more people who interact with each other and may have the similar characteristics or objectives."@en ;
@@ -1551,7 +1652,8 @@ sbeo:HallSegment rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#HandheldDevice
 sbeo:HandheldDevice rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:Device ;
+                    rdfs:subClassOf sbeo:Device ,
+                                    sbeo:MovableDevice ;
                     rdfs:comment "A smart device or a computer that is small enough to be used while holding it in the hands."@en ;
                     rdfs:label "Handheld Device"@en .
 
@@ -1750,6 +1852,13 @@ sbeo:MotorisedWheelchairPerson rdf:type owl:Class ;
                                                sbeo:MobilityWithWheelchairPerson ;
                                rdfs:comment "It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair."@en ;
                                rdfs:label "Motorised Wheelchair Person"@en .
+
+
+###  https://w3id.org/sbeo#MovableDevice
+sbeo:MovableDevice rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:Device ;
+                   rdfs:comment "A device that can be moved from one place to another place, e.g., mobile phone, computer trolley, etc."@en ;
+                   rdfs:label "Movable Device"@en .
 
 
 ###  https://w3id.org/sbeo#MovingPavement
@@ -2209,6 +2318,49 @@ sbeo:TransitionPoint rdf:type owl:Class ;
                      rdfs:label "Transition Point"@en .
 
 
+###  https://w3id.org/sbeo#TravelTime
+sbeo:TravelTime rdf:type owl:Class ;
+                rdfs:subClassOf sbeo:Parameter ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:destination ;
+                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( sbeo:RoutePoint
+                                                                     seas:Door
+                                                                   )
+                                                     ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:origin ;
+                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( sbeo:RoutePoint
+                                                                     seas:Door
+                                                                   )
+                                                     ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:forPerson ;
+                                  owl:allValuesFrom foaf:Person
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:destination ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:origin ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:hasValue ;
+                                  owl:allValuesFrom xsd:float
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sbeo:hasValue ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "A parameter to express the time taken (in seconds) by a specific person (or type of persons) to go from one point to another point (i.e., Route Element)."@en ;
+                rdfs:label "Travel Time"@en .
+
+
 ###  https://w3id.org/sbeo#TurnPoint
 sbeo:TurnPoint rdf:type owl:Class ;
                rdfs:subClassOf sbeo:NavigationalPoint ;
@@ -2581,20 +2733,20 @@ sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ;
 
 ###  https://w3id.org/sbeo#DeviatingFromPath
 sbeo:DeviatingFromPath rdf:type owl:NamedIndividual ;
-                       rdfs:label "Deviating From Path"@en ,
-                                  "When someone is deviating from the provided path."@en .
+                       rdfs:comment "When someone is deviating from the provided path."@en ;
+                       rdfs:label "Deviating From Path"@en .
 
 
 ###  https://w3id.org/sbeo#Evacuated
 sbeo:Evacuated rdf:type owl:NamedIndividual ;
-               rdfs:label "Evacuated"@en ,
-                          "This instance is used to mention when a person has been evacuated successfully."@en .
+               rdfs:comment "This instance is used to mention when a person has been evacuated successfully."@en ;
+               rdfs:label "Evacuated"@en .
 
 
 ###  https://w3id.org/sbeo#Evacuating
 sbeo:Evacuating rdf:type owl:NamedIndividual ;
-                rdfs:label "Evacuating"@en ,
-                           "This instance is used to express when someone is in the process of evacuating some space."@en .
+                rdfs:comment "This instance is used to express when someone is in the process of evacuating some space."@en ;
+                rdfs:label "Evacuating"@en .
 
 
 ###  https://w3id.org/sbeo#Exhausted
