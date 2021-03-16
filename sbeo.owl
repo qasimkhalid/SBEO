@@ -1,3 +1,4 @@
+
 @prefix sbeo: <https://w3id.org/sbeo#> .
 
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -28,12 +29,12 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."""@en ;
                          dcterms:issued "2020-07-12" ;
                          dcterms:language "en" ;
-                         dcterms:modified "2021-02-23" ;
+                         dcterms:modified "2021-03-30T15:44:00"^^xsd:dateTime ;
                          dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                          vann:preferredNamespacePrefix "sbeo" ;
                          vann:preferredNamespaceUri sbeo: ;
                          rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
-                         owl:versionInfo 0.1 .
+                         owl:versionInfo 0.2 .
 
 #################################################################
 #    Annotation properties
@@ -632,6 +633,14 @@ olo:index rdf:type owl:DatatypeProperty ,
           rdfs:label "has index"@en .
 
 
+###  http://purl.org/ontology/olo/core#length
+olo:length rdf:type owl:DatatypeProperty ;
+           rdfs:domain olo:OrderedList ;
+           rdfs:range xsd:nonNegativeInteger ;
+           rdfs:label "Length of Ordered List"@en ;
+           rdfs:comment "The length of the Ordered List."@en .
+
+
 ###  http://xmlns.com/foaf/0.1/age
 foaf:age rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
@@ -671,7 +680,7 @@ sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
                                                        sbeo:Space
                                                      )
                                        ] ;
-                           rdfs:range xsd:integer ;
+                           rdfs:range xsd:nonNegativeInteger ;
                            rdfs:comment "The accommodating capacity (in terms of persons) of a particular space."@en ;
                            rdfs:label "Accommodation Capacity"@en .
 
@@ -685,7 +694,7 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
                                         sbeo:SocialUnit
                                       )
                         ] ;
-            rdfs:range xsd:float ;
+            rdfs:range xsd:dateTimeStamp ;
             rdfs:comment "The time at which an activity or event occurred."@en ;
             rdfs:label "At Time"@en .
 
@@ -738,7 +747,7 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                                              sbeo:Event
                                            )
                              ] ;
-                 rdfs:range xsd:float ;
+                 rdfs:range xsd:dateTimeStamp ;
                  owl:propertyDisjointWith sbeo:startedAtTime ;
                  rdfs:comment "The time at which an activity ended."@en ;
                  rdfs:label "Ended At Time"@en .
@@ -756,7 +765,7 @@ sbeo:hasValue rdf:type owl:DatatypeProperty ,
 ###  https://w3id.org/sbeo#hasXTimesDeviated
 sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
                        rdfs:domain sbeo:SocialUnit ;
-                       rdfs:range xsd:integer ;
+                       rdfs:range xsd:nonNegativeInteger ;
                        rdfs:comment "Number of times a social unit is deviated while following the provided path."@en ;
                        rdfs:label "Has X Time Deviated"@en .
 
@@ -768,7 +777,7 @@ sbeo:id rdf:type owl:DatatypeProperty ;
                                     sbeo:SocialUnit
                                   )
                     ] ;
-        rdfs:range xsd:integer ;
+        rdfs:range xsd:positiveInteger ;
         rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
         rdfs:label "Identification Number"@en .
 
@@ -777,9 +786,7 @@ sbeo:id rdf:type owl:DatatypeProperty ;
 sbeo:length rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( olo:OrderedList
-                                        sbeo:Group
-                                        sbeo:Passage
+                          owl:unionOf ( sbeo:Passage
                                         sbeo:Space
                                       )
                         ] ;
@@ -794,6 +801,14 @@ sbeo:number rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:integer ;
             rdfs:comment "A number assigned to anything."@en ;
             rdfs:label "Has Number"@en .
+
+
+###  https://w3id.org/sbeo#size
+sbeo:size rdf:type owl:DatatypeProperty ;
+          rdfs:domain sbeo:Group ;
+          rdfs:range xsd:positiveInteger ;
+            rdfs:comment " the relative extent of something; a thing's overall dimensions or magnitude (Oxford Dictionary of English)."@en ;
+            rdfs:label "Size"@en .
 
 
 ###  https://w3id.org/sbeo#speed
@@ -823,7 +838,7 @@ sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
                                                sbeo:Event
                                              )
                                ] ;
-                   rdfs:range xsd:float ;
+                   rdfs:range xsd:dateTimeStamp ;
                    rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger."@en ;
                    rdfs:label "Started At Time"@en .
 
@@ -850,21 +865,9 @@ sbeo:timeDuration rdf:type owl:DatatypeProperty ;
                                               sbeo:Event
                                             )
                               ] ;
-                  rdfs:range xsd:float ;
+                  rdfs:range xsd:dateTimeStamp ;
                   rdfs:comment "The length of time during which any activity or event lasts."@en ;
                   rdfs:label "Time Duration"@en .
-
-
-###  https://w3id.org/sbeo#travelTime
-sbeo:travelTime rdf:type owl:DatatypeProperty ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( sbeo:Passage
-                                            sbeo:Route
-                                          )
-                            ] ;
-                rdfs:range xsd:float ;
-                rdfs:comment "A specific period of time required to move from one place to another."@en ;
-                rdfs:label "Travel Time"@en .
 
 
 ###  https://w3id.org/sbeo#width
@@ -1517,11 +1520,11 @@ sbeo:Group rdf:type owl:Class ;
                              owl:minCardinality "2"^^xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:length ;
-                             owl:allValuesFrom xsd:integer
+                             owl:onProperty sbeo:size ;
+                             owl:allValuesFrom xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:length ;
+                             owl:onProperty sbeo:size ;
                              owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            rdfs:comment "It represents a collection of two or more people who interact with each other and may have the similar characteristics or objectives."@en ;
@@ -1551,7 +1554,8 @@ sbeo:HallSegment rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#HandheldDevice
 sbeo:HandheldDevice rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:Device ;
+                    rdfs:subClassOf sbeo:Device ,
+                                    sbeo:MovableDevice ;
                     rdfs:comment "A smart device or a computer that is small enough to be used while holding it in the hands."@en ;
                     rdfs:label "Handheld Device"@en .
 
@@ -1750,6 +1754,13 @@ sbeo:MotorisedWheelchairPerson rdf:type owl:Class ;
                                                sbeo:MobilityWithWheelchairPerson ;
                                rdfs:comment "It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair."@en ;
                                rdfs:label "Motorised Wheelchair Person"@en .
+
+
+###  https://w3id.org/sbeo#MovableDevice
+sbeo:MovableDevice rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:Device ;
+                   rdfs:comment "A device that can be moved from one place to another place, e.g., mobile phone, computer trolley, etc."@en ;
+                   rdfs:label "Movable Device"@en .
 
 
 ###  https://w3id.org/sbeo#MovingPavement
@@ -2581,20 +2592,20 @@ sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ;
 
 ###  https://w3id.org/sbeo#DeviatingFromPath
 sbeo:DeviatingFromPath rdf:type owl:NamedIndividual ;
-                       rdfs:label "Deviating From Path"@en ,
-                                  "When someone is deviating from the provided path."@en .
+                       rdfs:label "Deviating From Path"@en ;
+                       rdfs:comment "When someone is deviating from the provided path."@en .
 
 
 ###  https://w3id.org/sbeo#Evacuated
 sbeo:Evacuated rdf:type owl:NamedIndividual ;
-               rdfs:label "Evacuated"@en ,
-                          "This instance is used to mention when a person has been evacuated successfully."@en .
+               rdfs:label "Evacuated"@en ;
+               rdfs:comment "This instance is used to mention when a person has been evacuated successfully."@en .
 
 
 ###  https://w3id.org/sbeo#Evacuating
 sbeo:Evacuating rdf:type owl:NamedIndividual ;
-                rdfs:label "Evacuating"@en ,
-                           "This instance is used to express when someone is in the process of evacuating some space."@en .
+                rdfs:label "Evacuating"@en ;
+                rdfs:comment "This instance is used to express when someone is in the process of evacuating some space."@en .
 
 
 ###  https://w3id.org/sbeo#Exhausted
