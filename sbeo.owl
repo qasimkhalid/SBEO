@@ -1,5 +1,4 @@
-@prefix sbeo: <https://w3id.org/sbeo#> .
-
+@prefix : <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -8,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -28,12 +28,12 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."""@en ;
                          dcterms:issued "2020-07-12" ;
                          dcterms:language "en" ;
-                         dcterms:modified "2021-02-23" ;
+                         dcterms:modified "2021-03-16T12:19:00"^^xsd:dateTime ;
                          dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                          vann:preferredNamespacePrefix "sbeo" ;
                          vann:preferredNamespaceUri sbeo: ;
                          rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
-                         owl:versionInfo 0.1 .
+                         owl:versionInfo 0.2 .
 
 #################################################################
 #    Annotation properties
@@ -632,6 +632,12 @@ olo:index rdf:type owl:DatatypeProperty ,
           rdfs:label "has index"@en .
 
 
+###  http://purl.org/ontology/olo/core#length
+olo:length rdf:type owl:DatatypeProperty ;
+           rdfs:domain olo:OrderedList ;
+           rdfs:range xsd:nonNegativeInteger .
+
+
 ###  http://xmlns.com/foaf/0.1/age
 foaf:age rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
@@ -671,7 +677,7 @@ sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
                                                        sbeo:Space
                                                      )
                                        ] ;
-                           rdfs:range xsd:integer ;
+                           rdfs:range xsd:nonNegativeInteger ;
                            rdfs:comment "The accommodating capacity (in terms of persons) of a particular space."@en ;
                            rdfs:label "Accommodation Capacity"@en .
 
@@ -685,7 +691,7 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
                                         sbeo:SocialUnit
                                       )
                         ] ;
-            rdfs:range xsd:float ;
+            rdfs:range xsd:dateTimeStamp ;
             rdfs:comment "The time at which an activity or event occurred."@en ;
             rdfs:label "At Time"@en .
 
@@ -738,7 +744,7 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                                              sbeo:Event
                                            )
                              ] ;
-                 rdfs:range xsd:float ;
+                 rdfs:range xsd:dateTimeStamp ;
                  owl:propertyDisjointWith sbeo:startedAtTime ;
                  rdfs:comment "The time at which an activity ended."@en ;
                  rdfs:label "Ended At Time"@en .
@@ -756,7 +762,7 @@ sbeo:hasValue rdf:type owl:DatatypeProperty ,
 ###  https://w3id.org/sbeo#hasXTimesDeviated
 sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
                        rdfs:domain sbeo:SocialUnit ;
-                       rdfs:range xsd:integer ;
+                       rdfs:range xsd:nonNegativeInteger ;
                        rdfs:comment "Number of times a social unit is deviated while following the provided path."@en ;
                        rdfs:label "Has X Time Deviated"@en .
 
@@ -777,9 +783,7 @@ sbeo:id rdf:type owl:DatatypeProperty ;
 sbeo:length rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( olo:OrderedList
-                                        sbeo:Group
-                                        sbeo:Passage
+                          owl:unionOf ( sbeo:Passage
                                         sbeo:Space
                                       )
                         ] ;
@@ -794,6 +798,12 @@ sbeo:number rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:integer ;
             rdfs:comment "A number assigned to anything."@en ;
             rdfs:label "Has Number"@en .
+
+
+###  https://w3id.org/sbeo#size
+sbeo:size rdf:type owl:DatatypeProperty ;
+          rdfs:domain sbeo:Group ;
+          rdfs:range xsd:nonNegativeInteger .
 
 
 ###  https://w3id.org/sbeo#speed
@@ -823,7 +833,7 @@ sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
                                                sbeo:Event
                                              )
                                ] ;
-                   rdfs:range xsd:float ;
+                   rdfs:range xsd:dateTimeStamp ;
                    rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger."@en ;
                    rdfs:label "Started At Time"@en .
 
@@ -850,7 +860,7 @@ sbeo:timeDuration rdf:type owl:DatatypeProperty ;
                                               sbeo:Event
                                             )
                               ] ;
-                  rdfs:range xsd:float ;
+                  rdfs:range xsd:dateTimeStamp ;
                   rdfs:comment "The length of time during which any activity or event lasts."@en ;
                   rdfs:label "Time Duration"@en .
 
@@ -862,7 +872,7 @@ sbeo:travelTime rdf:type owl:DatatypeProperty ;
                                             sbeo:Route
                                           )
                             ] ;
-                rdfs:range xsd:float ;
+                rdfs:range xsd:dateTimeStamp ;
                 rdfs:comment "A specific period of time required to move from one place to another."@en ;
                 rdfs:label "Travel Time"@en .
 
@@ -1517,11 +1527,11 @@ sbeo:Group rdf:type owl:Class ;
                              owl:minCardinality "2"^^xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:length ;
-                             owl:allValuesFrom xsd:integer
+                             owl:onProperty sbeo:size ;
+                             owl:allValuesFrom xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:length ;
+                             owl:onProperty sbeo:size ;
                              owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            rdfs:comment "It represents a collection of two or more people who interact with each other and may have the similar characteristics or objectives."@en ;
