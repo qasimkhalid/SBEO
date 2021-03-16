@@ -1,4 +1,6 @@
-@prefix : <https://w3id.org/sbeo#> .
+
+@prefix sbeo: <https://w3id.org/sbeo#> .
+
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,33 +9,22 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <https://w3id.org/sbeo> .
 
 <https://w3id.org/sbeo> rdf:type owl:Ontology ;
                          dc:rights <https://www.gnu.org/licenses/gpl.html> ;
-                         dcterms:contributor <https://orcid.org/0000-0001-8565-9194> ,
-                                             <https://orcid.org/0000-0002-3843-6729> ,
-                                             <https://orcid.org/0000-0002-8962-6856> ;
-                         dcterms:creator <https://orcid.org/0000-0002-7944-2594> ;
-                         dcterms:description """Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
+                         dcterms:creator "Qasim Khalid" ;
+                         dcterms:description """Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
-The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation. 
-
-Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."""@en ;
-                         dcterms:issued "2020-07-12" ;
+The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation."""@en ;
                          dcterms:language "en" ;
-                         dcterms:modified "2021-03-16T12:19:00"^^xsd:dateTime ;
                          dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
-                         vann:preferredNamespacePrefix "sbeo" ;
-                         vann:preferredNamespaceUri sbeo: ;
                          rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
-                         owl:versionInfo 0.2 .
+                         owl:versionInfo 0.1 .
 
 #################################################################
 #    Annotation properties
@@ -41,10 +32,6 @@ Several other parameters related to the spaces, users and context are also descr
 
 ###  http://purl.org/dc/elements/1.1/rights
 dc:rights rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/contributor
-dcterms:contributor rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -55,28 +42,12 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 dcterms:description rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/terms/issued
-dcterms:issued rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.org/dc/terms/language
 dcterms:language rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/terms/modified
-dcterms:modified rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.org/dc/terms/title
 dcterms:title rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespacePrefix
-vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespaceUri
-vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.org/domainIncludes
@@ -632,12 +603,6 @@ olo:index rdf:type owl:DatatypeProperty ,
           rdfs:label "has index"@en .
 
 
-###  http://purl.org/ontology/olo/core#length
-olo:length rdf:type owl:DatatypeProperty ;
-           rdfs:domain olo:OrderedList ;
-           rdfs:range xsd:nonNegativeInteger .
-
-
 ###  http://xmlns.com/foaf/0.1/age
 foaf:age rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
@@ -677,7 +642,7 @@ sbeo:accommodationCapacity rdf:type owl:DatatypeProperty ,
                                                        sbeo:Space
                                                      )
                                        ] ;
-                           rdfs:range xsd:nonNegativeInteger ;
+                           rdfs:range xsd:integer ;
                            rdfs:comment "The accommodating capacity (in terms of persons) of a particular space."@en ;
                            rdfs:label "Accommodation Capacity"@en .
 
@@ -691,7 +656,7 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
                                         sbeo:SocialUnit
                                       )
                         ] ;
-            rdfs:range xsd:dateTimeStamp ;
+            rdfs:range xsd:float ;
             rdfs:comment "The time at which an activity or event occurred."@en ;
             rdfs:label "At Time"@en .
 
@@ -744,7 +709,7 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                                              sbeo:Event
                                            )
                              ] ;
-                 rdfs:range xsd:dateTimeStamp ;
+                 rdfs:range xsd:float ;
                  owl:propertyDisjointWith sbeo:startedAtTime ;
                  rdfs:comment "The time at which an activity ended."@en ;
                  rdfs:label "Ended At Time"@en .
@@ -762,7 +727,7 @@ sbeo:hasValue rdf:type owl:DatatypeProperty ,
 ###  https://w3id.org/sbeo#hasXTimesDeviated
 sbeo:hasXTimesDeviated rdf:type owl:DatatypeProperty ;
                        rdfs:domain sbeo:SocialUnit ;
-                       rdfs:range xsd:nonNegativeInteger ;
+                       rdfs:range xsd:integer ;
                        rdfs:comment "Number of times a social unit is deviated while following the provided path."@en ;
                        rdfs:label "Has X Time Deviated"@en .
 
@@ -783,7 +748,9 @@ sbeo:id rdf:type owl:DatatypeProperty ;
 sbeo:length rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:Passage
+                          owl:unionOf ( olo:OrderedList
+                                        sbeo:Group
+                                        sbeo:Passage
                                         sbeo:Space
                                       )
                         ] ;
@@ -798,12 +765,6 @@ sbeo:number rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:integer ;
             rdfs:comment "A number assigned to anything."@en ;
             rdfs:label "Has Number"@en .
-
-
-###  https://w3id.org/sbeo#size
-sbeo:size rdf:type owl:DatatypeProperty ;
-          rdfs:domain sbeo:Group ;
-          rdfs:range xsd:nonNegativeInteger .
 
 
 ###  https://w3id.org/sbeo#speed
@@ -833,7 +794,7 @@ sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
                                                sbeo:Event
                                              )
                                ] ;
-                   rdfs:range xsd:dateTimeStamp ;
+                   rdfs:range xsd:float ;
                    rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger."@en ;
                    rdfs:label "Started At Time"@en .
 
@@ -860,7 +821,7 @@ sbeo:timeDuration rdf:type owl:DatatypeProperty ;
                                               sbeo:Event
                                             )
                               ] ;
-                  rdfs:range xsd:dateTimeStamp ;
+                  rdfs:range xsd:float ;
                   rdfs:comment "The length of time during which any activity or event lasts."@en ;
                   rdfs:label "Time Duration"@en .
 
@@ -872,7 +833,7 @@ sbeo:travelTime rdf:type owl:DatatypeProperty ;
                                             sbeo:Route
                                           )
                             ] ;
-                rdfs:range xsd:dateTimeStamp ;
+                rdfs:range xsd:float ;
                 rdfs:comment "A specific period of time required to move from one place to another."@en ;
                 rdfs:label "Travel Time"@en .
 
@@ -1527,11 +1488,11 @@ sbeo:Group rdf:type owl:Class ;
                              owl:minCardinality "2"^^xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:size ;
-                             owl:allValuesFrom xsd:nonNegativeInteger
+                             owl:onProperty sbeo:length ;
+                             owl:allValuesFrom xsd:integer
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty sbeo:size ;
+                             owl:onProperty sbeo:length ;
                              owl:cardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            rdfs:comment "It represents a collection of two or more people who interact with each other and may have the similar characteristics or objectives."@en ;
@@ -2720,5 +2681,3 @@ sbeo:Walking rdf:type owl:NamedIndividual ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
              rdfs:label "Walking"@en .
 
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
