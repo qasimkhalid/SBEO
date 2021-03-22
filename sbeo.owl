@@ -1,4 +1,5 @@
-@prefix : <https://w3id.org/sbeo#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
+
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,7 +8,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -28,7 +28,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."""@en ;
                          dcterms:issued "2020-07-12" ;
                          dcterms:language "en" ;
-                         dcterms:modified "2021-03-16T12:19:00"^^xsd:dateTime ;
+                         dcterms:modified "2021-03-21T11:18:00"^^xsd:dateTime ;
                          dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                          vann:preferredNamespacePrefix "sbeo" ;
                          vann:preferredNamespaceUri sbeo: ;
@@ -1561,7 +1561,8 @@ sbeo:HallSegment rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#HandheldDevice
 sbeo:HandheldDevice rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:Device ;
+                    rdfs:subClassOf sbeo:Device ,
+                                    sbeo:MovableDevice ;
                     rdfs:comment "A smart device or a computer that is small enough to be used while holding it in the hands."@en ;
                     rdfs:label "Handheld Device"@en .
 
@@ -1760,6 +1761,13 @@ sbeo:MotorisedWheelchairPerson rdf:type owl:Class ;
                                                sbeo:MobilityWithWheelchairPerson ;
                                rdfs:comment "It is a kind of wheelchair that has either a mechanical engine or an electric battery. It has more speed than a traditional wheelchair."@en ;
                                rdfs:label "Motorised Wheelchair Person"@en .
+
+
+###  https://w3id.org/sbeo#MovableDevice
+sbeo:MovableDevice rdf:type owl:Class ;
+                   rdfs:subClassOf sbeo:Device ;
+                   rdfs:comment "A device that can be moved from one place to another place, e.g., mobile phone, computer trolley, etc."@en ;
+                   rdfs:label "Movable Device"@en .
 
 
 ###  https://w3id.org/sbeo#MovingPavement
