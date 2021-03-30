@@ -1,5 +1,4 @@
-@prefix sbeo: <https://w3id.org/sbeo#> .
-
+@prefix : <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -8,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -28,7 +28,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."""@en ;
                          dcterms:issued "2020-07-12" ;
                          dcterms:language "en" ;
-                         dcterms:modified "2021-03-21T11:18:00"^^xsd:dateTime ;
+                         dcterms:modified "2021-03-30T15:44:00"^^xsd:dateTime ;
                          dcterms:title "SBEO: Smart Building Evacuation Ontology"@en ;
                          vann:preferredNamespacePrefix "sbeo" ;
                          vann:preferredNamespaceUri sbeo: ;
@@ -774,7 +774,7 @@ sbeo:id rdf:type owl:DatatypeProperty ;
                                     sbeo:SocialUnit
                                   )
                     ] ;
-        rdfs:range xsd:integer ;
+        rdfs:range xsd:positiveInteger ;
         rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
         rdfs:label "Identification Number"@en .
 
@@ -803,7 +803,7 @@ sbeo:number rdf:type owl:DatatypeProperty ;
 ###  https://w3id.org/sbeo#size
 sbeo:size rdf:type owl:DatatypeProperty ;
           rdfs:domain sbeo:Group ;
-          rdfs:range xsd:nonNegativeInteger .
+          rdfs:range xsd:positiveInteger .
 
 
 ###  https://w3id.org/sbeo#speed
@@ -863,18 +863,6 @@ sbeo:timeDuration rdf:type owl:DatatypeProperty ;
                   rdfs:range xsd:dateTimeStamp ;
                   rdfs:comment "The length of time during which any activity or event lasts."@en ;
                   rdfs:label "Time Duration"@en .
-
-
-###  https://w3id.org/sbeo#travelTime
-sbeo:travelTime rdf:type owl:DatatypeProperty ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( sbeo:Passage
-                                            sbeo:Route
-                                          )
-                            ] ;
-                rdfs:range xsd:dateTimeStamp ;
-                rdfs:comment "A specific period of time required to move from one place to another."@en ;
-                rdfs:label "Travel Time"@en .
 
 
 ###  https://w3id.org/sbeo#width
