@@ -97,11 +97,17 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://purl.org/ontology/olo/core#OrderedList"
-    }, {
-      "@id" : "https://w3id.org/sbeo#Group"
-    }, {
       "@id" : "https://w3id.org/sbeo#Passage"
+    }, {
+      "@id" : "https://w3id.org/sbeo#Space"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid128",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/sbeo#RouteElement"
     }, {
       "@id" : "https://w3id.org/sbeo#Space"
     } ]
@@ -119,17 +125,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid130",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/sbeo#RouteElement"
-    }, {
-      "@id" : "https://w3id.org/sbeo#Space"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid133",
+  "@id" : "_:genid131",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -139,7 +135,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid136",
+  "@id" : "_:genid134",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -155,7 +151,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid142",
+  "@id" : "_:genid140",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -165,17 +161,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid145",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/sbeo#Passage"
-    }, {
-      "@id" : "https://w3id.org/sbeo#Route"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid148",
+  "@id" : "_:genid143",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -185,7 +171,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid151",
+  "@id" : "_:genid146",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -195,7 +181,7 @@
     "@id" : "https://w3id.org/sbeo#length"
   } ]
 }, {
-  "@id" : "_:genid152",
+  "@id" : "_:genid147",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -205,7 +191,7 @@
     "@id" : "http://purl.org/ontology/olo/core#next"
   } ]
 }, {
-  "@id" : "_:genid153",
+  "@id" : "_:genid148",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -215,7 +201,7 @@
     "@id" : "http://purl.org/ontology/olo/core#ordered_list"
   } ]
 }, {
-  "@id" : "_:genid154",
+  "@id" : "_:genid149",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -225,7 +211,7 @@
     "@id" : "http://purl.org/ontology/olo/core#previous"
   } ]
 }, {
-  "@id" : "_:genid155",
+  "@id" : "_:genid150",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -235,13 +221,60 @@
     "@id" : "http://purl.org/ontology/olo/core#index"
   } ]
 }, {
-  "@id" : "_:genid156",
+  "@id" : "_:genid151",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/sbeo#hasIntensity"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
     "@id" : "https://w3id.org/sbeo#Intensity"
+  } ]
+}, {
+  "@id" : "_:genid152",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/sbeo#SocialUnit"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#forPerson"
+  } ]
+}, {
+  "@id" : "_:genid153",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/sbeo#Impact"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#hasImpact"
+  } ]
+}, {
+  "@id" : "_:genid154",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/sbeo#Activity"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#ofActivity"
+  } ]
+}, {
+  "@id" : "_:genid155",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#hasImpact"
+  } ]
+}, {
+  "@id" : "_:genid156",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#ofActivity"
   } ]
 }, {
   "@id" : "_:genid157",
@@ -256,10 +289,10 @@
   "@id" : "_:genid158",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#Impact"
+    "@id" : "https://w3id.org/sbeo#Severity"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasImpact"
+    "@id" : "https://w3id.org/sbeo#hasSeverity"
   } ]
 }, {
   "@id" : "_:genid159",
@@ -278,7 +311,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasImpact"
+    "@id" : "https://w3id.org/sbeo#hasSeverity"
   } ]
 }, {
   "@id" : "_:genid161",
@@ -292,53 +325,6 @@
   } ]
 }, {
   "@id" : "_:genid162",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#SocialUnit"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#forPerson"
-  } ]
-}, {
-  "@id" : "_:genid163",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#Severity"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasSeverity"
-  } ]
-}, {
-  "@id" : "_:genid164",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#Activity"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#ofActivity"
-  } ]
-}, {
-  "@id" : "_:genid165",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasSeverity"
-  } ]
-}, {
-  "@id" : "_:genid166",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#ofActivity"
-  } ]
-}, {
-  "@id" : "_:genid167",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -349,6 +335,16 @@
       "@id" : "https://w3id.org/sbeo#PickingUpDependents"
     }, {
       "@id" : "https://w3id.org/sbeo#Visiting"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid167",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/sbeo#Available"
+    }, {
+      "@id" : "https://w3id.org/sbeo#UnAvailable"
     } ]
   } ]
 }, {
@@ -364,17 +360,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid172",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/sbeo#Available"
-    }, {
-      "@id" : "https://w3id.org/sbeo#UnAvailable"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid175",
+  "@id" : "_:genid170",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -388,7 +374,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid180",
+  "@id" : "_:genid175",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -396,6 +382,53 @@
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/sbeo#hasAvailabilityStatus"
+  } ]
+}, {
+  "@id" : "_:genid176",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/sbeo#SocialUnit"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#forPerson"
+  } ]
+}, {
+  "@id" : "_:genid177",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/sbeo#Impact"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#hasImpact"
+  } ]
+}, {
+  "@id" : "_:genid178",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/sbeo#Event"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#ofEvent"
+  } ]
+}, {
+  "@id" : "_:genid179",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#hasImpact"
+  } ]
+}, {
+  "@id" : "_:genid180",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/sbeo#ofEvent"
   } ]
 }, {
   "@id" : "_:genid181",
@@ -410,10 +443,10 @@
   "@id" : "_:genid182",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#Impact"
+    "@id" : "https://w3id.org/sbeo#Severity"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasImpact"
+    "@id" : "https://w3id.org/sbeo#hasSeverity"
   } ]
 }, {
   "@id" : "_:genid183",
@@ -432,7 +465,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasImpact"
+    "@id" : "https://w3id.org/sbeo#hasSeverity"
   } ]
 }, {
   "@id" : "_:genid185",
@@ -446,53 +479,6 @@
   } ]
 }, {
   "@id" : "_:genid186",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#SocialUnit"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#forPerson"
-  } ]
-}, {
-  "@id" : "_:genid187",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#Severity"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasSeverity"
-  } ]
-}, {
-  "@id" : "_:genid188",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://w3id.org/sbeo#Event"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#ofEvent"
-  } ]
-}, {
-  "@id" : "_:genid189",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#hasSeverity"
-  } ]
-}, {
-  "@id" : "_:genid190",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#ofEvent"
-  } ]
-}, {
-  "@id" : "_:genid191",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -504,7 +490,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid195",
+  "@id" : "_:genid190",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -514,7 +500,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid198",
+  "@id" : "_:genid193",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#minCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -524,26 +510,26 @@
     "@id" : "https://w3id.org/sbeo#hasMember"
   } ]
 }, {
-  "@id" : "_:genid199",
+  "@id" : "_:genid194",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#length"
+    "@id" : "https://w3id.org/sbeo#size"
   } ]
 }, {
-  "@id" : "_:genid200",
+  "@id" : "_:genid195",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/sbeo#length"
+    "@id" : "https://w3id.org/sbeo#size"
   } ]
 }, {
-  "@id" : "_:genid201",
+  "@id" : "_:genid196",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/sbeo#hasIntensity"
@@ -552,7 +538,7 @@
     "@id" : "https://w3id.org/sbeo#Intensity"
   } ]
 }, {
-  "@id" : "_:genid202",
+  "@id" : "_:genid197",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -568,7 +554,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid208",
+  "@id" : "_:genid203",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -579,6 +565,16 @@
       "@id" : "https://w3id.org/sbeo#CollaborativeNavigation"
     }, {
       "@id" : "https://w3id.org/sbeo#MultiObjectiveNavigation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid208",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#oneOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/sbeo#DeviatingFromPath"
+    }, {
+      "@id" : "https://w3id.org/sbeo#FollowingPath"
     } ]
   } ]
 }, {
@@ -596,17 +592,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid213",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/sbeo#DeviatingFromPath"
-    }, {
-      "@id" : "https://w3id.org/sbeo#FollowingPath"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid216",
+  "@id" : "_:genid211",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Person"
@@ -615,7 +601,7 @@
     "@id" : "https://w3id.org/sbeo#forPerson"
   } ]
 }, {
-  "@id" : "_:genid217",
+  "@id" : "_:genid212",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/sbeo#Ability"
@@ -624,7 +610,7 @@
     "@id" : "https://w3id.org/sbeo#hasAbility"
   } ]
 }, {
-  "@id" : "_:genid218",
+  "@id" : "_:genid213",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/sbeo#Quality"
@@ -633,7 +619,7 @@
     "@id" : "https://w3id.org/sbeo#hasQuality"
   } ]
 }, {
-  "@id" : "_:genid219",
+  "@id" : "_:genid214",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -643,7 +629,7 @@
     "@id" : "https://w3id.org/sbeo#hasAbility"
   } ]
 }, {
-  "@id" : "_:genid220",
+  "@id" : "_:genid215",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -653,16 +639,16 @@
     "@id" : "https://w3id.org/sbeo#hasQuality"
   } ]
 }, {
-  "@id" : "_:genid221",
+  "@id" : "_:genid216",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/sbeo#ofSpace"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid222"
+    "@id" : "_:genid217"
   } ]
 }, {
-  "@id" : "_:genid222",
+  "@id" : "_:genid217",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -672,7 +658,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid225",
+  "@id" : "_:genid220",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Person"
@@ -681,7 +667,7 @@
     "@id" : "https://w3id.org/sbeo#forPerson"
   } ]
 }, {
-  "@id" : "_:genid226",
+  "@id" : "_:genid221",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -691,7 +677,7 @@
     "@id" : "https://w3id.org/sbeo#ofSpace"
   } ]
 }, {
-  "@id" : "_:genid227",
+  "@id" : "_:genid222",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#float"
@@ -700,7 +686,7 @@
     "@id" : "https://w3id.org/sbeo#hasValue"
   } ]
 }, {
-  "@id" : "_:genid228",
+  "@id" : "_:genid223",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -710,7 +696,7 @@
     "@id" : "https://w3id.org/sbeo#hasValue"
   } ]
 }, {
-  "@id" : "_:genid229",
+  "@id" : "_:genid224",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/sbeo#context"
@@ -719,7 +705,7 @@
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ]
 }, {
-  "@id" : "_:genid230",
+  "@id" : "_:genid225",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Person"
@@ -728,7 +714,7 @@
     "@id" : "https://w3id.org/sbeo#player"
   } ]
 }, {
-  "@id" : "_:genid231",
+  "@id" : "_:genid226",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/sbeo#Role"
@@ -737,7 +723,7 @@
     "@id" : "https://w3id.org/sbeo#role"
   } ]
 }, {
-  "@id" : "_:genid232",
+  "@id" : "_:genid227",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -750,7 +736,7 @@
     "@id" : "https://w3id.org/sbeo#player"
   } ]
 }, {
-  "@id" : "_:genid233",
+  "@id" : "_:genid228",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -760,7 +746,7 @@
     "@id" : "https://w3id.org/sbeo#context"
   } ]
 }, {
-  "@id" : "_:genid234",
+  "@id" : "_:genid229",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/sbeo#Role"
@@ -773,7 +759,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid235",
+  "@id" : "_:genid230",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/sbeo#AvailabilityStatus"
@@ -786,7 +772,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid236",
+  "@id" : "_:genid231",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/sbeo#AvailabilityStatus"
@@ -799,7 +785,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid237",
+  "@id" : "_:genid232",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/sbeo#AvailabilityStatus"
@@ -812,16 +798,16 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid238",
+  "@id" : "_:genid233",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/sbeo#ofSpace"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid239"
+    "@id" : "_:genid234"
   } ]
 }, {
-  "@id" : "_:genid239",
+  "@id" : "_:genid234",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -831,7 +817,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid242",
+  "@id" : "_:genid237",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Person"
@@ -840,7 +826,7 @@
     "@id" : "https://w3id.org/sbeo#forPerson"
   } ]
 }, {
-  "@id" : "_:genid243",
+  "@id" : "_:genid238",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -850,7 +836,7 @@
     "@id" : "https://w3id.org/sbeo#ofSpace"
   } ]
 }, {
-  "@id" : "_:genid244",
+  "@id" : "_:genid239",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#float"
@@ -859,7 +845,7 @@
     "@id" : "https://w3id.org/sbeo#hasValue"
   } ]
 }, {
-  "@id" : "_:genid245",
+  "@id" : "_:genid240",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -1112,13 +1098,22 @@
   "@id" : "http://purl.org/dc/elements/1.1/rights",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/contributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/creator",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/language",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/title",
@@ -1138,7 +1133,7 @@
     "@value" : "Ordered List"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid151"
+    "@id" : "_:genid146"
   } ]
 }, {
   "@id" : "http://purl.org/ontology/olo/core#Slot",
@@ -1155,13 +1150,13 @@
     "@value" : "Slot"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid152"
+    "@id" : "_:genid147"
   }, {
-    "@id" : "_:genid153"
+    "@id" : "_:genid148"
   }, {
-    "@id" : "_:genid154"
+    "@id" : "_:genid149"
   }, {
-    "@id" : "_:genid155"
+    "@id" : "_:genid150"
   } ]
 }, {
   "@id" : "http://purl.org/ontology/olo/core#index",
@@ -1196,6 +1191,23 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has item"
+  } ]
+}, {
+  "@id" : "http://purl.org/ontology/olo/core#length",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The length of the Ordered List."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/ontology/olo/core#OrderedList"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Length of Ordered List"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
   } ]
 }, {
   "@id" : "http://purl.org/ontology/olo/core#next",
@@ -1283,6 +1295,12 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://purl.org/ontology/olo/core#Slot"
   } ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://schema.org/domainIncludes",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -1445,26 +1463,46 @@
   "http://purl.org/dc/elements/1.1/rights" : [ {
     "@id" : "https://www.gnu.org/licenses/gpl.html"
   } ],
+  "http://purl.org/dc/terms/contributor" : [ {
+    "@id" : "https://orcid.org/0000-0001-8565-9194"
+  }, {
+    "@id" : "https://orcid.org/0000-0002-3843-6729"
+  }, {
+    "@id" : "https://orcid.org/0000-0002-8962-6856"
+  } ],
   "http://purl.org/dc/terms/creator" : [ {
-    "@value" : "Qasim Khalid"
+    "@id" : "https://orcid.org/0000-0002-7944-2594"
   } ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  \n\nThe core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation."
+    "@value" : "Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  \n\nThe core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation. \n\nSeveral other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."
+  } ],
+  "http://purl.org/dc/terms/issued" : [ {
+    "@value" : "2020-07-12"
   } ],
   "http://purl.org/dc/terms/language" : [ {
     "@value" : "en"
   } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2021-03-30T15:44:00"
+  } ],
   "http://purl.org/dc/terms/title" : [ {
     "@language" : "en",
     "@value" : "SBEO: Smart Building Evacuation Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "sbeo"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@id" : "https://w3id.org/sbeo#"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
     "@id" : "https://github.com/qasimkhalid/SBEO"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "0.1"
+    "@value" : "0.2"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Ability",
@@ -1601,7 +1639,7 @@
     "@value" : "Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid156"
+    "@id" : "_:genid151"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#ActivityImpact",
@@ -1617,15 +1655,15 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Parameter"
   }, {
-    "@id" : "_:genid157"
+    "@id" : "_:genid152"
   }, {
-    "@id" : "_:genid158"
+    "@id" : "_:genid153"
   }, {
-    "@id" : "_:genid159"
+    "@id" : "_:genid154"
   }, {
-    "@id" : "_:genid160"
+    "@id" : "_:genid155"
   }, {
-    "@id" : "_:genid161"
+    "@id" : "_:genid156"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#ActivitySeverity",
@@ -1641,15 +1679,15 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Parameter"
   }, {
-    "@id" : "_:genid162"
+    "@id" : "_:genid157"
   }, {
-    "@id" : "_:genid163"
+    "@id" : "_:genid158"
   }, {
-    "@id" : "_:genid164"
+    "@id" : "_:genid159"
   }, {
-    "@id" : "_:genid165"
+    "@id" : "_:genid160"
   }, {
-    "@id" : "_:genid166"
+    "@id" : "_:genid161"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#ActivityStatus",
@@ -1663,7 +1701,7 @@
     "@value" : "Activity Status"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid167"
+    "@id" : "_:genid162"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#AlertingDevice",
@@ -1811,7 +1849,7 @@
     "@value" : "Availability Status"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid172"
+    "@id" : "_:genid167"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Available",
@@ -2017,12 +2055,13 @@
 }, {
   "@id" : "https://w3id.org/sbeo#DeviatingFromPath",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "When someone is deviating from the provided path."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Deviating From Path"
-  }, {
-    "@language" : "en",
-    "@value" : "When someone is deviating from the provided path."
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#DeviationState",
@@ -2036,7 +2075,7 @@
     "@value" : "Deviation State"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid175"
+    "@id" : "_:genid170"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Device",
@@ -2050,7 +2089,7 @@
     "@value" : "Device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid180"
+    "@id" : "_:genid175"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#DisplayScreen",
@@ -2225,22 +2264,24 @@
 }, {
   "@id" : "https://w3id.org/sbeo#Evacuated",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This instance is used to mention when a person has been evacuated successfully."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Evacuated"
-  }, {
-    "@language" : "en",
-    "@value" : "This instance is used to mention when a person has been evacuated successfully."
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Evacuating",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This instance is used to express when someone is in the process of evacuating some space."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Evacuating"
-  }, {
-    "@language" : "en",
-    "@value" : "This instance is used to express when someone is in the process of evacuating some space."
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Event",
@@ -2267,15 +2308,15 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Parameter"
   }, {
-    "@id" : "_:genid181"
+    "@id" : "_:genid176"
   }, {
-    "@id" : "_:genid182"
+    "@id" : "_:genid177"
   }, {
-    "@id" : "_:genid183"
+    "@id" : "_:genid178"
   }, {
-    "@id" : "_:genid184"
+    "@id" : "_:genid179"
   }, {
-    "@id" : "_:genid185"
+    "@id" : "_:genid180"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#EventSeverity",
@@ -2291,15 +2332,15 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Parameter"
   }, {
-    "@id" : "_:genid186"
+    "@id" : "_:genid181"
   }, {
-    "@id" : "_:genid187"
+    "@id" : "_:genid182"
   }, {
-    "@id" : "_:genid188"
+    "@id" : "_:genid183"
   }, {
-    "@id" : "_:genid189"
+    "@id" : "_:genid184"
   }, {
-    "@id" : "_:genid190"
+    "@id" : "_:genid185"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Exhausted",
@@ -2447,7 +2488,7 @@
     "@value" : "Fitness Status"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid191"
+    "@id" : "_:genid186"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#FloorEntrance",
@@ -2519,7 +2560,7 @@
     "@id" : "https://w3id.org/sbeo#Route"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid195"
+    "@id" : "_:genid190"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Group",
@@ -2535,11 +2576,11 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#SocialUnit"
   }, {
-    "@id" : "_:genid198"
+    "@id" : "_:genid193"
   }, {
-    "@id" : "_:genid199"
+    "@id" : "_:genid194"
   }, {
-    "@id" : "_:genid200"
+    "@id" : "_:genid195"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#HallEntrance",
@@ -2596,6 +2637,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Device"
+  }, {
+    "@id" : "https://w3id.org/sbeo#MovableDevice"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#HearingImpairedPerson",
@@ -2714,7 +2757,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Event"
   }, {
-    "@id" : "_:genid201"
+    "@id" : "_:genid196"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#IncidentProtectionDevice",
@@ -2948,7 +2991,7 @@
     "@value" : "Motion State"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid202"
+    "@id" : "_:genid197"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#MotorImpairedPerson",
@@ -2979,6 +3022,20 @@
     "@id" : "https://w3id.org/sbeo#MobilityWithAssistedDevicePerson"
   }, {
     "@id" : "https://w3id.org/sbeo#MobilityWithWheelchairPerson"
+  } ]
+}, {
+  "@id" : "https://w3id.org/sbeo#MovableDevice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A device that can be moved from one place to another place, e.g., mobile phone, computer trolley, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Movable Device"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/sbeo#Device"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#MovingPavement",
@@ -3020,7 +3077,7 @@
     "@id" : "https://w3id.org/sbeo#Activity"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid208"
+    "@id" : "_:genid203"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#NavigationalPoint",
@@ -3048,7 +3105,7 @@
     "@value" : "Navigational State"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid213"
+    "@id" : "_:genid208"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#NoDeviate",
@@ -3181,15 +3238,15 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Parameter"
   }, {
-    "@id" : "_:genid216"
+    "@id" : "_:genid211"
   }, {
-    "@id" : "_:genid217"
+    "@id" : "_:genid212"
   }, {
-    "@id" : "_:genid218"
+    "@id" : "_:genid213"
   }, {
-    "@id" : "_:genid219"
+    "@id" : "_:genid214"
   }, {
-    "@id" : "_:genid220"
+    "@id" : "_:genid215"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#PersonAccessibility",
@@ -3205,15 +3262,15 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Parameter"
   }, {
+    "@id" : "_:genid216"
+  }, {
+    "@id" : "_:genid220"
+  }, {
     "@id" : "_:genid221"
   }, {
-    "@id" : "_:genid225"
+    "@id" : "_:genid222"
   }, {
-    "@id" : "_:genid226"
-  }, {
-    "@id" : "_:genid227"
-  }, {
-    "@id" : "_:genid228"
+    "@id" : "_:genid223"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#PhysicallyImpairedPerson",
@@ -3359,17 +3416,17 @@
     "@value" : "Role In Context"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid224"
+  }, {
+    "@id" : "_:genid225"
+  }, {
+    "@id" : "_:genid226"
+  }, {
+    "@id" : "_:genid227"
+  }, {
+    "@id" : "_:genid228"
+  }, {
     "@id" : "_:genid229"
-  }, {
-    "@id" : "_:genid230"
-  }, {
-    "@id" : "_:genid231"
-  }, {
-    "@id" : "_:genid232"
-  }, {
-    "@id" : "_:genid233"
-  }, {
-    "@id" : "_:genid234"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Rolling",
@@ -3438,7 +3495,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/ontology/olo/core#OrderedList"
   }, {
-    "@id" : "_:genid235"
+    "@id" : "_:genid230"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#RouteElement",
@@ -3452,7 +3509,7 @@
     "@value" : "Route Element"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid236"
+    "@id" : "_:genid231"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#RoutePoint",
@@ -3658,7 +3715,7 @@
     "@value" : "Space"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid237"
+    "@id" : "_:genid232"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#SpaceSafety",
@@ -3674,15 +3731,15 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/sbeo#Parameter"
   }, {
+    "@id" : "_:genid233"
+  }, {
+    "@id" : "_:genid237"
+  }, {
     "@id" : "_:genid238"
   }, {
-    "@id" : "_:genid242"
+    "@id" : "_:genid239"
   }, {
-    "@id" : "_:genid243"
-  }, {
-    "@id" : "_:genid244"
-  }, {
-    "@id" : "_:genid245"
+    "@id" : "_:genid240"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#SpatialAbility",
@@ -3994,7 +4051,7 @@
     "@value" : "Accommodation Capacity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#accompanying",
@@ -4079,7 +4136,7 @@
     "@value" : "At Time"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#connectedTo",
@@ -4181,7 +4238,7 @@
     "@value" : "Ended At Time"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
   } ],
   "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
     "@id" : "https://w3id.org/sbeo#startedAtTime"
@@ -4507,7 +4564,7 @@
     "@value" : "Has X Time Deviated"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#id",
@@ -4524,7 +4581,7 @@
     "@value" : "Identification Number"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#installedIn",
@@ -4839,6 +4896,23 @@
     "@id" : "https://w3id.org/sbeo#GraphBasedRoute"
   } ]
 }, {
+  "@id" : "https://w3id.org/sbeo#size",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : " the relative extent of something; a thing's overall dimensions or magnitude (Oxford Dictionary of English)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/sbeo#Group"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Size"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+  } ]
+}, {
   "@id" : "https://w3id.org/sbeo#speed",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -4863,7 +4937,7 @@
     "@value" : "A multiplying factor that may affect the speed of person while passing through a specific space."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid130"
+    "@id" : "_:genid128"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4880,14 +4954,14 @@
     "@value" : "Start is when an activity is deemed to have been started by an entity, known as trigger."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid133"
+    "@id" : "_:genid131"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Started At Time"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#staticDescription",
@@ -4896,7 +4970,7 @@
     "@value" : "A static or a fix information about any activity, event, space, social unit, or point of interest."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid136"
+    "@id" : "_:genid134"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -4913,31 +4987,14 @@
     "@value" : "The length of time during which any activity or event lasts."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid142"
+    "@id" : "_:genid140"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Time Duration"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
-  } ]
-}, {
-  "@id" : "https://w3id.org/sbeo#travelTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A specific period of time required to move from one place to another."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid145"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Travel Time"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#upper",
@@ -4981,7 +5038,7 @@
     "@value" : "The measurement or extent of something from side to side (Oxford Dictionary of English)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid148"
+    "@id" : "_:genid143"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",

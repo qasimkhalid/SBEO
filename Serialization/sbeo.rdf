@@ -2,29 +2,34 @@
 <rdf:RDF xmlns="https://w3id.org/sbeo#"
      xml:base="https://w3id.org/sbeo"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:olo="http://purl.org/ontology/olo/core#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:sbeo="https://w3id.org/sbeo#"
-     xmlns:seas="https://w3id.org/seas/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:sosa="http://www.w3.org/ns/sosa/"
-     xmlns:schema="http://schema.org/"
-     xmlns:dcterms="http://purl.org/dc/terms/">
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/sbeo">
         <dc:rights rdf:resource="https://www.gnu.org/licenses/gpl.html"/>
-        <dcterms:creator>Qasim Khalid</dcterms:creator>
-        <dcterms:description xml:lang="en">Smart Building Evacuation Ontology (SBEO) is an ontology that couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-8565-9194"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-3843-6729"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8962-6856"/>
+        <terms:creator rdf:resource="https://orcid.org/0000-0002-7944-2594"/>
+        <terms:description xml:lang="en">Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
-The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users' characteristics and preferences, situational awareness of both building (hazard detection, status of routes in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.</dcterms:description>
-        <dcterms:language>en</dcterms:language>
-        <dcterms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</dcterms:title>
+The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation. 
+
+Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized.</terms:description>
+        <terms:issued>2020-07-12</terms:issued>
+        <terms:language>en</terms:language>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-30T15:44:00</terms:modified>
+        <terms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</terms:title>
+        <vann:preferredNamespacePrefix>sbeo</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/sbeo#"/>
         <rdfs:seeAlso rdf:resource="https://github.com/qasimkhalid/SBEO"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -37,16 +42,26 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://purl.org/dc/elements/1.1/rights -->
 
+
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
     
 
 
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
     <!-- http://purl.org/dc/terms/creator -->
+
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
     
@@ -54,23 +69,55 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://purl.org/dc/terms/description -->
 
+
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
     
 
 
     <!-- http://purl.org/dc/terms/language -->
 
+
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
     
 
 
     <!-- http://purl.org/dc/terms/title -->
 
+
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
     <!-- http://schema.org/domainIncludes -->
+
 
     <owl:AnnotationProperty rdf:about="http://schema.org/domainIncludes"/>
     
@@ -78,17 +125,20 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://schema.org/rangeIncludes -->
 
+
     <owl:AnnotationProperty rdf:about="http://schema.org/rangeIncludes"/>
     
 
 
     <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
+
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
     
 
 
     <!-- http://www.w3.org/2004/02/skos/core#example -->
+
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
     
@@ -102,10 +152,12 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://purl.org/ontology/olo/core#item -->
+
 
     <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#item">
         <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
@@ -116,6 +168,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- http://purl.org/ontology/olo/core#next -->
+
 
     <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#next">
         <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#previous"/>
@@ -131,6 +184,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://purl.org/ontology/olo/core#ordered_list -->
 
+
     <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#ordered_list">
         <owl:inverseOf rdf:resource="http://purl.org/ontology/olo/core#slot"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -145,6 +199,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://purl.org/ontology/olo/core#previous -->
 
+
     <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#previous">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
@@ -158,6 +213,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://purl.org/ontology/olo/core#slot -->
 
+
     <owl:ObjectProperty rdf:about="http://purl.org/ontology/olo/core#slot">
         <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/olo/core#Slot"/>
@@ -169,6 +225,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- http://www.w3.org/ns/sosa/observes -->
+
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observes">
         <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
@@ -185,6 +242,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#accompanying -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#accompanying">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
@@ -198,6 +256,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#acquaintanceOf -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#acquaintanceOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -209,6 +268,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#adjacentTo -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#adjacentTo">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
@@ -236,6 +296,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#assignedRoute -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#assignedRoute">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#Route"/>
@@ -246,6 +307,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#connectedTo -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#connectedTo">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
@@ -273,6 +335,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#context -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#context">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#RoleInContext"/>
         <rdfs:range>
@@ -292,6 +355,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#excludedFor -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#excludedFor">
         <rdfs:domain>
             <owl:Class>
@@ -310,6 +374,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#familiarWith -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#familiarWith">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -331,6 +396,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#forPerson -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#forPerson">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Parameter"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -341,6 +407,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasAbility -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasAbility">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#PersonAbility"/>
@@ -353,6 +420,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasActivityStatus -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasActivityStatus">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#ActivityStatus"/>
@@ -363,6 +431,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasAvailabilityStatus -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasAvailabilityStatus">
         <rdfs:domain>
@@ -382,6 +451,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasDescription -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasDescription">
         <rdfs:domain>
@@ -405,6 +475,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasDeviationState -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasDeviationState">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#DeviationState"/>
@@ -416,6 +487,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasFitnessStatus -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasFitnessStatus">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#FitnessStatus"/>
@@ -426,6 +498,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasImpact -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasImpact">
         <rdfs:domain>
@@ -445,6 +518,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasIntensity -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasIntensity">
         <rdfs:domain>
             <owl:Class>
@@ -463,6 +537,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasMember -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasMember">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Group"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -473,6 +548,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasMotionState -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasMotionState">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -485,6 +561,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasNavigationalState -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasNavigationalState">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#NavigationalState"/>
@@ -495,6 +572,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasNavigationalType -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasNavigationalType">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -507,6 +585,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasQuality -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasQuality">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#PersonAbility"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#Quality"/>
@@ -517,6 +596,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasSeverity -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasSeverity">
         <rdfs:domain>
@@ -535,6 +615,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#installedIn -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#installedIn">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Device"/>
@@ -555,6 +636,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#leadsTo -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#leadsTo">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
@@ -583,6 +665,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#locatedIn -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#locatedIn">
         <rdfs:domain>
@@ -614,6 +697,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#lower -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#lower">
         <owl:inverseOf rdf:resource="https://w3id.org/sbeo#upper"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
@@ -626,6 +710,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#meansOfNotification -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#meansOfNotification">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
@@ -647,6 +732,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#notificationPreference -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#notificationPreference">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#Description"/>
@@ -657,6 +743,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ofActivity -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#ofActivity">
         <rdfs:domain>
@@ -676,6 +763,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ofEvent -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#ofEvent">
         <rdfs:domain>
             <owl:Class>
@@ -694,6 +782,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ofSpace -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#ofSpace">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Parameter"/>
         <rdfs:range>
@@ -711,6 +800,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#partOf -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#partOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
@@ -738,6 +828,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#performedBy -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#performedBy">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Activity"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
@@ -749,6 +840,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#player -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#player">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#RoleInContext"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -759,6 +851,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#responsibleTo -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#responsibleTo">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/sbeo#acquaintanceOf"/>
@@ -773,6 +866,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#role -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#role">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#RoleInContext"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#Role"/>
@@ -783,6 +877,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#routePreference -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#routePreference">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
@@ -795,6 +890,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#routeType -->
 
+
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#routeType">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Route"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#GraphBasedRoute"/>
@@ -805,6 +901,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#upper -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#upper">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -817,6 +914,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#uses -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#uses">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
@@ -845,10 +943,12 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://purl.org/ontology/olo/core#index -->
+
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ontology/olo/core#index">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -861,7 +961,20 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     
 
 
+    <!-- http://purl.org/ontology/olo/core#length -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ontology/olo/core#length">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">The length of the Ordered List.</rdfs:comment>
+        <rdfs:label xml:lang="en">Length of Ordered List</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/age -->
+
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/age">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -874,6 +987,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://xmlns.com/foaf/0.1/firstName -->
 
+
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment xml:lang="en">The first name of the person.</rdfs:comment>
@@ -883,6 +997,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- http://xmlns.com/foaf/0.1/gender -->
+
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/gender">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -895,6 +1010,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://xmlns.com/foaf/0.1/lastName -->
 
+
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/lastName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment xml:lang="en">The last name of the person.</rdfs:comment>
@@ -904,6 +1020,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#accommodationCapacity -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#accommodationCapacity">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -916,7 +1033,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <rdfs:comment xml:lang="en">The accommodating capacity (in terms of persons) of a particular space.</rdfs:comment>
         <rdfs:label xml:lang="en">Accommodation Capacity</rdfs:label>
     </owl:DatatypeProperty>
@@ -924,6 +1041,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#atTime -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#atTime">
         <rdfs:domain>
@@ -936,7 +1054,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
         <rdfs:comment xml:lang="en">The time at which an activity or event occurred.</rdfs:comment>
         <rdfs:label xml:lang="en">At Time</rdfs:label>
     </owl:DatatypeProperty>
@@ -944,6 +1062,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#cost -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#cost">
         <rdfs:domain>
@@ -962,6 +1081,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#currentOccupancy -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#currentOccupancy">
         <rdfs:domain>
@@ -982,6 +1102,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#dynamicDescription -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#dynamicDescription">
         <rdfs:domain>
@@ -1004,6 +1125,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#endedAtTime -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#endedAtTime">
         <rdfs:domain>
             <owl:Class>
@@ -1013,7 +1135,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/sbeo#startedAtTime"/>
         <rdfs:comment xml:lang="en">The time at which an activity ended.</rdfs:comment>
         <rdfs:label xml:lang="en">Ended At Time</rdfs:label>
@@ -1022,6 +1144,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#hasValue -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#hasValue">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -1035,9 +1158,10 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#hasXTimesDeviated -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#hasXTimesDeviated">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <rdfs:comment xml:lang="en">Number of times a social unit is deviated while following the provided path.</rdfs:comment>
         <rdfs:label xml:lang="en">Has X Time Deviated</rdfs:label>
     </owl:DatatypeProperty>
@@ -1045,6 +1169,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#id -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#id">
         <rdfs:domain>
@@ -1055,7 +1180,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment xml:lang="en">An unique identification number of something such as, social unit, device, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Identification Number</rdfs:label>
     </owl:DatatypeProperty>
@@ -1064,13 +1189,12 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#length -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#length">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ontology/olo/core#OrderedList"/>
-                    <rdf:Description rdf:about="https://w3id.org/sbeo#Group"/>
                     <rdf:Description rdf:about="https://w3id.org/sbeo#Passage"/>
                     <rdf:Description rdf:about="https://w3id.org/sbeo#Space"/>
                 </owl:unionOf>
@@ -1085,6 +1209,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#number -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#number">
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
@@ -1094,7 +1219,20 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     
 
 
+    <!-- https://w3id.org/sbeo#size -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#size">
+        <rdfs:domain rdf:resource="https://w3id.org/sbeo#Group"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment xml:lang="en"> the relative extent of something; a thing&apos;s overall dimensions or magnitude (Oxford Dictionary of English).</rdfs:comment>
+        <rdfs:label xml:lang="en">Size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/sbeo#speed -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#speed">
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
@@ -1106,6 +1244,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#speedFactor -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#speedFactor">
         <rdfs:domain>
@@ -1125,6 +1264,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#startedAtTime -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#startedAtTime">
         <rdfs:domain>
             <owl:Class>
@@ -1134,7 +1274,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
         <rdfs:comment xml:lang="en">Start is when an activity is deemed to have been started by an entity, known as trigger.</rdfs:comment>
         <rdfs:label xml:lang="en">Started At Time</rdfs:label>
     </owl:DatatypeProperty>
@@ -1142,6 +1282,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#staticDescription -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#staticDescription">
         <rdfs:domain>
@@ -1164,6 +1305,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#timeDuration -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#timeDuration">
         <rdfs:domain>
             <owl:Class>
@@ -1173,32 +1315,15 @@ The core SBEO covers the concepts related to the geometry of building, devices a
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
         <rdfs:comment xml:lang="en">The length of time during which any activity or event lasts.</rdfs:comment>
         <rdfs:label xml:lang="en">Time Duration</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/sbeo#travelTime -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#travelTime">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/sbeo#Passage"/>
-                    <rdf:Description rdf:about="https://w3id.org/sbeo#Route"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="en">A specific period of time required to move from one place to another.</rdfs:comment>
-        <rdfs:label xml:lang="en">Travel Time</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/sbeo#width -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#width">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -1225,10 +1350,12 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://purl.org/ontology/olo/core#OrderedList -->
+
 
     <owl:Class rdf:about="http://purl.org/ontology/olo/core#OrderedList">
         <rdfs:subClassOf>
@@ -1245,6 +1372,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- http://purl.org/ontology/olo/core#Slot -->
+
 
     <owl:Class rdf:about="http://purl.org/ontology/olo/core#Slot">
         <rdfs:subClassOf>
@@ -1280,6 +1408,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
 
+
     <owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty">
         <rdfs:comment xml:lang="en">An observable quality (property, characteristic) of a FeatureOfInterest.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
@@ -1291,6 +1420,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- http://www.w3.org/ns/sosa/Sensor -->
+
 
     <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor">
         <rdfs:comment xml:lang="en">Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.</rdfs:comment>
@@ -1304,6 +1434,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
+
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:comment xml:lang="en">It represents a single individual of any age and having any type of characteristics.</rdfs:comment>
@@ -1314,6 +1445,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Ability -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Ability">
         <rdfs:comment xml:lang="en">Possession of the means or skill to do something (Oxford Dictionary of English).</rdfs:comment>
         <rdfs:label xml:lang="en">Ability</rdfs:label>
@@ -1322,6 +1454,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#AbilityToHear -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToHear">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
@@ -1333,6 +1466,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AbilityToRun -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToRun">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityAbility"/>
         <rdfs:comment xml:lang="en">An ability to run.</rdfs:comment>
@@ -1342,6 +1476,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#AbilityToSee -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToSee">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
@@ -1353,6 +1488,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AbilityToTalk -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToTalk">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
         <rdfs:comment xml:lang="en">An ability to talk.</rdfs:comment>
@@ -1362,6 +1498,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#AbilityToTouch -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToTouch">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryAbility"/>
@@ -1373,6 +1510,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AbilityToUseStairs -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToUseStairs">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityAbility"/>
         <rdfs:comment xml:lang="en">An ability to use the stairs. Note that the people on the wheelchair are not considered to have this ability no matter the stairs have a stairlift and a ramp.</rdfs:comment>
@@ -1382,6 +1520,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#AbilityToWalk -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#AbilityToWalk">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityAbility"/>
@@ -1393,6 +1532,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ActiveFireProtectionDevice -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#ActiveFireProtectionDevice">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#FireProtectionDevice"/>
         <rdfs:comment xml:lang="en">It is an integral part of the fire protection used as a first response to minimize the spread of fire and related effects.</rdfs:comment>
@@ -1402,6 +1542,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Activity -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Activity">
         <rdfs:subClassOf>
@@ -1417,6 +1558,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ActivityImpact -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#ActivityImpact">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
@@ -1458,6 +1600,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ActivitySeverity -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#ActivitySeverity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
         <rdfs:subClassOf>
@@ -1498,6 +1641,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ActivityStatus -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#ActivityStatus">
         <owl:equivalentClass>
             <owl:Class>
@@ -1517,6 +1661,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AlertingDevice -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AlertingDevice">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
         <rdfs:comment xml:lang="en">Alerting devices are those devices that are used to react to normal as well as alarming situations to let people know that some specific condition is occuring.</rdfs:comment>
@@ -1526,6 +1671,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#AlertingDeviceForImpairedPerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#AlertingDeviceForImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#AlertingDevice"/>
@@ -1537,6 +1683,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AlzheimersDiseasedPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AlzheimersDiseasedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MentalImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person having an Alzheimer&apos;s disease.</rdfs:comment>
@@ -1546,6 +1693,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Apartment -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Apartment">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
@@ -1557,6 +1705,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AppartmentBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AppartmentBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/ResidentialBuilding"/>
         <rdfs:comment xml:lang="en">A set of one or more buildings that contain apartments in it.</rdfs:comment>
@@ -1566,6 +1715,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#AssemblyPoint -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#AssemblyPoint">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
@@ -1577,6 +1727,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AudioDescription -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AudioDescription">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Description"/>
         <rdfs:comment xml:lang="en">A type of description in which sounds such as voices, are used to provide the information about any entity.</rdfs:comment>
@@ -1587,6 +1738,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AutonomousMobilityPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#AutonomousMobilityPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MotorImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person who can walk on his/her with a help of a non-motorised device, e.g. crutches.</rdfs:comment>
@@ -1596,6 +1748,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#AvailabilityStatus -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#AvailabilityStatus">
         <owl:equivalentClass>
@@ -1614,6 +1767,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#BlindPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#BlindPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisuallyImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person who has lost the vision completly and can neither see naturally nor with the help of any device.</rdfs:comment>
@@ -1623,6 +1777,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#BuildingEntrance -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#BuildingEntrance">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
@@ -1634,6 +1789,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#BuildingExit -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#BuildingExit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
         <rdfs:comment xml:lang="en">A logical point that is used to represent the exit of a building.</rdfs:comment>
@@ -1643,6 +1799,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ChemicalSpill -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#ChemicalSpill">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
@@ -1654,6 +1811,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#CinemaBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#CinemaBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/AssemblyBuilding"/>
         <rdfs:comment xml:lang="en">A building in which movies are shown.</rdfs:comment>
@@ -1663,6 +1821,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Classroom -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Classroom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
@@ -1674,6 +1833,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ColourBlindPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#ColourBlindPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisuallyImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person having the decreased ability to see color or differences in color.</rdfs:comment>
@@ -1683,6 +1843,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Congestion -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Congestion">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
@@ -1694,6 +1855,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#CorridorEntrance -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#CorridorEntrance">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
         <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a corridor.</rdfs:comment>
@@ -1703,6 +1865,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#CorridorExit -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#CorridorExit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
@@ -1714,6 +1877,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#CorridorSegment -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#CorridorSegment">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Corridor"/>
         <rdfs:comment xml:lang="en">A fragment or an atomic element of a corridor.</rdfs:comment>
@@ -1723,6 +1887,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#DayCare -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#DayCare">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
@@ -1734,6 +1899,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Description -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Description">
         <rdfs:comment xml:lang="en">A representation and detail of a person, object, or event. It is used to describe the details of anything.</rdfs:comment>
         <rdfs:label xml:lang="en">Description</rdfs:label>
@@ -1742,6 +1908,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#DeviationState -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#DeviationState">
         <owl:equivalentClass>
@@ -1762,6 +1929,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Device -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Device">
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1777,6 +1945,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#DisplayScreen -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#DisplayScreen">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
         <rdfs:comment xml:lang="en">A display screen is an output device to represent the information in visual or tactile form.</rdfs:comment>
@@ -1786,6 +1955,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#DownSyndromePerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#DownSyndromePerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MentalImpairedPerson"/>
@@ -1797,6 +1967,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Earthquake -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Earthquake">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
         <rdfs:comment xml:lang="en">A sudden violent shaking of the ground, typically causing great destruction, as a result of movements within the earth&apos;s crust or volcanic action (Oxford Dictionary of English). It may cause a sudden panic among the occupants of the building.</rdfs:comment>
@@ -1806,6 +1977,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#EmergencyActivity -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyActivity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Activity"/>
@@ -1817,6 +1989,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#EmergencyEvacuation -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyEvacuation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#EmergencyActivity"/>
         <rdfs:comment xml:lang="en">It represents an immediate escape of people away from a particular area that has ongoing or imminent hazard to their lives or property.</rdfs:comment>
@@ -1826,6 +1999,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#EmergencyEvacuationGroup -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyEvacuationGroup">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Group"/>
@@ -1837,6 +2011,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#EmergencyEvacuationRoute -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyEvacuationRoute">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ExitRoute"/>
         <rdfs:comment xml:lang="en">A type of route in which only those spaces are mentioned that are potentially safe for its users as well as the ending point of it must be an exit from a particular space.</rdfs:comment>
@@ -1846,6 +2021,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#EmergencyExit -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#EmergencyExit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
@@ -1857,6 +2033,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#EndPoint -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#EndPoint">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#NavigationalPoint"/>
         <rdfs:comment xml:lang="en">A logic point that is used to indicate the end of a corridor.</rdfs:comment>
@@ -1867,6 +2044,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Entrance -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Entrance">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#TransitionPoint"/>
         <rdfs:comment xml:lang="en">Entrance represents a space or a door that is used to enter into a building. Normally, it is also used as an exit.</rdfs:comment>
@@ -1876,6 +2054,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Escalator -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Escalator">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
@@ -1888,6 +2067,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#EscortSupportedWheelchairPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#EscortSupportedWheelchairPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithWheelchairPerson"/>
         <rdfs:comment xml:lang="en">A physical impaired person whose wheelchair is escorted by another person.</rdfs:comment>
@@ -1898,6 +2078,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Event -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Event">
         <rdfs:comment xml:lang="en">An occurrence; something that happens (Oxford Dictionary of English). It represents when something planned or sudden happens.</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
@@ -1906,6 +2087,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#EventImpact -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#EventImpact">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
@@ -1947,6 +2129,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#EventSeverity -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#EventSeverity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
         <rdfs:subClassOf>
@@ -1987,6 +2170,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Exit -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Exit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#TransitionPoint"/>
         <rdfs:comment xml:lang="en">Exit represents a logical representation for escaping or releasing from a specific phsyical space. Generally, an exit is as same as an entrance.</rdfs:comment>
@@ -1996,6 +2180,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ExitRoute -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#ExitRoute">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Route"/>
@@ -2007,6 +2192,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Family -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Family">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Group"/>
         <rdfs:comment xml:lang="en">A group of two or more persons having family ties between them.</rdfs:comment>
@@ -2016,6 +2202,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Fire -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Fire">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
@@ -2027,6 +2214,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#FireDoor -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#FireDoor">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PassiveFireProtectionDevice"/>
         <rdfs:comment xml:lang="en">A type of door used to minimize the spread of fire and related effects by isolating two connected spaces or sections in the building.</rdfs:comment>
@@ -2036,6 +2224,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#FireEscapeLadder -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#FireEscapeLadder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PassiveFireProtectionDevice"/>
@@ -2047,6 +2236,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#FireExtinguisher -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#FireExtinguisher">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ActiveFireProtectionDevice"/>
         <rdfs:comment xml:lang="en">An active fire protection instrument used by persons to blow out small scale fire.</rdfs:comment>
@@ -2057,6 +2247,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#FireProtectionDevice -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#FireProtectionDevice">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#IncidentProtectionDevice"/>
         <rdfs:comment xml:lang="en">Device that is used to minimize the effects of potentially danger fires.</rdfs:comment>
@@ -2066,6 +2257,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#FitnessStatus -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#FitnessStatus">
         <owl:equivalentClass>
@@ -2085,6 +2277,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#FloorEntrance -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#FloorEntrance">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
         <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a floor.</rdfs:comment>
@@ -2094,6 +2287,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#FloorExit -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#FloorExit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
@@ -2105,6 +2299,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Footpath -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Footpath">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Thoroughfare"/>
@@ -2115,6 +2310,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#GraphBasedRoute -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#GraphBasedRoute">
         <owl:equivalentClass>
@@ -2134,6 +2330,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Group -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Group">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:subClassOf>
@@ -2144,13 +2341,13 @@ The core SBEO covers the concepts related to the geometry of building, devices a
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/sbeo#length"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#size"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/sbeo#length"/>
+                <owl:onProperty rdf:resource="https://w3id.org/sbeo#size"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2162,6 +2359,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#HallEntrance -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#HallEntrance">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
         <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a hall.</rdfs:comment>
@@ -2171,6 +2369,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#HallExit -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#HallExit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
@@ -2182,6 +2381,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#HallSegment -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#HallSegment">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Hall"/>
         <rdfs:comment xml:lang="en">A fragment or an atomic element of a hall.</rdfs:comment>
@@ -2192,8 +2392,10 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#HandheldDevice -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#HandheldDevice">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MovableDevice"/>
         <rdfs:comment xml:lang="en">A smart device or a computer that is small enough to be used while holding it in the hands.</rdfs:comment>
         <rdfs:label xml:lang="en">Handheld Device</rdfs:label>
     </owl:Class>
@@ -2201,6 +2403,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#HearingImpairedPerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#HearingImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryImpairedPerson"/>
@@ -2211,6 +2414,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#HorizontalMovingPavement -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#HorizontalMovingPavement">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
@@ -2224,6 +2428,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#HorizontalPassage -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#HorizontalPassage">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Passage"/>
         <owl:disjointWith rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
@@ -2235,6 +2440,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#HotelBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#HotelBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/ResidentialBuilding"/>
         <rdfs:comment xml:lang="en">A building that contains rooms, apartments or suites where people stay for a specific time period.</rdfs:comment>
@@ -2244,6 +2450,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ImageDescription -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#ImageDescription">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Description"/>
@@ -2255,6 +2462,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Impact -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Impact">
         <rdfs:comment xml:lang="en">An impact is a long-lasting effect of an event (or activity), that continues to exist after the event (or activity) has taken place.</rdfs:comment>
         <rdfs:label xml:lang="en">Impact</rdfs:label>
@@ -2263,6 +2471,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ImpairedPerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#ImpairedPerson">
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -2273,6 +2482,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Incident -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Incident">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Event"/>
@@ -2290,6 +2500,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#IncidentProtectionDevice -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#IncidentProtectionDevice">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
         <rdfs:comment xml:lang="en">Device that is used to avoid and minimize the effects of potentially danger events for the occupants of the building as well as for the structure of building itself.</rdfs:comment>
@@ -2300,6 +2511,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Intensity -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Intensity">
         <rdfs:comment xml:lang="en">The measurable amount of a property, such as force, brightness, or a magnetic field (Oxford Dictionary of English).</rdfs:comment>
         <rdfs:label xml:lang="en">Intensity</rdfs:label>
@@ -2308,6 +2520,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Junction -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Junction">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#NavigationalPoint"/>
@@ -2319,6 +2532,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#KidsArea -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#KidsArea">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
         <rdfs:comment xml:lang="en">A place where infants or young children can play which is surrounded by a boundary normally. It can be both indoor and outdoor.</rdfs:comment>
@@ -2328,6 +2542,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#LowStaminaPerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#LowStaminaPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PhysicallyImpairedPerson"/>
@@ -2339,6 +2554,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#LowVisionPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#LowVisionPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisuallyImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person whose visual acuity is 20/70 or poorer in the better-seeing eye and cannot be corrected or improved with regular eyeglasses.</rdfs:comment>
@@ -2348,6 +2564,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#MeetingRoom -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#MeetingRoom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
@@ -2359,6 +2576,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#MentalAbility -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#MentalAbility">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
         <rdfs:comment xml:lang="en">The mental ability of an indi-vidual to remain focused on an external stimuli or an internal experience for a certain period of time (World Health Organisation).</rdfs:comment>
@@ -2368,6 +2586,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#MentalImpairedPerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#MentalImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ImpairedPerson"/>
@@ -2379,6 +2598,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#MildHearingImpairedPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#MildHearingImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person who is only able to hear the sounds that are between 25 and 40 dB.</rdfs:comment>
@@ -2388,6 +2608,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#MobilePhone -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#MobilePhone">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HandheldDevice"/>
@@ -2400,6 +2621,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#MobilityAbility -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#MobilityAbility">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
         <rdfs:comment xml:lang="en">This ability is used to represent all kinetic abilities a person may have.</rdfs:comment>
@@ -2409,6 +2631,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#MobilityWithAssistedDevicePerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#MobilityWithAssistedDevicePerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MotorImpairedPerson"/>
@@ -2420,6 +2643,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#MobilityWithWheelchairPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#MobilityWithWheelchairPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MotorImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person using a wheelchair (a mobility device that is used while having any kind of tempoary or permanent physical impairment).</rdfs:comment>
@@ -2430,6 +2654,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ModerateHearingImpairedPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#ModerateHearingImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person who cannot hear sounds that are less than 40-75 dB.</rdfs:comment>
@@ -2439,6 +2664,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#MotionState -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#MotionState">
         <owl:equivalentClass>
@@ -2460,6 +2686,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#MotorImpairedPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#MotorImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#PhysicallyImpairedPerson"/>
         <rdfs:comment xml:lang="en">A person who has either partial or total loss of function of a body part, usually a limb or limbs.</rdfs:comment>
@@ -2470,6 +2697,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#MotorisedWheelchairPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#MotorisedWheelchairPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithAssistedDevicePerson"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithWheelchairPerson"/>
@@ -2479,7 +2707,19 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     
 
 
+    <!-- https://w3id.org/sbeo#MovableDevice -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sbeo#MovableDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
+        <rdfs:comment xml:lang="en">A device that can be moved from one place to another place, e.g., mobile phone, computer trolley, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Movable Device</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/sbeo#MovingPavement -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#MovingPavement">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
@@ -2490,6 +2730,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Navigation -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Navigation">
         <owl:equivalentClass>
@@ -2511,6 +2752,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#NavigationalPoint -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#NavigationalPoint">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
         <rdfs:comment xml:lang="en">It is a special type of point that connects more than two corridors or enforce change of direction to users or indicate the end of corridors.</rdfs:comment>
@@ -2520,6 +2762,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#NavigationalState -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#NavigationalState">
         <owl:equivalentClass>
@@ -2538,6 +2781,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#NonMotorisedWheelchairPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#NonMotorisedWheelchairPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilityWithWheelchairPerson"/>
         <rdfs:comment xml:lang="en">A traditional wheelchair that is used by hands. It has significantly lower speed than motorised wheelchairs.</rdfs:comment>
@@ -2547,6 +2791,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#OpenAreaEntrance -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#OpenAreaEntrance">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
@@ -2558,6 +2803,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#OpenAreaExit -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#OpenAreaExit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
         <rdfs:comment xml:lang="en">A logical point that is used to represent the exit from a specifc open space.</rdfs:comment>
@@ -2567,6 +2813,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Panic -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Panic">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
@@ -2578,6 +2825,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Parameter -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Parameter">
         <rdfs:comment xml:lang="en">A numerical or other measurable factor forming one of a set that defines a system or sets the conditions of its operation.</rdfs:comment>
         <rdfs:label xml:lang="en">Parameter</rdfs:label>
@@ -2586,6 +2834,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Passage -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Passage">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RouteElement"/>
@@ -2597,6 +2846,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#PassiveFireProtectionDevice -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#PassiveFireProtectionDevice">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#FireProtectionDevice"/>
         <rdfs:comment xml:lang="en">It is an integral component installed in the building while construction to resist the fire.</rdfs:comment>
@@ -2606,6 +2856,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#PersonAbility -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#PersonAbility">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
@@ -2646,6 +2897,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#PersonAccessibility -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#PersonAccessibility">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
@@ -2694,6 +2946,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#PhysicallyImpairedPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#PhysicallyImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ImpairedPerson"/>
         <rdfs:comment xml:lang="en">A physical impairment is a condition in which any part of person&apos;s body is either  damaged or is not working properly.</rdfs:comment>
@@ -2703,6 +2956,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#PointOfInterest -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#PointOfInterest">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
@@ -2714,6 +2968,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#PointOfInterestSegment -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#PointOfInterestSegment">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
         <rdfs:comment xml:lang="en">A traverasal part of a space that is connected to a specific Point of Interest.</rdfs:comment>
@@ -2723,6 +2978,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ProfoundHearingImpairedPerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#ProfoundHearingImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
@@ -2734,6 +2990,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Quality -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Quality">
         <rdfs:comment xml:lang="en">A degree or grade of excellence or worth.</rdfs:comment>
         <rdfs:label xml:lang="en">Quality</rdfs:label>
@@ -2742,6 +2999,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Ramp -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Ramp">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
@@ -2754,6 +3012,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Road -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Road">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Thoroughfare"/>
@@ -2765,6 +3024,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Role -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Role">
         <rdfs:comment xml:lang="en">The function assumed or part played by a person or thing in a particular situation (Oxford Dictionary of English).</rdfs:comment>
         <rdfs:label xml:lang="en">Role</rdfs:label>
@@ -2773,6 +3033,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#RoleInContext -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#RoleInContext">
         <rdfs:subClassOf>
@@ -2821,6 +3082,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#RoomEntrance -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#RoomEntrance">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Entrance"/>
         <rdfs:comment xml:lang="en">A logical point that is used to represent the entrance to a room.</rdfs:comment>
@@ -2830,6 +3092,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#RoomExit -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#RoomExit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Exit"/>
@@ -2841,6 +3104,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#RoomSegment -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#RoomSegment">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
         <rdfs:comment xml:lang="en">A traversable part in a room that is usually used to go the exit or the other part of the room.</rdfs:comment>
@@ -2850,6 +3114,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Route -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Route">
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/olo/core#OrderedList"/>
@@ -2868,6 +3133,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#RouteElement -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#RouteElement">
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -2884,6 +3150,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#RoutePoint -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#RoutePoint">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RouteElement"/>
         <rdfs:comment xml:lang="en">Any spatial element that is part of a path and traversable by persons. In addition, it may be used as a logic representation of physical passages to represent a node (or a vertex) in a route graph.</rdfs:comment>
@@ -2893,6 +3160,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#SeatingArrangementRoute -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#SeatingArrangementRoute">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Route"/>
@@ -2904,6 +3172,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#SensorEvent -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#SensorEvent">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Event"/>
         <rdfs:comment xml:lang="en">This concept is used to express an event detected by any sensor.</rdfs:comment>
@@ -2913,6 +3182,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#SensoryAbility -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#SensoryAbility">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
@@ -2924,6 +3194,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#SensoryImpairedPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#SensoryImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#ImpairedPerson"/>
         <rdfs:comment xml:lang="en">Sensory impairment is when one of the senses such as sight, hearing, smell, touch, taste and spatial awareness, is no longer normal.</rdfs:comment>
@@ -2933,6 +3204,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#SevereHearingImpairedPerson -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#SevereHearingImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HearingImpairedPerson"/>
@@ -2944,6 +3216,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Severity -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Severity">
         <rdfs:comment xml:lang="en">The quality of being hard to endure, uninviting or formidable.</rdfs:comment>
         <rdfs:label xml:lang="en">Severity</rdfs:label>
@@ -2952,6 +3225,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ShoppingMallBuilding -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#ShoppingMallBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/MercantileBuilding"/>
@@ -2963,6 +3237,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#ShoppingRoute -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#ShoppingRoute">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VisitRoute"/>
         <rdfs:comment xml:lang="en">A type of route in which the specific points of interest are mentioned in the form of connected spaces, according to the preferences or interests of a one or more individuals.</rdfs:comment>
@@ -2972,6 +3247,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#SmartPhone -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#SmartPhone">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MobilePhone"/>
@@ -2983,6 +3259,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#SocialUnit -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#SocialUnit">
         <rdfs:comment xml:lang="en">An individual, or a group or community, considered as a discrete constituent of a society or larger group (Oxford Dictionary of English).</rdfs:comment>
         <rdfs:label xml:lang="en">Social Unit</rdfs:label>
@@ -2991,6 +3268,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Space -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Space">
         <rdfs:subClassOf>
@@ -3007,6 +3285,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#SpaceSafety -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#SpaceSafety">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Parameter"/>
@@ -3055,6 +3334,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#SpatialAbility -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#SpatialAbility">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Ability"/>
         <rdfs:comment xml:lang="en">This ability expresses the capacity to understand, reason and remember the spatial relations among objects and spaces.</rdfs:comment>
@@ -3064,6 +3344,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#StadiumBuilding -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#StadiumBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/AssemblyBuilding"/>
@@ -3075,6 +3356,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Stampeding -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Stampeding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Panic"/>
         <rdfs:comment xml:lang="en">A sudden and uncontrollable run by the group of people caused by panic.</rdfs:comment>
@@ -3084,6 +3366,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Suite -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Suite">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
@@ -3095,6 +3378,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Telephone -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#Telephone">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Device"/>
         <rdfs:comment xml:lang="en">A device for transmitting voices over a distance using wire or radio, by converting acoustic vibrations to electrical signals (Oxford Dictionary of English).</rdfs:comment>
@@ -3104,6 +3388,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#TerroristAttack -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#TerroristAttack">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Incident"/>
@@ -3115,6 +3400,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#TextualDescription -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#TextualDescription">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Description"/>
         <rdfs:comment xml:lang="en">A type of description in which only text or writings are used to provide the information about any entity.</rdfs:comment>
@@ -3124,6 +3410,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Thoroughfare -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Thoroughfare">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
@@ -3135,6 +3422,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#TransitionPoint -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#TransitionPoint">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
         <rdfs:comment xml:lang="en">A point at which person passes from one place to the next.</rdfs:comment>
@@ -3145,6 +3433,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#TurnPoint -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#TurnPoint">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#NavigationalPoint"/>
         <rdfs:comment xml:lang="en">A logic point that is used to enforce people to change their direction.</rdfs:comment>
@@ -3154,6 +3443,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#VerticalMovingPavement -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#VerticalMovingPavement">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#MovingPavement"/>
@@ -3166,6 +3456,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#VerticalPassage -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#VerticalPassage">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Passage"/>
         <rdfs:comment xml:lang="en">A type of passage that connects spatial elements located on different storey or floor.</rdfs:comment>
@@ -3175,6 +3466,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Visit -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#Visit">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Activity"/>
@@ -3186,6 +3478,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#VisitRoute -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#VisitRoute">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Route"/>
         <rdfs:comment xml:lang="en">A type of route created for visiting purposes within an indoor environment.</rdfs:comment>
@@ -3195,6 +3488,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#VisitingGroup -->
+
 
     <owl:Class rdf:about="https://w3id.org/sbeo#VisitingGroup">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Group"/>
@@ -3206,6 +3500,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#VisuallyImpairedPerson -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#VisuallyImpairedPerson">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#SensoryImpairedPerson"/>
         <rdfs:comment xml:lang="en">It is a partial or total unability to see. It is also known as visual loss. Here, we considered a person having visual impairment who as severe low vision; 20/200 to 20/400 or higher.</rdfs:comment>
@@ -3216,6 +3511,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#WaitingZone -->
 
+
     <owl:Class rdf:about="https://w3id.org/sbeo#WaitingZone">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#RoutePoint"/>
         <rdfs:comment xml:lang="en">A space (normally with seating), where people can wait to do some specific activity. During emergency condtions, it is also used for several purposes, such as unification of people with their family members, acquaintances or emergency rescue teams, etc.</rdfs:comment>
@@ -3225,6 +3521,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/AssemblyBuilding -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/AssemblyBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
@@ -3237,6 +3534,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/Attic -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/Attic">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
         <rdfs:comment xml:lang="en">the part of a building, especially of a house, directly under a roof; garret.</rdfs:comment>
@@ -3247,6 +3545,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Balcony -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Balcony">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
@@ -3259,6 +3558,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/Basement -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/Basement">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
         <rdfs:comment xml:lang="en">A story of a building, partly or wholly underground.</rdfs:comment>
@@ -3269,6 +3569,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Bathroom -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Bathroom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
@@ -3281,6 +3582,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/Bedroom -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/Bedroom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
         <rdfs:comment xml:lang="en">Bedroom is used mainly for sleeping.</rdfs:comment>
@@ -3291,6 +3593,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Building -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Building">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
@@ -3304,6 +3607,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/BuildingSpace -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/BuildingSpace">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
         <rdfs:comment xml:lang="en">A Space is a 3D volume bounded by surfaces. It represents the physical spaces of the building.</rdfs:comment>
@@ -3314,6 +3618,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/BuildingSpatialStructure -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/BuildingSpatialStructure">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
@@ -3326,6 +3631,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/BuildingStorey -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/BuildingStorey">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpatialStructure"/>
         <rdfs:comment xml:lang="en">The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound.</rdfs:comment>
@@ -3336,6 +3642,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Corridor -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Corridor">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
@@ -3349,6 +3656,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/DiningRoom -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/DiningRoom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
         <rdfs:comment xml:lang="en">A room in which meals are eaten, as in a home or hotel, especially the room in which the major or more formal meals are eaten.</rdfs:comment>
@@ -3359,6 +3667,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Door -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Door">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
@@ -3371,6 +3680,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/EducationalBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/EducationalBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
         <rdfs:comment xml:lang="en">Schools and day care centers.</rdfs:comment>
@@ -3381,6 +3691,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Elevator -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Elevator">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
@@ -3394,6 +3705,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/Greenhouse -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/Greenhouse">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
         <rdfs:comment xml:lang="en">A building, room, or zone, usually chiefly of glass, in which the temperature is maintained within a desired range, used for cultivating tender plants or growing plants out of season.</rdfs:comment>
@@ -3404,6 +3716,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Hall -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Hall">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#HorizontalPassage"/>
@@ -3417,6 +3730,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/HomeOffice -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/HomeOffice">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Office"/>
         <rdfs:comment xml:lang="en">A work or office space set up in a person&apos;s home and used exclusively for business on a regular basis.</rdfs:comment>
@@ -3427,6 +3741,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/IndustrialBuilding -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/IndustrialBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
@@ -3439,6 +3754,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/InstitutionalBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/InstitutionalBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
         <rdfs:comment xml:lang="en">Institutions such as hospitals providing medical and surgical treatment and nursing care for ill or injured people.</rdfs:comment>
@@ -3449,6 +3765,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Kitchen -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Kitchen">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
@@ -3461,6 +3778,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/Laundry -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/Laundry">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
         <rdfs:comment xml:lang="en">A room or zone, as in a home or apartment building, reserved for doing the family wash.</rdfs:comment>
@@ -3471,6 +3789,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/LivingRoom -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/LivingRoom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
@@ -3483,6 +3802,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/Lobby -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/Lobby">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
         <rdfs:comment xml:lang="en">An entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer.</rdfs:comment>
@@ -3493,6 +3813,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/MercantileBuilding -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/MercantileBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
@@ -3505,6 +3826,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/NonResidentialBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/NonResidentialBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Building"/>
         <rdfs:comment xml:lang="en">A  non-residential building is a building at least half of which is used for other than residential purposes. </rdfs:comment>
@@ -3515,6 +3837,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Office -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Office">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
@@ -3527,6 +3850,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/OfficeBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/OfficeBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/NonResidentialBuilding"/>
         <rdfs:comment xml:lang="en">Places where services are provided. Examples: banks, insurance agencies.</rdfs:comment>
@@ -3537,6 +3861,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/ResidentialBuilding -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/ResidentialBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Building"/>
@@ -3549,6 +3874,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/Room -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/Room">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/BuildingSpace"/>
         <rdfs:comment xml:lang="en">A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself.</rdfs:comment>
@@ -3560,6 +3886,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/SiteOfBuilding -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/SiteOfBuilding">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#Space"/>
         <rdfs:comment xml:lang="en">Building site is a locale containing one or more separate buildings. They are zones.</rdfs:comment>
@@ -3570,6 +3897,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/Stairs -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/Stairs">
         <rdfs:subClassOf rdf:resource="https://w3id.org/sbeo#VerticalPassage"/>
@@ -3583,6 +3911,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/StorageRoom -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/StorageRoom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
         <rdfs:comment xml:lang="en">Room for storage.</rdfs:comment>
@@ -3594,6 +3923,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/seas/SwimmingPool -->
 
+
     <owl:Class rdf:about="https://w3id.org/seas/SwimmingPool">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
         <rdfs:comment xml:lang="en">A tank or large artificial basin, as of concrete, for filling with water for swimming.</rdfs:comment>
@@ -3604,6 +3934,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/seas/UtilityRoom -->
+
 
     <owl:Class rdf:about="https://w3id.org/seas/UtilityRoom">
         <rdfs:subClassOf rdf:resource="https://w3id.org/seas/Room"/>
@@ -3622,10 +3953,12 @@ The core SBEO covers the concepts related to the geometry of building, devices a
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- https://w3id.org/sbeo#AssistedNavigation -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#AssistedNavigation">
         <rdfs:comment xml:lang="en">A type of navigation in which a person is assisted by a person or a machine to perform a specific activity.</rdfs:comment>
@@ -3636,6 +3969,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#AutonomousNavigation -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#AutonomousNavigation">
         <rdfs:comment xml:lang="en">A type of navigation in which a person plans and executes his or her path without any human or machine intervention.</rdfs:comment>
         <rdfs:label xml:lang="en">Autonomous Navigation</rdfs:label>
@@ -3644,6 +3978,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Available -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Available">
         <rdfs:comment xml:lang="en">Obtainable or accessible and ready for use or service.</rdfs:comment>
@@ -3654,6 +3989,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#CollaborativeNavigation -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#CollaborativeNavigation">
         <rdfs:comment xml:lang="en">A type of navigation in which two or more persons are involved that may or may not have same objectives.</rdfs:comment>
         <rdfs:label xml:lang="en">Collaborative Navigation</rdfs:label>
@@ -3663,32 +3999,36 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#DeviatingFromPath -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#DeviatingFromPath">
+        <rdfs:comment xml:lang="en">When someone is deviating from the provided path.</rdfs:comment>
         <rdfs:label xml:lang="en">Deviating From Path</rdfs:label>
-        <rdfs:label xml:lang="en">When someone is deviating from the provided path.</rdfs:label>
     </owl:NamedIndividual>
     
 
 
     <!-- https://w3id.org/sbeo#Evacuated -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Evacuated">
+        <rdfs:comment xml:lang="en">This instance is used to mention when a person has been evacuated successfully.</rdfs:comment>
         <rdfs:label xml:lang="en">Evacuated</rdfs:label>
-        <rdfs:label xml:lang="en">This instance is used to mention when a person has been evacuated successfully.</rdfs:label>
     </owl:NamedIndividual>
     
 
 
     <!-- https://w3id.org/sbeo#Evacuating -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Evacuating">
+        <rdfs:comment xml:lang="en">This instance is used to express when someone is in the process of evacuating some space.</rdfs:comment>
         <rdfs:label xml:lang="en">Evacuating</rdfs:label>
-        <rdfs:label xml:lang="en">This instance is used to express when someone is in the process of evacuating some space.</rdfs:label>
     </owl:NamedIndividual>
     
 
 
     <!-- https://w3id.org/sbeo#Exhausted -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Exhausted">
         <rdfs:comment xml:lang="en">This instance is used to express the when someone has drained of one&apos;s energy or effectiveness.</rdfs:comment>
@@ -3699,6 +4039,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Fit -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Fit">
         <rdfs:comment xml:lang="en">This instance is used to express when the physical and mental condition is sound of someone.</rdfs:comment>
         <rdfs:label xml:lang="en">Fit</rdfs:label>
@@ -3707,6 +4048,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#FollowingPath -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#FollowingPath">
         <rdfs:comment xml:lang="en">This instance is used to express when someone is following one&apos;s provided path.</rdfs:comment>
@@ -3717,6 +4059,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Injured -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Injured">
         <rdfs:comment xml:lang="en">This instance is used to express when someone is not fit and has some injuries.</rdfs:comment>
         <rdfs:label xml:lang="en">Injured</rdfs:label>
@@ -3725,6 +4068,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#MultiObjectiveNavigation -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#MultiObjectiveNavigation">
         <rdfs:comment xml:lang="en">A type of navigation in which multiple point of interests are supposed to be visited by a person.</rdfs:comment>
@@ -3735,6 +4079,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#NoDeviate -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#NoDeviate">
         <rdfs:comment xml:lang="en">This instance is used to express when someone is not deviating at all while following one&apos;s provided path.</rdfs:comment>
         <rdfs:label xml:lang="en">No Deviate</rdfs:label>
@@ -3743,6 +4088,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#OftenDeviate -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#OftenDeviate">
         <rdfs:comment xml:lang="en">This instance is used to express when someone is deviating frequently while following the provided path.</rdfs:comment>
@@ -3753,6 +4099,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#PickingUpDependents -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#PickingUpDependents">
         <rdfs:comment xml:lang="en">This instance is used to express when someone is picking up the dependent member of one&apos;s group.</rdfs:comment>
         <rdfs:label xml:lang="en">Picking Up Dependents</rdfs:label>
@@ -3761,6 +4108,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#RareDeviate -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#RareDeviate">
         <rdfs:comment xml:lang="en">This instance is used to express when someone rarely deviates while following the provided path.</rdfs:comment>
@@ -3771,6 +4119,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Rolling -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Rolling">
         <rdfs:comment xml:lang="en">A type of movement by turning over and over on an axis, usually performed by a person using a wheelchair,</rdfs:comment>
         <rdfs:label xml:lang="en">Rolling</rdfs:label>
@@ -3779,6 +4128,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Running -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Running">
         <rdfs:comment xml:lang="en">A movement of an able-bodied person at a speed faster than a walk</rdfs:comment>
@@ -3789,6 +4139,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Scooting -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Scooting">
         <rdfs:comment xml:lang="en">A type of movement usually performed while sitting in (or riding on) an automatic or mechical device, such as electrical wheelchair, electric scooter, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Scooting</rdfs:label>
@@ -3797,6 +4148,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#ShortestPath -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#ShortestPath">
         <rdfs:comment xml:lang="en">A type of route having minimum cost in terms of distance or time.</rdfs:comment>
@@ -3807,6 +4159,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#SimplestPath -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#SimplestPath">
         <rdfs:comment xml:lang="en">A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points.</rdfs:comment>
         <rdfs:label xml:lang="en">Simplest Path</rdfs:label>
@@ -3815,6 +4168,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#Standing -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Standing">
         <rdfs:comment xml:lang="en">Having or maintaining an upright position, supported by one&apos;s feet (Oxford Dictionary of English).</rdfs:comment>
@@ -3825,6 +4179,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#TooOftenDeviate -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#TooOftenDeviate">
         <rdfs:comment xml:lang="en">This instance is used to express when someone is deviating frequently while following the provided path.</rdfs:comment>
         <rdfs:label xml:lang="en">Too Often Deviate</rdfs:label>
@@ -3833,6 +4188,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
     <!-- https://w3id.org/sbeo#UnAvailable -->
+
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#UnAvailable">
         <rdfs:comment xml:lang="en">Not available or accessible.</rdfs:comment>
@@ -3843,6 +4199,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Visiting -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Visiting">
         <rdfs:comment xml:lang="en">The activity of making visits.</rdfs:comment>
         <rdfs:label xml:lang="en">Visiting</rdfs:label>
@@ -3852,6 +4209,7 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
     <!-- https://w3id.org/sbeo#Walking -->
 
+
     <owl:NamedIndividual rdf:about="https://w3id.org/sbeo#Walking">
         <rdfs:comment xml:lang="en">An unhurried rate of movement on foot (Oxford Dictionary of English).</rdfs:comment>
         <rdfs:label xml:lang="en">Walking</rdfs:label>
@@ -3860,5 +4218,6 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
 
