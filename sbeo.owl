@@ -636,7 +636,9 @@ olo:index rdf:type owl:DatatypeProperty ,
 ###  http://purl.org/ontology/olo/core#length
 olo:length rdf:type owl:DatatypeProperty ;
            rdfs:domain olo:OrderedList ;
-           rdfs:range xsd:nonNegativeInteger .
+           rdfs:range xsd:nonNegativeInteger ;
+           rdfs:label "Length of Ordered List"@en ;
+           rdfs:comment "The length of the Ordered List."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/age
@@ -804,7 +806,9 @@ sbeo:number rdf:type owl:DatatypeProperty ;
 ###  https://w3id.org/sbeo#size
 sbeo:size rdf:type owl:DatatypeProperty ;
           rdfs:domain sbeo:Group ;
-          rdfs:range xsd:positiveInteger .
+          rdfs:range xsd:positiveInteger ;
+            rdfs:comment " the relative extent of something; a thing's overall dimensions or magnitude (Oxford Dictionary of English)."@en ;
+            rdfs:label "Size"@en .
 
 
 ###  https://w3id.org/sbeo#speed
@@ -2588,20 +2592,20 @@ sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ;
 
 ###  https://w3id.org/sbeo#DeviatingFromPath
 sbeo:DeviatingFromPath rdf:type owl:NamedIndividual ;
-                       rdfs:label "Deviating From Path"@en ,
-                                  "When someone is deviating from the provided path."@en .
+                       rdfs:label "Deviating From Path"@en ;
+                       rdfs:comment "When someone is deviating from the provided path."@en .
 
 
 ###  https://w3id.org/sbeo#Evacuated
 sbeo:Evacuated rdf:type owl:NamedIndividual ;
-               rdfs:label "Evacuated"@en ,
-                          "This instance is used to mention when a person has been evacuated successfully."@en .
+               rdfs:label "Evacuated"@en ;
+               rdfs:comment "This instance is used to mention when a person has been evacuated successfully."@en .
 
 
 ###  https://w3id.org/sbeo#Evacuating
 sbeo:Evacuating rdf:type owl:NamedIndividual ;
-                rdfs:label "Evacuating"@en ,
-                           "This instance is used to express when someone is in the process of evacuating some space."@en .
+                rdfs:label "Evacuating"@en ;
+                rdfs:comment "This instance is used to express when someone is in the process of evacuating some space."@en .
 
 
 ###  https://w3id.org/sbeo#Exhausted
