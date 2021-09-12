@@ -67,8 +67,9 @@ function loadTOC(){
 <div class="head">
 <dl>
 <dt>Latest version:</dt>
-<dd><a href="https://w3id.org/sbeo">https://w3id.org/sbeo/v0.2</a></dd>
-<dt>Previous version:</dt>
+<dd><a href="https://w3id.org/sbeo">https://w3id.org/sbeo/v0.3</a></dd>
+<dt>Previous versions:</dt>
+<dd><a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.2/docs/index.html">https://w3id.org/sbeo/v0.2</a></dd>
 <dd><a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.1/docs/index.html">https://w3id.org/sbeo/v0.1</a></dd>
 <dt>Authors:</dt>
 <dd>Qasim Khalid, URJC Spain and IMT Lille Douai France. (<a href="https://orcid.org/0000-0002-7944-2594">ORCID</a>) </dd>   
@@ -86,7 +87,7 @@ function loadTOC(){
 <img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
 
 <dt>Cite as:</dt>
-<dd>Qasim Khalid. SBEO: Smart Building Evacuation Ontology. version: 0.2.</dd>
+<dd>Qasim Khalid. SBEO: Smart Building Evacuation Ontology. version: 0.3.</dd>
 </dl>
 <hr/>
 </div>
@@ -228,6 +229,7 @@ SBEO reuses various concepts from the existing ontologies such as <a href="http:
 An alphabetical index of SBEO terms, by class (concepts) and by property (relationships, attributes), are given below. All the terms are hyperlinked to their detailed description for quick reference.
 </span>
 <h4>Classes</h4>
+
 <ul class="hlist">
    <li>
       <a href="#Ability" title="https://w3id.org/sbeo#Ability">Ability</a>
@@ -792,6 +794,9 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
       <a href="#TransitionPoint" title="https://w3id.org/sbeo#TransitionPoint">Transition Point</a>
    </li>
    <li>
+      <a href="#TravelTime" title="https://w3id.org/sbeo#TravelTime">Travel Time</a>
+   </li>
+   <li>
       <a href="#https://w3id.org/seas/HomeOffice" title="https://w3id.org/seas/HomeOffice">Tree house</a>
    </li>
    <li>
@@ -841,6 +846,9 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
       <a href="#context" title="https://w3id.org/sbeo#context">Context</a>
    </li>
    <li>
+      <a href="#destination" title="https://w3id.org/sbeo#destination">Destination</a>
+   </li>
+   <li>
       <a href="#excludedFor" title="https://w3id.org/sbeo#excludedFor">Excluded For</a>
    </li>
    <li>
@@ -848,6 +856,9 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
    </li>
    <li>
       <a href="#forPerson" title="https://w3id.org/sbeo#forPerson">For Person</a>
+   </li>
+   <li>
+      <a href="#groupSubscription" title="https://w3id.org/sbeo#groupSubscription">Group Subscription</a>
    </li>
    <li>
       <a href="#hasAbility" title="https://w3id.org/sbeo#hasAbility">Has Ability</a>
@@ -937,6 +948,9 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
       <a href="#ofSpace" title="https://w3id.org/sbeo#ofSpace">Of Space</a>
    </li>
    <li>
+      <a href="#origin" title="https://w3id.org/sbeo#origin">Origin</a>
+   </li>
+   <li>
       <a href="#partOf" title="https://w3id.org/sbeo#partOf">Part Of</a>
    </li>
    <li>
@@ -971,13 +985,16 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
       <a href="#http://xmlns.com/foaf/0.1/age" title="http://xmlns.com/foaf/0.1/age">Age</a>
    </li>
    <li>
+      <a href="#area" title="https://w3id.org/sbeo#area">Area (in sq. meters)</a>
+   </li>
+   <li>
       <a href="#atTime" title="https://w3id.org/sbeo#atTime">At Time</a>
    </li>
    <li>
-      <a href="#cost" title="https://w3id.org/sbeo#cost">Cost</a>
+      <a href="#base" title="https://w3id.org/sbeo#base">Base (in meters)</a>
    </li>
    <li>
-      <a href="#currentOccupancy" title="https://w3id.org/sbeo#currentOccupancy">Current Occupancy</a>
+      <a href="#cost" title="https://w3id.org/sbeo#cost">Cost</a>
    </li>
    <li>
       <a href="#dynamicDescription" title="https://w3id.org/sbeo#dynamicDescription">Dynamic Description</a>
@@ -992,13 +1009,22 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
       <a href="#http://xmlns.com/foaf/0.1/gender" title="http://xmlns.com/foaf/0.1/gender">Gender</a>
    </li>
    <li>
+      <a href="#hasCongestion" title="https://w3id.org/sbeo#hasCongestion">Has Congestion</a>
+   </li>
+   <li>
       <a href="#http://purl.org/ontology/olo/core#index" title="http://purl.org/ontology/olo/core#index">has index</a>
    </li>
    <li>
       <a href="#number" title="https://w3id.org/sbeo#number">Has Number</a>
    </li>
    <li>
+      <a href="#relativeOccupancyRatio" title="https://w3id.org/sbeo#relativeOccupancyRatio">Has Relative Occupancy Ratio</a>
+   </li>
+   <li>
       <a href="#hasXTimesDeviated" title="https://w3id.org/sbeo#hasXTimesDeviated">Has X Time Deviated</a>
+   </li>
+   <li>
+      <a href="#height" title="https://w3id.org/sbeo#height">Height  (in meters)</a>
    </li>
    <li>
       <a href="#id" title="https://w3id.org/sbeo#id">Identification Number</a>
@@ -1007,10 +1033,13 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
       <a href="#http://xmlns.com/foaf/0.1/lastName" title="http://xmlns.com/foaf/0.1/lastName">Last Name</a>
    </li>
    <li>
-      <a href="#length" title="https://w3id.org/sbeo#length">Length</a>
+      <a href="#length" title="https://w3id.org/sbeo#length">Length (in meters)</a>
    </li>
    <li>
       <a href="#http://purl.org/ontology/olo/core#length" title="http://purl.org/ontology/olo/core#length">Length of Ordered List</a>
+   </li>
+   <li>
+      <a href="#radius" title="https://w3id.org/sbeo#radius">Radius (in meters)</a>
    </li>
    <li>
       <a href="#size" title="https://w3id.org/sbeo#size">Size</a>
@@ -1034,7 +1063,7 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
       <a href="#hasValue" title="https://w3id.org/sbeo#hasValue">Value</a>
    </li>
    <li>
-      <a href="#width" title="https://w3id.org/sbeo#width">Width</a>
+      <a href="#width" title="https://w3id.org/sbeo#width">Width (in meters)</a>
    </li>
 </ul><h4>Named Individuals</h4><ul class="hlist">
    <li>
@@ -1115,18 +1144,17 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
    <li>
       <a href="#Walking" title="https://w3id.org/sbeo#Walking">Walking</a>
    </li>
-
-
 </div>
   
-<div id="visual"><h2 id="visu" class="list">SBEO Visualization <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
+<!-- <div id="visual"><h2 id="visu" class="list">SBEO Visualization <span class="backlink"> back to <a href="#toc">ToC</a></span></h2> -->
+<!-- <span class="markdown"> -->
  
-<p>The visualisation fo SBEO is given below using WebVowl plugin. </p> </span>
+<!-- <p>The visualisation fo SBEO is given below using WebVowl plugin. </p> </span> -->
 
-<iframe align="center" width="100%" height ="500px" src="webvowl/index.html#sbeo""></iframe> 
+<!-- <iframe align="center" width="100%" height ="500px" src="webvowl/index.html#sbeo"></iframe>  -->
+<!-- <iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe>  -->
 
-</div>
+<!-- </div> -->
 
 
    
@@ -1135,8 +1163,8 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
    <div id="crossref"><h2 id="crossreference" class="list">Cross reference for SBEO: Smart Building Evacuation Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by SBEO: Smart Building Evacuation Ontology.
 
-<div id="classes">
 
+<div id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
@@ -1700,6 +1728,9 @@ This section provides details for each class and property defined by SBEO: Smart
       </li>
       <li>
          <a href="#TransitionPoint" title="https://w3id.org/sbeo#TransitionPoint">Transition Point</a>
+      </li>
+      <li>
+         <a href="#TravelTime" title="https://w3id.org/sbeo#TravelTime">Travel Time</a>
       </li>
       <li>
          <a href="#https://w3id.org/seas/HomeOffice" title="https://w3id.org/seas/HomeOffice">Tree house</a>
@@ -3508,6 +3539,11 @@ This section provides details for each class and property defined by SBEO: Smart
             <sup class="type-op" title="object property">op</sup>, <a href="#size" title="https://w3id.org/sbeo#size">Size</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#groupSubscription" title="https://w3id.org/sbeo#groupSubscription">Group Subscription</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="https://w3id.org/seas/Hall">
@@ -4721,6 +4757,7 @@ This section provides details for each class and property defined by SBEO: Smart
             <sup class="type-c" title="class">c</sup>, <a href="#PersonAbility" title="https://w3id.org/sbeo#PersonAbility">Person Ability</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonAccessibility" title="https://w3id.org/sbeo#PersonAccessibility">Person Accessibility</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SpaceSafety" title="https://w3id.org/sbeo#SpaceSafety">Space Saftey</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TravelTime" title="https://w3id.org/sbeo#TravelTime">Travel Time</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -4808,7 +4845,8 @@ This section provides details for each class and property defined by SBEO: Smart
             <sup class="type-dp" title="data property">dp</sup>, <a href="#familiarWith" title="https://w3id.org/sbeo#familiarWith">Familiar With</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://xmlns.com/foaf/0.1/firstName" title="http://xmlns.com/foaf/0.1/firstName">First Name</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#http://xmlns.com/foaf/0.1/gender" title="http://xmlns.com/foaf/0.1/gender">Gender</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFitnessStatus" title="https://w3id.org/sbeo#hasFitnessStatus">Has Fitness Status</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#groupSubscription" title="https://w3id.org/sbeo#groupSubscription">Group Subscription</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasFitnessStatus" title="https://w3id.org/sbeo#hasFitnessStatus">Has Fitness Status</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasMotionState" title="https://w3id.org/sbeo#hasMotionState">Has Motion State</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasNavigationalType" title="https://w3id.org/sbeo#hasNavigationalType">Has Navigation Type</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://xmlns.com/foaf/0.1/lastName" title="http://xmlns.com/foaf/0.1/lastName">Last Name</a>
@@ -5857,6 +5895,30 @@ This section provides details for each class and property defined by SBEO: Smart
          </dd>
       </dl>
    </div>
+   <div class="entity" id="TravelTime">
+      <h3>Travel Time<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#TravelTime</p>
+      <div class="comment">
+         <span class="markdown">A parameter to express the time taken (in seconds) by a specific person (or type of persons) to go from one point to another point (i.e., Route Element).</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Parameter" title="https://w3id.org/sbeo#Parameter">Parameter</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#destination" title="https://w3id.org/sbeo#destination">Destination</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#origin" title="https://w3id.org/sbeo#origin">Origin</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="https://w3id.org/seas/HomeOffice">
       <h3>Tree house<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -6103,6 +6165,9 @@ This section provides details for each class and property defined by SBEO: Smart
          <a href="#context" title="https://w3id.org/sbeo#context">Context</a>
       </li>
       <li>
+         <a href="#destination" title="https://w3id.org/sbeo#destination">Destination</a>
+      </li>
+      <li>
          <a href="#excludedFor" title="https://w3id.org/sbeo#excludedFor">Excluded For</a>
       </li>
       <li>
@@ -6110,6 +6175,9 @@ This section provides details for each class and property defined by SBEO: Smart
       </li>
       <li>
          <a href="#forPerson" title="https://w3id.org/sbeo#forPerson">For Person</a>
+      </li>
+      <li>
+         <a href="#groupSubscription" title="https://w3id.org/sbeo#groupSubscription">Group Subscription</a>
       </li>
       <li>
          <a href="#hasAbility" title="https://w3id.org/sbeo#hasAbility">Has Ability</a>
@@ -6197,6 +6265,9 @@ This section provides details for each class and property defined by SBEO: Smart
       </li>
       <li>
          <a href="#ofSpace" title="https://w3id.org/sbeo#ofSpace">Of Space</a>
+      </li>
+      <li>
+         <a href="#origin" title="https://w3id.org/sbeo#origin">Origin</a>
       </li>
       <li>
          <a href="#partOf" title="https://w3id.org/sbeo#partOf">Part Of</a>
@@ -6407,6 +6478,34 @@ This section provides details for each class and property defined by SBEO: Smart
          </dl>
       </div>
    </div>
+   <div class="entity" id="destination">
+      <h3>Destination<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#destination</p>
+      <div class="comment">
+         <span class="markdown">It represents the ending point of a movement.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#TravelTime" title="https://w3id.org/sbeo#TravelTime">Travel Time</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#RoutePoint" title="https://w3id.org/sbeo#RoutePoint">Route Point</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#https://w3id.org/seas/Door" title="https://w3id.org/seas/Door">Door</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="excludedFor">
       <h3>Excluded For<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -6492,6 +6591,31 @@ This section provides details for each class and property defined by SBEO: Smart
             <dt>has range</dt>
             <dd>
                <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="groupSubscription">
+      <h3>Group Subscription<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#groupSubscription</p>
+      <div class="comment">
+         <span class="markdown">A prroperty to express an association with a specifc group.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Group" title="https://w3id.org/sbeo#Group">Group</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -7385,6 +7509,34 @@ This section provides details for each class and property defined by SBEO: Smart
          </dl>
       </div>
    </div>
+   <div class="entity" id="origin">
+      <h3>Origin<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#origin</p>
+      <div class="comment">
+         <span class="markdown">It represents the starting point of a movement.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#TravelTime" title="https://w3id.org/sbeo#TravelTime">Travel Time</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#RouteElement" title="https://w3id.org/sbeo#RouteElement">Route Element</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#https://w3id.org/seas/Door" title="https://w3id.org/seas/Door">Door</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="partOf">
       <h3>Part Of<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -7654,13 +7806,16 @@ This section provides details for each class and property defined by SBEO: Smart
          <a href="#http://xmlns.com/foaf/0.1/age" title="http://xmlns.com/foaf/0.1/age">Age</a>
       </li>
       <li>
+         <a href="#area" title="https://w3id.org/sbeo#area">Area (in sq. meters)</a>
+      </li>
+      <li>
          <a href="#atTime" title="https://w3id.org/sbeo#atTime">At Time</a>
       </li>
       <li>
-         <a href="#cost" title="https://w3id.org/sbeo#cost">Cost</a>
+         <a href="#base" title="https://w3id.org/sbeo#base">Base (in meters)</a>
       </li>
       <li>
-         <a href="#currentOccupancy" title="https://w3id.org/sbeo#currentOccupancy">Current Occupancy</a>
+         <a href="#cost" title="https://w3id.org/sbeo#cost">Cost</a>
       </li>
       <li>
          <a href="#dynamicDescription" title="https://w3id.org/sbeo#dynamicDescription">Dynamic Description</a>
@@ -7675,13 +7830,22 @@ This section provides details for each class and property defined by SBEO: Smart
          <a href="#http://xmlns.com/foaf/0.1/gender" title="http://xmlns.com/foaf/0.1/gender">Gender</a>
       </li>
       <li>
+         <a href="#hasCongestion" title="https://w3id.org/sbeo#hasCongestion">Has Congestion</a>
+      </li>
+      <li>
          <a href="#http://purl.org/ontology/olo/core#index" title="http://purl.org/ontology/olo/core#index">has index</a>
       </li>
       <li>
          <a href="#number" title="https://w3id.org/sbeo#number">Has Number</a>
       </li>
       <li>
+         <a href="#relativeOccupancyRatio" title="https://w3id.org/sbeo#relativeOccupancyRatio">Has Relative Occupancy Ratio</a>
+      </li>
+      <li>
          <a href="#hasXTimesDeviated" title="https://w3id.org/sbeo#hasXTimesDeviated">Has X Time Deviated</a>
+      </li>
+      <li>
+         <a href="#height" title="https://w3id.org/sbeo#height">Height  (in meters)</a>
       </li>
       <li>
          <a href="#id" title="https://w3id.org/sbeo#id">Identification Number</a>
@@ -7690,10 +7854,13 @@ This section provides details for each class and property defined by SBEO: Smart
          <a href="#http://xmlns.com/foaf/0.1/lastName" title="http://xmlns.com/foaf/0.1/lastName">Last Name</a>
       </li>
       <li>
-         <a href="#length" title="https://w3id.org/sbeo#length">Length</a>
+         <a href="#length" title="https://w3id.org/sbeo#length">Length (in meters)</a>
       </li>
       <li>
          <a href="#http://purl.org/ontology/olo/core#length" title="http://purl.org/ontology/olo/core#length">Length of Ordered List</a>
+      </li>
+      <li>
+         <a href="#radius" title="https://w3id.org/sbeo#radius">Radius (in meters)</a>
       </li>
       <li>
          <a href="#size" title="https://w3id.org/sbeo#size">Size</a>
@@ -7717,7 +7884,7 @@ This section provides details for each class and property defined by SBEO: Smart
          <a href="#hasValue" title="https://w3id.org/sbeo#hasValue">Value</a>
       </li>
       <li>
-         <a href="#width" title="https://w3id.org/sbeo#width">Width</a>
+         <a href="#width" title="https://w3id.org/sbeo#width">Width (in meters)</a>
       </li>
    </ul>
    <div class="entity" id="accommodationCapacity">
@@ -7775,6 +7942,35 @@ This section provides details for each class and property defined by SBEO: Smart
          </dl>
       </div>
    </div>
+   <div class="entity" id="area">
+      <h3>Area (in sq. meters)<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#area</p>
+      <div class="comment">
+         <span class="markdown">Area is the quantity that expresses the occupied amount of the two-dimensional region, shape, or planar lamina, in the plane.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Passage" title="https://w3id.org/sbeo#Passage">Passage</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Space" title="https://w3id.org/sbeo#Space">Space</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">float</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="atTime">
       <h3>At Time<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -7808,6 +8004,35 @@ This section provides details for each class and property defined by SBEO: Smart
          </dl>
       </div>
    </div>
+   <div class="entity" id="base">
+      <h3>Base (in meters)<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#base</p>
+      <div class="comment">
+         <span class="markdown">A base is a side (mostly the bottom) of a polygon or a face of a polyhedron. This term is commonly applied to triangles, parallelograms, trapezoids, cylinders, cones, and pyramids.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Passage" title="https://w3id.org/sbeo#Passage">Passage</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Space" title="https://w3id.org/sbeo#Space">Space</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">float</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="cost">
       <h3>Cost<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -7831,39 +8056,6 @@ This section provides details for each class and property defined by SBEO: Smart
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">float</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="currentOccupancy">
-      <h3>Current Occupancy<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/sbeo#currentOccupancy</p>
-      <div class="comment">
-         <span class="markdown">The current occupancy (in terms of persons) of a particular space.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#PointOfInterest" title="https://w3id.org/sbeo#PointOfInterest">Point Of Interest</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#Route" title="https://w3id.org/sbeo#Route">Route</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#RouteElement" title="https://w3id.org/sbeo#RouteElement">Route Element</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#Space" title="https://w3id.org/sbeo#Space">Space</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#integer">integer</span>
             </dd>
          </dl>
       </div>
@@ -7973,6 +8165,38 @@ This section provides details for each class and property defined by SBEO: Smart
          </dl>
       </div>
    </div>
+   <div class="entity" id="hasCongestion">
+      <h3>Has Congestion<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#hasCongestion</p>
+      <div class="comment">
+         <span class="markdown">A property to express either a space has congestion or not.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Route" title="https://w3id.org/sbeo#Route">Route</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#RouteElement" title="https://w3id.org/sbeo#RouteElement">Route Element</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Space" title="https://w3id.org/sbeo#Space">Space</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="http://purl.org/ontology/olo/core#index">
       <h3>has index<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -8029,6 +8253,41 @@ This section provides details for each class and property defined by SBEO: Smart
          </dl>
       </div>
    </div>
+   <div class="entity" id="relativeOccupancyRatio">
+      <h3>Has Relative Occupancy Ratio<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#relativeOccupancyRatio</p>
+      <div class="comment">
+         <span class="markdown">The relative occupancy ratio (in terms of persons) measures the ratio of occupied to total usable (i.e., capacity) space.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PointOfInterest" title="https://w3id.org/sbeo#PointOfInterest">Point Of Interest</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Route" title="https://w3id.org/sbeo#Route">Route</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#RouteElement" title="https://w3id.org/sbeo#RouteElement">Route Element</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Space" title="https://w3id.org/sbeo#Space">Space</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">float</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasXTimesDeviated">
       <h3>Has X Time Deviated<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -8050,6 +8309,35 @@ This section provides details for each class and property defined by SBEO: Smart
             <dd>
                <span class="dotted"
                      title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="height">
+      <h3>Height  (in meters)<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#height</p>
+      <div class="comment">
+         <span class="markdown">A height is a vertical distance from the top to the base of the shape, object or space.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Passage" title="https://w3id.org/sbeo#Passage">Passage</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Space" title="https://w3id.org/sbeo#Space">Space</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">float</span>
             </dd>
          </dl>
       </div>
@@ -8102,7 +8390,7 @@ This section provides details for each class and property defined by SBEO: Smart
       </div>
    </div>
    <div class="entity" id="length">
-      <h3>Length<sup class="type-dp" title="data property">dp</sup>
+      <h3>Length (in meters)<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
@@ -8151,6 +8439,35 @@ This section provides details for each class and property defined by SBEO: Smart
             <dd>
                <span class="dotted"
                      title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="radius">
+      <h3>Radius (in meters)<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sbeo#radius</p>
+      <div class="comment">
+         <span class="markdown">The term radius is associated with circular shapes, objects and spacesn that represents the distance from the center of a circle to any point on the circle boundry. It is half of the diameter of a circle.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Passage" title="https://w3id.org/sbeo#Passage">Passage</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Space" title="https://w3id.org/sbeo#Space">Space</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">float</span>
             </dd>
          </dl>
       </div>
@@ -8347,7 +8664,7 @@ This section provides details for each class and property defined by SBEO: Smart
       </div>
    </div>
    <div class="entity" id="width">
-      <h3>Width<sup class="type-dp" title="data property">dp</sup>
+      <h3>Width (in meters)<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
@@ -8752,11 +9069,6 @@ This section provides details for each class and property defined by SBEO: Smart
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
 </div>
 </div>
-
-
-</div>
-
-
 </div>
     
 	<hr/>
@@ -8779,6 +9091,11 @@ This section provides details for each class and property defined by SBEO: Smart
     <ul>
 	  <li>Concepts related to the Impact of an Event/Activity are added to the ontology.</li>
     </ul>
+<h4>12-09-2021</h4>
+<ul>
+  <li>Concept and properties related to the TravelTime are added to the ontology.</li>
+  <li>Data properties related to the geometry of the spaces are added to the ontology.</li>
+</ul>
 
 </div>
 
