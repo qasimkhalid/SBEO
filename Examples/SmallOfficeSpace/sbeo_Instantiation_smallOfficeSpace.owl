@@ -22,12 +22,33 @@ The office space can be considered as a smart space as it is equipped with diffe
 
 
 
-
-
-
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Activity1
+:Activity1 rdf:type owl:NamedIndividual ,
+                    sbeo:EmergencyEvacuation ;
+           sbeo:hasIntensity :High ;
+           sbeo:performedBy :Alice ;
+           sbeo:startedAtTime "2021-03-30T15:44:00Z"^^xsd:dateTimeStamp .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Activity1Impact
+:Activity1Impact rdf:type owl:NamedIndividual ,
+                          sbeo:ActivityImpact ;
+                 sbeo:forPerson :Alice ;
+                 sbeo:hasImpact :High ;
+                 sbeo:ofActivity :Activity1 .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Activity1Severity
+:Activity1Severity rdf:type owl:NamedIndividual ,
+                            sbeo:ActivitySeverity ;
+                   sbeo:forPerson :Alice ;
+                   sbeo:hasImpact :High ;
+                   sbeo:ofActivity :Activity1 .
+
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Alice
 :Alice rdf:type owl:NamedIndividual ,
@@ -83,7 +104,7 @@ The office space can be considered as a smart space as it is equipped with diffe
            sbeo:locatedIn :GroundFloor ;
            sbeo:length "10.0"^^xsd:float ;
            sbeo:width "5.0"^^xsd:float ;
-           sbeo:currentOccupancy 5 .
+           sbeo:relativeOccupancyRatio 0.5 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Corridor10
@@ -144,7 +165,7 @@ The office space can be considered as a smart space as it is equipped with diffe
                             :Office2 ,
                             :OpenHall2 ;
            sbeo:locatedIn :GroundFloor ;
-           sbeo:currentOccupancy 1 .
+           sbeo:relativeOccupancyRatio 0.1 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Corridor6
@@ -408,6 +429,7 @@ The office space can be considered as a smart space as it is equipped with diffe
               sbeo:EmergencyExit ,
               sbeo:FloorExit ,
               seas:Door ;
+     owl:sameAs :FirstFloorExit ;
      sbeo:locatedIn :FirstFloor .
 
 
@@ -468,6 +490,10 @@ The office space can be considered as a smart space as it is equipped with diffe
             sbeo:locatedIn :OfficeBuilding1 ;
             sbeo:lower :GroundFloor ;
             sbeo:number 1 .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#FirstFloorExit
+:FirstFloorExit rdf:type owl:NamedIndividual .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#GroundFloor
@@ -563,7 +589,25 @@ The office space can be considered as a smart space as it is equipped with diffe
                    sbeo:KidsArea ,
                    seas:Room ;
           sbeo:adjacentTo :WC2 ;
-          sbeo:locatedIn :FirstFloor .
+          sbeo:connectedTo :Corridor10 ;
+          sbeo:locatedIn :FirstFloor ;
+          sbeo:partOf :OfficeBuilding1 ;
+          sbeo:accommodationCapacity "15"^^xsd:positiveInteger ;
+          sbeo:area "150.0"^^xsd:float ;
+          sbeo:length "10.0"^^xsd:float ;
+          sbeo:relativeOccupancyRatio "0.4"^^xsd:float ;
+          sbeo:width "15.0"^^xsd:float .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#KidsRoomExit
+:KidsRoomExit rdf:type owl:NamedIndividual ;
+              owl:sameAs :RE8 .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#KidsRoomLocationSensor
+:KidsRoomLocationSensor rdf:type owl:NamedIndividual ,
+                                 sosa:Sensor ;
+                        owl:sameAs :LocationSensor56 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Kitchen
@@ -1183,6 +1227,11 @@ The office space can be considered as a smart space as it is equipped with diffe
          sbeo:locatedIn :FirstFloor .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Office5Exit
+:Office5Exit rdf:type owl:NamedIndividual ;
+             owl:sameAs :RE9 .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#OfficeBuilding1
 :OfficeBuilding1 rdf:type owl:NamedIndividual ,
                           seas:OfficeBuilding ;
@@ -1436,7 +1485,7 @@ The office space can be considered as a smart space as it is equipped with diffe
                sbeo:RoleInContext ;
       sbeo:context :Family1 ;
       sbeo:player :Person6 ;
-      sbeo:role sbeo:Responsible .
+      sbeo:role :Responsible .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#RIC3
@@ -1444,7 +1493,7 @@ The office space can be considered as a smart space as it is equipped with diffe
                sbeo:RoleInContext ;
       sbeo:context :Family1 ;
       sbeo:player :Person3 ;
-      sbeo:role sbeo:Dependent .
+      sbeo:role :Dependent .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Responsible
@@ -3694,6 +3743,33 @@ The office space can be considered as a smart space as it is equipped with diffe
                     sbeo:installedIn :CorridorSegment9 .
 
 
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TravelTime1
+:TravelTime1 rdf:type owl:NamedIndividual ,
+                      sbeo:TravelTime ;
+             sbeo:destination :KidsRoomExit ;
+             sbeo:forPerson :Alice ;
+             sbeo:origin :KidsRoom ;
+             sbeo:hasValue 2 .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TravelTime2
+:TravelTime2 rdf:type owl:NamedIndividual ,
+                      sbeo:TravelTime ;
+             sbeo:destination :Office5Exit ;
+             sbeo:forPerson :Alice ;
+             sbeo:origin :KidsRoomExit ;
+             sbeo:hasValue 1 .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#TravelTime3
+:TravelTime3 rdf:type owl:NamedIndividual ,
+                      sbeo:TravelTime ;
+             sbeo:destination :FirstFloorExit ;
+             sbeo:forPerson :Alice ;
+             sbeo:origin :Office5Exit ;
+             sbeo:hasValue 3 .
+
+
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#VictorVisit
 :VictorVisit rdf:type owl:NamedIndividual ,
                       sbeo:Visit .
@@ -3715,8 +3791,6 @@ The office space can be considered as a smart space as it is equipped with diffe
 :WC2 rdf:type owl:NamedIndividual ,
               seas:Bathroom ;
      sbeo:locatedIn :FirstFloor .
-
-
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

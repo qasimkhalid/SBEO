@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/sbeo#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,7 +7,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -34,66 +33,6 @@ Several other parameters related to the spaces, users and context are also descr
                          vann:preferredNamespaceUri sbeo: ;
                          rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                          owl:versionInfo 0.3 .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/elements/1.1/rights
-dc:rights rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/contributor
-dcterms:contributor rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/issued
-dcterms:issued rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/language
-dcterms:language rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/modified
-dcterms:modified rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespacePrefix
-vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespaceUri
-vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
-
-
-###  http://schema.org/domainIncludes
-schema:domainIncludes rdf:type owl:AnnotationProperty .
-
-
-###  http://schema.org/rangeIncludes
-schema:rangeIncludes rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#definition
-<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#example
-<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
-
 
 #################################################################
 #    Object Properties
@@ -145,6 +84,18 @@ olo:slot rdf:type owl:ObjectProperty ;
          rdfs:comment "A slot in an ordered list."@en ;
          rdfs:isDefinedBy olo: ;
          rdfs:label "has slot"@en .
+
+
+###  http://www.w3.org/ns/sosa/madeBySensor
+sosa:madeBySensor rdf:type owl:ObjectProperty ;
+                  rdfs:domain sosa:Observation ;
+                  rdfs:range sosa:Sensor ;
+                  schema:domainIncludes sosa:Observation ;
+                  schema:rangeIncludes sosa:Sensor ;
+                  rdfs:comment "Relation between an Observation and the Sensor which made the Observation."@en ;
+                  rdfs:isDefinedBy sosa: ;
+                  rdfs:label "made by sensor"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Relation between an Observation and the Sensor which made the Observation."@en .
 
 
 ###  http://www.w3.org/ns/sosa/observes
@@ -238,7 +189,7 @@ sbeo:destination rdf:type owl:ObjectProperty ;
                  rdfs:domain sbeo:TravelTime ;
                  rdfs:range [ rdf:type owl:Class ;
                               owl:unionOf ( sbeo:RoutePoint
-                                            seas:Door
+											sbeo:Space
                                           )
                             ] ;
                  rdfs:comment "It represents the ending point of a movement."@en ;
@@ -278,6 +229,18 @@ sbeo:forPerson rdf:type owl:ObjectProperty ;
                rdfs:range foaf:Person ;
                rdfs:comment "A property to express a foaf:Person in a n-ary relation for sbeo:Parameter."@en ;
                rdfs:label "For Person"@en .
+
+
+###  https://w3id.org/sbeo#forSpace
+sbeo:forSpace rdf:type owl:ObjectProperty ;
+              rdfs:domain sbeo:Parameter ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( sbeo:RouteElement
+                                         sbeo:Space
+                                       )
+                         ] ;
+              rdfs:comment "A property to express a sbeo:Space in a n-ary relation for sbeo:Parameter."@en ;
+              rdfs:label "For Space"@en .
 
 
 ###  https://w3id.org/sbeo#groupSubscription
@@ -535,24 +498,12 @@ sbeo:ofEvent rdf:type owl:ObjectProperty ;
              rdfs:label "Of Event"@en .
 
 
-###  https://w3id.org/sbeo#ofSpace
-sbeo:ofSpace rdf:type owl:ObjectProperty ;
-             rdfs:domain sbeo:Parameter ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( sbeo:RouteElement
-                                        sbeo:Space
-                                      )
-                        ] ;
-             rdfs:comment "A property to express a sbeo:Space in a n-ary relation for sbeo:Parameter."@en ;
-             rdfs:label "Of Space"@en .
-
-
 ###  https://w3id.org/sbeo#origin
 sbeo:origin rdf:type owl:ObjectProperty ;
             rdfs:domain sbeo:TravelTime ;
             rdfs:range [ rdf:type owl:Class ;
                          owl:unionOf ( sbeo:RouteElement
-                                       seas:Door
+                                       sbeo:Space
                                      )
                        ] ;
             rdfs:comment "It represents the starting point of a movement."@en ;
@@ -672,6 +623,17 @@ olo:length rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:nonNegativeInteger ;
            rdfs:comment "The length of the Ordered List."@en ;
            rdfs:label "Length of Ordered List"@en .
+
+
+###  http://www.w3.org/ns/sosa/hasSimpleResult
+sosa:hasSimpleResult rdf:type owl:DatatypeProperty ;
+                     rdfs:domain sosa:Observation ;
+                     schema:domainIncludes sosa:Observation ;
+                     rdfs:comment "The simple value of an Observation or Actuation or act of Sampling."@en ;
+                     rdfs:isDefinedBy sosa: ;
+                     rdfs:label "has simple result"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "The simple value of an Observation or Actuation or act of Sampling."@en ;
+                     <http://www.w3.org/2004/02/skos/core#example> "For instance, the values 23 or true."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/age
@@ -1029,6 +991,32 @@ sosa:ObservableProperty rdf:type owl:Class ;
                         <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
 
 
+###  http://www.w3.org/ns/sosa/Observation
+sosa:Observation rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty sosa:madeBySensor ;
+                                   owl:someValuesFrom sosa:Sensor
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sosa:madeBySensor ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass sosa:Sensor
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:atTime ;
+                                   owl:allValuesFrom xsd:dateTimeStamp
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:atTime ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+                 rdfs:isDefinedBy sosa: ;
+                 rdfs:label "Observation"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+                 <http://www.w3.org/2004/02/skos/core#example> "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en .
+
+
 ###  http://www.w3.org/ns/sosa/Sensor
 sosa:Sensor rdf:type owl:Class ;
             rdfs:subClassOf sbeo:Device ;
@@ -1091,6 +1079,14 @@ sbeo:Activity rdf:type owl:Class ;
 ###  https://w3id.org/sbeo#ActivityImpact
 sbeo:ActivityImpact rdf:type owl:Class ;
                     rdfs:subClassOf sbeo:Parameter ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sbeo:forSpace ;
+                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( sbeo:RouteElement
+                                                                         sbeo:Space
+                                                                       )
+                                                         ]
+                                    ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty sbeo:forPerson ;
                                       owl:allValuesFrom sbeo:SocialUnit
@@ -1439,6 +1435,14 @@ sbeo:Event rdf:type owl:Class ;
 ###  https://w3id.org/sbeo#EventImpact
 sbeo:EventImpact rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:Parameter ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sbeo:forSpace ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( sbeo:RouteElement
+                                                                      sbeo:Space
+                                                                    )
+                                                      ]
+                                 ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty sbeo:forPerson ;
                                    owl:allValuesFrom sbeo:SocialUnit
@@ -1961,7 +1965,7 @@ sbeo:PersonAbility rdf:type owl:Class ;
 sbeo:PersonAccessibility rdf:type owl:Class ;
                          rdfs:subClassOf sbeo:Parameter ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty sbeo:ofSpace ;
+                                           owl:onProperty sbeo:forSpace ;
                                            owl:someValuesFrom [ rdf:type owl:Class ;
                                                                 owl:unionOf ( sbeo:RouteElement
                                                                               sbeo:Space
@@ -1973,7 +1977,7 @@ sbeo:PersonAccessibility rdf:type owl:Class ;
                                            owl:allValuesFrom foaf:Person
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty sbeo:ofSpace ;
+                                           owl:onProperty sbeo:forSpace ;
                                            owl:cardinality "1"^^xsd:nonNegativeInteger
                                          ] ,
                                          [ rdf:type owl:Restriction ;
@@ -2197,6 +2201,103 @@ sbeo:Space rdf:type owl:Class ;
                              owl:onProperty sbeo:hasAvailabilityStatus ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass sbeo:AvailabilityStatus
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:area ;
+                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                 owl:onDatatype xsd:float ;
+                                                 owl:withRestrictions ( [ xsd:minExclusive "0.0"^^xsd:float
+                                                                        ]
+                                                                      )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:base ;
+                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                 owl:onDatatype xsd:float ;
+                                                 owl:withRestrictions ( [ xsd:minExclusive "0.0"^^xsd:float
+                                                                        ]
+                                                                      )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:height ;
+                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                 owl:onDatatype xsd:float ;
+                                                 owl:withRestrictions ( [ xsd:minExclusive "0.0"^^xsd:float
+                                                                        ]
+                                                                      )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:length ;
+                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                 owl:onDatatype xsd:float ;
+                                                 owl:withRestrictions ( [ xsd:minExclusive "0.0"^^xsd:float
+                                                                        ]
+                                                                      )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:radius ;
+                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                 owl:onDatatype xsd:float ;
+                                                 owl:withRestrictions ( [ xsd:minExclusive "0.0"^^xsd:float
+                                                                        ]
+                                                                      )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:relativeOccupancyRatio ;
+                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                 owl:onDatatype xsd:float ;
+                                                 owl:withRestrictions ( [ xsd:minExclusive "0.0"^^xsd:float
+                                                                        ]
+                                                                        [ xsd:maxInclusive "1.0"^^xsd:float
+                                                                        ]
+                                                                      )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:width ;
+                             owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                 owl:onDatatype xsd:float ;
+                                                 owl:withRestrictions ( [ xsd:minExclusive "0.0"^^xsd:float
+                                                                        ]
+                                                                      )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:accommodationCapacity ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:area ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:relativeOccupancyRatio ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:base ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:height ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:length ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:radius ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:width ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            rdfs:comment "A physical, three dimensional, and one of the most important elements in the design of architecture that can further be divided to create more spaces from it."@en ;
            rdfs:label "Space"@en .
@@ -2206,7 +2307,7 @@ sbeo:Space rdf:type owl:Class ;
 sbeo:SpaceSafety rdf:type owl:Class ;
                  rdfs:subClassOf sbeo:Parameter ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty sbeo:ofSpace ;
+                                   owl:onProperty sbeo:forSpace ;
                                    owl:someValuesFrom [ rdf:type owl:Class ;
                                                         owl:unionOf ( sbeo:RouteElement
                                                                       sbeo:Space
@@ -2218,7 +2319,7 @@ sbeo:SpaceSafety rdf:type owl:Class ;
                                    owl:allValuesFrom foaf:Person
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty sbeo:ofSpace ;
+                                   owl:onProperty sbeo:forSpace ;
                                    owl:cardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -2295,42 +2396,6 @@ sbeo:TransitionPoint rdf:type owl:Class ;
 ###  https://w3id.org/sbeo#TravelTime
 sbeo:TravelTime rdf:type owl:Class ;
                 rdfs:subClassOf sbeo:Parameter ,
-                                [ rdf:type owl:Class ;
-                                  owl:unionOf ( [ owl:intersectionOf ( seas:BuildingSpace
-                                                                       [ rdf:type owl:Class ;
-                                                                         owl:complementOf sbeo:Passage
-                                                                       ]
-                                                                     ) ;
-                                                  rdf:type owl:Class
-                                                ]
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty sbeo:destination ;
-                                                  owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                      owl:unionOf ( sbeo:RoutePoint
-                                                                                    seas:Door
-                                                                                  )
-                                                                    ]
-                                                ]
-                                              )
-                                ] ,
-                                [ rdf:type owl:Class ;
-                                  owl:unionOf ( [ owl:intersectionOf ( seas:BuildingSpace
-                                                                       [ rdf:type owl:Class ;
-                                                                         owl:complementOf sbeo:Passage
-                                                                       ]
-                                                                     ) ;
-                                                  rdf:type owl:Class
-                                                ]
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty sbeo:origin ;
-                                                  owl:allValuesFrom [ rdf:type owl:Class ;
-                                                                      owl:unionOf ( sbeo:RoutePoint
-                                                                                    seas:Door
-                                                                                  )
-                                                                    ]
-                                                ]
-                                              )
-                                ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty sbeo:forPerson ;
                                   owl:allValuesFrom foaf:Person
