@@ -20,12 +20,9 @@
 The office space can be considered as a smart space as it is equipped with different sensors such as location, temperature and smoke. In addition, fire incident equipment, alerting device such as speakers, and a monitor screen are also installed in it."""@en ;
                                                                    owl:versionInfo "0.1"@en .
 
-#################################################################
-#    Classes
-#################################################################
 
-###  https://w3id.org/sbeo#DeafPerson
-sbeo:DeafPerson rdf:type owl:Class .
+
+
 
 
 #################################################################
@@ -84,9 +81,9 @@ sbeo:DeafPerson rdf:type owl:Class .
                             :J1 ,
                             :PV1 ;
            sbeo:locatedIn :GroundFloor ;
-           sbeo:currentOccupancy 5 ;
            sbeo:length "10.0"^^xsd:float ;
-           sbeo:width "5.0"^^xsd:float .
+           sbeo:width "5.0"^^xsd:float ;
+           sbeo:currentOccupancy 5 .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Corridor10
@@ -1259,7 +1256,7 @@ sbeo:DeafPerson rdf:type owl:Class .
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person3
 :Person3 rdf:type owl:NamedIndividual ,
                   foaf:Person ;
-         sbeo:assignedRoute :Route12 ;
+         sbeo:assignedRoute :RouteA ;
          sbeo:hasFitnessStatus sbeo:Fit ;
          sbeo:hasMotionState sbeo:Standing ;
          sbeo:hasNavigationalType sbeo:CollaborativeNavigation ;
@@ -1290,7 +1287,7 @@ sbeo:DeafPerson rdf:type owl:Class .
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person5
 :Person5 rdf:type owl:NamedIndividual ,
-                  sbeo:DeafPerson ;
+                  foaf:Person ;
          sbeo:familiarWith :OfficeBuilding1 ;
          sbeo:hasFitnessStatus sbeo:Fit ;
          sbeo:hasMotionState sbeo:Standing ;
@@ -1308,7 +1305,7 @@ sbeo:DeafPerson rdf:type owl:Class .
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Person6
 :Person6 rdf:type owl:NamedIndividual ,
                   foaf:Person ;
-         sbeo:assignedRoute :Route12 ;
+         sbeo:assignedRoute :RouteA ;
          sbeo:familiarWith :OfficeBuilding1 ;
          sbeo:hasActivityStatus sbeo:Evacuating ,
                                 sbeo:PickingUpDependents ;
@@ -1565,17 +1562,6 @@ sbeo:DeafPerson rdf:type owl:Class .
          olo:length "12"^^xsd:nonNegativeInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route12
-:Route12 rdf:type owl:NamedIndividual ,
-                  sbeo:EmergencyEvacuationRoute ;
-         olo:slot :Slot63 ,
-                  :Slot64 ,
-                  :Slot65 ,
-                  :Slot66 ;
-         sbeo:hasAvailabilityStatus sbeo:Available ;
-         olo:length "4"^^xsd:nonNegativeInteger .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Route13
 :Route13 rdf:type owl:NamedIndividual ,
                   sbeo:EmergencyEvacuationRoute ;
@@ -1726,6 +1712,17 @@ sbeo:DeafPerson rdf:type owl:Class .
                  :Slot28 ,
                  :Slot29 ;
         olo:length "3"^^xsd:nonNegativeInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#RouteA
+:RouteA rdf:type owl:NamedIndividual ,
+                 sbeo:EmergencyEvacuationRoute ;
+        olo:slot :SlotK ,
+                 :SlotL ,
+                 :SlotM ,
+                 :SlotN ;
+        sbeo:hasAvailabilityStatus sbeo:Available ;
+        olo:length "4"^^xsd:nonNegativeInteger .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Screen1
@@ -2266,38 +2263,6 @@ sbeo:DeafPerson rdf:type owl:Class .
         olo:index "12"^^xsd:positiveInteger .
 
 
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot63
-:Slot63 rdf:type owl:NamedIndividual ,
-                 olo:Slot ;
-        olo:item :KidsRoom ;
-        olo:ordered_list :Route12 ;
-        olo:index "1"^^xsd:positiveInteger .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot64
-:Slot64 rdf:type owl:NamedIndividual ,
-                 olo:Slot ;
-        olo:item :RE8 ;
-        olo:ordered_list :Route12 ;
-        olo:index "2"^^xsd:positiveInteger .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot65
-:Slot65 rdf:type owl:NamedIndividual ,
-                 olo:Slot ;
-        olo:item :RE9 ;
-        olo:ordered_list :Route12 ;
-        olo:index "3"^^xsd:positiveInteger .
-
-
-###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot66
-:Slot66 rdf:type owl:NamedIndividual ,
-                 olo:Slot ;
-        olo:item :FE3 ;
-        olo:ordered_list :Route12 ;
-        olo:index "4"^^xsd:positiveInteger .
-
-
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Slot67
 :Slot67 rdf:type owl:NamedIndividual ,
                  olo:Slot ;
@@ -2591,6 +2556,41 @@ sbeo:DeafPerson rdf:type owl:Class .
         olo:item :FE1 ;
         olo:ordered_list :Route17 ;
         olo:index "6"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SlotK
+:SlotK rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :KidsRoom ;
+       olo:next :SlotL ;
+       olo:ordered_list :RouteA ;
+       olo:index "1"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SlotL
+:SlotL rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :RE8 ;
+       olo:next :SlotM ;
+       olo:ordered_list :RouteA ;
+       olo:index "2"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SlotM
+:SlotM rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :RE9 ;
+       olo:next :SlotN ;
+       olo:ordered_list :RouteA ;
+       olo:index "3"^^xsd:positiveInteger .
+
+
+###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#SlotN
+:SlotN rdf:type owl:NamedIndividual ,
+                olo:Slot ;
+       olo:item :FE3 ;
+       olo:ordered_list :RouteA ;
+       olo:index "4"^^xsd:positiveInteger .
 
 
 ###  http://www.ia.urjc.es/ontologies/building/office_space_scenario#Smoke
@@ -3717,12 +3717,6 @@ sbeo:DeafPerson rdf:type owl:Class .
      sbeo:locatedIn :FirstFloor .
 
 
-###  https://w3id.org/sbeo#Dependent
-sbeo:Dependent rdf:type owl:NamedIndividual .
-
-
-###  https://w3id.org/sbeo#Responsible
-sbeo:Responsible rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

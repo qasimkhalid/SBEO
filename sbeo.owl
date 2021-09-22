@@ -597,8 +597,10 @@ sbeo:responsibleTo rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf sbeo:acquaintanceOf ;
                    rdf:type owl:TransitiveProperty ;
                    rdfs:domain foaf:Person ;
-                   rdfs:range foaf:Person ;
-                   rdfs:comment "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English)."@en ;
+                   rdfs:range sbeo:SocialUnit ;
+                   rdfs:comment """Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English).
+
+If a foaf:Person becomes responsible or a leader of a social unit, this property can be used  to express a relation between them."""@en ;
                    rdfs:label "Responsible To"@en .
 
 
@@ -814,7 +816,6 @@ sbeo:hasCongestion rdf:type owl:DatatypeProperty ,
 sbeo:hasValue rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain owl:Thing ;
-              rdfs:range xsd:float ;
               rdfs:comment "Provides a value that is a direct representation of an entity."@en ;
               rdfs:label "Value"@en .
 
@@ -897,7 +898,7 @@ sbeo:relativeOccupancyRatio rdf:type owl:DatatypeProperty ,
                                                       )
                                         ] ;
                             rdfs:range xsd:float ;
-                            rdfs:comment "The relative occupancy ratio (in terms of persons) measures the ratio of occupied to total usable (i.e., capacity) space."@en ;
+                            rdfs:comment "The relative occupancy ratio (in terms of persons) states the ratio of occupied to total usable (i.e., capacity) space."@en ;
                             rdfs:label "Has Relative Occupancy Ratio"@en .
 
 
@@ -1030,6 +1031,7 @@ sosa:ObservableProperty rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Sensor
 sosa:Sensor rdf:type owl:Class ;
+            rdfs:subClassOf sbeo:Device ;
             rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
             rdfs:isDefinedBy sosa: ;
             rdfs:label "Sensor"@en ;
@@ -1050,55 +1052,6 @@ sbeo:Ability rdf:type owl:Class ;
              rdfs:label "Ability"@en .
 
 
-###  https://w3id.org/sbeo#AbilityToHear
-sbeo:AbilityToHear rdf:type owl:Class ;
-                   rdfs:subClassOf sbeo:SensoryAbility ;
-                   rdfs:comment "An ability to hear."@en ;
-                   rdfs:label "Ability To Hear"@en .
-
-
-###  https://w3id.org/sbeo#AbilityToRun
-sbeo:AbilityToRun rdf:type owl:Class ;
-                  rdfs:subClassOf sbeo:MobilityAbility ;
-                  rdfs:comment "An ability to run."@en ;
-                  rdfs:label "Ability To Run"@en .
-
-
-###  https://w3id.org/sbeo#AbilityToSee
-sbeo:AbilityToSee rdf:type owl:Class ;
-                  rdfs:subClassOf sbeo:SensoryAbility ;
-                  rdfs:comment "An ability to hear."@en ;
-                  rdfs:label "Ability To See"@en .
-
-
-###  https://w3id.org/sbeo#AbilityToTalk
-sbeo:AbilityToTalk rdf:type owl:Class ;
-                   rdfs:subClassOf sbeo:SensoryAbility ;
-                   rdfs:comment "An ability to talk."@en ;
-                   rdfs:label "Ability To Talk"@en .
-
-
-###  https://w3id.org/sbeo#AbilityToTouch
-sbeo:AbilityToTouch rdf:type owl:Class ;
-                    rdfs:subClassOf sbeo:SensoryAbility ;
-                    rdfs:comment "An ability to touch."@en ;
-                    rdfs:label "Ability To Touch"@en .
-
-
-###  https://w3id.org/sbeo#AbilityToUseStairs
-sbeo:AbilityToUseStairs rdf:type owl:Class ;
-                        rdfs:subClassOf sbeo:MobilityAbility ;
-                        rdfs:comment "An ability to use the stairs. Note that the people on the wheelchair are not considered to have this ability no matter the stairs have a stairlift and a ramp."@en ;
-                        rdfs:label "Ability To Use Stairs"@en .
-
-
-###  https://w3id.org/sbeo#AbilityToWalk
-sbeo:AbilityToWalk rdf:type owl:Class ;
-                   rdfs:subClassOf sbeo:MobilityAbility ;
-                   rdfs:comment "An ability of a person to walk. A person who is using crutches is also considered to have this ability."@en ;
-                   rdfs:label "Ability To Walk"@en .
-
-
 ###  https://w3id.org/sbeo#ActiveFireProtectionDevice
 sbeo:ActiveFireProtectionDevice rdf:type owl:Class ;
                                 rdfs:subClassOf sbeo:FireProtectionDevice ;
@@ -1111,6 +1064,25 @@ sbeo:Activity rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty sbeo:hasIntensity ;
                                 owl:someValuesFrom sbeo:Intensity
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:performedBy ;
+                                owl:allValuesFrom sbeo:SocialUnit
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:performedBy ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass sbeo:SocialUnit
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:startedAtTime ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:dateTimeStamp
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:endedAtTime ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:dateTimeStamp
                               ] ;
               rdfs:comment "A process that a person, group of persons, or machine does during a specific amount of time, such as visiting, shopping, etc."@en ;
               rdfs:label "Activity"@en .
@@ -1450,6 +1422,16 @@ sbeo:EscortSupportedWheelchairPerson rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#Event
 sbeo:Event rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:startedAtTime ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:dateTimeStamp
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sbeo:endedAtTime ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:dateTimeStamp
+                           ] ;
            rdfs:comment "An occurrence; something that happens (Oxford Dictionary of English). It represents when something planned or sudden happens."@en ;
            rdfs:label "Event"@en .
 
@@ -1771,7 +1753,7 @@ sbeo:MeetingRoom rdf:type owl:Class ;
 ###  https://w3id.org/sbeo#MentalAbility
 sbeo:MentalAbility rdf:type owl:Class ;
                    rdfs:subClassOf sbeo:Ability ;
-                   rdfs:comment "The mental ability of an indi-vidual to remain focused on an external stimuli or an internal experience for a certain period of time (World Health Organisation)."@en ;
+                   rdfs:comment "The mental ability of an individual to remain focused on an external stimuli or an internal experience for a certain period of time (World Health Organisation)."@en ;
                    rdfs:label "Mental Ability"@en .
 
 
@@ -1993,10 +1975,6 @@ sbeo:PersonAccessibility rdf:type owl:Class ;
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty sbeo:ofSpace ;
                                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty sbeo:hasValue ;
-                                           owl:allValuesFrom xsd:float
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty sbeo:hasValue ;
@@ -2245,10 +2223,6 @@ sbeo:SpaceSafety rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty sbeo:hasValue ;
-                                   owl:allValuesFrom xsd:float
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty sbeo:hasValue ;
                                    owl:cardinality "1"^^xsd:nonNegativeInteger
                                  ] ;
                  rdfs:comment "A parameter to express the safety of any space for a specific person (or type of persons) in terms of some value."@en ;
@@ -2321,21 +2295,41 @@ sbeo:TransitionPoint rdf:type owl:Class ;
 ###  https://w3id.org/sbeo#TravelTime
 sbeo:TravelTime rdf:type owl:Class ;
                 rdfs:subClassOf sbeo:Parameter ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty sbeo:destination ;
-                                  owl:someValuesFrom [ rdf:type owl:Class ;
-                                                       owl:unionOf ( sbeo:RoutePoint
-                                                                     seas:Door
-                                                                   )
-                                                     ]
+                                [ rdf:type owl:Class ;
+                                  owl:unionOf ( [ owl:intersectionOf ( seas:BuildingSpace
+                                                                       [ rdf:type owl:Class ;
+                                                                         owl:complementOf sbeo:Passage
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty sbeo:destination ;
+                                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( sbeo:RoutePoint
+                                                                                    seas:Door
+                                                                                  )
+                                                                    ]
+                                                ]
+                                              )
                                 ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty sbeo:origin ;
-                                  owl:someValuesFrom [ rdf:type owl:Class ;
-                                                       owl:unionOf ( sbeo:RoutePoint
-                                                                     seas:Door
-                                                                   )
-                                                     ]
+                                [ rdf:type owl:Class ;
+                                  owl:unionOf ( [ owl:intersectionOf ( seas:BuildingSpace
+                                                                       [ rdf:type owl:Class ;
+                                                                         owl:complementOf sbeo:Passage
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty sbeo:origin ;
+                                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( sbeo:RoutePoint
+                                                                                    seas:Door
+                                                                                  )
+                                                                    ]
+                                                ]
+                                              )
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty sbeo:forPerson ;
@@ -2348,10 +2342,6 @@ sbeo:TravelTime rdf:type owl:Class ;
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty sbeo:origin ;
                                   owl:cardinality "1"^^xsd:nonNegativeInteger
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty sbeo:hasValue ;
-                                  owl:allValuesFrom xsd:float
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty sbeo:hasValue ;
@@ -2707,14 +2697,65 @@ seas:UtilityRoom rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  https://w3id.org/sbeo#AbilityToHear
+sbeo:AbilityToHear rdf:type owl:NamedIndividual ,
+                            sbeo:SensoryAbility ;
+                   rdfs:comment "An ability to hear."@en ;
+                   rdfs:label "Ability To Hear"@en .
+
+
+###  https://w3id.org/sbeo#AbilityToRun
+sbeo:AbilityToRun rdf:type owl:NamedIndividual ,
+                           sbeo:MobilityAbility ;
+                  rdfs:comment "An ability to run."@en ;
+                  rdfs:label "Ability To Run"@en .
+
+
+###  https://w3id.org/sbeo#AbilityToSee
+sbeo:AbilityToSee rdf:type owl:NamedIndividual ,
+                           sbeo:SensoryAbility ;
+                  rdfs:comment "An ability to hear."@en ;
+                  rdfs:label "Ability To See"@en .
+
+
+###  https://w3id.org/sbeo#AbilityToTalk
+sbeo:AbilityToTalk rdf:type owl:NamedIndividual ,
+                            sbeo:SensoryAbility ;
+                   rdfs:comment "An ability to talk."@en ;
+                   rdfs:label "Ability To Talk"@en .
+
+
+###  https://w3id.org/sbeo#AbilityToTouch
+sbeo:AbilityToTouch rdf:type owl:NamedIndividual ,
+                             sbeo:SensoryAbility ;
+                    rdfs:comment "An ability to touch."@en ;
+                    rdfs:label "Ability To Touch"@en .
+
+
+###  https://w3id.org/sbeo#AbilityToUseStairs
+sbeo:AbilityToUseStairs rdf:type owl:NamedIndividual ,
+                                 sbeo:MobilityAbility ;
+                        rdfs:comment "An ability to use the stairs. Note that the people on the wheelchair are not considered to have this ability no matter the stairs have a stairlift and a ramp."@en ;
+                        rdfs:label "Ability To Use Stairs"@en .
+
+
+###  https://w3id.org/sbeo#AbilityToWalk
+sbeo:AbilityToWalk rdf:type owl:NamedIndividual ,
+                            sbeo:MobilityAbility ;
+                   rdfs:comment "An ability of a person to walk. A person who is using crutches is also considered to have this ability."@en ;
+                   rdfs:label "Ability To Walk"@en .
+
+
 ###  https://w3id.org/sbeo#AssistedNavigation
-sbeo:AssistedNavigation rdf:type owl:NamedIndividual ;
+sbeo:AssistedNavigation rdf:type owl:NamedIndividual ,
+                                 sbeo:Navigation ;
                         rdfs:comment "A type of navigation in which a person is assisted by a person or a machine to perform a specific activity."@en ;
                         rdfs:label "Assisted Navigation"@en .
 
 
 ###  https://w3id.org/sbeo#AutonomousNavigation
-sbeo:AutonomousNavigation rdf:type owl:NamedIndividual ;
+sbeo:AutonomousNavigation rdf:type owl:NamedIndividual ,
+                                   sbeo:Navigation ;
                           rdfs:comment "A type of navigation in which a person plans and executes his or her path without any human or machine intervention."@en ;
                           rdfs:label "Autonomous Navigation"@en .
 
@@ -2726,7 +2767,8 @@ sbeo:Available rdf:type owl:NamedIndividual ;
 
 
 ###  https://w3id.org/sbeo#CollaborativeNavigation
-sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ;
+sbeo:CollaborativeNavigation rdf:type owl:NamedIndividual ,
+                                      sbeo:Navigation ;
                              rdfs:comment "A type of navigation in which two or more persons are involved that may or may not have same objectives."@en ;
                              rdfs:label "Collaborative Navigation"@en .
 
@@ -2774,7 +2816,8 @@ sbeo:Injured rdf:type owl:NamedIndividual ;
 
 
 ###  https://w3id.org/sbeo#MultiObjectiveNavigation
-sbeo:MultiObjectiveNavigation rdf:type owl:NamedIndividual ;
+sbeo:MultiObjectiveNavigation rdf:type owl:NamedIndividual ,
+                                       sbeo:Navigation ;
                               rdfs:comment "A type of navigation in which multiple point of interests are supposed to be visited by a person."@en ;
                               rdfs:label "Multi-objective Navigation"@en .
 
@@ -2804,19 +2847,22 @@ sbeo:RareDeviate rdf:type owl:NamedIndividual ;
 
 
 ###  https://w3id.org/sbeo#Rolling
-sbeo:Rolling rdf:type owl:NamedIndividual ;
-             rdfs:comment "A type of movement by turning over and over on an axis, usually performed by a person using a wheelchair,"@en ;
+sbeo:Rolling rdf:type owl:NamedIndividual ,
+                      sbeo:MotionState ;
+             rdfs:comment "A type of movement by turning over and over on an axis, usually performed by a person using a manual wheelchair."@en ;
              rdfs:label "Rolling"@en .
 
 
 ###  https://w3id.org/sbeo#Running
-sbeo:Running rdf:type owl:NamedIndividual ;
+sbeo:Running rdf:type owl:NamedIndividual ,
+                      sbeo:MotionState ;
              rdfs:comment "A movement of an able-bodied person at a speed faster than a walk"@en ;
              rdfs:label "Running"@en .
 
 
 ###  https://w3id.org/sbeo#Scooting
-sbeo:Scooting rdf:type owl:NamedIndividual ;
+sbeo:Scooting rdf:type owl:NamedIndividual ,
+                       sbeo:MotionState ;
               rdfs:comment "A type of movement usually performed while sitting in (or riding on) an automatic or mechical device, such as electrical wheelchair, electric scooter, etc."@en ;
               rdfs:label "Scooting"@en .
 
@@ -2834,7 +2880,8 @@ sbeo:SimplestPath rdf:type owl:NamedIndividual ;
 
 
 ###  https://w3id.org/sbeo#Standing
-sbeo:Standing rdf:type owl:NamedIndividual ;
+sbeo:Standing rdf:type owl:NamedIndividual ,
+                       sbeo:MotionState ;
               rdfs:comment "Having or maintaining an upright position, supported by one's feet (Oxford Dictionary of English)."@en ;
               rdfs:label "Standing"@en .
 
@@ -2858,7 +2905,8 @@ sbeo:Visiting rdf:type owl:NamedIndividual ;
 
 
 ###  https://w3id.org/sbeo#Walking
-sbeo:Walking rdf:type owl:NamedIndividual ;
+sbeo:Walking rdf:type owl:NamedIndividual ,
+                      sbeo:MotionState ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
              rdfs:label "Walking"@en .
 
