@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/sbeo#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,12 +7,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <https://w3id.org/sbeo> .
 
 <https://w3id.org/sbeo> rdf:type owl:Ontology ;
@@ -169,6 +169,16 @@ sosa:observes rdf:type owl:ObjectProperty ;
               rdfs:isDefinedBy sosa: ;
               rdfs:label "observes"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en .
+
+sosa:observedProperty a owl:ObjectProperty ;
+    rdfs:label "observed property"@en ;
+    skos:definition "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+    rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+    schema:domainIncludes sosa:Observation ;
+    schema:rangeIncludes sosa:ObservableProperty ;
+	  rdfs:domain sosa:Observation ;
+	  rdfs:range sosa:ObservableProperty ;
+    rdfs:isDefinedBy sosa: .
 
 
 ###  https://w3id.org/sbeo#accompanying
