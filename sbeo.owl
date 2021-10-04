@@ -1,4 +1,4 @@
-@prefix sbeo: <https://w3id.org/sbeo#> .
+@prefix : <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -1390,6 +1390,24 @@ sbeo:DisplayScreen rdf:type owl:Class ;
                    rdfs:subClassOf sbeo:Device ;
                    rdfs:comment "A display screen is an output device to represent the information in visual or tactile form."@en ;
                    rdfs:label "Display Screen"@en .
+
+
+###  https://w3id.org/sbeo#Distance
+sbeo:Distance rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:destination ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:origin ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sbeo:hasValue ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:comment "The Distance between two points, nodes or spaces."@en ;
+              rdfs:label "Distance"@en .
 
 
 ###  https://w3id.org/sbeo#DownSyndromePerson
