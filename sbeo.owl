@@ -7,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -33,6 +34,66 @@ Several other parameters related to the spaces, users and context are also descr
                          vann:preferredNamespaceUri sbeo: ;
                          rdfs:seeAlso <https://github.com/qasimkhalid/SBEO> ;
                          owl:versionInfo 0.3 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+dcterms:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/domainIncludes
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/rangeIncludes
+schema:rangeIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -189,7 +250,7 @@ sbeo:destination rdf:type owl:ObjectProperty ;
                  rdfs:domain sbeo:TravelTime ;
                  rdfs:range [ rdf:type owl:Class ;
                               owl:unionOf ( sbeo:RoutePoint
-											sbeo:Space
+                                            sbeo:Space
                                           )
                             ] ;
                  rdfs:comment "It represents the ending point of a movement."@en ;
@@ -1140,13 +1201,6 @@ sbeo:ActivitySeverity rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#ActivityStatus
 sbeo:ActivityStatus rdf:type owl:Class ;
-                    owl:equivalentClass [ rdf:type owl:Class ;
-                                          owl:oneOf ( sbeo:Evacuated
-                                                      sbeo:Evacuating
-                                                      sbeo:PickingUpDependents
-                                                      sbeo:Visiting
-                                                    )
-                                        ] ;
                     rdfs:comment "It expresses the status of a specific activity being performed by a person."@en ;
                     rdfs:label "Activity Status"@en .
 
@@ -1552,12 +1606,6 @@ sbeo:FireProtectionDevice rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#FitnessStatus
 sbeo:FitnessStatus rdf:type owl:Class ;
-                   owl:equivalentClass [ rdf:type owl:Class ;
-                                         owl:oneOf ( sbeo:Exhausted
-                                                     sbeo:Fit
-                                                     sbeo:Injured
-                                                   )
-                                       ] ;
                    rdfs:comment "A fitness status is associated with a person that represent the quality of being suitable for a specific activity."@en ;
                    rdfs:label "Fitness Status"@en .
 
@@ -1813,14 +1861,6 @@ sbeo:ModerateHearingImpairedPerson rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#MotionState
 sbeo:MotionState rdf:type owl:Class ;
-                 owl:equivalentClass [ rdf:type owl:Class ;
-                                       owl:oneOf ( sbeo:Rolling
-                                                   sbeo:Running
-                                                   sbeo:Scooting
-                                                   sbeo:Standing
-                                                   sbeo:Walking
-                                                 )
-                                     ] ;
                  rdfs:comment "It describes the movement of a person."@en ;
                  rdfs:label "Motion State"@en .
 
@@ -2847,25 +2887,29 @@ sbeo:DeviatingFromPath rdf:type owl:NamedIndividual ;
 ###  https://w3id.org/sbeo#Evacuated
 sbeo:Evacuated rdf:type owl:NamedIndividual ;
                rdfs:comment "This instance is used to mention when a person has been evacuated successfully."@en ;
-               rdfs:label "Evacuated"@en .
+               rdfs:label "Evacuated"@en ;
+               owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#Evacuating
 sbeo:Evacuating rdf:type owl:NamedIndividual ;
                 rdfs:comment "This instance is used to express when someone is in the process of evacuating some space."@en ;
-                rdfs:label "Evacuating"@en .
+                rdfs:label "Evacuating"@en ;
+                owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#Exhausted
 sbeo:Exhausted rdf:type owl:NamedIndividual ;
                rdfs:comment "This instance is used to express the when someone has drained of one's energy or effectiveness."@en ;
-               rdfs:label "Exhausted"@en .
+               rdfs:label "Exhausted"@en ;
+               owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#Fit
 sbeo:Fit rdf:type owl:NamedIndividual ;
          rdfs:comment "This instance is used to express when the physical and mental condition is sound of someone."@en ;
-         rdfs:label "Fit"@en .
+         rdfs:label "Fit"@en ;
+         owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#FollowingPath
@@ -2877,7 +2921,8 @@ sbeo:FollowingPath rdf:type owl:NamedIndividual ;
 ###  https://w3id.org/sbeo#Injured
 sbeo:Injured rdf:type owl:NamedIndividual ;
              rdfs:comment "This instance is used to express when someone is not fit and has some injuries."@en ;
-             rdfs:label "Injured"@en .
+             rdfs:label "Injured"@en ;
+             owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#MultiObjectiveNavigation
@@ -2902,7 +2947,8 @@ sbeo:OftenDeviate rdf:type owl:NamedIndividual ;
 ###  https://w3id.org/sbeo#PickingUpDependents
 sbeo:PickingUpDependents rdf:type owl:NamedIndividual ;
                          rdfs:comment "This instance is used to express when someone is picking up the dependent member of one's group."@en ;
-                         rdfs:label "Picking Up Dependents"@en .
+                         rdfs:label "Picking Up Dependents"@en ;
+                         owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#RareDeviate
@@ -2912,43 +2958,45 @@ sbeo:RareDeviate rdf:type owl:NamedIndividual ;
 
 
 ###  https://w3id.org/sbeo#Rolling
-sbeo:Rolling rdf:type owl:NamedIndividual ,
-                      sbeo:MotionState ;
+sbeo:Rolling rdf:type owl:NamedIndividual ;
              rdfs:comment "A type of movement by turning over and over on an axis, usually performed by a person using a manual wheelchair."@en ;
-             rdfs:label "Rolling"@en .
+             rdfs:label "Rolling"@en ;
+             owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#Running
-sbeo:Running rdf:type owl:NamedIndividual ,
-                      sbeo:MotionState ;
+sbeo:Running rdf:type owl:NamedIndividual ;
              rdfs:comment "A movement of an able-bodied person at a speed faster than a walk"@en ;
-             rdfs:label "Running"@en .
+             rdfs:label "Running"@en ;
+             owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#Scooting
-sbeo:Scooting rdf:type owl:NamedIndividual ,
-                       sbeo:MotionState ;
+sbeo:Scooting rdf:type owl:NamedIndividual ;
               rdfs:comment "A type of movement usually performed while sitting in (or riding on) an automatic or mechical device, such as electrical wheelchair, electric scooter, etc."@en ;
-              rdfs:label "Scooting"@en .
+              rdfs:label "Scooting"@en ;
+              owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#ShortestPath
 sbeo:ShortestPath rdf:type owl:NamedIndividual ;
                   rdfs:comment "A type of route having minimum cost in terms of distance or time."@en ;
-                  rdfs:label "Shortest Path"@en .
+                  rdfs:label "Shortest Path"@en ;
+                  owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#SimplestPath
 sbeo:SimplestPath rdf:type owl:NamedIndividual ;
                   rdfs:comment "A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points."@en ;
-                  rdfs:label "Simplest Path"@en .
+                  rdfs:label "Simplest Path"@en ;
+                  owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#Standing
-sbeo:Standing rdf:type owl:NamedIndividual ,
-                       sbeo:MotionState ;
+sbeo:Standing rdf:type owl:NamedIndividual ;
               rdfs:comment "Having or maintaining an upright position, supported by one's feet (Oxford Dictionary of English)."@en ;
-              rdfs:label "Standing"@en .
+              rdfs:label "Standing"@en ;
+              owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#TooOftenDeviate
@@ -2966,14 +3014,15 @@ sbeo:UnAvailable rdf:type owl:NamedIndividual ;
 ###  https://w3id.org/sbeo#Visiting
 sbeo:Visiting rdf:type owl:NamedIndividual ;
               rdfs:comment "The activity of making visits."@en ;
-              rdfs:label "Visiting"@en .
+              rdfs:label "Visiting"@en ;
+              owl:deprecated "" .
 
 
 ###  https://w3id.org/sbeo#Walking
-sbeo:Walking rdf:type owl:NamedIndividual ,
-                      sbeo:MotionState ;
+sbeo:Walking rdf:type owl:NamedIndividual ;
              rdfs:comment "An unhurried rate of movement on foot (Oxford Dictionary of English)."@en ;
-             rdfs:label "Walking"@en .
+             rdfs:label "Walking"@en ;
+             owl:deprecated "" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
