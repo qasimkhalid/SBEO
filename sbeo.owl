@@ -8,11 +8,11 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix seas: <https://w3id.org/seas/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <https://w3id.org/sbeo> .
 
 <https://w3id.org/sbeo> rdf:type owl:Ontology ;
@@ -88,11 +88,11 @@ schema:rangeIncludes rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#definition
-<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+skos:definition rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#example
-<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+skos:example rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -156,7 +156,19 @@ sosa:madeBySensor rdf:type owl:ObjectProperty ;
                   rdfs:comment "Relation between an Observation and the Sensor which made the Observation."@en ;
                   rdfs:isDefinedBy sosa: ;
                   rdfs:label "made by sensor"@en ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "Relation between an Observation and the Sensor which made the Observation."@en .
+                  skos:definition "Relation between an Observation and the Sensor which made the Observation."@en .
+
+
+###  http://www.w3.org/ns/sosa/observedProperty
+sosa:observedProperty rdf:type owl:ObjectProperty ;
+                      rdfs:domain sosa:Observation ;
+                      rdfs:range sosa:ObservableProperty ;
+                      schema:domainIncludes sosa:Observation ;
+                      schema:rangeIncludes sosa:ObservableProperty ;
+                      rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+                      rdfs:isDefinedBy sosa: ;
+                      rdfs:label "observed property"@en ;
+                      skos:definition "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en .
 
 
 ###  http://www.w3.org/ns/sosa/observes
@@ -168,17 +180,7 @@ sosa:observes rdf:type owl:ObjectProperty ;
               rdfs:comment "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en ;
               rdfs:isDefinedBy sosa: ;
               rdfs:label "observes"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en .
-
-sosa:observedProperty a owl:ObjectProperty ;
-    rdfs:label "observed property"@en ;
-    skos:definition "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
-    rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
-    schema:domainIncludes sosa:Observation ;
-    schema:rangeIncludes sosa:ObservableProperty ;
-	  rdfs:domain sosa:Observation ;
-	  rdfs:range sosa:ObservableProperty ;
-    rdfs:isDefinedBy sosa: .
+              skos:definition "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en .
 
 
 ###  https://w3id.org/sbeo#accompanying
@@ -703,8 +705,8 @@ sosa:hasSimpleResult rdf:type owl:DatatypeProperty ;
                      rdfs:comment "The simple value of an Observation or Actuation or act of Sampling."@en ;
                      rdfs:isDefinedBy sosa: ;
                      rdfs:label "has simple result"@en ;
-                     <http://www.w3.org/2004/02/skos/core#definition> "The simple value of an Observation or Actuation or act of Sampling."@en ;
-                     <http://www.w3.org/2004/02/skos/core#example> "For instance, the values 23 or true."@en .
+                     skos:definition "The simple value of an Observation or Actuation or act of Sampling."@en ;
+                     skos:example "For instance, the values 23 or true."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/age
@@ -773,7 +775,7 @@ sbeo:atTime rdf:type owl:DatatypeProperty ;
                                         sbeo:SocialUnit
                                       )
                         ] ;
-            rdfs:range xsd:dateTimeStamp ;
+            rdfs:range xsd:unsignedLong ;
             rdfs:comment "The time at which an activity or event occurred."@en ;
             rdfs:label "At Time"@en .
 
@@ -825,7 +827,7 @@ sbeo:endedAtTime rdf:type owl:DatatypeProperty ;
                                              sbeo:Event
                                            )
                              ] ;
-                 rdfs:range xsd:dateTimeStamp ;
+                 rdfs:range xsd:unsignedLong ;
                  owl:propertyDisjointWith sbeo:startedAtTime ;
                  rdfs:comment "The time at which an activity ended."@en ;
                  rdfs:label "Ended At Time"@en .
@@ -970,7 +972,7 @@ sbeo:startedAtTime rdf:type owl:DatatypeProperty ;
                                                sbeo:Event
                                              )
                                ] ;
-                   rdfs:range xsd:dateTimeStamp ;
+                   rdfs:range xsd:unsignedLong ;
                    rdfs:comment "Start is when an activity is deemed to have been started by an entity, known as trigger."@en ;
                    rdfs:label "Started At Time"@en .
 
@@ -997,7 +999,7 @@ sbeo:timeDuration rdf:type owl:DatatypeProperty ;
                                               sbeo:Event
                                             )
                               ] ;
-                  rdfs:range xsd:dateTimeStamp ;
+                  rdfs:range xsd:unsignedLong ;
                   rdfs:comment "The length of time during which any activity or event lasts."@en ;
                   rdfs:label "Time Duration"@en .
 
@@ -1058,8 +1060,8 @@ sosa:ObservableProperty rdf:type owl:Class ;
                         rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
                         rdfs:isDefinedBy sosa: ;
                         rdfs:label "Observable Property"@en ;
-                        <http://www.w3.org/2004/02/skos/core#definition> "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
-                        <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+                        skos:definition "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                        skos:example "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
 
 
 ###  http://www.w3.org/ns/sosa/Observation
@@ -1075,7 +1077,7 @@ sosa:Observation rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty sbeo:atTime ;
-                                   owl:allValuesFrom xsd:dateTimeStamp
+                                   owl:allValuesFrom xsd:unsignedLong
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty sbeo:atTime ;
@@ -1084,8 +1086,8 @@ sosa:Observation rdf:type owl:Class ;
                  rdfs:comment "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
                  rdfs:isDefinedBy sosa: ;
                  rdfs:label "Observation"@en ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
-                 <http://www.w3.org/2004/02/skos/core#example> "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en .
+                 skos:definition "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+                 skos:example "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en .
 
 
 ###  http://www.w3.org/ns/sosa/Sensor
@@ -1094,8 +1096,8 @@ sosa:Sensor rdf:type owl:Class ;
             rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
             rdfs:isDefinedBy sosa: ;
             rdfs:label "Sensor"@en ;
-            <http://www.w3.org/2004/02/skos/core#definition> "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
-            <http://www.w3.org/2004/02/skos/core#example> "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en .
+            skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+            skos:example "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -1136,12 +1138,12 @@ sbeo:Activity rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty sbeo:startedAtTime ;
                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:dateTimeStamp
+                                owl:onDataRange xsd:unsignedLong
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty sbeo:endedAtTime ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:dateTimeStamp
+                                owl:onDataRange xsd:unsignedLong
                               ] ;
               rdfs:comment "A process that a person, group of persons, or machine does during a specific amount of time, such as visiting, shopping, etc."@en ;
               rdfs:label "Activity"@en .
@@ -1503,12 +1505,12 @@ sbeo:Event rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty sbeo:startedAtTime ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:dateTimeStamp
+                             owl:onDataRange xsd:unsignedLong
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty sbeo:endedAtTime ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:dateTimeStamp
+                             owl:onDataRange xsd:unsignedLong
                            ] ;
            rdfs:comment "An occurrence; something that happens (Oxford Dictionary of English). It represents when something planned or sudden happens."@en ;
            rdfs:label "Event"@en .
