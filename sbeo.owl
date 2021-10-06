@@ -1,4 +1,4 @@
-@prefix sbeo: <https://w3id.org/sbeo#> .
+@prefix : <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -1102,7 +1103,25 @@ sosa:Sensor rdf:type owl:Class ;
 
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person rdf:type owl:Class ;
-            rdfs:subClassOf sbeo:SocialUnit ;
+            rdfs:subClassOf sbeo:SocialUnit ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sbeo:hasMotionState ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass sbeo:MotionState
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sbeo:locatedIn ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( sbeo:RouteElement
+                                                          sbeo:Space
+                                                        )
+                                          ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sbeo:atTime ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
             rdfs:comment "It represents a single individual of any age and having any type of characteristics."@en ;
             rdfs:label "Person"@en .
 
