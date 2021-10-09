@@ -884,7 +884,6 @@ sbeo:id rdf:type owl:DatatypeProperty ;
                                     sbeo:SocialUnit
                                   )
                     ] ;
-        rdfs:range xsd:positiveInteger ;
         rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
         rdfs:label "Identification Number"@en .
 
