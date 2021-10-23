@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/sbeo#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,7 +7,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -1727,7 +1726,7 @@ sbeo:HallExit rdf:type owl:Class ;
 
 ###  https://w3id.org/sbeo#HallSegment
 sbeo:HallSegment rdf:type owl:Class ;
-                 rdfs:subClassOf seas:Hall ;
+                 rdfs:subClassOf sbeo:HorizontalPassage ;
                  rdfs:comment "A fragment or an atomic element of a hall."@en ;
                  rdfs:label "Hall Segment"@en .
 
@@ -2694,8 +2693,7 @@ seas:Greenhouse rdf:type owl:Class ;
 
 ###  https://w3id.org/seas/Hall
 seas:Hall rdf:type owl:Class ;
-          rdfs:subClassOf sbeo:HorizontalPassage ,
-                          seas:Lobby ;
+          rdfs:subClassOf seas:Lobby ;
           rdfs:comment "A large entrance room of a house or building."@en ;
           rdfs:isDefinedBy seas:BuildingOntology ;
           rdfs:label "Hall"@en .
