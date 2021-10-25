@@ -1,4 +1,3 @@
-@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix olo: <http://purl.org/ontology/olo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,6 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
 @prefix seas: <https://w3id.org/seas/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -845,6 +845,18 @@ sbeo:hasCongestion rdf:type owl:DatatypeProperty ,
                    rdfs:range xsd:boolean ;
                    rdfs:comment "A property to express either a space has congestion or not."@en ;
                    rdfs:label "Has Congestion"@en .
+
+
+###  https://w3id.org/sbeo#hasSafetyValue
+sbeo:hasSafetyValue rdf:type owl:DatatypeProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( sbeo:RouteElement
+                                                sbeo:Space
+                                              )
+                                ] ;
+                    rdfs:range xsd:float ;
+                    rdfs:comment "A property to express the safety of any space in terms of some value. Note that this is a generic property as a space will have a same safety value for all kinds of person."@en ;
+                    rdfs:label "Has Safety Value"@en .
 
 
 ###  https://w3id.org/sbeo#hasValue
