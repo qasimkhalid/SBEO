@@ -889,14 +889,11 @@ sbeo:height rdf:type owl:DatatypeProperty ,
 
 
 ###  https://w3id.org/sbeo#id
-sbeo:id rdf:type owl:DatatypeProperty ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( sbeo:Device
-                                    sbeo:SocialUnit
-                                  )
-                    ] ;
-        rdfs:comment "An unique identification number of something such as, social unit, device, etc."@en ;
-        rdfs:label "Identification Number"@en .
+sbeo:id rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain owl:Thing ;
+        rdfs:comment "An unique identification value of something such as, social unit, device, space."@en ;
+        rdfs:label "Identifier"@en .
 
 
 ###  https://w3id.org/sbeo#length
