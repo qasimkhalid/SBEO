@@ -4,9 +4,13 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
 
 1. ### User model-related competency questions:
 
+
    * ***Users’ characteristics.***
 
-        * How many families are located in the office building?
+
+        * 1. Who is not capable of running?
+		
+        * 2. How many families are located in the building?\\
         ```
         SELECT (COUNT (DISTINCT ?family) AS ?familyCount)
         WHERE {
@@ -18,7 +22,9 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        * What are types of people with respect to their physical characteristics? 
+        * 3. Who has a bad quality of hearing ability (in the building)?
+		
+        * 4. What are the types of people concerning their physical characteristics?? 
         ```
         SELECT ?person (?allTypePerson AS ?type)
         WHERE {
@@ -27,9 +33,21 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
+
    * ***Users’ preferences.***
 
-      * What are the notification preferences of each person?
+
+      * 5. What are route preferences (for emergency evacuation, e.g., simplest path, shortest path) of each person?
+       ```   
+       SELECT  ?person ?rp
+       WHERE {
+           ?person rdf:type ?allTypePerson ;
+                   sbeo:routePreference ?rp .
+           ?allTypePerson rdfs:subClassOf* foaf:Person  .  
+       }
+       ```
+	   	  
+      * 6. What are the notification preferences (in terms of description, e.g., audio, textual) of each person??
        ```
        SELECT  ?person ?np
        WHERE {
@@ -39,21 +57,46 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
        }
        ```
 
-      * What are route preferences of each person?
-       ```   
-       SELECT  ?person ?rp
-       WHERE {
-           ?person rdf:type ?allTypePerson ;
-                   sbeo:routePreference ?rp .
-           ?allTypePerson rdfs:subClassOf* foaf:Person  .  
-       }
-       ```
 
 2. ### Building model-related competency questions:
 
 
     * ***Spatial information.***
-        * Which building blocks are the part of which specific building?   
+       
+
+	   * 7. What is the relative occupancy ratio of all corridors?
+		```
+        SELECT ?corridor ?value
+        WHERE {
+            ?corridor rdf:type seas:Corridor ;
+                      sbeo:currentOccupancy ?value . 
+        }
+        ```
+		
+		* 8. How many points of interest are located on each floor of the building?   
+        ```
+        SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
+        WHERE {
+            ?poi rdf:type sbeo:PointOfInterest ;
+                 sbeo:locatedIn ?space . 
+            ?space sbeo:locatedIn ?floor . 
+            ?floor rdf:type seas:BuildingStorey .
+        }
+        GROUP BY ?floor 
+        ```
+        
+        * 9. Which other spaces are adjacent to a specific space (e.g., kitchen) in the building?   
+        ```
+        SELECT ?adjacentSpace
+        WHERE {
+            ?kitchen rdf:type seas:Kitchen ;
+                     sbeo:adjacentTo ?adjacentSpace . 
+            ?adjacentSpace rdf:type ?space . 
+            ?space rdfs:subClassOf* sbeo:Space .
+        }
+        ```
+		
+        * 10. Which space (e.g., a specific building block) is a sub-part of which space (e.g., building)?   
 
         ```
         SELECT ?buildingBlock ?specificBuilding
@@ -64,7 +107,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
         
-        * What is the length and width of all corridors (excluding corridor segments)? 
+        * 11. What is the area of all corridors (it can be of any shape, such as, rectangular, circular, trapezoidal or triangular)? 
 
          ```
         SELECT ?corridor ?length ?width 
@@ -76,42 +119,8 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
          ```
 
 
-        * How many points of interests are located on each floor of the building?   
-        ```
-        SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
-        WHERE {
-            ?poi rdf:type sbeo:PointOfInterest ;
-                 sbeo:locatedIn ?space . 
-            ?space sbeo:locatedIn ?floor . 
-            ?floor rdf:type seas:BuildingStorey .
-        }
-        GROUP BY ?floor 
-        ```
 
-
-        * Which other spaces are adjacent to the kitchen?   
-        ```
-        SELECT ?adjacentSpace
-        WHERE {
-            ?kitchen rdf:type seas:Kitchen ;
-                     sbeo:adjacentTo ?adjacentSpace . 
-            ?adjacentSpace rdf:type ?space . 
-            ?space rdfs:subClassOf* sbeo:Space .
-        }
-        ```
-
-
-        * What is the current occupancy of all corridors?
-        ```
-        SELECT ?corridor ?value
-        WHERE {
-            ?corridor rdf:type seas:Corridor ;
-                      sbeo:currentOccupancy ?value . 
-        }
-        ```
-
-
-        * Which spaces are excluded for which person?  
+        * 12. Which spaces are excluded (due to any reason such as limited access on account of a mobility impairment or privacy policy of spaces, e.g., hotels) for which person? 
         ```
         SELECT ?space ?person
         WHERE {
@@ -125,9 +134,73 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         ```
 
 
-    * ***Devices and components of the indoor environment.***
+ * ***Route graph***.
 
-        * What are the fire incident protection devices located at the same floor where a person is located? 
+
+		* 13. How many nodes and edges are there in the graph-based representation of building?
+        ```
+        SELECT  (COUNT (DISTINCT ?edge) AS ?edgeCount) (COUNT (DISTINCT ?node) AS ?nodeCount) 
+        WHERE {
+            ?edge rdf:type ?allTypePassage .              
+            ?allTypePassage rdfs:subClassOf* sbeo:Passage . 
+
+            ?node rdf:type ?allTypeRoutePoint .              
+            ?allTypeRoutePoint rdfs:subClassOf* sbeo:RoutePoint . 
+        }
+        ```
+
+        * 14. What is the type of each route in terms of its graph-based representation (e.g., Shortest Path or Simplest Path)?
+        ```
+        SELECT ?route ?graphBasedtype 
+        WHERE {
+            ?route rdf:type ?allTypeRoute ;
+                   sbeo:routeType ?graphBasedtype . 
+            ?allTypeRoute rdfs:subClassOf* sbeo:Route .
+        }
+        ```
+
+
+        * 15. What is the travel time of all exit routes for each person (the starting and ending points of each exit route is considered as origin and destination respectively)?
+        ```
+        SELECT ?route ?time 
+        WHERE {
+            ?route rdf:type ?allTypeRoute ;
+                   sbeo:travelTime ?time . 
+            ?allTypeRoute rdfs:subClassOf* sbeo:Route .
+        }
+        ```
+
+
+    * ***Devices***
+ 
+
+        * 16. Who is using a hand-held device and of what type?
+        ```
+        SELECT ?person ?device (?allTypeDevice AS ?deviceType)
+        WHERE {
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:uses ?device . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person . 
+
+            ?device rdf:type ?allTypeDevice . 
+            ?allTypeDevice rdfs:subClassOf* sbeo:HandheldDevice. 
+        }
+        ORDER BY ?person
+        ```
+		
+		* 17. Which sensors are installed in each space of a specific type (e.g., office)? 
+        ```
+        SELECT ?office ?sensor
+        WHERE {
+            ?sensor rdf:type ?allTypeSensor ;
+                    sbeo:installedIn ?office . 
+            ?allTypeSensor rdfs:subClassOf* sbeo:Sensor . 
+
+            ?office rdf:type seas:Office . 
+        }
+        ORDER BY ?office 
+        ```
+        *  18. How many fire protection devices are installed on the same floor where a specific person is located?  
         ```
         SELECT DISTINCT ?device ?person
         WHERE {
@@ -151,95 +224,15 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
             ?allTypeIncidentProtection  rdfs:subClassOf* sbeo:IncidentProtectionDevice .
         }
         ```
-
-
-        * Which sensors are installed in each office?
-        ```
-        SELECT ?office ?sensor
-        WHERE {
-            ?sensor rdf:type ?allTypeSensor ;
-                    sbeo:installedIn ?office . 
-            ?allTypeSensor rdfs:subClassOf* sbeo:Sensor . 
-
-            ?office rdf:type seas:Office . 
-        }
-        ORDER BY ?office 
-        ```
-        
-
-        * Who is using a hand-held device and which one? 
-        ```
-        SELECT ?person ?device (?allTypeDevice AS ?deviceType)
-        WHERE {
-            ?person rdf:type ?allTypePerson ;
-                    sbeo:uses ?device . 
-            ?allTypePerson rdfs:subClassOf* foaf:Person . 
-
-            ?device rdf:type ?allTypeDevice . 
-            ?allTypeDevice rdfs:subClassOf* sbeo:HandheldDevice. 
-        }
-        ORDER BY ?person
-        ```
-
-        * What type of sensors are installed in the building?
-        ```
-        SELECT DISTINCT (?allTypeSensor AS ?sensorType)
-        WHERE {
-            ?sensor rdf:type ?allTypeSensor .
-            ?allTypeSensor rdfs:subClassOf* sbeo:Sensor . 
-        }
-        ```
-
-    * ***Route graph***.
-
-
-        * What are the types of routes in terms of from graph-based representation?
-        ```
-        SELECT ?route ?graphBasedtype 
-        WHERE {
-            ?route rdf:type ?allTypeRoute ;
-                   sbeo:routeType ?graphBasedtype . 
-            ?allTypeRoute rdfs:subClassOf* sbeo:Route .
-        }
-        ```
-
-
-        * What is the travel time of each route?
-        ```
-        SELECT ?route ?time 
-        WHERE {
-            ?route rdf:type ?allTypeRoute ;
-                   sbeo:travelTime ?time . 
-            ?allTypeRoute rdfs:subClassOf* sbeo:Route .
-        }
-        ```
-
-
-        * How many nodes and edges are generated from the layout of the building?
-        ```
-        SELECT  (COUNT (DISTINCT ?edge) AS ?edgeCount) (COUNT (DISTINCT ?node) AS ?nodeCount) 
-        WHERE {
-            ?edge rdf:type ?allTypePassage .              
-            ?allTypePassage rdfs:subClassOf* sbeo:Passage . 
-
-            ?node rdf:type ?allTypeRoutePoint .              
-            ?allTypeRoutePoint rdfs:subClassOf* sbeo:RoutePoint . 
-        }
-        ```
-
+ 
+   
 3. ### Context model-related competency questions:       
 
-    * ***Building situation awareness***.
-        * Finding out any incident occurred in the building?
-        ```
-        SELECT ?incident
-        WHERE {
-            ?incident rdf:type ?allTypeIncident .
-            ?allTypeIncident rdfs:subClassOf* sbeo:Incident .
-        }
-        ```
 
-         * Finding out all the activities being done in an indoor environment?  
+    * ***Building***.
+	
+	
+		* 19. Which activities (e.g, visit, evacuation, shopping) are being done in the building? 
         ```
         SELECT ?activity
         WHERE {
@@ -247,18 +240,8 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
             ?allTypeActivity rdfs:subClassOf* sbeo:Activity .
         }
         ```
-
-        *  At what time any incident occurred?
-        ```
-        SELECT ?incident ?startedTime
-        WHERE {
-            ?incident rdf:type ?allTypeIncident ;
-                      sbeo:startedAtTime ?startedTime . 
-            ?allTypeIncident rdfs:subClassOf* sbeo:Incident .
-        }
-        ```
-
-        * What is the availability status of each space?
+		
+        * 20. What is the availability status (i.e., Available or Unavailable) of each space? 
         ```
         SELECT ?space ?status
         WHERE {
@@ -267,11 +250,12 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
             ?allTypeSpace rdfs:subClassOf* sbeo:Space .
         }
         ```
-
-
-
-    * ***Users situation awareness***.
-        * Where is each person located in the building?
+		
+		
+    * ***User***.
+	
+	
+        * 21. Where is each person located in the building?
         ```
         SELECT ?person ?space
         WHERE {
@@ -280,8 +264,42 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
             ?allTypePerson rdfs:subClassOf* foaf:Person .
         }
         ```
+		
+		*  22. What is the role of each member within any group? 
+        ```
+        SELECT DISTINCT ?person ?role ?group
+        WHERE {
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasRole ?role .  
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
 
-        *  Which route is assigned to each person of each group (e.g., a family)?
+            ?group rdf:type ?allTypeGroup ;
+                   sbeo:hasMember ?person .  
+            ?allTypeGroup rdfs:subClassOf* sbeo:Group .
+        }
+        ```
+		
+		* 23. How many times a person has deviated from the provided path?   
+        ```
+        SELECT ?person ?deviation
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasXTimesDeviated ?deviation . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
+		 
+        * 24. What is the fitness status (i.e, Exhausted, Fit, or Injured) of each person?
+        ```
+        SELECT ?person ?fitStatus
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasFitnessStatus ?fitStatus . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
+		
+        *  25. Which route is assigned to whom of which group (refers to a number of people that are classified together, e.g., a family)?
         ```
         SELECT DISTINCT ?group ?person ?route
         WHERE {
@@ -298,17 +316,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        *  What are the navigational states of each person?
-        ```
-        SELECT ?person ?state
-        WHERE { 
-            ?person rdf:type ?allTypePerson ;
-                    sbeo:hasNavigationalState ?state . 
-            ?allTypePerson rdfs:subClassOf* foaf:Person .
-        }
-        ```
-
-        * What are the motion states of each person?
+		* 26. What is the motion state of each person (refers to the movement of a person, e.g., walking, standing, running, rolling, or scooting)?
         ```
         SELECT ?person ?state
         WHERE { 
@@ -318,47 +326,40 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }   
         ```
 
-        * How many times a person has deviated from one's provided path?   
+        *  27. What is the navigational state of each person (refers to the state while following a path to check either a person is following the provided path or deviating from it)?
         ```
-        SELECT ?person ?deviation
+        SELECT ?person ?state
         WHERE { 
             ?person rdf:type ?allTypePerson ;
-                    sbeo:hasXTimesDeviated ?deviation . 
+                    sbeo:hasNavigationalState ?state . 
             ?allTypePerson rdfs:subClassOf* foaf:Person .
         }
         ```
 
-        * What is the fitness status of each person?
-        ```
-        SELECT ?person ?fitStatus
-        WHERE { 
-            ?person rdf:type ?allTypePerson ;
-                    sbeo:hasFitnessStatus ?fitStatus . 
-            ?allTypePerson rdfs:subClassOf* foaf:Person .
-        }
-        ```
-    
-        * What is the role of each member within any group?
-        ```
-        SELECT DISTINCT ?person ?role ?group
-        WHERE {
-            ?person rdf:type ?allTypePerson ;
-                    sbeo:hasRole ?role .  
-            ?allTypePerson rdfs:subClassOf* foaf:Person .
-
-            ?group rdf:type ?allTypeGroup ;
-                   sbeo:hasMember ?person .  
-            ?allTypeGroup rdfs:subClassOf* sbeo:Group .
-        }
-        ```
-
-
-
-
-
+        
     * ***Emergency evacuation***.
 
-        * What is the availability status of all emergency evacuation routes?
+
+        * 28. Is there an incident in the building?
+        ```
+        SELECT ?incident
+        WHERE {
+            ?incident rdf:type ?allTypeIncident .
+            ?allTypeIncident rdfs:subClassOf* sbeo:Incident .
+        }
+        ```
+
+        * 29. At what time an incident occurred?
+        ```
+        SELECT ?incident ?startedTime
+        WHERE {
+            ?incident rdf:type ?allTypeIncident ;
+                      sbeo:startedAtTime ?startedTime . 
+            ?allTypeIncident rdfs:subClassOf* sbeo:Incident .
+        }
+        ```
+
+        * 30. What is the availability status of the spaces that are a part of emergency evacuation routes?
         ```
         SELECT ?route ?avStatus
             WHERE { 
@@ -367,25 +368,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        * How many emergency evacuation groups are located in building?
-        ```
-        SELECT (COUNT (DISTINCT ?group) AS ?emergencyEvacGroups)
-        WHERE { 
-            ?group rdf:type sbeo:EmergencyEvacuationGroup .
-        }
-        ```
-
-        * Who has evacuated the building successfully?
-        ```
-        SELECT ?person 
-        WHERE { 
-            ?person rdf:type ?allTypePerson ;
-                    sbeo:hasActivityStatus sbeo:Evacuated . 
-            ?allTypePerson rdfs:subClassOf* foaf:Person .
-        }
-        ```
-    
-        * How many groups are still in the process of evacuating the building?
+        * 31. How many groups are still in the process of evacuating the building ?
         ```
         SELECT ?group 
         WHERE { 
@@ -395,5 +378,20 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
+        * 32. What is the impact of activities on persons having mild quality of seeing ability?
+        
+		* 33. What is the severity of the incidents for mobility-impaired persons (of all types)?
+        
+		* 34. What are the intensities (refers to the magnitude or strength) of the events occurred?
+		
+		* 35. Who has evacuated the building successfully (refers to the activity status of a person he who completes his/her provided exit route)?
+        ```
+        SELECT ?person 
+        WHERE { 
+            ?person rdf:type ?allTypePerson ;
+                    sbeo:hasActivityStatus sbeo:Evacuated . 
+            ?allTypePerson rdfs:subClassOf* foaf:Person .
+        }
+        ```
 
         

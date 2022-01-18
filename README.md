@@ -14,6 +14,14 @@ Namespace URI:
 
 ## Diagram 
 
+
+### SBEO In A Nutshell
+
+<p align="center">
+  <img src="Figures/ontology-precised.png"/>
+</p>
+
+
 ### Class Diagram
 
 <p align="center">
