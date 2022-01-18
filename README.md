@@ -18,7 +18,7 @@ Namespace URI:
 ### SBEO In A Nutshell
 
 <p align="center">
-  <img src="Figures/ontology-precised.png"/>
+  <img src="Figures/ontology_precise.png"/>
 </p>
 
 
