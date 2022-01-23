@@ -1,6 +1,6 @@
 # Competencey questions for the SBEO
 
-The given SPARQL are _examples_ that may be reinterpreted and reused for applications.
+The given SPARQL queries are _examples_ that may be reinterpreted and reused for applications.
 
 1. ### User model-related competency questions:
 
