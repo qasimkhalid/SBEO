@@ -8,9 +8,9 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
    * ***Users’ characteristics.***
 
 
-        * 1. Who is not capable of running?
+        1. Who is not capable of running?
 		
-        * 2. How many families are located in the building?\\
+        2. How many families are located in the building?\\
         ```
         SELECT (COUNT (DISTINCT ?family) AS ?familyCount)
         WHERE {
@@ -22,9 +22,9 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-        * 3. Who has a bad quality of hearing ability (in the building)?
+        3. Who has a bad quality of hearing ability (in the building)?
 		
-        * 4. What are the types of people concerning their physical characteristics?? 
+        4. What are the types of people concerning their physical characteristics?? 
         ```
         SELECT ?person (?allTypePerson AS ?type)
         WHERE {
@@ -33,11 +33,10 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 
-
    * ***Users’ preferences.***
 
-
-      * 5. What are route preferences (for emergency evacuation, e.g., simplest path, shortest path) of each person?
+      	
+	5. What are route preferences (for emergency evacuation, e.g., simplest path, shortest path) of each person?
        ```   
        SELECT  ?person ?rp
        WHERE {
@@ -47,7 +46,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
        }
        ```
 	   	  
-      * 6. What are the notification preferences (in terms of description, e.g., audio, textual) of each person??
+      	6. What are the notification preferences (in terms of description, e.g., audio, textual) of each person??
        ```
        SELECT  ?person ?np
        WHERE {
@@ -64,7 +63,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
     * ***Spatial information.***
        
 
-	   * 7. What is the relative occupancy ratio of all corridors?
+  	7. What is the relative occupancy ratio of all corridors?
 		```
         SELECT ?corridor ?value
         WHERE {
@@ -73,7 +72,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         }
         ```
 		
-		* 8. How many points of interest are located on each floor of the building?   
+	8. How many points of interest are located on each floor of the building?   
         ```
         SELECT ?floor (COUNT (distinct ?poi) AS ?counter) 
         WHERE {
@@ -85,7 +84,7 @@ The given SPARQL are _examples_ that may be reinterpreted and reused for applica
         GROUP BY ?floor 
         ```
         
-        * 9. Which other spaces are adjacent to a specific space (e.g., kitchen) in the building?   
+        9. Which other spaces are adjacent to a specific space (e.g., kitchen) in the building?   
         ```
         SELECT ?adjacentSpace
         WHERE {
