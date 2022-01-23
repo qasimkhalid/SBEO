@@ -3,7 +3,7 @@ We here report the documentation for the [SBEO](https://github.com/qasimkhalid/S
 
 ## A. Basics
 1. **Ontology name (MUST)**
-Smart Building Evacuation Ontology (SBEO), version 0.1.
+Smart Building Evacuation Ontology (SBEO), version 0.4.
 
 2. **Ontology owner (MUST)**
 [Qasim Khalid](https://github.com/qasimkhalid)
@@ -75,7 +75,7 @@ All entities have an rdfs:comment and rdfs:label natural language explanation.
 There is no upper ontology used in the development of this ontology. But we have reused various concepts from different exisiting ontologies. See point E.4.
 
 9. **Ontology relationships (MUST)**
-33 object properties; 24 datatype properties.
+52 object properties; 33 datatype properties.
 
 1488 axioms included (of which 475 logical axioms, 320 declaration axioms, 267 SubClassOf, 5 Equivalent Classes, 2 Hidden GCI, 3 Inverse Object Properties, 3 Functional Object Properties, 2 Inverse Functional Object Property, 3 Transitive Object Properties , 5 Symmetric Object Properties, 52 Object Property Domain and 51 Object Property Range, 1 Disjoint Data Property, 14 Functional Data Property, 31 Data Property Domain and 24 Data Property Range, and 693 Annotation Assertions).
 
