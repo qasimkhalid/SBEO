@@ -67,8 +67,9 @@ function loadTOC(){
 <div class="head">
 <dl>
 <dt>This version:</dt>
-<dd><a href="https://w3id.org/sbeo">https://w3id.org/sbeo/v0.3</a></dd>
+<dd><a href="https://w3id.org/sbeo">https://w3id.org/sbeo/v0.4</a></dd>
 <dt>Previous versions:</dt>
+<dd><a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.3/docs/index.html">https://w3id.org/sbeo/v0.3</a></dd>
 <dd><a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.2/docs/index.html">https://w3id.org/sbeo/v0.2</a></dd>
 <dd><a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.1/docs/index.html">https://w3id.org/sbeo/v0.1</a></dd>
 <dt>Authors:</dt>
@@ -87,7 +88,7 @@ function loadTOC(){
 <img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
 
 <dt>Cite as:</dt>
-<dd>Qasim Khalid. SBEO: Smart Building Evacuation Ontology. version: 0.3.</dd>
+<dd>Qasim Khalid, Alberto Fernandez Gil, Marin Lujak and Arnaud Doniec, SBEO: Smart Building Evacuation Ontology. version: 0.4., https://w3id.org/sbeo/</dd>
 </dl>
 <hr/>
 </div>
@@ -96,11 +97,11 @@ function loadTOC(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
+Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of everyday-use routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.  
 
 <p>The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.  
 
-<p>Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized. </span>
+<p>Several other parameters related to the spaces, users and context are also described in SBEO, e.g., SpaceSafety, PersonAccessbility. Moreover, intensity, severity, and the impact of events and activites are also conceptualized. </span>
        
 </div>
 <hr/>
@@ -205,7 +206,7 @@ SBEO reuses various concepts from the existing ontologies such as <a href="http:
 	
 	
 		<div class="img"> 
-				<a href="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_ClassProperty_Diagram.png?raw=true"><img src="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_ClassProperty_Diagram.png?raw=true" alt="Class Diagram for SBEO" class="wideimg" title="click to enlarge" style="border:0"></a> 
+				<a href="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_ClassProperty_Diagram.png?raw=true"><img src="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_ClassProperty_Diagram.png?raw=true" alt="Class Diagram for SBEO" class="wideimg" title="click to enlarge" style="border:0" width="1000" height="auto"></a> 
 			<figcaption>Figure 2: Class and Properties Diagram for SBEO </figcaption>
 		</div>
 	</div>
@@ -1122,12 +1123,6 @@ An alphabetical index of SBEO terms, by class (concepts) and by property (relati
    </li>
    <li>
       <a href="#Scooting" title="https://w3id.org/sbeo#Scooting">Scooting</a>
-   </li>
-   <li>
-      <a href="#ShortestPath" title="https://w3id.org/sbeo#ShortestPath">Shortest Path</a>
-   </li>
-   <li>
-      <a href="#SimplestPath" title="https://w3id.org/sbeo#SimplestPath">Simplest Path</a>
    </li>
    <li>
       <a href="#Standing" title="https://w3id.org/sbeo#Standing">Standing</a>
@@ -3471,9 +3466,7 @@ This section provides details for each class and property defined by SBEO: Smart
       <div class="comment">
          <span class="markdown">A graph-based route is a graphical way of representing a route in terms of nodes (sometimes called vertices) and edges (sometimes called arcs).</span>
       </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>{ <a href="#ShortestPath" title="https://w3id.org/sbeo#ShortestPath">Shortest Path</a> , <a href="#SimplestPath" title="https://w3id.org/sbeo#SimplestPath">Simplest Path</a> }</dd>
+      <dl class="description">    
          <dt>has super-classes</dt>
          <dd>
             <a href="#Route" title="https://w3id.org/sbeo#Route">Route</a>
@@ -7708,10 +7701,7 @@ This section provides details for each class and property defined by SBEO: Smart
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/sbeo#routeType</p>
-      <div class="comment">
-         <span class="markdown">This property is used to express the type of a route in terms of graph-based routes, such as Shortest Path, Simplest Path etc.</span>
-      </div>
+         <strong>IRI:</strong> https://w3id.org/sbeo#routeType</p>     
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -8752,13 +8742,7 @@ This section provides details for each class and property defined by SBEO: Smart
       <li>
          <a href="#Scooting" title="https://w3id.org/sbeo#Scooting">Scooting</a>
       </li>
-      <li>
-         <a href="#ShortestPath" title="https://w3id.org/sbeo#ShortestPath">Shortest Path</a>
-      </li>
-      <li>
-         <a href="#SimplestPath" title="https://w3id.org/sbeo#SimplestPath">Simplest Path</a>
-      </li>
-      <li>
+	  <li>
          <a href="#Standing" title="https://w3id.org/sbeo#Standing">Standing</a>
       </li>
       <li>
@@ -8983,28 +8967,8 @@ This section provides details for each class and property defined by SBEO: Smart
          <span class="markdown">A type of movement usually performed while sitting in (or riding on) an automatic or mechical device, such as electrical wheelchair, electric scooter, etc.</span>
       </div>
    </div>
-   <div class="entity" id="ShortestPath">
-      <h3>Shortest Path<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/sbeo#ShortestPath</p>
-      <div class="comment">
-         <span class="markdown">A type of route having minimum cost in terms of distance or time.</span>
-      </div>
-   </div>
-   <div class="entity" id="SimplestPath">
-      <h3>Simplest Path<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/sbeo#SimplestPath</p>
-      <div class="comment">
-         <span class="markdown">A type of route having minimum complexity in terms of the amount of information required to negotiate each decision point, such as turning points.</span>
-      </div>
-   </div>
+   
+   
    <div class="entity" id="Standing">
       <h3>Standing<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -9078,23 +9042,27 @@ This section provides details for each class and property defined by SBEO: Smart
 <span class="markdown">
 </span>
 
+<h4>23-01-2022</h4>
+	<ul>
+		<li>Removed some individuals, i.e., Shortest Path and Simplest Path.</li>
+	</ul>
 <h4>12-09-2021</h4>
-<ul>
-  <li>Concept and properties related to the TravelTime are added to the ontology.</li>
-  <li>Data properties related to the geometry of the spaces are added to the ontology.</li>
-</ul>
+	<ul>
+		<li>Concept and properties related to the TravelTime are added to the ontology.</li>
+		<li>Data properties related to the geometry of the spaces are added to the ontology.</li>
+	</ul>
 <h4>18-02-2021</h4>
     <ul>
-	  <li>Concepts related to the Impact of an Event/Activity are added to the ontology.</li>
+		<li>Concepts related to the Impact of an Event/Activity are added to the ontology.</li>
     </ul>
 <h4>05-02-2021</h4>
-    <ul>
-      <li>Concepts related to the Severity and Intensity of an Event/Activity are added to the ontology.</li>
-	  <li>Concepts related to the Person Ability and its Quality are added to the ontology.</li>
-    </ul>
+	<ul>
+		<li>Concepts related to the Severity and Intensity of an Event/Activity are added to the ontology.</li>
+		<li>Concepts related to the Person Ability and its Quality are added to the ontology.</li>
+	</ul>
 <h4>12-07-2020</h4>
-    <ul>
-      <li>First version of the document available online.</li>
+	<ul>
+		<li>First version of the document available online.</li>
     </ul>
 </div>
 

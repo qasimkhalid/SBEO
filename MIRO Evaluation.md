@@ -18,7 +18,7 @@ Smart Building Evacuation Ontology (SBEO), version 0.1.
 <https://github.com/qasimkhalid/SBEO>
 
 6. **Methodological framework (MUST)**
-The ontology defined the needed concepts to create a real-time context aware route recommendations during both normal and emergency conditions by introducing the namespaces _sbeo_, and connecting them to well-known ontologies like [SEAS](<https://w3id.org/seas/>), [FOAF](<http://xmlns.com/foaf/spec/>), [SOSA](<https://www.w3.org/TR/vocab-ssn/>) and [OLO](<http://purl.org/ontology/olo/core#>).
+The ontology defined the needed concepts to create a real-time context aware route recommendations during both everday use and emergency conditions by introducing the namespaces _sbeo_, and connecting them to well-known ontologies like [SEAS](<https://w3id.org/seas/>), [FOAF](<http://xmlns.com/foaf/spec/>), [SOSA](<https://www.w3.org/TR/vocab-ssn/>) and [OLO](<http://purl.org/ontology/olo/core#>).
 
 ## B. Motivation
 1. **Need (MUST)**
@@ -37,7 +37,7 @@ This ontology that couples the information about any building with its occupants
 2. **Development community (MUST)**
 
   - Centre for Intelligent Information Technologies (CETINIA) of Universidad Rey Juan Carlos, Spain.
-  - Centre d’Enseignement de Recherche et d’Innovation (CERI) Sciences et Technologie du Num´erique, IMT Lille Douai, France. 
+  - Centre d’Enseignement de Recherche et d’Innovation (CERI) Sciences et Technologie du Num´erique, IMT Nord Europe, France. 
 
 3. **Communication (MUST)** [Issues](https://github.com/qasimkhalid/SBEO/issues) on Github.
 
@@ -57,7 +57,7 @@ it uses a reduced subset of OWL 2 capabilities, being the Description Logic SHOI
 Protégé v5.5.0.
 
 3. **Ontology metrics (SHOULD)**
-Number of classes: 171; number of object properties: 34; number of data properties: 24; number of individuals: 31.
+Number of classes: 191; number of object properties: 52; number of data properties: 31; number of individuals: 33.
 
 4. **Incorporation of other ontologies (MUST)**
 [SEAS](<https://w3id.org/seas/>), [SOSA](<https://www.w3.org/TR/vocab-ssn/>), [OLO](<http://purl.org/ontology/olo/core#>), [FOAF](<http://xmlns.com/foaf/spec/>).
@@ -77,10 +77,10 @@ There is no upper ontology used in the development of this ontology. But we have
 9. **Ontology relationships (MUST)**
 33 object properties; 24 datatype properties.
 
-10. **Axiom pattern (MUST)**
-1101 axioms included (of which 308 logical axioms, 258 declaration axioms, 177 SubClassOf, 9 Equivalent Classes, 8 Hidden GCI, 3 Inverse Object Properties, 2 Functional Object Properties, 1 Inverse Functional Object Property, 6 Transitive Object Properties , 5 Symmetric Object Properties, 33 Object Property Domain and 32 Object Property Range, 1 SubData Property, 1 Disjoint Data Property, 4 Functional Data Property, 24 Data Property Domain and 10 Data Property Range, and 535 Annotation Assertions).
+1488 axioms included (of which 475 logical axioms, 320 declaration axioms, 267 SubClassOf, 5 Equivalent Classes, 2 Hidden GCI, 3 Inverse Object Properties, 3 Functional Object Properties, 2 Inverse Functional Object Property, 3 Transitive Object Properties , 5 Symmetric Object Properties, 52 Object Property Domain and 51 Object Property Range, 1 Disjoint Data Property, 14 Functional Data Property, 31 Data Property Domain and 24 Data Property Range, and 693 Annotation Assertions).
 
 11. **Deferencable URI (OPTIONAL)** 
+10. **Axiom pattern (MUST)**
 It is possible to use deferencable URIs, but no assumption on this is made in the ontology.
 ## F. Managing change
 1. **Sustainability plan (MUST)**
@@ -106,7 +106,10 @@ At the moment, there is only one theoretical [example](https://github.com/qasimk
 None
 
 5. **Evidence of use (MUST)**
-The ontology is still new, but we plan to use it in forthcoming projects.
+The ontology is used in development of Context-AwaRe Emergency Evacuation (CAREE) software. The details can be found [here](https://github.com/qasimkhalid/CAREE). 
+
+
+still new, but we plan to use it in forthcoming projects.
 
 ## References
 [1] Matentzoglu, N., Malone, J., Mungall, C., & Stevens, R. (2018). MIRO: guidelines for minimum information for the reporting of an ontology. _Journal of biomedical semantics, 9_(1), 6.
