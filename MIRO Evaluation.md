@@ -106,10 +106,7 @@ At the moment, there is only one theoretical [example](https://github.com/qasimk
 None
 
 5. **Evidence of use (MUST)**
-The ontology is used in development of Context-AwaRe Emergency Evacuation (CAREE) software. The details can be found [here](https://github.com/qasimkhalid/CAREE). 
-
-
-still new, but we plan to use it in forthcoming projects.
+The ontology is used in development of Context-AwaRe Emergency Evacuation (CAREE) software. The details can be found [here](https://github.com/qasimkhalid/CAREE). Moreover, we also plan to use it in forthcoming projects.
 
 ## References
 [1] Matentzoglu, N., Malone, J., Mungall, C., & Stevens, R. (2018). MIRO: guidelines for minimum information for the reporting of an ontology. _Journal of biomedical semantics, 9_(1), 6.
