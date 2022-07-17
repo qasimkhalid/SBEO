@@ -22,6 +22,13 @@ The core SBEO covers the concepts related to the geometry of building, devices a
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
     <script> 
+	
+<!-- Visualization WebLink JS function  -->
+$('a.webvowllink').click(function(e) {
+	e.preventDefault();
+    window.open('https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.1/sbeo.owl');
+});
+
 function loadHash() {
   jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
 	var hash = location.hash;
@@ -61,13 +68,13 @@ function loadTOC(){
 
 <body>
 <div class="container">
-<h1>SBEO: Smart Building Evacuation Ontology <a href="https://qasimkhalid.github.io/SBEO/"><img id="logo" src="https://github.com/qasimkhalid/SBEO/blob/master/Figures/logo/sbeo_logo.png?raw=true" alt="sbeo Ontology" style="float:right"></a> 
+<h1>SBEO: Smart Building Evacuation Ontology <a href="https://qasimkhalid.github.io/SBEO/"><img id="logo" src="https://github.com/qasimkhalid/SBEO/blob/v0.1/Figures/logo/sbeo_logo.png?raw=true" alt="sbeo Ontology" style="float:right"></a> 
 </h1>
 
 <div class="head">
 <dl>
 <dt>This version:</dt>
-<dd><a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.1/docs/index.html">https://w3id.org/sbeo/v0.1</a></dd>
+<dd><a href="https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.1/docs/index.html">https://w3id.org/sbeo/v0.1</a></dd>
 <dt>Authors:</dt>
 <dd>Qasim Khalid, URJC Spain and IMT Lille Douai France. (<a href="https://orcid.org/0000-0002-7944-2594">ORCID</a>) </dd>   
 
@@ -77,9 +84,9 @@ function loadTOC(){
 <dd>Arnaud Doniec, IMT Lille Douai, France (<a href="http://ia.ur.imt-lille-douai.fr/en/chercheurs/doniec_arnaud/">Web</a>, <a href="https://orcid.org/0000-0002-3843-6729">ORCID</a>) </dd>
 
 
-<dt>Download serialization:</dt><dd><span><a href="https://github.com/qasimkhalid/SBEO/raw/master/Serialization/sbeo.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="https://github.com/qasimkhalid/SBEO/raw/master/Serialization/sbeo.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="https://github.com/qasimkhalid/SBEO/raw/master/Serialization/sbeo.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="https://raw.githubusercontent.com/qasimkhalid/SBEO/master/sbeo.owl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd>
+<dt>Download serialization:</dt><dd><span><a href="https://github.com/qasimkhalid/SBEO/raw/v0.1/Serialization/sbeo.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="https://github.com/qasimkhalid/SBEO/raw/v0.1/Serialization/sbeo.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="https://github.com/qasimkhalid/SBEO/raw/v0.1/Serialization/sbeo.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="https://raw.githubusercontent.com/qasimkhalid/SBEO/v0.1/sbeo.owl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd>
 <dt>License: </dt><dd><a href="https://www.gnu.org/licenses/gpl.html" target="_blank"><img src="https://img.shields.io/badge/License-https://www.gnu.org/licenses/gpl.html-blue.svg" alt="GPLv3" /></a>
-</dd><dt>Visualization:</dt><dd><a href="http://visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/qasimkhalid/SBEO/master/sbeo.owl" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+</dd><dt>Visualization:</dt><dd><a href="#" class="webvowllink" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank">
 <img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
 
@@ -189,7 +196,7 @@ SBEO reuses various concepts from the existing ontologies such as <a href="http:
 	
 	
 		<div class="img"> 
-				<a href="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_Class_Diagram_updated.png?raw=true"><img src="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_Class_Diagram_updated.png?raw=true" alt="Class Diagram for SBEO" class="wideimg" title="click to enlarge" style="border:0"></a> 
+				<a href="https://github.com/qasimkhalid/SBEO/blob/v0.1/Figures/SBEO_Class_Diagram_updated.png?raw=true"><img src="https://github.com/qasimkhalid/SBEO/blob/v0.1/Figures/SBEO_Class_Diagram_updated.png?raw=true" alt="Class Diagram for SBEO" class="wideimg" title="click to enlarge" style="border:0"></a> 
 			<figcaption>Figure 1: Class Diagram for SBEO </figcaption>
 		</div>
 	</div>
@@ -202,7 +209,7 @@ SBEO reuses various concepts from the existing ontologies such as <a href="http:
 	
 	
 		<div class="img"> 
-				<a href="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_ClassProperty_Diagram.png?raw=true"><img src="https://github.com/qasimkhalid/SBEO/blob/master/Figures/SBEO_ClassProperty_Diagram.png?raw=true" alt="Class Diagram for SBEO" class="wideimg" title="click to enlarge" style="border:0"></a> 
+				<a href="https://github.com/qasimkhalid/SBEO/blob/v0.1/Figures/SBEO_ClassProperty_Diagram.png?raw=true"><img src="https://github.com/qasimkhalid/SBEO/blob/v0.1/Figures/SBEO_ClassProperty_Diagram.png?raw=true" alt="Class Diagram for SBEO" class="wideimg" title="click to enlarge" style="border:0"></a> 
 			<figcaption>Figure 2: Class and Properties Diagram for SBEO </figcaption>
 		</div>
 	</div>
