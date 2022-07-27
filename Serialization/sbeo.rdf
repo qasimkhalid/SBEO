@@ -27,14 +27,14 @@
 The core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.
 
 Several other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized.</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">2020-07-12</dcterms:issued>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-07-12T00:00:00</dcterms:issued>
         <dcterms:language>en</dcterms:language>
-        <dcterms:modified xml:lang="en">2022-01-23T21:48:00</dcterms:modified>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-07-26T10:16:00</dcterms:modified>
         <dcterms:title xml:lang="en">SBEO: Smart Building Evacuation Ontology</dcterms:title>
         <vann:preferredNamespacePrefix>sbeo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/sbeo#"/>
         <rdfs:seeAlso rdf:resource="https://github.com/qasimkhalid/SBEO"/>
-        <owl:versionInfo xml:lang="en">0.4</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -270,6 +270,7 @@ Several other parameters related to the spaces, users and context are also descr
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#acquaintanceOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment xml:lang="en">Any friend or an acquaintance tie among occupants.</rdfs:comment>
@@ -298,6 +299,7 @@ Several other parameters related to the spaces, users and context are also descr
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/sbeo#connectedTo"/>
         <rdfs:comment xml:lang="en">Nearest in space or position; immediately adjoining without intervening space or element; an exact neighbour.</rdfs:comment>
         <rdfs:label xml:lang="en">Adjacent To</rdfs:label>
     </owl:ObjectProperty>
@@ -363,6 +365,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#destination -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#destination">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#TravelTime"/>
         <rdfs:range>
             <owl:Class>
@@ -460,6 +463,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasAbility -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasAbility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#PersonAbility"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#Ability"/>
         <rdfs:comment xml:lang="en">A property to express a sbeo:Ability in a n-ary relation for sbeo:PersonAbility.</rdfs:comment>
@@ -482,6 +486,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasAvailabilityStatus -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasAvailabilityStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -523,6 +528,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasDeviationState -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasDeviationState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#DeviationState"/>
         <rdfs:comment xml:lang="en">A deviation status of a person depending on how ofthen one deviates from the proposed route.</rdfs:comment>
@@ -534,6 +540,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasFitnessStatus -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasFitnessStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#FitnessStatus"/>
         <rdfs:comment xml:lang="en">A fitness status is associated with a person that represent the quality of being suitable for a specific activity. There are three different levels of fitness levels are introduced that can be extended according to the needs of the application. These are &apos;Fit&apos;, &apos;Exhausted&apos; and &apos;Injured&apos;.</rdfs:comment>
@@ -545,6 +552,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasImpact -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasImpact">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -563,6 +571,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasIntensity -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasIntensity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -592,6 +601,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasMotionState -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasMotionState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#MotionState"/>
         <rdfs:comment xml:lang="en">The motion state of a person.</rdfs:comment>
@@ -603,6 +613,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasNavigationalState -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasNavigationalState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#NavigationalState"/>
         <rdfs:comment xml:lang="en">A navigational state of a social unit while following any path.</rdfs:comment>
@@ -625,6 +636,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasQuality -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasQuality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#PersonAbility"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#Quality"/>
         <rdfs:comment xml:lang="en">A property to express a quality of something in terms of different levels. For example, good, bad, medium, perfect, mild, and so forth.</rdfs:comment>
@@ -636,6 +648,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#hasSeverity -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#hasSeverity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -654,6 +667,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#installedIn -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#installedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Device"/>
         <rdfs:range>
             <owl:Class>
@@ -675,6 +689,7 @@ Several other parameters related to the spaces, users and context are also descr
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#leadsTo">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -702,6 +717,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#locatedIn -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#locatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -733,6 +749,7 @@ Several other parameters related to the spaces, users and context are also descr
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#lower">
         <owl:inverseOf rdf:resource="https://w3id.org/sbeo#upper"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/seas/BuildingStorey"/>
         <rdfs:range rdf:resource="https://w3id.org/seas/BuildingStorey"/>
@@ -797,12 +814,12 @@ Several other parameters related to the spaces, users and context are also descr
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/sbeo#ActivityImpact"/>
+                    <rdf:Description rdf:about="https://w3id.org/sbeo#EventImpact"/>
                     <rdf:Description rdf:about="https://w3id.org/sbeo#EventSeverity"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/sbeo#Incident"/>
+        <rdfs:range rdf:resource="https://w3id.org/sbeo#Event"/>
         <rdfs:comment xml:lang="en">A property to express a sbeo:Event in a n-ary relation for sbeo:EventSeverity.</rdfs:comment>
         <rdfs:label xml:lang="en">Of Event</rdfs:label>
     </owl:ObjectProperty>
@@ -812,6 +829,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#origin -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#origin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#TravelTime"/>
         <rdfs:range>
             <owl:Class>
@@ -878,8 +896,7 @@ Several other parameters related to the spaces, users and context are also descr
     <!-- https://w3id.org/sbeo#responsibleTo -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#responsibleTo">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/sbeo#acquaintanceOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="https://w3id.org/sbeo#SocialUnit"/>
         <rdfs:comment xml:lang="en">Having an obligation to do something, or having control over or care for someone, as part of one&apos;s role (Oxford Dictionary of English).
@@ -927,6 +944,7 @@ If a foaf:Person becomes responsible or a leader of a social unit, this property
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sbeo#upper">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/seas/BuildingStorey"/>
         <rdfs:range rdf:resource="https://w3id.org/seas/BuildingStorey"/>
         <rdfs:comment xml:lang="en">Associates the upper storey in a building.</rdfs:comment>
@@ -1167,6 +1185,7 @@ If a foaf:Person becomes responsible or a leader of a social unit, this property
     <!-- https://w3id.org/sbeo#endedAtTime -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#endedAtTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1265,7 +1284,6 @@ If a foaf:Person becomes responsible or a leader of a social unit, this property
     <!-- https://w3id.org/sbeo#id -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#id">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment xml:lang="en">An unique identification value of something such as, social unit, device, space.</rdfs:comment>
         <rdfs:label xml:lang="en">Identifier</rdfs:label>
@@ -1346,6 +1364,7 @@ If a foaf:Person becomes responsible or a leader of a social unit, this property
     <!-- https://w3id.org/sbeo#size -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#size">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/sbeo#Group"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment xml:lang="en"> the relative extent of something; a thing&apos;s overall dimensions or magnitude (Oxford Dictionary of English).</rdfs:comment>
@@ -1386,6 +1405,7 @@ If a foaf:Person becomes responsible or a leader of a social unit, this property
     <!-- https://w3id.org/sbeo#startedAtTime -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sbeo#startedAtTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">

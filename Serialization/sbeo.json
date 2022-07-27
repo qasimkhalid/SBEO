@@ -1593,7 +1593,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/sbeo#ActivityImpact"
+      "@id" : "https://w3id.org/sbeo#EventImpact"
     }, {
       "@id" : "https://w3id.org/sbeo#EventSeverity"
     } ]
@@ -2156,15 +2156,15 @@
     "@value" : "Smart Building Evacuation Ontology (SBEO) couples the information about any building with its occupants such that it can be used in many useful ways. For example, indoor localization of people, detection of any hazard, a recommendation of normal routes such as shopping or stadium seating routes, or safe and feasible emergency evacuation routes or both of them all together.\n\nThe core SBEO covers the concepts related to the geometry of building, devices and components of the building, route graphs correspondent to the building topology, users’ characteristics and preferences, situational awareness of both building (hazard detection, status of spaces (or routes) in terms of availability and occupancy) and users (tracking, management of groups, status in terms of fitness), and emergency evacuation.\n\nSeveral other parameters related to the spaces, users and context are also described in SBEO. For example, SpaceSafety, PersonAccessbility, etc. Moreover, intensity, severity, and the impact of events and activites are also conceptualized."
   } ],
   "http://purl.org/dc/terms/issued" : [ {
-    "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "@value" : "2020-07-12"
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2020-07-12T00:00:00"
   } ],
   "http://purl.org/dc/terms/language" : [ {
     "@value" : "en"
   } ],
   "http://purl.org/dc/terms/modified" : [ {
-    "@language" : "en",
-    "@value" : "2022-01-23T21:48:00"
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2022-07-26T10:16:00"
   } ],
   "http://purl.org/dc/terms/title" : [ {
     "@language" : "en",
@@ -2180,8 +2180,8 @@
     "@id" : "https://github.com/qasimkhalid/SBEO"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@language" : "en",
-    "@value" : "0.4"
+    "@type" : "http://www.w3.org/2001/XMLSchema#double",
+    "@value" : "0.5"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#Ability",
@@ -4846,7 +4846,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#acquaintanceOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty", "http://www.w3.org/2002/07/owl#ReflexiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Any friend or an acquaintance tie among occupants."
@@ -4877,6 +4877,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "_:genid4"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "https://w3id.org/sbeo#connectedTo"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#area",
@@ -4999,7 +5002,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#destination",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "It represents the ending point of a movement."
@@ -5033,7 +5036,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#endedAtTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The time at which an activity ended."
@@ -5138,7 +5141,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasAbility",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A property to express a sbeo:Ability in a n-ary relation for sbeo:PersonAbility."
@@ -5172,7 +5175,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasAvailabilityStatus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The status of something in terms of availability. For example, available or unavailable."
@@ -5223,7 +5226,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasDeviationState",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A deviation status of a person depending on how ofthen one deviates from the proposed route."
@@ -5240,7 +5243,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasFitnessStatus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A fitness status is associated with a person that represent the quality of being suitable for a specific activity. There are three different levels of fitness levels are introduced that can be extended according to the needs of the application. These are 'Fit', 'Exhausted' and 'Injured'."
@@ -5257,7 +5260,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasImpact",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A property to express the impact of a particular sbeo:Activity or sbeo:Event."
@@ -5274,7 +5277,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasIntensity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A property to express the intensity of a particular sbeo:Activity or sbeo:Event."
@@ -5308,7 +5311,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasMotionState",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The motion state of a person."
@@ -5325,7 +5328,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasNavigationalState",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A navigational state of a social unit while following any path."
@@ -5359,7 +5362,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasQuality",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A property to express a quality of something in terms of different levels. For example, good, bad, medium, perfect, mild, and so forth."
@@ -5393,7 +5396,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#hasSeverity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "A property to express a sbeo:Severity in a n-ary relation for sbeo:ActivitySeverity or  sbeo:EventSeverity."
@@ -5458,7 +5461,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#id",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An unique identification value of something such as, social unit, device, space."
@@ -5472,7 +5475,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#installedIn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Place or fix (equipment or machinery) in position ready for use (Oxford Dictionary of English)."
@@ -5489,7 +5492,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#leadsTo",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#SymmetricProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Be a means of access to a particular space or point."
@@ -5523,7 +5526,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#locatedIn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "States the location of any social unit, activity, event, physical space, or a point of interest at any other physical space."
@@ -5540,7 +5543,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#lower",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Associates the lower storey in a building."
@@ -5641,11 +5644,11 @@
     "@value" : "Of Event"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/sbeo#Incident"
+    "@id" : "https://w3id.org/sbeo#Event"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#origin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "It represents the starting point of a movement."
@@ -5747,7 +5750,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#responsibleTo",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#AsymmetricProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Having an obligation to do something, or having control over or care for someone, as part of one's role (Oxford Dictionary of English).\n\nIf a foaf:Person becomes responsible or a leader of a social unit, this property can be used  to express a relation between them."
@@ -5761,9 +5764,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/sbeo#SocialUnit"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/sbeo#acquaintanceOf"
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#role",
@@ -5818,7 +5818,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#size",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : " the relative extent of something; a thing's overall dimensions or magnitude (Oxford Dictionary of English)."
@@ -5869,7 +5869,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#startedAtTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Start is when an activity is deemed to have been started by an entity, known as trigger."
@@ -5919,7 +5919,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/sbeo#upper",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Associates the upper storey in a building."
