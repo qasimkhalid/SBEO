@@ -39,5 +39,5 @@ Namespace URI:
 
 - Qasim Khalid <`qasim.khalid [at] urjc.es`>
 - Alberto Fernandez Gil <`alberto.fernandez [at] urjc.es`>
-- Marin Lujak <`marin.lujak [at] imt-lille-douai.fr `>
-- Arnaud Doniec <`arnaud.doniec [at] imt-lille-douai.fr `>
+- Marin Lujak <`marin.lujak [at] urjc.es `>
+- Arnaud Doniec <`arnaud.doniec [at] imt-nord-europe.fr `>
